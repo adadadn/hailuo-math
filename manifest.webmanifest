@@ -1,0 +1,10 @@
+{
+  "name": "考研数学 M1",
+  "short_name": "数学 M1",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f5f7fb",
+  "theme_color": "#15324b",
+  "lang": "zh-CN",
+  "icons": []
+}
