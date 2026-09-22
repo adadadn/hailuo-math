@@ -5,6 +5,85 @@
 export const MISTAKE_RESULTS = ["incorrect", "unknown", "partial"];
 export const RECENT_WINDOW_MS = 14 * 24 * 60 * 60 * 1000; // 近期去重窗口：14 天
 export const OVERDUE_DAYS = 7; // 超过 7 天未练习视为久未复习
+export const REVIEW_INTERVALS = [1, 2, 4, 7, 15, 30]; // 记忆曲线：复习间隔（天）
+export const EXAM_MINUTES_PER_QUESTION = 2; // 模拟考试每题限时（分钟）
+
+// 复习阶段推进：答错/不会/部分正确 → 回到第 0 阶段（明天复习）；答对 → 阶段 +1
+export function nextReviewStage(result, stage = 0) {
+  const s = Number.isFinite(stage) && stage > 0 ? stage : 0;
+  if (MISTAKE_RESULTS.includes(result)) return 0;
+  return Math.min(s + 1, REVIEW_INTERVALS.length - 1);
+}
+export function reviewDueAt(stage, now = Date.now()) {
+  const s = Math.max(0, Math.min(Math.trunc(stage) || 0, REVIEW_INTERVALS.length - 1));
+  return now + REVIEW_INTERVALS[s] * 86400000;
+}
+// 到期待复习的题目 id（按到期时间升序）
+export function dueReviewIds(reviews, now = Date.now()) {
+  return Object.entries(reviews || {})
+    .filter(([, r]) => r && Number.isFinite(r.due) && r.due <= now)
+    .map(([id]) => id)
+    .sort((a, b) => reviews[a].due - reviews[b].due);
+}
+
+// 确定性伪随机（seed 相同则结果相同，便于测试与复现）
+function mulberry32(seed) {
+  let a = seed >>> 0;
+  return function () {
+    a += 0x6d2b79f5;
+    let t = a;
+    t = Math.imul(t ^ (t >>> 15), t | 1);
+    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+/**
+ * 模拟考试组卷：只取客观题（选择/填空），题型交替、顺序打散。
+ * @returns {{items: Array<object>, notice: string}} items 为题目对象数组
+ */
+export function buildExamPlan({ questions, project, chapter = "all", count, seed = Date.now() }) {
+  let pool = questions.filter((q) => q.project === project && q.reviewStatus === "approved" && q.type !== "essay" && (chapter === "all" || q.chapter === chapter));
+  if (pool.length < count) {
+    return { items: [], notice: `当前范围只有 ${pool.length} 道客观题，不足以组成 ${count} 道试卷。` };
+  }
+  const rand = mulberry32(seed);
+  const shuffled = pool.slice().sort(() => rand() - 0.5).slice(0, count);
+  const buckets = { choice: [], fill: [] };
+  for (const q of shuffled) buckets[q.type].push(q);
+  const rotated = [];
+  let slot = 0;
+  while (rotated.length < count && slot < count * 4) {
+    const next = buckets[slot % 2 === 0 ? "choice" : "fill"].shift();
+    if (next) rotated.push(next);
+    slot += 1;
+  }
+  return { items: rotated };
+}
+
+/**
+ * 模拟考试判分：按试卷题目清单逐题判分（未作答计为错误），填空/选择用答案比对。
+ * @param {Array} questions 全量题库
+ * @param {Object} answers 已作答映射 { id: 答案 }（可缺失，缺失视为未作答）
+ * @param {Array} [questionIds] 试卷题目顺序；缺省时按 answers 的键
+ * @returns {{correct: number, total: number, accuracy: number, details: Array}}
+ */
+export function scoreExam(questions, answers, questionIds) {
+  const ids = Array.isArray(questionIds) && questionIds.length ? questionIds : Object.keys(answers || {});
+  let correct = 0;
+  const details = [];
+  for (const id of ids) {
+    const q = questions.find((x) => x.id === id);
+    if (!q) continue;
+    const raw = answers && answers[id] !== undefined ? answers[id] : "";
+    const submitted = raw === null ? "" : String(raw);
+    const ok = submitted.trim() !== "" && answersMatch(submitted, q.answer);
+    if (ok) correct += 1;
+    details.push({ id, question: q, submitted, correct: ok });
+  }
+  const total = details.length;
+  return { correct, total, accuracy: total ? correct / total : 0, details };
+}
 
 // 常用数学符号归一化：统一上下标、全角/半角、减号等写法
 const UNI_MAP = {

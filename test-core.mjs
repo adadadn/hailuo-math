@@ -1,6 +1,6 @@
 // 考研数学 M1 核心逻辑单测（Node 运行，无需浏览器）
 import { readFileSync } from "node:fs";
-import { normalizeAnswer, safeEvaluate, answersMatch, buildDailyPlan, MISTAKE_RESULTS } from "./core.js";
+import { normalizeAnswer, safeEvaluate, answersMatch, buildDailyPlan, MISTAKE_RESULTS, nextReviewStage, reviewDueAt, dueReviewIds, buildExamPlan, scoreExam, EXAM_MINUTES_PER_QUESTION } from "./core.js";
 
 let failures = 0;
 const check = (name, cond, detail = "") => {
@@ -112,6 +112,47 @@ const mkAttempt = (id, result, daysAgo) => ({ [id]: { questionId: id, result, co
 // 8. 错因集合
 {
   check("MISTAKE_RESULTS 含三态", ["incorrect", "unknown", "partial"].every((r) => MISTAKE_RESULTS.includes(r)));
+}
+
+console.log("== 复习调度（记忆曲线） ==");
+{
+  const t = new Date("2026-09-22T00:00:00Z").getTime();
+  check("答对：阶段 0→1", nextReviewStage("correct", 0) === 1);
+  check("答对：阶段 1→2", nextReviewStage("correct", 1) === 2);
+  check("答对：阶段 2→3", nextReviewStage("correct", 2) === 3);
+  check("答对：阶段 4→5（30 天档）", nextReviewStage("correct", 4) === 5);
+  check("答对：阶段 5 封顶", nextReviewStage("correct", 5) === 5);
+  check("答错/不会/部分：重置回第 0 阶段", nextReviewStage("incorrect", 4) === 0 && nextReviewStage("unknown", 3) === 0 && nextReviewStage("partial", 2) === 0);
+  check("间隔：阶段 0/1/2 对应 1/2/4 天", (reviewDueAt(0, t) - t) / 86400000 === 1 && (reviewDueAt(1, t) - t) / 86400000 === 2 && (reviewDueAt(2, t) - t) / 86400000 === 4);
+  check("间隔：阶段 5 对应 30 天", (reviewDueAt(5, t) - t) / 86400000 === 30);
+  const reviews = {
+    a: { stage: 1, due: t - 1000 },   // 已到期
+    b: { stage: 2, due: t + 86400000 }, // 明天到期
+    c: { stage: 0 },                  // 异常记录（无 due）
+  };
+  const due = dueReviewIds(reviews, t);
+  check("到期判断：只含已到期", due.includes("a") && !due.includes("b") && !due.includes("c"), due.join(","));
+}
+
+console.log("== 模拟考试组卷与判分 ==");
+{
+  const mk = (id, type, chapter) => ({ id, project: "math1", chapter, type, kind: "mock", reviewStatus: "approved", stem: id, answer: "1", explanation: "解析" + id, source: "t", options: type === "choice" ? ["1", "2"] : undefined });
+  const pool = [mk("c1", "choice", "函数、极限与连续"), mk("c2", "choice", "函数、极限与连续"), mk("f1", "fill", "一元函数微分学"), mk("f2", "fill", "一元函数微分学"), mk("e1", "essay", "一元函数积分学")];
+  const plan = buildExamPlan({ questions: pool, project: "math1", chapter: "all", count: 4, seed: 42 });
+  check("考试组卷：只组客观题", plan.items.length === 4 && plan.items.every((q) => q.type !== "essay"), `len=${plan.items.length}`);
+  check("考试组卷：题型交替（choice 在偶数位）", plan.items.every((q, i) => (i % 2 === 0) === (q.type === "choice")), plan.items.map((q) => q.type).join(","));
+  const same = buildExamPlan({ questions: pool, project: "math1", chapter: "all", count: 4, seed: 42 });
+  check("考试组卷：同 seed 结果确定", JSON.stringify(plan.items.map((q) => q.id)) === JSON.stringify(same.items.map((q) => q.id)));
+  const chapterPlan = buildExamPlan({ questions: pool, project: "math1", chapter: "一元函数微分学", count: 2, seed: 1 });
+  check("考试组卷：按章节过滤", chapterPlan.items.every((q) => q.chapter === "一元函数微分学") && chapterPlan.items.length === 2);
+  const short = buildExamPlan({ questions: pool, project: "math1", chapter: "一元函数微分学", count: 4, seed: 1 });
+  check("考试组卷：客观题不足时返回空并提示", short.items.length === 0 && short.notice.includes("只有"));
+  const answers = { c1: "1", c2: "9", f1: "1" }; // c2 答错，f2 未作答
+  const scored = scoreExam(pool, answers, ["c1", "c2", "f1", "f2"]);
+  check("判分：正确数 2", scored.correct === 2, `correct=${scored.correct}`);
+  check("判分：总数含未作答且正确率 0.5", scored.total === 4 && scored.accuracy === 0.5, JSON.stringify([scored.total, scored.accuracy]));
+  check("判分：details 逐题且未作答计入", scored.details.length === 4 && scored.details.find((d) => d.question.id === "c2").correct === false && scored.details.find((d) => d.question.id === "f2").submitted === "");
+  check("EXAM_MINUTES_PER_QUESTION = 2", EXAM_MINUTES_PER_QUESTION === 2);
 }
 
 console.log(failures === 0 ? "\n全部通过 ✔" : `\n${failures} 项失败 ✘`);

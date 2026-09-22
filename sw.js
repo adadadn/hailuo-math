@@ -1,5 +1,5 @@
-const CACHE = "kaoyan-math-m1-v7";
-const ASSETS = ["/", "/index.html", "/styles.css", "/app.js", "/core.js", "/data/questions.json", "/data/curriculum.json", "/manifest.webmanifest", "/icon.svg"];
+const CACHE = "kaoyan-math-m1-v8";
+const ASSETS = ["/", "/index.html", "/styles.css", "/app.js", "/core.js", "/data/questions.json", "/data/curriculum.json", "/data/notes.json", "/manifest.webmanifest", "/icon.svg"];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(caches.open(CACHE).then((cache) => cache.addAll(ASSETS)));

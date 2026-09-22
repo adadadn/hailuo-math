@@ -200,10 +200,68 @@ select:focus, input:focus, textarea:focus { border-color: var(--teal); box-shado
 /* ---------- 页脚 ---------- */
 .footer { margin-top: 26px; padding: 16px 0 8px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; line-height: 1.6; }
 
+/* ---------- 学习中心 ---------- */
+.chapter-row { display: flex; align-items: center; gap: 12px; width: 100%; text-align: left; border: 1px solid var(--line); border-radius: var(--radius-md); background: #fff; padding: 13px 14px; transition: border-color .15s ease, box-shadow .15s ease; }
+.chapter-row:hover { border-color: #9fd6c8; box-shadow: var(--shadow-card); }
+.chapter-no { flex: none; width: 34px; height: 34px; display: grid; place-items: center; border-radius: 10px; background: var(--teal-soft); color: var(--teal-ink); font-weight: 800; font-size: 13px; }
+.chapter-main { flex: 1; min-width: 0; }
+.chapter-main strong { display: block; font-size: 15px; margin-bottom: 2px; }
+.chapter-main .muted { font-size: 12px; }
+.chapter-arrow { flex: none; color: var(--line-strong); font-size: 20px; font-weight: 800; }
+
+/* ---------- 讲义 ---------- */
+.check-list, .pitfall-list { margin: 0; padding-left: 0; list-style: none; display: grid; gap: 9px; }
+.check-list li, .pitfall-list li { position: relative; padding-left: 24px; line-height: 1.65; font-size: 14px; }
+.check-list li::before { content: "✓"; position: absolute; left: 0; top: 0; color: var(--teal); font-weight: 800; }
+.pitfall-list li::before { content: "!"; position: absolute; left: 0; top: 0; width: 17px; height: 17px; display: grid; place-items: center; border-radius: 50%; background: var(--orange-soft); color: var(--orange-ink); font-size: 12px; font-weight: 800; }
+.formula-table { overflow-x: auto; }
+.formula-table table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.formula-table td { border: 1px solid var(--line); padding: 9px 11px; vertical-align: top; line-height: 1.6; }
+.formula-table td:first-child { background: #f7fafb; font-weight: 700; color: var(--teal-ink); white-space: nowrap; }
+.method-list { margin: 0; padding-left: 20px; display: grid; gap: 9px; }
+.method-list li { line-height: 1.6; font-size: 14px; }
+.method-list .muted { font-size: 13px; margin-top: 2px; }
+.example-item { border: 1px solid var(--line); border-radius: var(--radius-md); background: #fff; overflow: hidden; }
+.example-item summary { list-style: none; display: flex; gap: 10px; align-items: flex-start; padding: 13px 14px; cursor: pointer; font-weight: 600; font-size: 14px; line-height: 1.55; }
+.example-item summary::-webkit-details-marker { display: none; }
+.example-item summary .tag { flex: none; }
+.example-item[open] { border-color: #bfddd4; }
+.example-item[open] summary { border-bottom: 1px solid var(--line); }
+.example-body { padding: 12px 14px 14px; background: #fafcfd; }
+.example-body .muted { font-size: 13px; margin: 0 0 8px; }
+.example-solution { white-space: pre-line; font-size: 13.5px; line-height: 1.75; color: var(--ink); }
+
+/* ---------- 解题过程增强 ---------- */
+.solution-title { margin: 12px 0 6px; font-size: 13px; color: var(--muted); }
+.explain { border-top: 1px dashed #d3e0e6; padding-top: 8px; }
+.pitfall-hint { margin-top: 10px; padding: 9px 12px; border-radius: 8px; background: var(--orange-soft); color: var(--orange-ink); font-size: 13px; line-height: 1.6; }
+
+/* ---------- 模拟考试 ---------- */
+.exam-count-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.exam-count { border: 1px solid var(--line-strong); border-radius: var(--radius-md); padding: 10px 6px; background: #fff; color: var(--ink); font-size: 12.5px; font-weight: 700; transition: border-color .15s ease, background .15s ease; }
+.exam-count:hover { border-color: var(--teal); }
+.exam-count.active { border-color: var(--teal); background: var(--teal-soft); color: var(--teal-ink); box-shadow: inset 0 0 0 1px var(--teal); }
+.exam-topbar { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 12px; }
+.exam-timer { font-variant-numeric: tabular-nums; font-size: 22px; font-weight: 800; color: var(--navy); letter-spacing: .02em; }
+.exam-timer.danger { color: var(--red); }
+.exam-pages { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+.exam-page { width: 34px; height: 34px; border-radius: 9px; border: 1px solid var(--line-strong); background: #fff; color: var(--muted); font-weight: 700; font-size: 12.5px; transition: border-color .15s ease, background .15s ease, color .15s ease; }
+.exam-page:hover { border-color: var(--teal); color: var(--teal-strong); }
+.exam-page.current { border-color: var(--navy); color: #fff; background: var(--navy); }
+.exam-page.done { background: var(--teal-soft); border-color: var(--teal); color: var(--teal-ink); }
+.exam-result-line { display: flex; justify-content: space-between; gap: 10px; margin-top: 8px; font-weight: 700; font-size: 13.5px; }
+.score-panel { text-align: center; padding: 24px 18px; }
+.score-number { font-size: 56px; font-weight: 800; line-height: 1; letter-spacing: -.02em; }
+.score-number small { font-size: 20px; font-weight: 700; margin-left: 2px; }
+.score-number.teal { color: var(--teal); }
+.score-number.orange { color: var(--orange); }
+.score-number.red { color: var(--red); }
+
 /* ---------- 小屏微调 ---------- */
 @media (max-width: 380px) {
   .page { padding: 16px 14px 88px; }
   .question-stem { font-size: 17px; }
   .home-stats { grid-template-columns: 1fr 1fr; }
   h1 { font-size: 24px; }
+  .exam-count { font-size: 11.5px; padding: 9px 4px; }
 }
