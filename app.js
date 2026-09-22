@@ -31,19 +31,25 @@ const sessionPractice = () => (state.session && state.practices[state.session.ke
 const attemptFor = (id) => state.attempts[id];
 const escapeHtml = (value) => String(value).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;" }[c]));
 const resultName = (result) => ({ correct: "正确", incorrect: "错误", unknown: "不会", partial: "部分正确", pending_confirmation: "待确认" })[result] || result;
+const TAB_ICONS = {
+  home: '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg>',
+  chapters: '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>',
+  mistakes: '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 8.5l7 7M15.5 8.5l-7 7"/></svg>',
+};
 
 function render() {
   document.querySelector("#app").innerHTML = `
     <div class="app-shell">
       <header class="topbar"><div class="topbar-inner">
-        <a class="brand" href="#" data-view="home"><span class="brand-mark">数</span><span><strong>考研数学 M1</strong><small>自适应每日一练</small></span></a>
-        <nav class="nav" aria-label="主导航">
-          <button class="${view === "home" ? "active" : ""}" data-view="home">首页</button>
-          <button class="${view === "chapters" ? "active" : ""}" data-view="chapters">章节</button>
-          <button class="${view === "mistakes" ? "active" : ""}" data-view="mistakes">错题</button>
-        </nav>
+        <a class="brand" href="#" data-view="home"><span class="brand-mark">数</span><span class="brand-text"><strong>考研数学 M1</strong><small>自适应每日一练</small></span></a>
+        <span class="topbar-day">${today().slice(5).replace("-", "/")}</span>
       </div></header>
       <main class="page">${view === "home" ? homeView() : view === "chapters" ? chaptersView() : view === "practice" ? practiceView() : mistakesView()}</main>
+      <nav class="tabbar" aria-label="底部导航">
+        <button class="tab${view === "home" ? " active" : ""}" data-view="home">${TAB_ICONS.home}<span>首页</span></button>
+        <button class="tab${view === "chapters" ? " active" : ""}" data-view="chapters">${TAB_ICONS.chapters}<span>章节</span></button>
+        <button class="tab${view === "mistakes" ? " active" : ""}" data-view="mistakes">${TAB_ICONS.mistakes}<span>错题</span></button>
+      </nav>
     </div>`;
   bindEvents();
 }
@@ -158,7 +164,7 @@ function practiceView() {
     <section class="panel"><div class="question-meta"><span class="tag teal">${TYPE_NAMES[q.type]}</span><span class="tag">${escapeHtml(q.chapter)}</span><span class="tag orange">${q.kind === "real" ? "真题" : "模拟题"}</span><span class="tag">来源：${escapeHtml(q.source)}</span></div>
       ${reason ? `<p class="reason">选题原因：${escapeHtml(reason)}</p>` : ""}
       <div class="question-stem">${escapeHtml(q.stem)}</div>${questionInput(q, attempt)}
-      ${answered ? `<div class="answer-box">${q.type === "essay" && attempt?.submittedAnswer ? `<span class="tag essay-note">${escapeHtml(attempt.submittedAnswer)}</span>` : ""}<strong>标准答案：${escapeHtml(q.answer)}</strong><br /><span>${escapeHtml(q.explanation)}</span></div>` : ""}
+      ${answered ? `<div class="answer-box">${q.type === "essay" && attempt?.submittedAnswer ? `<span class="tag essay-note">${escapeHtml(attempt.submittedAnswer)}</span>` : ""}<div class="answer-line"><span class="muted">标准答案</span><strong>${escapeHtml(q.answer)}</strong></div><span class="explain">${escapeHtml(q.explanation)}</span></div>` : ""}
       <div class="actions">${actions}</div>
     </section>`;
 }

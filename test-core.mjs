@@ -68,7 +68,7 @@ const mkAttempt = (id, result, daysAgo) => ({ [id]: { questionId: id, result, co
 // 2. 章节无题防呆（不静默回退，提示用户）
 {
   const plan = buildDailyPlan({ questions, attempts: {}, project: "math1", chapter: "重积分", count: 3, now });
-  check("章节有题：按章节内题量生成", plan.items.length === 2 && plan.chapter === "重积分", `len=${plan.items.length} chapter=${plan.chapter}`);
+  check("章节有题：按章节内题量生成", plan.items.length === 3 && plan.chapter === "重积分", `len=${plan.items.length} chapter=${plan.chapter}`);
   const plan2 = buildDailyPlan({ questions, attempts: {}, project: "math1", chapter: "不存在的章节", count: 3, now });
   check("章节无题：items 为空且标记 fallback", plan2.items.length === 0 && plan2.fallback === true);
   check("章节无题：提示更换章节", plan2.notice.includes("其他章节"));
@@ -91,8 +91,8 @@ const mkAttempt = (id, result, daysAgo) => ({ [id]: { questionId: id, result, co
 }
 // 5. 题库不足时补足并提示
 {
-  const plan = buildDailyPlan({ questions, attempts: {}, project: "math1", chapter: "向量代数与空间解析几何", count: 5, now });
-  check("题库不足：按现有题量生成", plan.items.length >= 1 && plan.items.length <= 5, `len=${plan.items.length}`);
+  const plan = buildDailyPlan({ questions, attempts: {}, project: "math1", chapter: "大数定律与中心极限定理", count: 20, now });
+  check("题库不足：按现有题量生成", plan.items.length >= 10 && plan.items.length < 20, `len=${plan.items.length}`);
   check("题库不足：有提示", plan.notice.includes("只有"));
 }
 // 6. 空项目题库
