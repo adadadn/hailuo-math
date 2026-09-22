@@ -1,0 +1,109 @@
+// 考研数学 M1 核心逻辑单测（Node 运行，无需浏览器）
+import { readFileSync } from "node:fs";
+import { normalizeAnswer, safeEvaluate, answersMatch, buildDailyPlan, MISTAKE_RESULTS } from "./core.js";
+
+let failures = 0;
+const check = (name, cond, detail = "") => {
+  if (cond) {
+    console.log(`  PASS  ${name}`);
+  } else {
+    failures += 1;
+    console.log(`  FAIL  ${name}${detail ? "  -> " + detail : ""}`);
+  }
+};
+
+const questions = JSON.parse(readFileSync(new URL("./data/questions.json", import.meta.url), "utf8"));
+
+console.log("== 题库数据完整性 ==");
+const ids = new Set();
+let bad = 0;
+for (const q of questions) {
+  if (ids.has(q.id)) { bad += 1; console.log("  duplicate id:", q.id); }
+  ids.add(q.id);
+  if (!q.id || !q.stem || !q.answer || !q.explanation || !q.chapter || !q.source || !q.difficulty || !q.kind || q.reviewStatus !== "approved" || !["choice", "fill", "essay"].includes(q.type)) {
+    bad += 1;
+    console.log("  missing/incorrect field:", q.id);
+  }
+  if (q.type === "choice" && (!Array.isArray(q.options) || !q.options.includes(q.answer))) {
+    bad += 1;
+    console.log("  choice answer not in options:", q.id);
+  }
+}
+check("无重复/缺字段/选择题答案在选项中", bad === 0, `bad=${bad}`);
+const counts = {};
+for (const q of questions) counts[q.project] = (counts[q.project] || 0) + 1;
+check("四项目每题 25+ 道", counts.math1 >= 25 && counts.math2 >= 25 && counts.math3 >= 25 && counts.calc396 >= 25, JSON.stringify(counts));
+const covered = {};
+for (const q of questions) covered[q.project] = new Set([...(covered[q.project] || []), q.chapter]);
+for (const p of Object.keys(covered)) console.log(`  ${p} 覆盖章节数: ${covered[p].size}`);
+
+console.log("== 答案归一化与数值比对 ==");
+check("1/2 与 0.5 数值等价", answersMatch("1/2", "0.5"));
+check("e^x+C 与 eˣ+C 归一化一致", answersMatch("e^x+C", "eˣ+C"));
+check("y=Ce^(2x) 与 y=ce^2x 一致", answersMatch("y=Ce^(2x)", "y=ce^2x"));
+check("x^2/2+C 与 x²/2+c 一致", answersMatch("x^2/2+C", "x²/2+c"));
+check("2 与 2.0 数值等价", answersMatch("2", "2.0"));
+check("(e-1)/2 与 0.859 不等（e 非数值）", !answersMatch("(e-1)/2", "0.859"));
+check("错误答案不相符", !answersMatch("3", "1/2"));
+check("safeEvaluate: 1/2=0.5", safeEvaluate("1/2") === 0.5);
+check("safeEvaluate: 2^3=8", safeEvaluate("2^3") === 8);
+check("safeEvaluate: (1+2)*3=9", safeEvaluate("(1+2)*3") === 9);
+check("safeEvaluate 拒绝注入", Number.isNaN(safeEvaluate("2+alert(1)")));
+check("safeEvaluate 拒绝空串", Number.isNaN(safeEvaluate("")));
+check("safeEvaluate 拒绝多余括号", Number.isNaN(safeEvaluate("1)(")));
+
+console.log("== 自适应组卷 ==");
+const now = Date.now();
+const day = 86400000;
+const mkAttempt = (id, result, daysAgo) => ({ [id]: { questionId: id, result, confirmed: true, updatedAt: new Date(now - daysAgo * day).toISOString() } });
+
+// 1. 全空历史：按题量取题，且带选题原因
+{
+  const plan = buildDailyPlan({ questions, attempts: {}, project: "math1", chapter: "all", count: 5, now });
+  check("空历史：生成 5 道题", plan.items.length === 5, `len=${plan.items.length}`);
+  check("空历史：每题都有原因", plan.items.every((it) => it.reason && it.reason.length > 0));
+  check("空历史：原因含“新题”", plan.items[0].reason.includes("新题"));
+  check("空历史：无不足提示", plan.notice === "", plan.notice);
+}
+// 2. 章节无题防呆（不静默回退，提示用户）
+{
+  const plan = buildDailyPlan({ questions, attempts: {}, project: "math1", chapter: "重积分", count: 3, now });
+  check("章节有题：按章节内题量生成", plan.items.length === 2 && plan.chapter === "重积分", `len=${plan.items.length} chapter=${plan.chapter}`);
+  const plan2 = buildDailyPlan({ questions, attempts: {}, project: "math1", chapter: "不存在的章节", count: 3, now });
+  check("章节无题：items 为空且标记 fallback", plan2.items.length === 0 && plan2.fallback === true);
+  check("章节无题：提示更换章节", plan2.notice.includes("其他章节"));
+}
+// 3. 错题优先
+{
+  const qs = questions.filter((q) => q.project === "math1");
+  const wrongId = qs[0].id;
+  const plan = buildDailyPlan({ questions, attempts: mkAttempt(wrongId, "incorrect", 2), project: "math1", chapter: "all", count: 5, now });
+  check("错题优先：错题进入题单", plan.items.some((it) => it.id === wrongId));
+  check("错题优先：排在最前", plan.items[0].id === wrongId);
+  check("错题优先：原因标注", plan.items[0].reason.includes("错题"));
+}
+// 4. 14 天去重
+{
+  const qs = questions.filter((q) => q.project === "math1");
+  const recentId = qs[1].id;
+  const plan = buildDailyPlan({ questions, attempts: mkAttempt(recentId, "correct", 1), project: "math1", chapter: "all", count: 5, now });
+  check("去重：近期做对的题不进题单（题库充足时）", !plan.items.some((it) => it.id === recentId), JSON.stringify(plan.items.map((i) => i.id)));
+}
+// 5. 题库不足时补足并提示
+{
+  const plan = buildDailyPlan({ questions, attempts: {}, project: "math1", chapter: "向量代数与空间解析几何", count: 5, now });
+  check("题库不足：按现有题量生成", plan.items.length >= 1 && plan.items.length <= 5, `len=${plan.items.length}`);
+  check("题库不足：有提示", plan.notice.includes("只有"));
+}
+// 6. 空项目题库
+{
+  const empty = buildDailyPlan({ questions: [], attempts: {}, project: "math1", chapter: "all", count: 5, now });
+  check("空题库：items 为空且带提示", empty.items.length === 0 && empty.notice.length > 0 && empty.fallback === true);
+}
+// 7. 错因集合
+{
+  check("MISTAKE_RESULTS 含三态", ["incorrect", "unknown", "partial"].every((r) => MISTAKE_RESULTS.includes(r)));
+}
+
+console.log(failures === 0 ? "\n全部通过 ✔" : `\n${failures} 项失败 ✘`);
+process.exit(failures === 0 ? 0 : 1);

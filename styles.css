@@ -148,3 +148,19 @@ h1 { max-width: 680px; font-size: clamp(34px, 5vw, 58px); letter-spacing: -.02em
   .project-grid, .chapter-list { grid-template-columns: 1fr; }
   .page { padding-top: 28px; }
 }
+
+/* M1 v0.2 additions: home stats, selection reason, mistake form, calendar, chapter practice */
+.home-stats { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.reason { margin: 0 0 14px; padding: 9px 12px; border-left: 3px solid var(--teal); background: #f0faf7; color: #0b6f67; font-size: 13px; font-weight: 700; border-radius: 0 6px 6px 0; }
+.mistake-form { margin-top: 14px; border-color: #f0c9b4; background: #fffaf6; }
+.mistake-form textarea { width: 100%; border: 1px solid var(--line); border-radius: 6px; padding: 9px 11px; resize: vertical; font: inherit; }
+.mistake-note { color: var(--navy); }
+.chapter-actions { margin-top: 12px; padding: 12px 15px 14px; border-top: 1px solid var(--line); }
+.calendar { display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; }
+.cal-cell { aspect-ratio: 1; display: grid; place-items: center; border-radius: 6px; background: #f2f6f8; color: var(--muted); font-size: 12px; }
+.cal-cell.checked { background: var(--teal); color: #fff; font-weight: 800; }
+.cal-cell.today { outline: 2px solid var(--navy); outline-offset: 1px; font-weight: 800; color: var(--navy); }
+@media (max-width: 470px) {
+  .home-stats { grid-template-columns: 1fr 1fr; }
+  .cal-cell { font-size: 11px; }
+}

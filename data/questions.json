@@ -298,5 +298,320 @@
     "id": "396-stat-001", "project": "calc396", "type": "essay",
     "stem": "设随机变量 X 的方差为 4，求 Y=3X-2 的方差。", "answer": "36",
     "explanation": "D(aX+b)=a²D(X)，所以 D(Y)=9×4=36。", "source": "原创示例题", "chapter": "数字特征与统计基础", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "sx1-series-001", "project": "math1", "type": "choice",
+    "stem": "级数 Σ(n=1→∞) 1/n² 的敛散性为？", "answer": "收敛", "options": ["收敛", "发散", "条件收敛", "无法判断"],
+    "explanation": "这是 p 级数，p=2>1，因此收敛。", "source": "原创示例题", "chapter": "无穷级数", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "sx1-series-002", "project": "math1", "type": "fill",
+    "stem": "幂级数 Σ(n=0→∞) x^n 的收敛半径为____。", "answer": "1",
+    "explanation": "由比值审敛法，|x|<1 时收敛，因此收敛半径 R=1。", "source": "原创示例题", "chapter": "无穷级数", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "sx1-series-003", "project": "math1", "type": "choice",
+    "stem": "交错级数 Σ(n=1→∞) (-1)^(n+1)/n 的敛散性为？", "answer": "条件收敛", "options": ["条件收敛", "绝对收敛", "发散", "无法判断"],
+    "explanation": "取绝对值后为调和级数发散，但原级数满足莱布尼茨判别法收敛，故条件收敛。", "source": "原创示例题", "chapter": "无穷级数", "difficulty": 2, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "sx1-multi-int-001", "project": "math1", "type": "fill",
+    "stem": "二重积分 ∫∫_D 1 dσ，其中 D: 0≤x≤1, 0≤y≤2，其值为____。", "answer": "2",
+    "explanation": "被积函数为 1，积分等于区域 D 的面积 1×2=2。", "source": "原创示例题", "chapter": "重积分", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "sx1-multi-int-002", "project": "math1", "type": "essay",
+    "stem": "用极坐标计算二重积分 ∫∫(x²+y²) dσ，其中 D 为单位圆 x²+y²≤1。", "answer": "π/2",
+    "explanation": "令 x=r cosθ, y=r sinθ，则 ∫∫r²·r dr dθ = ∫₀²ᵖⁱ dθ ∫₀¹ r³ dr = 2π·(1/4)=π/2。", "source": "原创示例题", "chapter": "重积分", "difficulty": 2, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "sx1-det-001", "project": "math1", "type": "fill",
+    "stem": "二阶行列式 |1 2; 3 4| 的值为____。", "answer": "-2",
+    "explanation": "1×4-2×3=-2。", "source": "原创示例题", "chapter": "行列式", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "sx1-det-002", "project": "math1", "type": "fill",
+    "stem": "三阶对角矩阵 diag(2,3,4) 的行列式为____。", "answer": "24",
+    "explanation": "对角矩阵的行列式等于主对角线元素之积 2×3×4=24。", "source": "原创示例题", "chapter": "行列式", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "sx1-linear-001", "project": "math1", "type": "choice",
+    "stem": "齐次线性方程组 Ax=0（A 为 m×n 矩阵）有非零解的充分必要条件是？", "answer": "r(A)<n", "options": ["r(A)<n", "r(A)=n", "m<n", "det(A)≠0"],
+    "explanation": "未知数个数 n 大于系数矩阵的秩时，存在自由未知量，方程组有非零解。", "source": "原创示例题", "chapter": "线性方程组", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "sx1-eigen-001", "project": "math1", "type": "fill",
+    "stem": "方阵 A 的特征值为 1 和 2，则 det(A)=____。", "answer": "2",
+    "explanation": "方阵的行列式等于其全部特征值之积，1×2=2。", "source": "原创示例题", "chapter": "特征值与特征向量", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "sx1-eigen-002", "project": "math1", "type": "fill",
+    "stem": "设 λ=2 是方阵 A 的特征值，则行列式 |A-2I|=____。", "answer": "0",
+    "explanation": "λ 是 A 的特征值 ⇔ |A-λI|=0，因此 |A-2I|=0。", "source": "原创示例题", "chapter": "特征值与特征向量", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "sx1-quad-001", "project": "math1", "type": "choice",
+    "stem": "二次型 f(x,y)=x²+y² 是____二次型。", "answer": "正定", "options": ["正定", "负定", "半正定", "不定"],
+    "explanation": "对任意 (x,y)≠(0,0)，f=x²+y²>0，因此正定。", "source": "原创示例题", "chapter": "二次型", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "sx1-geom-001", "project": "math1", "type": "fill",
+    "stem": "向量 a=(1,2,2) 的模长为____。", "answer": "3",
+    "explanation": "|a|=√(1²+2²+2²)=√9=3。", "source": "原创示例题", "chapter": "向量代数与空间解析几何", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "sx1-geom-002", "project": "math1", "type": "choice",
+    "stem": "点 (1,1,1) 到平面 x+y+z=0 的距离为？", "answer": "√3", "options": ["1", "√3", "2", "3"],
+    "explanation": "距离 d=|1+1+1|/√(1²+1²+1²)=3/√3=√3。", "source": "原创示例题", "chapter": "向量代数与空间解析几何", "difficulty": 2, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "sx1-rand-001", "project": "math1", "type": "fill",
+    "stem": "设 X~N(0,1)，则 P(X≤0)=____。", "answer": "1/2",
+    "explanation": "标准正态分布关于 0 对称，因此 P(X≤0)=1/2。", "source": "原创示例题", "chapter": "随机变量及其分布", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "sx1-stat-001", "project": "math1", "type": "choice",
+    "stem": "样本方差 S²=(1/(n-1))Σ(Xᵢ-X̄)² 是总体方差 σ² 的____估计。", "answer": "无偏", "options": ["无偏", "有偏", "矩", "一致"],
+    "explanation": "E(S²)=σ²，因此 S² 是 σ² 的无偏估计。", "source": "原创示例题", "chapter": "数理统计", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "sx1-vector-001", "project": "math1", "type": "fill",
+    "stem": "向量组 α₁=(1,0,0)，α₂=(0,1,0)，α₃=(0,0,1) 线性____（填相关或无关）。", "answer": "无关",
+    "explanation": "三个向量线性无关当且仅当 k₁α₁+k₂α₂+k₃α₃=0 只有零解，此处显然成立。", "source": "原创示例题", "chapter": "向量", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "sx1-big-001", "project": "math1", "type": "choice",
+    "stem": "大数定律表明：当样本量 n 足够大时，样本均值 X̄ 依概率收敛于？", "answer": "总体均值 μ", "options": ["总体均值 μ", "总体方差 σ²", "0", "1"],
+    "explanation": "大数定律说明样本均值 X̄ 依概率收敛于总体均值 μ。", "source": "原创示例题", "chapter": "大数定律与中心极限定理", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "sx2-lim-002", "project": "math2", "type": "fill",
+    "stem": "lim(x→∞) (1+1/x)^x =____。", "answer": "e",
+    "explanation": "这是第二个重要极限，极限值为自然常数 e。", "source": "原创示例题", "chapter": "函数、极限与连续", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "sx2-der-003", "project": "math2", "type": "fill",
+    "stem": "若 f(x)=x³，则 f''(x)=____。", "answer": "6x",
+    "explanation": "f'(x)=3x²，f''(x)=6x。", "source": "原创示例题", "chapter": "一元函数微分学", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "sx2-int-003", "project": "math2", "type": "fill",
+    "stem": "∫ 2x/(x²+1) dx =____。", "answer": "ln(x^2+1)+C",
+    "explanation": "令 u=x²+1，则 du=2x dx，积分为 ∫1/u du=ln|u|+C=ln(x²+1)+C。", "source": "原创示例题", "chapter": "一元函数积分学", "difficulty": 2, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "sx2-int-004", "project": "math2", "type": "fill",
+    "stem": "定积分 ∫₀^π sin x dx =____。", "answer": "2",
+    "explanation": "∫₀^π sin x dx = [-cos x]₀^π = 1-(-1)=2。", "source": "原创示例题", "chapter": "一元函数积分学", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "sx2-multi-int-001", "project": "math2", "type": "fill",
+    "stem": "二重积分 ∫∫_D 2 dσ，其中 D 为边长 1 的正方形，其值为____。", "answer": "2",
+    "explanation": "被积函数为常数 2，积分等于 2×区域面积=2×1=2。", "source": "原创示例题", "chapter": "二重积分", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "sx2-multi-int-002", "project": "math2", "type": "choice",
+    "stem": "用极坐标计算二重积分 ∫∫_D 1 dσ，其中 D: x²+y²≤4，其值为？", "answer": "4π", "options": ["4π", "2π", "π", "8π"],
+    "explanation": "被积函数为 1 时二重积分等于区域面积，半径为 2 的圆面积为 4π。", "source": "原创示例题", "chapter": "二重积分", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "sx2-det-001", "project": "math2", "type": "fill",
+    "stem": "对角矩阵 [[2,0],[0,3]] 的行列式为____。", "answer": "6",
+    "explanation": "对角矩阵的行列式等于主对角线元素之积 2×3=6。", "source": "原创示例题", "chapter": "行列式", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "sx2-det-002", "project": "math2", "type": "fill",
+    "stem": "设 A 为 2 阶方阵且 |A|=2，则 |2A|=____。", "answer": "8",
+    "explanation": "n 阶方阵满足 |kA|=kⁿ|A|，此处 |2A|=2²×2=8。", "source": "原创示例题", "chapter": "行列式", "difficulty": 2, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "sx2-eigen-001", "project": "math2", "type": "choice",
+    "stem": "矩阵 [[2,0],[0,3]] 的特征值为？", "answer": "2,3", "options": ["1,2", "2,3", "0,1", "3,4"],
+    "explanation": "对角矩阵的特征值即主对角线元素 2 和 3。", "source": "原创示例题", "chapter": "特征值与特征向量", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "sx2-eigen-002", "project": "math2", "type": "choice",
+    "stem": "方阵 A 的特征值均不为 0 的充要条件是？", "answer": "A 可逆", "options": ["A 可逆", "A 不可逆", "A=0", "r(A)=1"],
+    "explanation": "det(A)=特征值之积≠0 ⇔ A 可逆。", "source": "原创示例题", "chapter": "特征值与特征向量", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "sx2-quad-001", "project": "math2", "type": "fill",
+    "stem": "二次型 f(x,y)=x²+2xy+y² 的矩阵为 [[1,1],[1,1]]，其秩为____。", "answer": "1",
+    "explanation": "矩阵两行成比例，秩为 1。", "source": "原创示例题", "chapter": "二次型", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "sx2-ode-002", "project": "math2", "type": "choice",
+    "stem": "微分方程 y'+y=0 的通解为？", "answer": "y=Ce^-x", "options": ["y=Ce^-x", "y=Ce^x", "y=Cx", "y=C"],
+    "explanation": "分离变量得 dy/y=-dx，积分得 ln|y|=-x+C，即 y=Ce^-x。", "source": "原创示例题", "chapter": "微分方程", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "sx2-ode-003", "project": "math2", "type": "choice",
+    "stem": "微分方程 y''-4y=0 的通解为？", "answer": "y=C1e^(2x)+C2e^(-2x)", "options": ["y=C1e^(2x)+C2e^(-2x)", "y=C1e^(2x)+C2e^x", "y=(C1+C2x)e^(2x)", "y=C1cos2x+C2sin2x"],
+    "explanation": "特征方程 r²-4=0 的根为 ±2，通解为 y=C1e^(2x)+C2e^(-2x)。", "source": "原创示例题", "chapter": "微分方程", "difficulty": 2, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "sx2-vector-002", "project": "math2", "type": "choice",
+    "stem": "向量组 α₁=(1,1)，α₂=(2,2) 线性？", "answer": "相关", "options": ["相关", "无关", "无法判断", "部分相关"],
+    "explanation": "α₂=2α₁，存在不全为零的系数使组合为零，因此线性相关。", "source": "原创示例题", "chapter": "向量", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "sx2-linear-002", "project": "math2", "type": "choice",
+    "stem": "若方阵 A 可逆，则非齐次线性方程组 Ax=b 的解的情况是？", "answer": "唯一解", "options": ["唯一解", "无解", "无穷多解", "不确定"],
+    "explanation": "A 可逆时 x=A⁻¹b，存在且唯一。", "source": "原创示例题", "chapter": "线性方程组", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "sx2-conn-001", "project": "math2", "type": "choice",
+    "stem": "函数 f(x) 在闭区间 [a,b] 上连续且 f(a)f(b)<0，则存在 c∈(a,b) 使得？", "answer": "f(c)=0", "options": ["f(c)=0", "f(c)=1", "f(c)=f(a)", "f'(c)=0"],
+    "explanation": "这是零点存在定理：端点函数值异号时，区间内至少有一个零点。", "source": "原创示例题", "chapter": "函数、极限与连续", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "sx3-multi-int-001", "project": "math3", "type": "choice",
+    "stem": "二重积分 ∫∫_D 1 dσ，其中 D 为单位圆 x²+y²≤1，其值为？", "answer": "π", "options": ["π", "2π", "4π", "0"],
+    "explanation": "被积函数为 1 时积分等于区域面积，单位圆面积为 π。", "source": "原创示例题", "chapter": "二重积分", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "sx3-multi-int-002", "project": "math3", "type": "fill",
+    "stem": "二重积分 ∫∫_D x dσ，其中 D: 0≤x≤1, 0≤y≤1，其值为____。", "answer": "1/2",
+    "explanation": "∫₀¹ (∫₀¹ x dy) dx = ∫₀¹ x dx = 1/2。", "source": "原创示例题", "chapter": "二重积分", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "sx3-lin-001", "project": "math3", "type": "choice",
+    "stem": "n 阶方阵 A 的齐次方程组 Ax=0 只有零解的充要条件是？", "answer": "r(A)=n", "options": ["r(A)=n", "r(A)<n", "det(A)=0", "A 不可逆"],
+    "explanation": "A 满秩（r(A)=n）时 Ax=0 只有零解。", "source": "原创示例题", "chapter": "向量与线性方程组", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "sx3-eigen-001", "project": "math3", "type": "choice",
+    "stem": "对角矩阵 diag(1,2,3) 的特征值为？", "answer": "1,2,3", "options": ["1,2,3", "0,1,2", "2,3,4", "1,1,1"],
+    "explanation": "对角矩阵的特征值即主对角线元素。", "source": "原创示例题", "chapter": "特征值、特征向量与二次型", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "sx3-eigen-002", "project": "math3", "type": "fill",
+    "stem": "若矩阵 A 与 B 相似，则 A 与 B 的特征值____（填相同或不同）。", "answer": "相同",
+    "explanation": "相似矩阵有相同的特征多项式，因此特征值相同。", "source": "原创示例题", "chapter": "特征值、特征向量与二次型", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "sx3-quad-001", "project": "math3", "type": "choice",
+    "stem": "二次型 f(x,y)=x²-y² 是____二次型。", "answer": "不定", "options": ["不定", "正定", "负定", "半正定"],
+    "explanation": "特征值为 1 和 -1，一正一负，因此不定。", "source": "原创示例题", "chapter": "特征值、特征向量与二次型", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "sx3-2d-001", "project": "math3", "type": "choice",
+    "stem": "设随机变量 X、Y 相互独立，则联合概率密度 f(x,y) 与边缘密度 f_X(x)、f_Y(y) 的关系是？", "answer": "f_X(x)f_Y(y)", "options": ["f_X(x)f_Y(y)", "f_X(x)+f_Y(y)", "f_X(x)-f_Y(y)", "f_X(x)/f_Y(y)"],
+    "explanation": "独立时联合密度等于边缘密度之积 f(x,y)=f_X(x)f_Y(y)。", "source": "原创示例题", "chapter": "多维随机变量", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "sx3-2d-002", "project": "math3", "type": "choice",
+    "stem": "设 X~N(0,1)、Y~N(0,1) 相互独立，则 X+Y 服从？", "answer": "N(0,2)", "options": ["N(0,2)", "N(0,1)", "N(1,0)", "N(2,0)"],
+    "explanation": "独立正态变量之和仍为正态，均值相加、方差相加：N(0,1+1)=N(0,2)。", "source": "原创示例题", "chapter": "多维随机变量", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "sx3-prob-003", "project": "math3", "type": "choice",
+    "stem": "设 P(B)>0，条件概率 P(A|B) 的定义式为？", "answer": "P(AB)/P(B)", "options": ["P(AB)/P(B)", "P(A)+P(B)", "P(A)P(B)", "P(B)/P(AB)"],
+    "explanation": "条件概率定义 P(A|B)=P(AB)/P(B)。", "source": "原创示例题", "chapter": "随机事件与概率", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "sx3-series-003", "project": "math3", "type": "fill",
+    "stem": "幂级数 Σ(n=1→∞) x^n/n 的收敛半径为____。", "answer": "1",
+    "explanation": "由比值审敛法，lim|x^(n+1)/(n+1) · n/x^n|=|x|，收敛半径 R=1。", "source": "原创示例题", "chapter": "无穷级数", "difficulty": 2, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "sx3-der-003", "project": "math3", "type": "fill",
+    "stem": "设总成本函数 C(x)=x²+10，则边际成本 C'(x)=____。", "answer": "2x",
+    "explanation": "边际成本是成本函数对产量 x 的导数，C'(x)=2x。", "source": "原创示例题", "chapter": "一元函数微分学", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "sx3-int-003", "project": "math3", "type": "choice",
+    "stem": "∫ x e^x dx =？", "answer": "(x-1)e^x+C", "options": ["(x+1)e^x+C", "(x-1)e^x+C", "x e^x+C", "x² e^x+C"],
+    "explanation": "分部积分：∫x e^x dx = x e^x - ∫e^x dx = (x-1)e^x+C。", "source": "原创示例题", "chapter": "一元函数积分学", "difficulty": 2, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "sx3-limit-003", "project": "math3", "type": "fill",
+    "stem": "lim(x→0) sin 3x / x =____。", "answer": "3",
+    "explanation": "lim(x→0) sin 3x / (3x) = 1，因此原极限为 3。", "source": "原创示例题", "chapter": "函数、极限与连续", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "sx3-cond-001", "project": "math3", "type": "choice",
+    "stem": "函数 f(x)=|x| 在 x=0 处？", "answer": "连续不可导", "options": ["连续不可导", "可导不连续", "连续且可导", "既不连续也不可导"],
+    "explanation": "lim f(x)=0=f(0)，连续；但左右导数分别为 -1 和 1，不可导。", "source": "原创示例题", "chapter": "函数、极限与连续", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "sx3-stat-002", "project": "math3", "type": "choice",
+    "stem": "设 X~U(0,θ)，X̄ 为样本均值，用矩估计法求 θ 的估计量为？", "answer": "2X̄", "options": ["2X̄", "X̄", "X̄/2", "4X̄"],
+    "explanation": "E(X)=θ/2，令 X̄=θ/2，得 θ 的矩估计 θ̂=2X̄。", "source": "原创示例题", "chapter": "数理统计", "difficulty": 2, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "396-lim-001", "project": "calc396", "type": "fill",
+    "stem": "lim(x→0) (e^x-1)/x =____。", "answer": "1",
+    "explanation": "这是基本极限 lim(x→0)(e^x-1)/x=1，即 e^x 在 0 处的导数。", "source": "原创示例题", "chapter": "函数、极限与连续", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "396-lim-002", "project": "calc396", "type": "choice",
+    "stem": "lim(x→∞) (1+2/x)^x =？", "answer": "e^2", "options": ["e^2", "e", "e^-2", "1"],
+    "explanation": "令 t=x/2，则极限化为 [lim(1+1/t)^t]²=e²。", "source": "原创示例题", "chapter": "函数、极限与连续", "difficulty": 2, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "396-der-003", "project": "calc396", "type": "choice",
+    "stem": "f(x)=ln(x²+1)，则 f'(x)=？", "answer": "2x/(x²+1)", "options": ["2x/(x²+1)", "1/(x²+1)", "2x", "x/(x²+1)"],
+    "explanation": "复合函数求导：f'(x)=(1/(x²+1))·2x=2x/(x²+1)。", "source": "原创示例题", "chapter": "一元函数微分学", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "396-int-003", "project": "calc396", "type": "choice",
+    "stem": "∫ 1/(1+x²) dx =？", "answer": "arctan x+C", "options": ["arctan x+C", "ln|x|+C", "arcsin x+C", "tan x+C"],
+    "explanation": "基本积分公式 ∫1/(1+x²) dx = arctan x+C。", "source": "原创示例题", "chapter": "一元函数积分学", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "396-multi-001", "project": "calc396", "type": "fill",
+    "stem": "设 z=x²y，则 ∂z/∂x 在点 (1,1) 处的值为____。", "answer": "2",
+    "explanation": "∂z/∂x=2xy，代入 (1,1) 得 2。", "source": "原创示例题", "chapter": "多元函数与微积分应用", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "396-multi-002", "project": "calc396", "type": "choice",
+    "stem": "二元函数 f(x,y)=x²+y² 的最小值为？", "answer": "0", "options": ["0", "1", "-1", "不存在"],
+    "explanation": "f(x,y)≥0，且在原点取到 0。", "source": "原创示例题", "chapter": "多元函数与微积分应用", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "396-eigen-001", "project": "calc396", "type": "choice",
+    "stem": "矩阵 [[1,0],[0,-1]] 的特征值为？", "answer": "1,-1", "options": ["1,-1", "1,1", "-1,-1", "0,1"],
+    "explanation": "对角矩阵的特征值即主对角线元素 1 和 -1。", "source": "原创示例题", "chapter": "特征值与二次型", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "396-quad-001", "project": "calc396", "type": "choice",
+    "stem": "二次型 f(x,y)=x²+2y² 是____二次型。", "answer": "正定", "options": ["正定", "负定", "不定", "半正定"],
+    "explanation": "特征值 1、2 均为正，因此正定。", "source": "原创示例题", "chapter": "特征值与二次型", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "396-rand-001", "project": "calc396", "type": "fill",
+    "stem": "设 X~B(n,p)（二项分布），则 E(X)=____。", "answer": "np",
+    "explanation": "二项分布 B(n,p) 的数学期望为 np。", "source": "原创示例题", "chapter": "随机变量及其分布", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "396-rand-002", "project": "calc396", "type": "choice",
+    "stem": "设 X 服从参数为 λ 的泊松分布 P(λ)，则 D(X)=？", "answer": "λ", "options": ["λ", "λ²", "√λ", "1/λ"],
+    "explanation": "泊松分布的期望与方差均为 λ。", "source": "原创示例题", "chapter": "随机变量及其分布", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "396-rand-003", "project": "calc396", "type": "choice",
+    "stem": "设 X~U(a,b)（均匀分布），则 E(X)=？", "answer": "(a+b)/2", "options": ["(a+b)/2", "(b-a)/2", "ab", "(a-b)/2"],
+    "explanation": "均匀分布 U(a,b) 的期望为区间中点 (a+b)/2。", "source": "原创示例题", "chapter": "随机变量及其分布", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "396-stat-002", "project": "calc396", "type": "choice",
+    "stem": "设 X̄ 为来自总体 X（期望为 μ）的样本均值，则 E(X̄)=？", "answer": "μ", "options": ["μ", "σ²", "0", "nμ"],
+    "explanation": "样本均值是总体均值的无偏估计，E(X̄)=μ。", "source": "原创示例题", "chapter": "数字特征与统计基础", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "396-cond-001", "project": "calc396", "type": "choice",
+    "stem": "对任意事件 A、B，P(A∪B)=？", "answer": "P(A)+P(B)-P(AB)", "options": ["P(A)+P(B)-P(AB)", "P(A)+P(B)", "P(A)P(B)", "P(A)-P(B)"],
+    "explanation": "加法公式：P(A∪B)=P(A)+P(B)-P(AB)。", "source": "原创示例题", "chapter": "随机事件与概率", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "396-ode-001", "project": "calc396", "type": "fill",
+    "stem": "微分方程 y'=x 的通解为____。", "answer": "x^2/2+C",
+    "explanation": "两边对 x 积分得 y=x²/2+C。", "source": "原创示例题", "chapter": "一元函数积分学", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "396-linear-002", "project": "calc396", "type": "choice",
+    "stem": "A 为 2×3 矩阵，B 为 3×4 矩阵，则 AB 的阶数为？", "answer": "2×4", "options": ["2×4", "3×3", "2×3", "4×2"],
+    "explanation": "矩阵相乘要求内维相等，结果阶数为外维相乘：2×4。", "source": "原创示例题", "chapter": "行列式与矩阵", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
   }
 ]
