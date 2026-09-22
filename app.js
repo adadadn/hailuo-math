@@ -46,7 +46,7 @@ function homeView() {
     <h1>今天，先完成一小组。</h1>
     <p class="lede">选择考试项目和章节，设置 1–7 题的练习量。题单生成后固定保存，完成每题确认后自动记录打卡。</p>
     <section class="section"><div class="section-head"><h2>考试项目</h2><span class="muted">当前：${PROJECTS[state.project].name}</span></div>
-      <div class="grid project-grid">${Object.entries(PROJECTS).map(([id, p]) => `<button class="project-card ${id === state.project ? "selected" : ""}" data-project="${id}"><span class="project-code">${p.code}</span><strong>${p.name}</strong><span>${p.chapters.length} 个一级章节</span></button>`).join("")}</div>
+      <div class="grid project-grid">${Object.entries(PROJECTS).map(([id, p]) => `<button class="project-card ${id === state.project ? "selected" : ""}" data-project="${id}"><span class="project-code">${p.code}</span><strong>${p.name}</strong><span>${p.chapters.length} 个一级章节 · ${questions.filter((q) => q.project === id).length} 道已导入题</span></button>`).join("")}</div>
     </section>
     <section class="section panel"><div class="section-head"><h2>生成今日题单</h2><span class="muted">允许预习任意章节</span></div>
       <div class="controls"><label>今日题量<div class="count-control"><button class="icon-button" data-count="-1" aria-label="减少题量">−</button><input id="count-input" type="number" min="1" max="7" value="${state.count}" /><button class="icon-button" data-count="1" aria-label="增加题量">+</button></div></label>

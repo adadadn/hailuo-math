@@ -8,7 +8,7 @@
     "options": ["0", "1", "不存在", "∞"],
     "explanation": "这是基本重要极限 lim(x→0) sin x / x = 1。",
     "source": "M1 示例题",
-    "chapter": "极限与连续",
+    "chapter": "函数、极限与连续",
     "difficulty": 1,
     "kind": "mock",
     "reviewStatus": "approved"
@@ -48,7 +48,7 @@
     "options": ["连续", "不可导", "无界", "不连续"],
     "explanation": "可导必连续，但连续不一定可导。",
     "source": "M1 示例题",
-    "chapter": "极限与连续",
+    "chapter": "函数、极限与连续",
     "difficulty": 1,
     "kind": "mock",
     "reviewStatus": "approved"
@@ -128,7 +128,7 @@
     "options": ["0", "1", "2", "-1"],
     "explanation": "单位矩阵的行列式恒为 1。",
     "source": "M1 示例题",
-    "chapter": "线性代数基础",
+    "chapter": "行列式与矩阵",
     "difficulty": 1,
     "kind": "mock",
     "reviewStatus": "approved"
@@ -141,7 +141,7 @@
     "answer": "0",
     "explanation": "标准正态分布 N(0,1) 的数学期望为 0。",
     "source": "M1 示例题",
-    "chapter": "概率统计基础",
+    "chapter": "随机事件与概率",
     "difficulty": 1,
     "kind": "mock",
     "reviewStatus": "approved"
@@ -154,9 +154,149 @@
     "answer": "(AB)^(-1)=B^(-1)A^(-1)",
     "explanation": "(AB)(B⁻¹A⁻¹)=AIA⁻¹=I，反向相乘同理。",
     "source": "M1 示例题",
-    "chapter": "线性代数基础",
+    "chapter": "行列式与矩阵",
     "difficulty": 2,
     "kind": "mock",
     "reviewStatus": "approved"
+  },
+  {
+    "id": "sx1-fun-002", "project": "math1", "type": "choice",
+    "stem": "函数 f(x)=x^3-3x 的极值点个数是？", "answer": "2", "options": ["0", "1", "2", "3"],
+    "explanation": "f'(x)=3(x^2-1)，在 x=-1 和 x=1 处变号，因此有 2 个极值点。", "source": "原创示例题", "chapter": "一元函数微分学", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "sx1-der-002", "project": "math1", "type": "fill",
+    "stem": "若 f(x)=ln(1+x^2)，则 f'(0)=____。", "answer": "0",
+    "explanation": "f'(x)=2x/(1+x^2)，代入 x=0 得 0。", "source": "原创示例题", "chapter": "一元函数微分学", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "sx1-int-002", "project": "math1", "type": "choice",
+    "stem": "积分 ∫₀¹ 2x dx 的值是？", "answer": "1", "options": ["0", "1/2", "1", "2"],
+    "explanation": "原函数为 x²，代入上下限得到 1。", "source": "原创示例题", "chapter": "一元函数积分学", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "sx1-multi-002", "project": "math1", "type": "essay",
+    "stem": "求 f(x,y)=x²y+sin y 在点 (1,0) 处的全微分。", "answer": "df=2xydx+(x²+cos y)dy，点(1,0)处 df=dy",
+    "explanation": "先求偏导 f_x=2xy，f_y=x²+cos y，再代入 (1,0)。", "source": "原创示例题", "chapter": "多元函数微分学", "difficulty": 2, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "sx1-ode-001", "project": "math1", "type": "fill",
+    "stem": "微分方程 y'=2y 的通解为____。", "answer": "y=Ce^(2x)",
+    "explanation": "分离变量 dy/y=2dx，积分得 ln|y|=2x+C。", "source": "原创示例题", "chapter": "微分方程", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "sx1-matrix-002", "project": "math1", "type": "choice",
+    "stem": "二阶单位矩阵的秩为？", "answer": "2", "options": ["0", "1", "2", "不确定"],
+    "explanation": "单位矩阵满秩，二阶单位矩阵的秩为 2。", "source": "原创示例题", "chapter": "矩阵", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "sx1-prob-001", "project": "math1", "type": "essay",
+    "stem": "设随机变量 X 服从参数为 p 的 0-1 分布，求 E(X) 和 D(X)。", "answer": "E(X)=p，D(X)=p(1-p)",
+    "explanation": "由 P(X=1)=p、P(X=0)=1-p 直接计算可得。", "source": "原创示例题", "chapter": "随机变量的数字特征", "difficulty": 2, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "sx2-fun-002", "project": "math2", "type": "choice",
+    "stem": "函数 f(x)=x² 在 x=0 处的最小值是？", "answer": "0", "options": ["-1", "0", "1", "不存在"],
+    "explanation": "x²≥0，且 x=0 时取到最小值 0。", "source": "原创示例题", "chapter": "一元函数微分学", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "sx2-int-002", "project": "math2", "type": "fill",
+    "stem": "∫₀² 1 dx 的值为____。", "answer": "2",
+    "explanation": "被积函数为常数 1，积分区间长度为 2。", "source": "原创示例题", "chapter": "一元函数积分学", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "sx2-multi-001", "project": "math2", "type": "choice",
+    "stem": "f(x,y)=x²+y² 在点 (0,0) 处的极值类型是？", "answer": "极小值", "options": ["极大值", "极小值", "驻点但无极值", "无法判断"],
+    "explanation": "f(x,y)≥0，且原点取 0，因此原点是极小值点。", "source": "原创示例题", "chapter": "多元函数微分学", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "sx2-ode-001", "project": "math2", "type": "essay",
+    "stem": "求微分方程 y''-3y'+2y=0 的通解。", "answer": "y=C1e^x+C2e^(2x)",
+    "explanation": "特征方程 r²-3r+2=0，根为 1、2。", "source": "原创示例题", "chapter": "微分方程", "difficulty": 2, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "sx2-matrix-002", "project": "math2", "type": "fill",
+    "stem": "矩阵 [[1,2],[0,3]] 的行列式为____。", "answer": "3",
+    "explanation": "上三角矩阵的行列式等于主对角线元素之积 1×3=3。", "source": "原创示例题", "chapter": "矩阵", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "sx2-vector-001", "project": "math2", "type": "choice",
+    "stem": "三个二维向量必然线性相关的原因是？", "answer": "向量个数大于空间维数", "options": ["长度相等", "向量个数大于空间维数", "都非零", "夹角相等"],
+    "explanation": "二维向量空间中，超过 2 个向量必然线性相关。", "source": "原创示例题", "chapter": "向量", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "sx2-linear-001", "project": "math2", "type": "essay",
+    "stem": "说明齐次线性方程组 Ax=0 总有零解，并说明何时有非零解。", "answer": "x=0 总是解；当系数矩阵 A 的秩小于未知数个数时有非零解",
+    "explanation": "代入零向量即可验证零解；由秩与自由未知量的关系得到非零解条件。", "source": "原创示例题", "chapter": "线性方程组", "difficulty": 2, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "sx3-limit-002", "project": "math3", "type": "fill",
+    "stem": "lim(x→0) (1-cos x)/x²=____。", "answer": "1/2",
+    "explanation": "利用 1-cos x=2sin²(x/2) 和基本重要极限可得 1/2。", "source": "原创示例题", "chapter": "函数、极限与连续", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "sx3-der-002", "project": "math3", "type": "essay",
+    "stem": "求函数 f(x)=x e^x 的导数，并讨论其在实数范围内的单调性。", "answer": "f'(x)=e^x(x+1)，在 (-∞,-1) 递减，在 (-1,+∞) 递增",
+    "explanation": "乘积求导后 e^x>0，导数符号由 x+1 决定。", "source": "原创示例题", "chapter": "一元函数微分学", "difficulty": 2, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "sx3-int-002", "project": "math3", "type": "choice",
+    "stem": "∫ 1/x dx 的原函数是？", "answer": "ln|x|+C", "options": ["ln x+C", "ln|x|+C", "1/x²+C", "x ln x+C"],
+    "explanation": "在 x≠0 的区间上，(ln|x|)'=1/x。", "source": "原创示例题", "chapter": "一元函数积分学", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "sx3-series-002", "project": "math3", "type": "fill",
+    "stem": "等比级数 Σ(1/2)^n（n 从 0 到无穷）的和为____。", "answer": "2",
+    "explanation": "首项 1、公比 1/2，和为 1/(1-1/2)=2。", "source": "原创示例题", "chapter": "无穷级数", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "sx3-matrix-002", "project": "math3", "type": "choice",
+    "stem": "若矩阵 A 可逆，则 det(A) 必须满足？", "answer": "det(A)≠0", "options": ["det(A)=0", "det(A)=1", "det(A)≠0", "det(A)<0"],
+    "explanation": "方阵可逆当且仅当其行列式不为 0。", "source": "原创示例题", "chapter": "行列式与矩阵", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "sx3-prob-002", "project": "math3", "type": "choice",
+    "stem": "若事件 A、B 相互独立，则 P(AB)=？", "answer": "P(A)P(B)", "options": ["P(A)+P(B)", "P(A)-P(B)", "P(A)P(B)", "P(A∪B)"],
+    "explanation": "独立事件满足乘法公式 P(AB)=P(A)P(B)。", "source": "原创示例题", "chapter": "随机事件与概率", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "sx3-stat-001", "project": "math3", "type": "essay",
+    "stem": "设 X 的数学期望为 μ、方差为 σ²，求 Y=aX+b 的数学期望和方差。", "answer": "E(Y)=aμ+b，D(Y)=a²σ²",
+    "explanation": "利用数学期望的线性性质和方差的齐次性。", "source": "原创示例题", "chapter": "数字特征与极限定理", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "396-cal-002", "project": "calc396", "type": "choice",
+    "stem": "函数 f(x)=x²-4x 在 x=2 处的最小值是？", "answer": "-4", "options": ["-4", "0", "2", "4"],
+    "explanation": "f(x)=(x-2)²-4，所以最小值为 -4。", "source": "原创示例题", "chapter": "一元函数微分学", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "396-der-002", "project": "calc396", "type": "fill",
+    "stem": "函数 f(x)=e^(3x) 在 x=0 处的导数为____。", "answer": "3",
+    "explanation": "f'(x)=3e^(3x)，代入 0 得 3。", "source": "原创示例题", "chapter": "一元函数微分学", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "396-int-002", "project": "calc396", "type": "essay",
+    "stem": "计算积分 ∫₀¹ x e^(x²) dx。", "answer": "(e-1)/2",
+    "explanation": "令 u=x²，则 du=2x dx，原积分等于 1/2∫₀¹e^u du=(e-1)/2。", "source": "原创示例题", "chapter": "一元函数积分学", "difficulty": 2, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "396-matrix-002", "project": "calc396", "type": "choice",
+    "stem": "若 3 阶矩阵 A 的两行相同，则 det(A)=？", "answer": "0", "options": ["0", "1", "3", "无法确定"],
+    "explanation": "行列式有两行相同时等于 0。", "source": "原创示例题", "chapter": "行列式与矩阵", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "396-linear-001", "project": "calc396", "type": "fill",
+    "stem": "齐次方程组 Ax=0 的零解是____解。", "answer": "必有",
+    "explanation": "将所有未知数取 0，总能满足齐次方程组。", "source": "原创示例题", "chapter": "向量与线性方程组", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "396-prob-002", "project": "calc396", "type": "choice",
+    "stem": "若 P(A)=0.4，P(B)=0.5 且 A、B 独立，则 P(A∩B)=？", "answer": "0.2", "options": ["0.1", "0.2", "0.4", "0.9"],
+    "explanation": "独立时 P(A∩B)=P(A)P(B)=0.4×0.5=0.2。", "source": "原创示例题", "chapter": "随机事件与概率", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
+  },
+  {
+    "id": "396-stat-001", "project": "calc396", "type": "essay",
+    "stem": "设随机变量 X 的方差为 4，求 Y=3X-2 的方差。", "answer": "36",
+    "explanation": "D(aX+b)=a²D(X)，所以 D(Y)=9×4=36。", "source": "原创示例题", "chapter": "数字特征与统计基础", "difficulty": 1, "kind": "mock", "reviewStatus": "approved"
   }
 ]
