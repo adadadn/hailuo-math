@@ -147,7 +147,9 @@ function practiceView() {
     <label>复盘备注<textarea id="reason-note" rows="2" placeholder="可选：简单记一下卡在哪一步"></textarea></label>
     <div class="actions"><button class="primary" data-action="confirm-mistake">确认</button><button class="text-button" data-action="cancel-mistake">取消</button></div></div>` : "";
   const actions = !answered
-    ? `<button class="primary" data-action="submit-answer" data-question="${q.id}">提交答案</button>`
+    ? (q.type === "essay"
+        ? `<div class="essay-entry"><p class="muted">先在纸上完成作答，再选择你的状态：</p><div class="actions"><button class="primary" data-action="essay-done" data-question="${q.id}">做完了，对答案</button><button class="secondary" data-action="essay-giveup" data-question="${q.id}">不会，直接看答案</button></div></div>`
+        : `<button class="primary" data-action="submit-answer" data-question="${q.id}">提交答案</button>`)
     : confirmed
       ? `<button class="primary" data-action="next-question">${isLast ? (practice.kind === "rework" ? "返回错题" : "完成今日一练") : "下一题"}</button>`
       : draftForm || `<div><p class="muted">${q.type === "essay" ? "请确认本题的最终学习结果" : "请确认系统判断是否符合你的学习情况"}</p><div class="result-buttons">${resultButtons}</div></div>`;
@@ -156,7 +158,7 @@ function practiceView() {
     <section class="panel"><div class="question-meta"><span class="tag teal">${TYPE_NAMES[q.type]}</span><span class="tag">${escapeHtml(q.chapter)}</span><span class="tag orange">${q.kind === "real" ? "真题" : "模拟题"}</span><span class="tag">来源：${escapeHtml(q.source)}</span></div>
       ${reason ? `<p class="reason">选题原因：${escapeHtml(reason)}</p>` : ""}
       <div class="question-stem">${escapeHtml(q.stem)}</div>${questionInput(q, attempt)}
-      ${answered ? `<div class="answer-box"><strong>标准答案：${escapeHtml(q.answer)}</strong><br /><span>${escapeHtml(q.explanation)}</span></div>` : ""}
+      ${answered ? `<div class="answer-box">${q.type === "essay" && attempt?.submittedAnswer ? `<span class="tag essay-note">${escapeHtml(attempt.submittedAnswer)}</span>` : ""}<strong>标准答案：${escapeHtml(q.answer)}</strong><br /><span>${escapeHtml(q.explanation)}</span></div>` : ""}
       <div class="actions">${actions}</div>
     </section>`;
 }
@@ -164,7 +166,8 @@ function practiceView() {
 function questionInput(q, attempt) {
   if (q.type === "choice") return `<div class="options">${q.options.map((option) => `<label class="option"><input type="radio" name="answer" value="${escapeHtml(option)}" ${attempt?.submittedAnswer === option ? "checked" : ""} ${attempt?.submitted ? "disabled" : ""} />${escapeHtml(option)}</label>`).join("")}</div>`;
   if (q.type === "fill") return `<label style="margin-top:18px">你的答案<input id="answer-input" type="text" value="${escapeHtml(attempt?.submittedAnswer || "")}" ${attempt?.submitted ? "disabled" : ""} /></label>`;
-  return `<label style="margin-top:18px">你的作答记录<textarea id="answer-input" rows="5" style="width:100%;border:1px solid var(--line);border-radius:6px;padding:11px 12px;resize:vertical" ${attempt?.submitted ? "disabled" : ""}>${escapeHtml(attempt?.submittedAnswer || "")}</textarea></label>`;
+  // 解答题不做文字录入：纸面作答后点「做完了，对答案」或「不会，直接看答案」
+  return "";
 }
 
 /* ---------- 错题 ---------- */
@@ -178,8 +181,9 @@ function mistakeRows(rows) {
   if (!rows.length) return `<div class="empty">当前项目还没有错题记录。</div>`;
   return rows.map((a) => {
     const reasonTag = a.reasonCode ? `<span class="tag orange">${escapeHtml(a.reasonCode)}</span>` : "";
+    const resultTagClass = a.result === "incorrect" ? "red" : a.result === "partial" ? "orange" : "navy";
     const note = a.note ? `<p class="muted mistake-note">复盘：${escapeHtml(a.note)}</p>` : "";
-    return `<div class="mistake-row" data-chapter="${escapeHtml(a.q.chapter)}" data-result="${a.result}"><div class="question-meta"><span class="tag orange">${resultName(a.result)}</span>${reasonTag}<span class="tag">${escapeHtml(a.q.chapter)}</span><span class="tag">来源：${escapeHtml(a.q.source)}</span></div>
+    return `<div class="mistake-row" data-chapter="${escapeHtml(a.q.chapter)}" data-result="${a.result}"><div class="question-meta"><span class="tag ${resultTagClass}">${resultName(a.result)}</span>${reasonTag}<span class="tag">${escapeHtml(a.q.chapter)}</span><span class="tag">来源：${escapeHtml(a.q.source)}</span></div>
       <strong>${escapeHtml(a.q.stem)}</strong>${note}
       <p class="muted">标准答案：${escapeHtml(a.q.answer)}</p>
       <div class="actions"><button class="secondary" data-redo="${a.questionId}">重做此题</button></div></div>`;
@@ -197,6 +201,7 @@ function bindEvents() {
   document.querySelectorAll("[data-chapter-practice]").forEach((el) => el.addEventListener("click", () => { state.presetChapter = el.dataset.chapterPractice; save(); view = "home"; render(); }));
   document.querySelector("[data-action='start-practice']")?.addEventListener("click", startPractice);
   document.querySelector("[data-action='submit-answer']")?.addEventListener("click", submitAnswer);
+  document.querySelectorAll("[data-action='essay-done'], [data-action='essay-giveup']").forEach((el) => el.addEventListener("click", () => submitEssay(el.dataset.question, el.dataset.action === "essay-done" ? "done" : "giveup")));
   document.querySelector("[data-action='next-question']")?.addEventListener("click", nextQuestion);
   document.querySelectorAll("[data-question][data-result]").forEach((el) => el.addEventListener("click", () => chooseResult(el.dataset.question, el.dataset.result)));
   document.querySelector("[data-action='confirm-mistake']")?.addEventListener("click", confirmMistake);
@@ -251,6 +256,14 @@ function submitAnswer() {
   const durationSeconds = Math.max(0, Math.round((Date.now() - start) / 1000));
   const result = q.type === "essay" ? "pending_confirmation" : answersMatch(answer, q.answer) ? "correct" : "incorrect";
   state.attempts[id] = { questionId: id, practiceKey: state.session ? state.session.key : dailyKey(), submitted: true, submittedAnswer: answer, result, confirmed: false, durationSeconds, updatedAt: new Date().toISOString() };
+  delete questionShownAt[id];
+  save();
+  render();
+}
+function submitEssay(id, mode) {
+  const start = questionShownAt[id] || Date.now();
+  const durationSeconds = Math.max(0, Math.round((Date.now() - start) / 1000));
+  state.attempts[id] = { questionId: id, practiceKey: state.session ? state.session.key : dailyKey(), submitted: true, submittedAnswer: mode === "done" ? "（纸面作答）" : "（直接看答案）", result: "pending_confirmation", confirmed: false, durationSeconds, updatedAt: new Date().toISOString() };
   delete questionShownAt[id];
   save();
   render();

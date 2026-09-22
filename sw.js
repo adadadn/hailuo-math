@@ -1,4 +1,4 @@
-const CACHE = "kaoyan-math-m1-v5";
+const CACHE = "kaoyan-math-m1-v6";
 const ASSETS = ["/", "/index.html", "/styles.css", "/app.js", "/core.js", "/data/questions.json", "/data/curriculum.json", "/manifest.webmanifest", "/icon.svg"];
 
 self.addEventListener("install", (event) => {

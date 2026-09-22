@@ -161,7 +161,22 @@ export function buildDailyPlan({ questions, attempts, project, chapter = "all", 
   });
   scored.sort((a, b) => b.score - a.score);
 
-  let items = scored.slice(0, count).map((s) => ({ id: s.q.id, qKind: s.q.kind, reason: s.reason }));
+  // 类型轮换：题单按 选择→填空→解答 交替，避免同类型扎堆；高分/错题优先体现在“先被取入”
+  const TYPE_ORDER = ["choice", "fill", "essay"];
+  const chosen = scored.slice(0, count);
+  const buckets = { choice: [], fill: [], essay: [] };
+  for (const s of chosen) buckets[s.q.type].push(s);
+  const rotated = [];
+  let slot = 0;
+  while (rotated.length < chosen.length && slot < 40) {
+    const t = TYPE_ORDER[slot % TYPE_ORDER.length];
+    const next = buckets[t].shift();
+    if (next) rotated.push(next);
+    slot += 1;
+  }
+  const ordered = rotated.length === chosen.length ? rotated : chosen;
+
+  let items = ordered.map((s) => ({ id: s.q.id, qKind: s.q.kind, reason: s.reason }));
 
   // 真题配比：若题库含真题且题单 >=3 道，尽量保底放入 1 道真题
   if (count >= 3 && items.length > 0 && !items.some((it) => it.qKind === "real")) {

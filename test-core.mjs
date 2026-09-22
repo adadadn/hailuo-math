@@ -100,7 +100,16 @@ const mkAttempt = (id, result, daysAgo) => ({ [id]: { questionId: id, result, co
   const empty = buildDailyPlan({ questions: [], attempts: {}, project: "math1", chapter: "all", count: 5, now });
   check("空题库：items 为空且带提示", empty.items.length === 0 && empty.notice.length > 0 && empty.fallback === true);
 }
-// 7. 错因集合
+// 7. 题型轮换（合成题库验证算法，不依赖真实数据顺序）
+{
+  const mk = (id, type) => ({ id, project: "math1", chapter: "X", type, kind: "mock", reviewStatus: "approved", stem: id, answer: "1", explanation: "", source: "t", options: type === "choice" ? ["1", "2"] : undefined });
+  const synthetic = [mk("e1", "essay"), mk("f1", "fill"), mk("c1", "choice"), mk("c2", "choice"), mk("e2", "essay"), mk("f2", "fill"), mk("c3", "choice"), mk("f3", "fill")];
+  const t3 = buildDailyPlan({ questions: synthetic, attempts: {}, project: "math1", count: 3, now }).items.map((it) => synthetic.find((q) => q.id === it.id).type);
+  check("轮换：3 题按 选择→填空→解答", t3.join(",") === "choice,fill,essay", t3.join(","));
+  const t6 = buildDailyPlan({ questions: synthetic, attempts: {}, project: "math1", count: 6, now }).items.map((it) => synthetic.find((q) => q.id === it.id).type);
+  check("轮换：6 题无相邻同类且三型齐全", t6.every((t, i) => i === 0 || t6[i - 1] !== t) && t6.includes("essay") && t6.includes("choice") && t6.includes("fill"), t6.join(","));
+}
+// 8. 错因集合
 {
   check("MISTAKE_RESULTS 含三态", ["incorrect", "unknown", "partial"].every((r) => MISTAKE_RESULTS.includes(r)));
 }
