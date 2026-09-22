@@ -1,4 +1,4 @@
-const PROJECTS = {
+let PROJECTS = {
   math1: { name: "数学一", code: "MATH I", chapters: ["极限与连续", "一元函数微分学", "一元函数积分学", "多元函数微分学"] },
   math2: { name: "数学二", code: "MATH II", chapters: ["极限与连续", "一元函数积分学", "无穷级数"] },
   math3: { name: "数学三", code: "MATH III", chapters: ["一元函数微分学", "一元函数积分学", "多元函数微分学"] },
@@ -10,6 +10,7 @@ const today = () => new Date().toISOString().slice(0, 10);
 const readState = () => JSON.parse(localStorage.getItem(STORAGE) || "null") || { project: "math1", count: 5, attempts: {}, practices: {}, checkins: {} };
 let state = readState();
 let questions = [];
+let curriculum = {};
 let view = "home";
 let practiceCursor = 0;
 
@@ -45,11 +46,11 @@ function homeView() {
     <h1>今天，先完成一小组。</h1>
     <p class="lede">选择考试项目和章节，设置 1–7 题的练习量。题单生成后固定保存，完成每题确认后自动记录打卡。</p>
     <section class="section"><div class="section-head"><h2>考试项目</h2><span class="muted">当前：${PROJECTS[state.project].name}</span></div>
-      <div class="grid project-grid">${Object.entries(PROJECTS).map(([id, p]) => `<button class="project-card ${id === state.project ? "selected" : ""}" data-project="${id}"><span class="project-code">${p.code}</span><strong>${p.name}</strong><span>${p.chapters.length} 个章节</span></button>`).join("")}</div>
+      <div class="grid project-grid">${Object.entries(PROJECTS).map(([id, p]) => `<button class="project-card ${id === state.project ? "selected" : ""}" data-project="${id}"><span class="project-code">${p.code}</span><strong>${p.name}</strong><span>${p.chapters.length} 个一级章节</span></button>`).join("")}</div>
     </section>
     <section class="section panel"><div class="section-head"><h2>生成今日题单</h2><span class="muted">允许预习任意章节</span></div>
       <div class="controls"><label>今日题量<div class="count-control"><button class="icon-button" data-count="-1" aria-label="减少题量">−</button><input id="count-input" type="number" min="1" max="7" value="${state.count}" /><button class="icon-button" data-count="1" aria-label="增加题量">+</button></div></label>
-      <label>章节范围<select id="chapter-select"><option value="all">全部章节</option>${PROJECTS[state.project].chapters.map((c) => `<option value="${escapeHtml(c)}">${escapeHtml(c)}</option>`).join("")}</select></label></div>
+      <label>章节范围<select id="chapter-select"><option value="all">全部章节</option>${PROJECTS[state.project].chapters.map((c) => `<option value="${escapeHtml(c.name)}">${escapeHtml(c.name)}</option>`).join("")}</select></label></div>
       <div class="actions"><button class="primary" data-action="start-practice">${practice ? "继续今日一练" : "开始今日一练"}</button><button class="secondary" data-view="chapters">浏览章节</button></div>
       <p id="home-notice" class="notice" hidden></p>
     </section>
@@ -61,8 +62,8 @@ function homeView() {
 
 function chaptersView() {
   const p = PROJECTS[state.project];
-  return `<p class="eyebrow">章节浏览 / ${p.code}</p><h1>${p.name}</h1><p class="lede">所有章节都可直接加入今日练习，也可以先浏览知识点结构。</p>
-    <section class="section"><div class="section-head"><h2>一级章节</h2><button class="text-button" data-view="home">返回组卷</button></div><div class="chapter-list">${p.chapters.map((c, i) => `<div class="chapter-item"><strong>${String(i + 1).padStart(2, "0")} · ${c}</strong><span>${questions.filter((q) => q.project === state.project && q.chapter === c).length} 道示例题 · 可预习</span></div>`).join("")}</div></section>`;
+  return `<p class="eyebrow">章节浏览 / ${p.code}</p><h1>${p.name}</h1><p class="lede">按考试范围拆开的完整章节结构。二级知识点用于后续题目标签和复习筛选，所有章节都允许预习。</p>
+    <section class="section"><div class="section-head"><h2>一级章节 <span class="muted">${p.chapters.length}</span></h2><button class="text-button" data-view="home">返回组卷</button></div><div class="chapter-list">${p.chapters.map((c, i) => `<details class="chapter-item"><summary><strong>${String(i + 1).padStart(2, "0")} · ${escapeHtml(c.name)}</strong><span>${questions.filter((q) => q.project === state.project && q.chapter === c.name).length} 道已导入题目</span></summary><div class="knowledge-list">${c.children.map((child) => `<span>${escapeHtml(child)}</span>`).join("")}</div></details>`).join("")}</div></section>`;
 }
 
 function practiceView() {
@@ -91,7 +92,7 @@ function questionInput(q, attempt) {
 function mistakesView() {
   const rows = Object.values(state.attempts).filter((a) => a.confirmed && ["incorrect", "unknown", "partial"].includes(a.result)).map((a) => ({ ...a, q: questions.find((q) => q.id === a.questionId) })).filter((a) => a.q && a.q.project === state.project);
   return `<p class="eyebrow">复盘 / 错题</p><h1>把做错的题留下。</h1><p class="lede">错误、不会和部分正确的题会自动进入这里，按章节和错误原因筛选。</p>
-    <section class="section panel"><div class="filter-row"><label>章节<select id="mistake-chapter"><option value="all">全部章节</option>${PROJECTS[state.project].chapters.map((c) => `<option value="${escapeHtml(c)}">${escapeHtml(c)}</option>`).join("")}</select></label><label>结果<select id="mistake-result"><option value="all">全部结果</option><option value="incorrect">错误</option><option value="unknown">不会</option><option value="partial">部分正确</option></select></label></div><div id="mistake-list" class="table-like">${mistakeRows(rows)}</div></section>`;
+    <section class="section panel"><div class="filter-row"><label>章节<select id="mistake-chapter"><option value="all">全部章节</option>${PROJECTS[state.project].chapters.map((c) => `<option value="${escapeHtml(c.name)}">${escapeHtml(c.name)}</option>`).join("")}</select></label><label>结果<select id="mistake-result"><option value="all">全部结果</option><option value="incorrect">错误</option><option value="unknown">不会</option><option value="partial">部分正确</option></select></label></div><div id="mistake-list" class="table-like">${mistakeRows(rows)}</div></section>`;
 }
 function mistakeRows(rows) { return rows.length ? rows.map((a) => `<div class="mistake-row" data-chapter="${escapeHtml(a.q.chapter)}" data-result="${a.result}"><div class="question-meta"><span class="tag orange">${resultName(a.result)}</span><span class="tag">${a.q.chapter}</span></div><strong>${escapeHtml(a.q.stem)}</strong><p class="muted">标准答案：${escapeHtml(a.q.answer)}</p></div>`).join("") : `<div class="empty">当前项目还没有错题记录。</div>`; }
 function resultName(result) { return ({ correct: "正确", incorrect: "错误", unknown: "不会", partial: "部分正确" })[result] || result; }
@@ -131,4 +132,14 @@ function submitAnswer() { const id = document.querySelector("[data-action='submi
 function confirmResult(id, result) { state.attempts[id] = { ...state.attempts[id], result, confirmed: true, confirmedAt: new Date().toISOString() }; const p = currentPractice(); if (p.questionIds.every((questionId) => state.attempts[questionId]?.confirmed)) { p.status = "completed"; state.checkins[practiceKey()] = { project: state.project, practiceKey: practiceKey(), completedAt: new Date().toISOString() }; } save(); render(); }
 function filterMistakes() { const chapter = document.querySelector("#mistake-chapter").value; const result = document.querySelector("#mistake-result").value; document.querySelectorAll(".mistake-row").forEach((row) => { row.hidden = (chapter !== "all" && row.dataset.chapter !== chapter) || (result !== "all" && row.dataset.result !== result); }); }
 
-fetch("/data/questions.json").then((response) => response.json()).then((data) => { questions = data; render(); if ("serviceWorker" in navigator) navigator.serviceWorker.register("/sw.js"); });
+function setCurriculum(data) {
+  curriculum = data;
+  PROJECTS = Object.fromEntries(Object.entries(data).map(([id, project]) => [id, project]));
+}
+
+Promise.all([fetch("/data/questions.json").then((response) => response.json()), fetch("/data/curriculum.json").then((response) => response.json())]).then(([data, structure]) => {
+  questions = data;
+  setCurriculum(structure);
+  render();
+  if ("serviceWorker" in navigator) navigator.serviceWorker.register("/sw.js");
+});
