@@ -163,6 +163,8 @@ select:focus, input:focus, textarea:focus { border-color: var(--teal); box-shado
 
 /* ---------- 错题 ---------- */
 .empty { padding: 28px 16px; text-align: center; color: var(--muted); border: 1.5px dashed var(--line-strong); border-radius: 12px; background: #fafcfd; }
+.success-banner { display: flex; align-items: center; gap: 8px; margin-bottom: 14px; padding: 11px 13px; border-radius: var(--radius-md); background: var(--teal-soft); border: 1px solid #bfddd4; color: var(--teal-ink); font-size: 13px; font-weight: 700; line-height: 1.5; }
+.success-banner::before { content: "✓"; font-weight: 800; }
 .table-like { display: grid; gap: 10px; }
 .mistake-row { padding: 15px; border: 1px solid var(--line); border-radius: 12px; background: #fff; transition: box-shadow .15s ease; }
 .mistake-row:hover { box-shadow: var(--shadow-card); }

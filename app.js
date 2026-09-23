@@ -283,7 +283,10 @@ function reviewView() {
 
 function mistakesView() {
   const rows = Object.values(state.attempts).filter((a) => a.confirmed && MISTAKE_RESULTS.includes(a.result)).map((a) => ({ ...a, q: questions.find((q) => q.id === a.questionId) })).filter((a) => a.q && a.q.project === state.project);
+  const cleared = state.lastCleared && Date.now() - state.lastCleared.at < 60000
+    ? `<div class="success-banner">重做成功，该题已自动移出错题本，并进入记忆曲线排期。</div>` : "";
   return `<p class="eyebrow">复盘 / 错题</p><h1>把做错的题留下。</h1><p class="lede">错误、不会和部分正确的题会自动进入这里，按章节和错误原因筛选，可点击「重做此题」回到练习。重做答对后会从错题本移出。</p>
+    ${cleared}
     <section class="section panel"><div class="filter-row"><label>章节<select id="mistake-chapter"><option value="all">全部章节</option>${PROJECTS[state.project].chapters.map((c) => `<option value="${escapeHtml(c.name)}">${escapeHtml(c.name)}</option>`).join("")}</select></label><label>结果<select id="mistake-result"><option value="all">全部结果</option><option value="incorrect">错误</option><option value="unknown">不会</option><option value="partial">部分正确</option></select></label></div><div id="mistake-list" class="table-like">${mistakeRows(rows)}</div></section>`;
 }
 function mistakeRows(rows) {
@@ -462,6 +465,10 @@ function confirmMistake() {
 }
 function confirmResult(id, result, reasonCode, note) {
   state.attempts[id] = { ...state.attempts[id], result, confirmed: true, reasonCode: reasonCode || undefined, note: note || undefined, confirmedAt: new Date().toISOString() };
+  // 重做答对：记录「已移出错题本」，供错题本页显示反馈
+  if (result === "correct" && state.session?.kind === "rework") {
+    state.lastCleared = { at: Date.now(), questionId: id };
+  }
   // 记忆曲线：每次确认结果都推进/重置复习阶段
   const prev = state.review[id] || { stage: 0, due: 0 };
   const stage = nextReviewStage(result, prev.stage);
