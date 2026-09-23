@@ -88,6 +88,8 @@ function render() {
       </nav>
     </div>`;
   bindEvents();
+  // 考试视图每次渲染后都重建计时器（翻页/存答案也会触发 render，不能让它中断倒计时）
+  if (view === "exam" && state.exam) startExamTimer();
 }
 
 /* ---------- 首页 ---------- */
@@ -185,11 +187,22 @@ function markLearned(chapter) {
 function learnView() {
   const p = PROJECTS[state.project];
   const learnedCount = p.chapters.filter((c) => learnedFor(c.name)).length;
+  // 每章答对题数（按题去重，只看确认过的作答）
+  const doneCounts = {};
+  const seen = new Set();
+  Object.values(state.attempts).forEach((a) => {
+    if (!a.confirmed || a.result !== "correct" || seen.has(a.questionId)) return;
+    seen.add(a.questionId);
+    const q = questions.find((x) => x.id === a.questionId);
+    if (q && q.project === state.project) doneCounts[q.chapter] = (doneCounts[q.chapter] || 0) + 1;
+  });
   const chapterRows = p.chapters.map((c, i) => {
     const note = noteFor(c.name);
     const learned = learnedFor(c.name);
     const disabled = !note;
-    return `<button class="chapter-row ${disabled ? "disabled" : ""} ${learned ? "learned" : ""}" ${disabled ? "" : `data-note-chapter="${escapeHtml(c.name)}"`}><span class="chapter-no">${learned ? "✓" : String(i + 1).padStart(2, "0")}</span><span class="chapter-main"><strong>${escapeHtml(c.name)}</strong><span class="muted">${questions.filter((q) => q.project === state.project && q.chapter === c.name).length} 道题 · ${note ? (learned ? "已学" : "讲义已就绪") : "讲义整理中"}</span></span><span class="chapter-arrow">›</span></button>`;
+    const done = doneCounts[c.name] || 0;
+    const qty = questions.filter((q) => q.project === state.project && q.chapter === c.name).length;
+    return `<button class="chapter-row ${disabled ? "disabled" : ""} ${learned ? "learned" : ""}" ${disabled ? "" : `data-note-chapter="${escapeHtml(c.name)}"`}><span class="chapter-no">${learned ? "✓" : String(i + 1).padStart(2, "0")}</span><span class="chapter-main"><strong>${escapeHtml(c.name)}</strong><span class="muted">${qty} 道题 · 答对 ${done} · ${note ? (learned ? "已学" : "待学习") : "讲义整理中"}</span></span><span class="chapter-arrow">›</span></button>`;
   }).join("");
   return `<p class="eyebrow">学习中心 / ${p.code}</p><h1>先学会，再练题。</h1><p class="lede">每章有「考点 + 公式 + 方法 + 易错点 + 例题精讲」讲义，先学后练效率更高。</p>
     <section class="section"><div class="section-head"><h2>${p.name}</h2><span class="muted">已学 ${learnedCount}/${p.chapters.length} 章</span></div><div class="chapter-list">${chapterRows}</div></section>`;
@@ -297,7 +310,7 @@ function reviewView() {
 
 function mistakesView() {
   const rows = Object.values(state.attempts).filter((a) => a.confirmed && MISTAKE_RESULTS.includes(a.result)).map((a) => ({ ...a, q: questions.find((q) => q.id === a.questionId) })).filter((a) => a.q && a.q.project === state.project);
-  const cleared = state.lastCleared && Date.now() - state.lastCleared.at < 60000
+  const cleared = state.lastCleared && state.lastCleared.project === state.project && Date.now() - state.lastCleared.at < 60000
     ? `<div class="success-banner">重做成功，该题已自动移出错题本，并进入记忆曲线排期。</div>` : "";
   return `<p class="eyebrow">复盘 / 错题</p><h1>把做错的题留下。</h1><p class="lede">错误 / 不会 / 部分正确的题自动收录，重做答对即移出。</p>
     ${cleared}
@@ -364,7 +377,7 @@ function examResultView() {
   if (!r) return `<section class="panel"><h2>还没有成绩</h2><button class="primary" data-view="exam-setup">去考试</button></section>`;
   const pct = Math.round(r.accuracy * 100);
   const cls = pct >= 80 ? "teal" : pct >= 60 ? "orange" : "red";
-  const rows = r.details.map((d) => `<div class="mistake-row"><div class="question-meta"><span class="tag ${d.correct ? "teal" : "red"}">${d.correct ? "正确" : "错误"}</span><span class="tag teal">${TYPE_NAMES[d.question.type]}</span><span class="tag">${escapeHtml(d.question.chapter)}</span></div>
+  const rows = r.details.filter((d) => d.question).map((d) => `<div class="mistake-row"><div class="question-meta"><span class="tag ${d.correct ? "teal" : "red"}">${d.correct ? "正确" : "错误"}</span><span class="tag teal">${TYPE_NAMES[d.question.type]}</span><span class="tag">${escapeHtml(d.question.chapter)}</span></div>
     <strong>${escapeHtml(d.question.stem)}</strong>
     <p class="muted">你的答案：${escapeHtml(d.submitted === undefined || d.submitted === null || d.submitted === "" ? "（未作答）" : d.submitted)}</p>
     ${d.correct ? "" : `<p class="muted">标准答案：${escapeHtml(d.question.answer)}</p><div class="example-solution">${escapeHtml(d.question.explanation)}</div>`}
@@ -478,10 +491,11 @@ function confirmMistake() {
   confirmDraft = null;
 }
 function confirmResult(id, result, reasonCode, note) {
+  const prevAttempt = state.attempts[id] || {};
   state.attempts[id] = { ...state.attempts[id], result, confirmed: true, reasonCode: reasonCode || undefined, note: note || undefined, confirmedAt: new Date().toISOString() };
-  // 重做答对：记录「已移出错题本」，供错题本页显示反馈
-  if (result === "correct" && state.session?.kind === "rework") {
-    state.lastCleared = { at: Date.now(), questionId: id };
+  // 重做答对且本题确认前就在错题本：记录「已移出错题本」，供错题本页显示反馈（复习页巩固题不误报）
+  if (result === "correct" && state.session?.kind === "rework" && MISTAKE_RESULTS.includes(prevAttempt.result)) {
+    state.lastCleared = { at: Date.now(), questionId: id, project: state.project };
   }
   // 记忆曲线：每次确认结果都推进/重置复习阶段
   const prev = state.review[id] || { stage: 0, due: 0 };
@@ -528,6 +542,21 @@ function startRework(id, from) {
 
 /* ---------- 模拟考试流程 ---------- */
 
+function startExamTimer() {
+  if (examTimer) { clearInterval(examTimer); examTimer = null; }
+  examTimer = setInterval(() => {
+    const timer = document.querySelector("#exam-timer");
+    if (!state.exam) { clearInterval(examTimer); examTimer = null; return; }
+    const remaining = state.exam.deadline - Date.now();
+    if (timer) {
+      const mm = String(Math.max(0, Math.floor(remaining / 60000))).padStart(2, "0");
+      const ss = String(Math.max(0, Math.floor((remaining % 60000) / 1000))).padStart(2, "0");
+      timer.textContent = `${mm}:${ss}`;
+      timer.classList.toggle("danger", remaining < 60000);
+    }
+    if (remaining <= 0) submitExam(true);
+  }, 1000);
+}
 function startExam() {
   const count = state.examSetup.count;
   const plan = buildExamPlan({ questions, project: state.project, chapter: state.examSetup.chapter || "all", count, seed: Date.now() });
@@ -548,18 +577,6 @@ function startExam() {
   save();
   view = "exam";
   render();
-  examTimer = setInterval(() => {
-    const timer = document.querySelector("#exam-timer");
-    if (!state.exam) { clearInterval(examTimer); examTimer = null; return; }
-    const remaining = state.exam.deadline - Date.now();
-    if (timer) {
-      const mm = String(Math.max(0, Math.floor(remaining / 60000))).padStart(2, "0");
-      const ss = String(Math.max(0, Math.floor((remaining % 60000) / 1000))).padStart(2, "0");
-      timer.textContent = `${mm}:${ss}`;
-      timer.classList.toggle("danger", remaining < 60000);
-    }
-    if (remaining <= 0) submitExam(true);
-  }, 1000);
 }
 function saveExamAnswer(value) {
   if (!state.exam) return;
