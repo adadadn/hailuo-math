@@ -5,3 +5,4 @@ node_modules/
 *.sqlite3
 .env
 dist/
+publish-site/

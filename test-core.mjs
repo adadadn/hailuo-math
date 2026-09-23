@@ -1,6 +1,7 @@
 // 考研数学 M1 核心逻辑单测（Node 运行，无需浏览器）
 import { readFileSync } from "node:fs";
-import { normalizeAnswer, safeEvaluate, answersMatch, buildDailyPlan, MISTAKE_RESULTS, nextReviewStage, reviewDueAt, dueReviewIds, buildExamPlan, scoreExam, EXAM_MINUTES_PER_QUESTION } from "./core.js";
+import Core from "./core.js";
+const { normalizeAnswer, safeEvaluate, answersMatch, buildDailyPlan, MISTAKE_RESULTS, nextReviewStage, reviewDueAt, dueReviewIds, buildExamPlan, scoreExam, EXAM_MINUTES_PER_QUESTION } = Core;
 
 let failures = 0;
 const check = (name, cond, detail = "") => {

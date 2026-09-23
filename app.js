@@ -1,8 +1,8 @@
-import {
+const {
   normalizeAnswer, answersMatch, buildDailyPlan, MISTAKE_RESULTS,
   nextReviewStage, reviewDueAt, dueReviewIds, REVIEW_INTERVALS,
   buildExamPlan, scoreExam, EXAM_MINUTES_PER_QUESTION,
-} from "./core.js";
+} = (typeof window !== "undefined" ? window.Core : globalThis.Core);
 
 const FALLBACK_PROJECTS = {
   math1: { name: "数学一", code: "MATH I", chapters: ["函数、极限与连续", "一元函数微分学", "一元函数积分学", "多元函数微分学"] },
@@ -625,13 +625,13 @@ function setCurriculum(data) {
 let PROJECTS = FALLBACK_PROJECTS;
 
 Promise.all([
-  fetch("/data/questions.json").then((response) => response.json()),
-  fetch("/data/curriculum.json").then((response) => response.json()),
-  fetch("/data/notes.json").then((response) => response.json()),
+  fetch("data/questions.json").then((response) => response.json()),
+  fetch("data/curriculum.json").then((response) => response.json()),
+  fetch("data/notes.json").then((response) => response.json()),
 ]).then(([data, structure, noteData]) => {
   questions = data;
   notes = noteData || {};
   setCurriculum(structure);
   render();
-  if ("serviceWorker" in navigator) navigator.serviceWorker.register("/sw.js");
+  if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => {});
 });
