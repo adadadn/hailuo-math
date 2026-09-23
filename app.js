@@ -77,7 +77,7 @@ function render() {
   document.querySelector("#app").innerHTML = `
     <div class="app-shell">
       <header class="topbar"><div class="topbar-inner">
-        <a class="brand" href="#" data-view="home"><span class="brand-mark">数</span><span class="brand-text"><strong>考研数学 M1</strong><small>自适应每日一练</small></span></a>
+        <a class="brand" href="#" data-view="home"><span class="brand-mark">螺</span><span class="brand-text"><strong>海螺游学</strong><small>自适应每日一练</small></span></a>
         <span class="topbar-day">${today().slice(5).replace("-", "/")}</span>
       </div></header>
       <main class="page">${main}</main>
@@ -135,7 +135,7 @@ function homeView() {
   const ckSet = checkinDateSet();
   const due = dueReviewIds(state.review).filter((id) => { const q = questions.find((x) => x.id === id); return q && q.project === state.project; }).length;
   const chapterOptions = PROJECTS[state.project].chapters.map((c) => `<option value="${escapeHtml(c.name)}" ${state.presetChapter === c.name ? "selected" : ""}>${escapeHtml(c.name)}</option>`).join("");
-  return `<p class="eyebrow">M1 / 今日学习工作台</p>
+  return `<p class="eyebrow">海螺游学 / 今日学习工作台</p>
     <h1>今天，先完成一小组。</h1>
     <p class="lede">每天 1–7 题，自适应组卷：错题优先、14 天内不重复。</p>
     <section class="section panel"><div class="stats home-stats">

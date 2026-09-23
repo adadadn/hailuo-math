@@ -1,10 +1,10 @@
 {
-  "name": "考研数学 M1",
-  "short_name": "数学 M1",
+  "name": "海螺游学",
+  "short_name": "海螺游学",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#f5f7fb",
-  "theme_color": "#15324b",
+  "theme_color": "#11557a",
   "lang": "zh-CN",
   "icons": [
     { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
