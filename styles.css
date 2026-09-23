@@ -61,15 +61,16 @@ button { cursor: pointer; }
 .topbar-day { color: #a9c3cd; font-size: 12.5px; font-weight: 700; }
 
 /* ---------- 页面骨架 ---------- */
-.page { flex: 1; width: 100%; padding: 18px 18px 92px; }
+.page { flex: 1; width: 100%; padding: 18px 18px 92px; animation: pageIn .18s ease; }
+@keyframes pageIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
 .eyebrow { margin: 0 0 8px; color: var(--teal); font-size: 11.5px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; display: flex; align-items: center; gap: 8px; }
 .eyebrow::before { content: ""; width: 16px; height: 3px; border-radius: 3px; background: var(--teal); }
 h1, h2, h3, p { margin-top: 0; }
 h1 { margin-bottom: 10px; font-size: 26px; line-height: 1.18; letter-spacing: -.015em; font-weight: 800; }
 h2 { margin-bottom: 0; font-size: 18px; letter-spacing: -.01em; }
 h3 { margin-bottom: 8px; font-size: 16px; }
-.lede { color: var(--muted); line-height: 1.7; font-size: 14px; }
-.section { margin-top: 26px; }
+.lede { color: var(--muted); line-height: 1.6; font-size: 13.5px; }
+.section { margin-top: 22px; }
 .section-head { display: flex; align-items: baseline; justify-content: space-between; gap: 14px; margin-bottom: 12px; }
 .section-head h2 { margin: 0; }
 .muted { color: var(--muted); }
@@ -98,9 +99,10 @@ select:focus, input:focus, textarea:focus { border-color: var(--teal); box-shado
 .icon-button:active { transform: scale(.94); }
 
 /* ---------- 按钮 ---------- */
-.primary { border: 0; border-radius: var(--radius-md); padding: 11px 18px; background: var(--teal); color: #fff; font-weight: 800; box-shadow: 0 5px 14px rgba(14, 124, 102, .26); transition: background .15s ease, box-shadow .15s ease, transform .12s ease; }
+.primary { border: 0; border-radius: var(--radius-md); padding: 12px 20px; background: var(--teal); color: #fff; font-weight: 800; box-shadow: 0 5px 14px rgba(14, 124, 102, .26); transition: background .15s ease, box-shadow .15s ease, transform .12s ease; }
 .primary:hover { background: var(--teal-strong); box-shadow: 0 7px 18px rgba(14, 124, 102, .32); }
 .primary:active { transform: translateY(1px); }
+.primary.big { width: 100%; padding: 14px 20px; font-size: 15px; letter-spacing: .02em; }
 .secondary { border: 1px solid var(--line-strong); border-radius: var(--radius-md); padding: 10px 16px; background: #fff; color: var(--navy); font-weight: 700; transition: border-color .15s ease, background .15s ease; }
 .secondary:hover { border-color: var(--teal); color: var(--teal-strong); background: var(--teal-soft); }
 .text-button { border: 0; background: transparent; color: var(--muted); padding: 8px 10px; border-radius: 8px; font-weight: 700; transition: color .15s ease, background .15s ease; }
@@ -112,8 +114,12 @@ select:focus, input:focus, textarea:focus { border-color: var(--teal); box-shado
 .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
 .home-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .stat { padding: 14px; background: #f7fafb; border: 1px solid #e6edf1; border-radius: 12px; }
-.stat strong { display: block; margin-top: 5px; font-size: 22px; font-weight: 800; letter-spacing: -.02em; color: var(--ink); }
+.stat strong { display: block; margin-top: 5px; font-size: 22px; font-weight: 800; letter-spacing: -.02em; color: var(--ink); line-height: 1; }
+.stat strong small { font-size: 13px; font-weight: 700; color: var(--muted); margin-left: 2px; }
 .stat .muted { font-size: 11.5px; font-weight: 700; }
+.num-teal { color: var(--teal) !important; }
+.num-red { color: var(--red) !important; }
+.num-navy { color: var(--navy) !important; }
 .progress { height: 9px; border-radius: 20px; background: #e4ebef; overflow: hidden; }
 .progress > span { display: block; height: 100%; background: var(--teal); border-radius: inherit; transition: width .4s ease; }
 
@@ -162,7 +168,9 @@ select:focus, input:focus, textarea:focus { border-color: var(--teal); box-shado
 .result-buttons button[data-result="partial"]:hover { border-color: var(--orange); color: var(--orange-ink); background: var(--orange-soft); }
 
 /* ---------- 错题 ---------- */
-.empty { padding: 28px 16px; text-align: center; color: var(--muted); border: 1.5px dashed var(--line-strong); border-radius: 12px; background: #fafcfd; }
+.empty { padding: 28px 16px; text-align: center; color: var(--muted); border: 1.5px dashed var(--line-strong); border-radius: 12px; background: #fafcfd; font-size: 14px; font-weight: 700; }
+.empty-sub { display: block; margin-top: 6px; color: var(--muted); font-size: 12.5px; font-weight: 500; }
+.empty-action { margin-top: 14px; }
 .success-banner { display: flex; align-items: center; gap: 8px; margin-bottom: 14px; padding: 11px 13px; border-radius: var(--radius-md); background: var(--teal-soft); border: 1px solid #bfddd4; color: var(--teal-ink); font-size: 13px; font-weight: 700; line-height: 1.5; }
 .success-banner::before { content: "✓"; font-weight: 800; }
 .table-like { display: grid; gap: 10px; }
@@ -205,11 +213,13 @@ select:focus, input:focus, textarea:focus { border-color: var(--teal); box-shado
 /* ---------- 学习中心 ---------- */
 .chapter-row { display: flex; align-items: center; gap: 12px; width: 100%; text-align: left; border: 1px solid var(--line); border-radius: var(--radius-md); background: #fff; padding: 13px 14px; transition: border-color .15s ease, box-shadow .15s ease; }
 .chapter-row:hover { border-color: #9fd6c8; box-shadow: var(--shadow-card); }
+.chapter-row.disabled { opacity: .55; cursor: default; }
+.chapter-row.disabled:hover { border-color: var(--line); box-shadow: none; }
 .chapter-no { flex: none; width: 34px; height: 34px; display: grid; place-items: center; border-radius: 10px; background: var(--teal-soft); color: var(--teal-ink); font-weight: 800; font-size: 13px; }
 .chapter-main { flex: 1; min-width: 0; }
 .chapter-main strong { display: block; font-size: 15px; margin-bottom: 2px; }
 .chapter-main .muted { font-size: 12px; }
-.chapter-arrow { flex: none; color: var(--line-strong); font-size: 20px; font-weight: 800; }
+.chapter-arrow { flex: none; color: #b3c4ce; font-size: 20px; font-weight: 800; }
 
 /* ---------- 讲义 ---------- */
 .check-list, .pitfall-list { margin: 0; padding-left: 0; list-style: none; display: grid; gap: 9px; }

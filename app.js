@@ -132,28 +132,28 @@ function homeView() {
   const chapterOptions = PROJECTS[state.project].chapters.map((c) => `<option value="${escapeHtml(c.name)}" ${state.presetChapter === c.name ? "selected" : ""}>${escapeHtml(c.name)}</option>`).join("");
   return `<p class="eyebrow">M1 / 今日学习工作台</p>
     <h1>今天，先完成一小组。</h1>
-    <p class="lede">选择考试项目和章节，设置 1–7 题的练习量。题单由自适应规则生成：错题优先、14 天内不重复，并标注每题选题原因。</p>
+    <p class="lede">每天 1–7 题，自适应组卷：错题优先、14 天内不重复。</p>
     <section class="section panel"><div class="stats home-stats">
-      <div class="stat"><span class="muted">累计打卡</span><strong>${ckSet.size} 天</strong></div>
-      <div class="stat"><span class="muted">连续打卡</span><strong>${streakDays(ckSet)} 天</strong></div>
-      <div class="stat"><span class="muted">累计错题</span><strong>${mistakes} 道</strong></div>
-      <div class="stat"><span class="muted">已确认做题</span><strong>${doneCount} 道</strong></div>
+      <div class="stat"><span class="muted">累计打卡</span><strong class="num-teal">${ckSet.size}<small>天</small></strong></div>
+      <div class="stat"><span class="muted">连续打卡</span><strong class="num-teal">${streakDays(ckSet)}<small>天</small></strong></div>
+      <div class="stat"><span class="muted">累计错题</span><strong class="num-red">${mistakes}<small>道</small></strong></div>
+      <div class="stat"><span class="muted">已确认做题</span><strong class="num-navy">${doneCount}<small>道</small></strong></div>
     </div></section>
     ${due ? `<section class="section"><div class="notice" style="display:flex;justify-content:space-between;align-items:center;gap:10px"><span>有 <strong>${due}</strong> 道题今天到期，按记忆曲线该复习了。</span><button class="secondary" data-view="review" style="flex:none">去复习</button></div></section>` : ""}
-    <section class="section"><div class="section-head"><h2>考试项目</h2><span class="muted">当前：${PROJECTS[state.project].name}</span></div>
-      <div class="grid project-grid">${Object.entries(PROJECTS).map(([id, p]) => `<button class="project-card ${id === state.project ? "selected" : ""}" data-project="${id}"><span class="project-code">${p.code}</span><strong>${p.name}</strong><span>${p.chapters.length} 个一级章节 · ${questions.filter((q) => q.project === id).length} 道已导入题</span></button>`).join("")}</div>
-    </section>
-    <section class="section panel"><div class="section-head"><h2>生成今日题单</h2><span class="muted">允许预习任意章节</span></div>
+    <section class="section panel"><div class="section-head"><h2>生成今日题单</h2><span class="muted">可预习任意章节</span></div>
       <div class="controls"><label>今日题量<div class="count-control"><button class="icon-button" data-count="-1" aria-label="减少题量">−</button><input id="count-input" type="number" min="1" max="7" value="${state.count}" /><button class="icon-button" data-count="1" aria-label="增加题量">+</button></div></label>
       <label>章节范围<select id="chapter-select"><option value="all">全部章节</option>${chapterOptions}</select></label></div>
-      <div class="actions"><button class="primary" data-action="start-practice">${practice ? "继续今日一练" : "开始今日一练"}</button><button class="secondary" data-view="chapters">浏览章节</button></div>
+      <div class="actions"><button class="primary big" data-action="start-practice">${practice ? "继续今日一练" : "开始今日一练"}</button><button class="secondary" data-view="chapters">浏览章节</button></div>
       <p id="home-notice" class="notice" hidden></p>
+    </section>
+    <section class="section"><div class="section-head"><h2>考试项目</h2><span class="muted">当前：${PROJECTS[state.project].name}</span></div>
+      <div class="grid project-grid">${Object.entries(PROJECTS).map(([id, p]) => `<button class="project-card ${id === state.project ? "selected" : ""}" data-project="${id}"><span class="project-code">${p.code}</span><strong>${p.name}</strong><span>${p.chapters.length} 个一级章节 · ${questions.filter((q) => q.project === id).length} 道已导入题</span></button>`).join("")}</div>
     </section>
     <section class="section"><div class="section-head"><h2>今日进度</h2><span class="muted">${checked ? "已打卡" : "未完成"}</span></div>
       <div class="panel">${practice ? `<div class="stats"><div class="stat"><span class="muted">已确认</span><strong>${completed}</strong></div><div class="stat"><span class="muted">题单总数</span><strong>${total}</strong></div><div class="stat"><span class="muted">状态</span><strong>${checked ? "完成" : `${total ? Math.round((completed / total) * 100) : 0}%`}</strong></div></div><div style="margin-top:16px" class="progress"><span style="width:${total ? (completed / total) * 100 : 0}%"></span></div>` : `<div class="empty">今天还没有固定题单，设置题量后开始。</div>`}</div>
     </section>
     <section class="section panel"><div class="section-head"><h2>模拟考试</h2><span class="muted">限时 · 自动判分</span></div>
-      <p class="lede">只含客观题，交卷自动判分并记录成绩。选择 10 / 15 / 20 道，每题限时 ${EXAM_MINUTES_PER_QUESTION} 分钟。</p>
+      <p class="lede">客观题成套组卷，交卷自动判分并记录成绩。10 / 15 / 20 题可选，每题限时 ${EXAM_MINUTES_PER_QUESTION} 分钟。</p>
       <div class="actions"><button class="primary" data-view="exam-setup">进入模拟考试</button></div>
     </section>
     <section class="section"><div class="section-head"><h2>打卡日历</h2><span class="muted">近 30 天 · 绿点为已打卡</span></div>
@@ -167,7 +167,7 @@ function homeView() {
 function chaptersView() {
   const p = PROJECTS[state.project];
   return `<p class="eyebrow">章节浏览 / ${p.code}</p><h1>${p.name}</h1><p class="lede">按考试范围拆开的完整章节结构。每章都有配套讲义，建议先学习再练习。</p>
-    <section class="section"><div class="section-head"><h2>一级章节 <span class="muted">${p.chapters.length}</span></h2><button class="text-button" data-view="home">返回组卷</button></div><div class="chapter-list">${p.chapters.map((c, i) => `<details class="chapter-item"><summary><strong>${String(i + 1).padStart(2, "0")} · ${escapeHtml(c.name)}</strong><span>${questions.filter((q) => q.project === state.project && q.chapter === c.name).length} 道已导入题目</span></summary><div class="knowledge-list">${(c.children || []).map((child) => `<span>${escapeHtml(child)}</span>`).join("")}</div><div class="chapter-actions"><button class="secondary" data-chapter-practice="${escapeHtml(c.name)}">练习本章</button><button class="secondary" data-note-chapter="${escapeHtml(c.name)}">查看讲义</button></div></details>`).join("")}</div></section>`;
+    <section class="section"><div class="section-head"><h2>一级章节 <span class="muted">${p.chapters.length}</span></h2><button class="text-button" data-view="home">返回组卷</button></div><div class="chapter-list">${p.chapters.map((c, i) => `<details class="chapter-item"><summary><strong>${String(i + 1).padStart(2, "0")} · ${escapeHtml(c.name)}</strong><span>${questions.filter((q) => q.project === state.project && q.chapter === c.name).length} 道已导入题目</span></summary><div class="knowledge-list">${(c.children || []).map((child) => `<span>${escapeHtml(child)}</span>`).join("")}</div><div class="chapter-actions"><button class="secondary" data-chapter-practice="${escapeHtml(c.name)}">练习本章</button>${noteFor(c.name) ? `<button class="secondary" data-note-chapter="${escapeHtml(c.name)}">查看讲义</button>` : ""}</div></details>`).join("")}</div></section>`;
 }
 
 /* ---------- 学习中心 ---------- */
@@ -176,9 +176,10 @@ function learnView() {
   const p = PROJECTS[state.project];
   const chapterRows = p.chapters.map((c, i) => {
     const note = noteFor(c.name);
-    return `<button class="chapter-row" data-note-chapter="${escapeHtml(c.name)}"><span class="chapter-no">${String(i + 1).padStart(2, "0")}</span><span class="chapter-main"><strong>${escapeHtml(c.name)}</strong><span class="muted">${questions.filter((q) => q.project === state.project && q.chapter === c.name).length} 道题 · ${note ? "讲义已就绪" : "讲义整理中"}</span></span><span class="chapter-arrow">›</span></button>`;
+    const disabled = !note;
+    return `<button class="chapter-row ${disabled ? "disabled" : ""}" ${disabled ? "" : `data-note-chapter="${escapeHtml(c.name)}"`}><span class="chapter-no">${String(i + 1).padStart(2, "0")}</span><span class="chapter-main"><strong>${escapeHtml(c.name)}</strong><span class="muted">${questions.filter((q) => q.project === state.project && q.chapter === c.name).length} 道题 · ${note ? "讲义已就绪" : "讲义整理中"}</span></span><span class="chapter-arrow">›</span></button>`;
   }).join("");
-  return `<p class="eyebrow">学习中心 / ${p.code}</p><h1>先学会，再练题。</h1><p class="lede">每个章节都有「考点 + 公式 + 方法 + 易错点 + 例题精讲」讲义，配套题库练习。先学后练，效率更高。</p>
+  return `<p class="eyebrow">学习中心 / ${p.code}</p><h1>先学会，再练题。</h1><p class="lede">每章有「考点 + 公式 + 方法 + 易错点 + 例题精讲」讲义，先学后练效率更高。</p>
     <section class="section"><div class="section-head"><h2>${p.name}</h2><span class="muted">共 ${p.chapters.length} 章</span></div><div class="chapter-list">${chapterRows}</div></section>`;
 }
 
@@ -273,7 +274,7 @@ function reviewView() {
     const days = Math.max(1, Math.ceil((r.due - now) / 86400000));
     return `<div class="mistake-row"><div class="question-meta"><span class="tag navy">${days === 1 ? "明天" : `${days} 天后`}</span><span class="tag teal">${TYPE_NAMES[q.type]}</span><span class="tag">${escapeHtml(q.chapter)}</span></div><strong>${escapeHtml(q.stem)}</strong></div>`;
   }).join("") : "";
-  return `<p class="eyebrow">复习计划 / 记忆曲线</p><h1>今天该复习什么？</h1><p class="lede">做错的题按 ${REVIEW_INTERVALS.join(" / ")} 天间隔自动排期：答对进入下一阶段、间隔拉长；答错回到第 1 天重新开始。</p>
+  return `<p class="eyebrow">复习计划 / 记忆曲线</p><h1>今天该复习什么？</h1><p class="lede">做错的题按 ${REVIEW_INTERVALS.join(" / ")} 天自动排期：答对拉长间隔，答错回到第 1 天。</p>
     <section class="section"><div class="section-head"><h2>今日待复习 <span class="muted">${due.length} 道</span></h2></div><div class="table-like">${dueRows}</div></section>
     ${upcomingRows ? `<section class="section"><div class="section-head"><h2>即将到期</h2><span class="muted">未来 5 道</span></div><div class="table-like">${upcomingRows}</div></section>` : ""}
     <div class="actions"><button class="secondary" data-view="mistakes">查看错题本</button><button class="secondary" data-view="home">回首页练习</button></div>`;
@@ -285,12 +286,12 @@ function mistakesView() {
   const rows = Object.values(state.attempts).filter((a) => a.confirmed && MISTAKE_RESULTS.includes(a.result)).map((a) => ({ ...a, q: questions.find((q) => q.id === a.questionId) })).filter((a) => a.q && a.q.project === state.project);
   const cleared = state.lastCleared && Date.now() - state.lastCleared.at < 60000
     ? `<div class="success-banner">重做成功，该题已自动移出错题本，并进入记忆曲线排期。</div>` : "";
-  return `<p class="eyebrow">复盘 / 错题</p><h1>把做错的题留下。</h1><p class="lede">错误、不会和部分正确的题会自动进入这里，按章节和错误原因筛选，可点击「重做此题」回到练习。重做答对后会从错题本移出。</p>
+  return `<p class="eyebrow">复盘 / 错题</p><h1>把做错的题留下。</h1><p class="lede">错误 / 不会 / 部分正确的题自动收录，重做答对即移出。</p>
     ${cleared}
     <section class="section panel"><div class="filter-row"><label>章节<select id="mistake-chapter"><option value="all">全部章节</option>${PROJECTS[state.project].chapters.map((c) => `<option value="${escapeHtml(c.name)}">${escapeHtml(c.name)}</option>`).join("")}</select></label><label>结果<select id="mistake-result"><option value="all">全部结果</option><option value="incorrect">错误</option><option value="unknown">不会</option><option value="partial">部分正确</option></select></label></div><div id="mistake-list" class="table-like">${mistakeRows(rows)}</div></section>`;
 }
 function mistakeRows(rows) {
-  if (!rows.length) return `<div class="empty">当前项目还没有错题记录。</div>`;
+  if (!rows.length) return `<div class="empty">当前项目还没有错题记录。<span class="empty-sub">做错的题会自动收录到这里。</span><button class="secondary empty-action" data-view="home">去练一题</button></div>`;
   return rows.map((a) => {
     const reasonTag = a.reasonCode ? `<span class="tag orange">${escapeHtml(a.reasonCode)}</span>` : "";
     const resultTagClass = a.result === "incorrect" ? "red" : a.result === "partial" ? "orange" : "navy";
