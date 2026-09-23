@@ -91,8 +91,8 @@ const mkAttempt = (id, result, daysAgo) => ({ [id]: { questionId: id, result, co
 }
 // 5. 题库不足时补足并提示
 {
-  const plan = buildDailyPlan({ questions, attempts: {}, project: "math1", chapter: "大数定律与中心极限定理", count: 20, now });
-  check("题库不足：按现有题量生成", plan.items.length >= 10 && plan.items.length < 20, `len=${plan.items.length}`);
+  const plan = buildDailyPlan({ questions, attempts: {}, project: "math1", chapter: "大数定律与中心极限定理", count: 25, now });
+  check("题库不足：按现有题量生成", plan.items.length >= 10 && plan.items.length < 25, `len=${plan.items.length}`);
   check("题库不足：有提示", plan.notice.includes("只有"));
 }
 // 6. 空项目题库
