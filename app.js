@@ -17,6 +17,7 @@ const today = () => new Date().toISOString().slice(0, 10);
 const defaultState = () => ({
   project: "math1", count: 5, attempts: {}, practices: {}, checkins: {}, session: null, presetChapter: "all",
   review: {}, exam: null, examResults: [], examSetup: { count: 10, chapter: "all" },
+  learned: {},
 });
 const readState = () => {
   let parsed = null;
@@ -49,6 +50,7 @@ const NOTE_KEY = {
   "特征值与特征向量": "特征值、特征向量与二次型", "二次型": "特征值、特征向量与二次型", "特征值与二次型": "特征值、特征向量与二次型",
   "随机变量的数字特征": "数字特征与极限定理", "数字特征与统计基础": "数字特征与极限定理", "大数定律与中心极限定理": "数字特征与极限定理",
   "多元函数与微积分应用": "多元函数微分学",
+  "重积分": "二重积分",
 };
 const noteFor = (chapter) => notes[NOTE_KEY[chapter] || chapter] || null;
 const TAB_ICONS = {
@@ -172,15 +174,25 @@ function chaptersView() {
 
 /* ---------- 学习中心 ---------- */
 
+const learnedFor = (chapter) => state.learned?.[NOTE_KEY[chapter] || chapter];
+function markLearned(chapter) {
+  const key = NOTE_KEY[chapter] || chapter;
+  const rec = state.learned?.[key] || { firstSeen: Date.now(), count: 0 };
+  state.learned[key] = { ...rec, lastSeen: Date.now(), count: rec.count + 1 };
+  save();
+}
+
 function learnView() {
   const p = PROJECTS[state.project];
+  const learnedCount = p.chapters.filter((c) => learnedFor(c.name)).length;
   const chapterRows = p.chapters.map((c, i) => {
     const note = noteFor(c.name);
+    const learned = learnedFor(c.name);
     const disabled = !note;
-    return `<button class="chapter-row ${disabled ? "disabled" : ""}" ${disabled ? "" : `data-note-chapter="${escapeHtml(c.name)}"`}><span class="chapter-no">${String(i + 1).padStart(2, "0")}</span><span class="chapter-main"><strong>${escapeHtml(c.name)}</strong><span class="muted">${questions.filter((q) => q.project === state.project && q.chapter === c.name).length} 道题 · ${note ? "讲义已就绪" : "讲义整理中"}</span></span><span class="chapter-arrow">›</span></button>`;
+    return `<button class="chapter-row ${disabled ? "disabled" : ""} ${learned ? "learned" : ""}" ${disabled ? "" : `data-note-chapter="${escapeHtml(c.name)}"`}><span class="chapter-no">${learned ? "✓" : String(i + 1).padStart(2, "0")}</span><span class="chapter-main"><strong>${escapeHtml(c.name)}</strong><span class="muted">${questions.filter((q) => q.project === state.project && q.chapter === c.name).length} 道题 · ${note ? (learned ? "已学" : "讲义已就绪") : "讲义整理中"}</span></span><span class="chapter-arrow">›</span></button>`;
   }).join("");
   return `<p class="eyebrow">学习中心 / ${p.code}</p><h1>先学会，再练题。</h1><p class="lede">每章有「考点 + 公式 + 方法 + 易错点 + 例题精讲」讲义，先学后练效率更高。</p>
-    <section class="section"><div class="section-head"><h2>${p.name}</h2><span class="muted">共 ${p.chapters.length} 章</span></div><div class="chapter-list">${chapterRows}</div></section>`;
+    <section class="section"><div class="section-head"><h2>${p.name}</h2><span class="muted">已学 ${learnedCount}/${p.chapters.length} 章</span></div><div class="chapter-list">${chapterRows}</div></section>`;
 }
 
 function notesView() {
@@ -188,6 +200,7 @@ function notesView() {
   const note = noteFor(chapter);
   const p = PROJECTS[state.project];
   if (!note) return `<section class="panel"><h2>讲义未找到</h2><p class="muted">该章节暂时没有讲义，先去题库练习吧。</p><button class="primary" data-view="learn">返回学习中心</button></section>`;
+  markLearned(chapter);
   const formulaRows = (note.formulas || []).map((f) => `<tr><td>${escapeHtml(f.name)}</td><td>${escapeHtml(f.body)}</td></tr>`).join("");
   const methodList = (note.methods || []).map((m) => `<li><strong>${escapeHtml(m.name)}</strong><div class="muted">${escapeHtml(m.body)}</div></li>`).join("");
   const exampleList = (note.examples || []).map((ex, i) => `<details class="example-item"><summary><span class="tag navy">例 ${i + 1}</span>${escapeHtml(ex.stem)}</summary><div class="example-body"><p class="muted">标准答案：${escapeHtml(ex.answer)}</p><div class="example-solution">${escapeHtml(ex.solution)}</div></div></details>`).join("");

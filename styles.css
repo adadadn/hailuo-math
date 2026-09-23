@@ -216,6 +216,7 @@ select:focus, input:focus, textarea:focus { border-color: var(--teal); box-shado
 .chapter-row.disabled { opacity: .55; cursor: default; }
 .chapter-row.disabled:hover { border-color: var(--line); box-shadow: none; }
 .chapter-no { flex: none; width: 34px; height: 34px; display: grid; place-items: center; border-radius: 10px; background: var(--teal-soft); color: var(--teal-ink); font-weight: 800; font-size: 13px; }
+.chapter-row.learned .chapter-no { background: var(--teal); color: #fff; }
 .chapter-main { flex: 1; min-width: 0; }
 .chapter-main strong { display: block; font-size: 15px; margin-bottom: 2px; }
 .chapter-main .muted { font-size: 12px; }
