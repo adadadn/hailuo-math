@@ -155,5 +155,19 @@ console.log("== 模拟考试组卷与判分 ==");
   check("EXAM_MINUTES_PER_QUESTION = 2", EXAM_MINUTES_PER_QUESTION === 2);
 }
 
+console.log("== 难度筛选（基础/拔高） ==");
+{
+  const hardPlan = buildExamPlan({ questions, project: "math1", chapter: "all", count: 10, seed: 42, difficulty: "hard" });
+  check("拔高考试卷：10 道且全部难度≥3", hardPlan.items.length === 10 && hardPlan.items.every((q) => (Number(q.difficulty) || 1) >= 3), `len=${hardPlan.items.length}`);
+  const basicDaily = buildDailyPlan({ questions, attempts: {}, project: "math3", count: 5, difficulty: "basic" });
+  check("基础每日练：5 道且全部难度≤2", basicDaily.items.length === 5 && basicDaily.items.every((q) => (Number(q.difficulty) || 1) <= 2), `len=${basicDaily.items.length}`);
+  const noPool = buildDailyPlan({ questions, attempts: {}, project: "math2", chapter: "无穷级数", count: 3, difficulty: "hard" });
+  check("拔高无题：防呆提示且不组卷", noPool.fallback === true && noPool.items.length === 0 && noPool.notice.includes("难度"));
+  const mk = (id, d) => ({ id, project: "math1", chapter: "X", type: "fill", difficulty: d, kind: "mock", reviewStatus: "approved", stem: id, answer: "1", explanation: "", source: "t" });
+  const mix = [mk("a", 1), mk("b", 2), mk("c", 3), mk("d", 4)];
+  const hardOnly = buildDailyPlan({ questions: mix, attempts: {}, project: "math1", count: 3, difficulty: "hard" }).items.map((it) => it.id);
+  check("混合池拔高：只取难度≥3", hardOnly.join(",") === "c,d", hardOnly.join(","));
+}
+
 console.log(failures === 0 ? "\n全部通过 ✔" : `\n${failures} 项失败 ✘`);
 process.exit(failures === 0 ? 0 : 1);

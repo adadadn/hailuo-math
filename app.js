@@ -11,12 +11,13 @@ const FALLBACK_PROJECTS = {
   calc396: { name: "396 经济类联考", code: "396", chapters: ["线性代数基础", "概率统计基础", "微积分基础"] },
 };
 const TYPE_NAMES = { choice: "选择题", fill: "填空题", essay: "解答题" };
+const DIFF_OPTS = [["all", "全部难度"], ["basic", "基础（难度≤2）"], ["hard", "拔高（难度≥3）"]];
 const REASON_CODES = ["概念不清", "计算错误", "方法错误", "审题错误", "步骤遗漏", "其他"];
 const STORAGE = "kaoyan-math-m1";
 const today = () => new Date().toISOString().slice(0, 10);
 const defaultState = () => ({
-  project: "math1", count: 5, attempts: {}, practices: {}, checkins: {}, session: null, presetChapter: "all",
-  review: {}, exam: null, examResults: [], examSetup: { count: 10, chapter: "all" },
+  project: "math1", count: 5, attempts: {}, practices: {}, checkins: {}, session: null, presetChapter: "all", presetDifficulty: "all",
+  review: {}, exam: null, examResults: [], examSetup: { count: 10, chapter: "all", difficulty: "all" },
   learned: {},
 });
 const readState = () => {
@@ -146,7 +147,8 @@ function homeView() {
     ${due ? `<section class="section"><div class="notice" style="display:flex;justify-content:space-between;align-items:center;gap:10px"><span>有 <strong>${due}</strong> 道题今天到期，按记忆曲线该复习了。</span><button class="secondary" data-view="review" style="flex:none">去复习</button></div></section>` : ""}
     <section class="section panel"><div class="section-head"><h2>生成今日题单</h2><span class="muted">可预习任意章节</span></div>
       <div class="controls"><label>今日题量<div class="count-control"><button class="icon-button" data-count="-1" aria-label="减少题量">−</button><input id="count-input" type="number" min="1" max="7" value="${state.count}" /><button class="icon-button" data-count="1" aria-label="增加题量">+</button></div></label>
-      <label>章节范围<select id="chapter-select"><option value="all">全部章节</option>${chapterOptions}</select></label></div>
+      <label>章节范围<select id="chapter-select"><option value="all">全部章节</option>${chapterOptions}</select></label>
+      <label>题目难度<select id="difficulty-select">${DIFF_OPTS.map(([v, label]) => `<option value="${v}" ${state.presetDifficulty === v ? "selected" : ""}>${label}</option>`).join("")}</select></label></div>
       <div class="actions"><button class="primary big" data-action="start-practice">${practice ? "继续今日一练" : "开始今日一练"}</button><button class="secondary" data-view="chapters">浏览章节</button></div>
       <p id="home-notice" class="notice" hidden></p>
     </section>
@@ -157,7 +159,7 @@ function homeView() {
       <div class="panel">${practice ? `<div class="stats"><div class="stat"><span class="muted">已确认</span><strong>${completed}</strong></div><div class="stat"><span class="muted">题单总数</span><strong>${total}</strong></div><div class="stat"><span class="muted">状态</span><strong>${checked ? "完成" : `${total ? Math.round((completed / total) * 100) : 0}%`}</strong></div></div><div style="margin-top:16px" class="progress"><span style="width:${total ? (completed / total) * 100 : 0}%"></span></div>` : `<div class="empty">今天还没有固定题单，设置题量后开始。</div>`}</div>
     </section>
     <section class="section panel"><div class="section-head"><h2>模拟考试</h2><span class="muted">限时 · 自动判分</span></div>
-      <p class="lede">客观题成套组卷，交卷自动判分并记录成绩。10 / 15 / 20 题可选，每题限时 ${EXAM_MINUTES_PER_QUESTION} 分钟。</p>
+      <p class="lede">客观题成套组卷，交卷自动判分并记录成绩。10 / 15 / 20 题可选，每题限时 ${EXAM_MINUTES_PER_QUESTION} 分钟；也可按难度组「基础卷 / 拔高卷」。</p>
       <div class="actions"><button class="primary" data-view="exam-setup">进入模拟考试</button></div>
     </section>
     <section class="section"><div class="section-head"><h2>打卡日历</h2><span class="muted">近 30 天 · 绿点为已打卡</span></div>
@@ -342,8 +344,10 @@ function examSetupView() {
   return `<p class="eyebrow">模拟考试 / ${PROJECTS[state.project].code}</p><h1>限时成套，检验真水平。</h1><p class="lede">从当前科目客观题库随机组卷，题型交替排列。交卷自动判分，成绩自动归档。</p>
     <section class="section panel"><div class="section-head"><h2>组一套卷</h2><span class="muted">每题限时 ${EXAM_MINUTES_PER_QUESTION} 分钟</span></div>
       <label>题目数量<div class="exam-count-row">${counts.map((n) => `<button class="exam-count ${state.examSetup.count === n ? "active" : ""}" data-exam-count="${n}">${n} 题 · ${n * EXAM_MINUTES_PER_QUESTION} 分钟</button>`).join("")}</div></label>
+      <label style="margin-top:14px">难度范围<div class="exam-count-row">${DIFF_OPTS.map(([v, label]) => `<button class="exam-count ${state.examSetup.difficulty === v ? "active" : ""}" data-exam-difficulty="${v}">${label}</button>`).join("")}</div></label>
       <label style="margin-top:14px">章节范围<select id="exam-chapter">${chapterOptions}</select></label>
       <div class="actions"><button class="primary" data-action="start-exam">开始考试</button><button class="secondary" data-view="home">返回首页</button></div>
+      <p id="exam-notice" class="notice" hidden></p>
     </section>
     ${history ? `<section class="section"><div class="section-head"><h2>历史成绩</h2><span class="muted">最近 ${Math.min((state.examResults || []).length, 8)} 次</span></div><div class="table-like">${history}</div></section>` : ""}`;
 }
@@ -396,6 +400,7 @@ function bindEvents() {
   document.querySelectorAll("[data-count]").forEach((el) => el.addEventListener("click", () => { state.count = Math.max(1, Math.min(7, state.count + Number(el.dataset.count))); save(); render(); }));
   document.querySelector("#count-input")?.addEventListener("change", (event) => { state.count = Math.max(1, Math.min(7, Number(event.target.value) || 1)); save(); render(); });
   document.querySelector("#chapter-select")?.addEventListener("change", (event) => { state.presetChapter = event.target.value; save(); });
+  document.querySelector("#difficulty-select")?.addEventListener("change", (event) => { state.presetDifficulty = event.target.value; save(); });
   document.querySelectorAll("[data-chapter-practice]").forEach((el) => el.addEventListener("click", () => { state.presetChapter = el.dataset.chapterPractice; save(); view = "home"; render(); }));
   document.querySelectorAll("[data-note-chapter]").forEach((el) => el.addEventListener("click", () => { state.presetNoteChapter = el.dataset.noteChapter; view = "notes"; render(); }));
   document.querySelector("[data-action='start-practice']")?.addEventListener("click", startPractice);
@@ -410,6 +415,7 @@ function bindEvents() {
   ["mistake-chapter", "mistake-result"].forEach((id) => document.querySelector(`#${id}`)?.addEventListener("change", filterMistakes));
   // 模拟考试
   document.querySelectorAll("[data-exam-count]").forEach((el) => el.addEventListener("click", () => { state.examSetup.count = Number(el.dataset.examCount); save(); render(); }));
+  document.querySelectorAll("[data-exam-difficulty]").forEach((el) => el.addEventListener("click", () => { state.examSetup.difficulty = el.dataset.examDifficulty; save(); render(); }));
   document.querySelector("#exam-chapter")?.addEventListener("change", (event) => { state.examSetup.chapter = event.target.value; save(); });
   document.querySelector("[data-action='start-exam']")?.addEventListener("click", startExam);
   document.querySelectorAll("input[name='exam-answer']").forEach((el) => el.addEventListener("change", () => saveExamAnswer(el.value)));
@@ -426,7 +432,7 @@ function bindEvents() {
 function startPractice() {
   const key = dailyKey();
   if (!state.practices[key]) {
-    const plan = buildDailyPlan({ questions, attempts: state.attempts, project: state.project, chapter: state.presetChapter || "all", count: state.count, now: Date.now() });
+    const plan = buildDailyPlan({ questions, attempts: state.attempts, project: state.project, chapter: state.presetChapter || "all", count: state.count, now: Date.now(), difficulty: state.presetDifficulty || "all" });
     if (plan.items.length === 0) {
       // 防呆：无可组卷题目时留在首页并展示原因，不进入白屏练习页
       const notice = document.querySelector("#home-notice");
@@ -559,17 +565,18 @@ function startExamTimer() {
 }
 function startExam() {
   const count = state.examSetup.count;
-  const plan = buildExamPlan({ questions, project: state.project, chapter: state.examSetup.chapter || "all", count, seed: Date.now() });
+  const plan = buildExamPlan({ questions, project: state.project, chapter: state.examSetup.chapter || "all", count, seed: Date.now(), difficulty: state.examSetup.difficulty || "all" });
   if (!plan.items.length) {
     view = "exam-setup";
     render();
-    const notice = document.querySelector("#home-notice");
-    if (notice) { notice.hidden = false; notice.textContent = plan.notice || "当前范围客观题不足，请更换章节或减少题数。"; }
+    const notice = document.querySelector("#exam-notice") || document.querySelector("#home-notice");
+    if (notice) { notice.hidden = false; notice.textContent = plan.notice || "当前范围客观题不足，请更换章节、难度或减少题数。"; }
     return;
   }
   state.exam = {
     questionIds: plan.items.map((q) => q.id),
     chapter: state.examSetup.chapter || "all",
+    difficulty: state.examSetup.difficulty || "all",
     count, answers: {}, cursor: 0,
     startedAt: Date.now(),
     deadline: Date.now() + count * EXAM_MINUTES_PER_QUESTION * 60000,

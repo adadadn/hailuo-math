@@ -38,12 +38,20 @@ function mulberry32(seed) {
   };
 }
 
+// 难度筛选：all 全部 / basic 基础（难度 ≤2）/ hard 拔高（难度 ≥3）
+export const DIFFICULTY_FILTERS = {
+  all: () => true,
+  basic: (q) => (Number(q.difficulty) || 1) <= 2,
+  hard: (q) => (Number(q.difficulty) || 1) >= 3,
+};
+
 /**
  * 模拟考试组卷：只取客观题（选择/填空），题型交替、顺序打散。
  * @returns {{items: Array<object>, notice: string}} items 为题目对象数组
  */
-export function buildExamPlan({ questions, project, chapter = "all", count, seed = Date.now() }) {
-  let pool = questions.filter((q) => q.project === project && q.reviewStatus === "approved" && q.type !== "essay" && (chapter === "all" || q.chapter === chapter));
+export function buildExamPlan({ questions, project, chapter = "all", count, seed = Date.now(), difficulty = "all" }) {
+  const diffOk = DIFFICULTY_FILTERS[difficulty] || DIFFICULTY_FILTERS.all;
+  let pool = questions.filter((q) => q.project === project && q.reviewStatus === "approved" && q.type !== "essay" && (chapter === "all" || q.chapter === chapter) && diffOk(q));
   if (pool.length < count) {
     return { items: [], notice: `当前范围只有 ${pool.length} 道客观题，不足以组成 ${count} 道试卷。` };
   }
@@ -190,15 +198,16 @@ export function answersMatch(userAnswer, expectedAnswer) {
  * @returns {{items: Array<{id: string, reason: string}>, chapter: string, notice: string}}
  *   items 为空时表示当前范围无可组卷题目，调用方应阻止创建题单。
  */
-export function buildDailyPlan({ questions, attempts, project, chapter = "all", count, now = Date.now() }) {
-  let pool = questions.filter((q) => q.project === project && q.reviewStatus === "approved" && (chapter === "all" || q.chapter === chapter));
+export function buildDailyPlan({ questions, attempts, project, chapter = "all", count, now = Date.now(), difficulty = "all" }) {
+  const diffOk = DIFFICULTY_FILTERS[difficulty] || DIFFICULTY_FILTERS.all;
+  let pool = questions.filter((q) => q.project === project && q.reviewStatus === "approved" && (chapter === "all" || q.chapter === chapter) && diffOk(q));
   let notice = "";
 
   if (pool.length === 0) {
-    // 防呆：所选章节无题时提示用户，不静默回退组卷
+    // 防呆：所选范围无题时提示用户，不静默回退组卷
     const msg = chapter === "all"
-      ? "当前项目还没有已审核题目，请先补充题库。"
-      : "所选章节暂无已审核题目，请在章节范围中选择其他章节或「全部章节」后再试。";
+      ? "当前项目还没有满足该难度要求的已审核题目，请更换难度后再试。"
+      : "所选章节暂无满足该难度要求的已审核题目，请在章节范围中选择其他章节或「全部章节」，或更换难度后再试。";
     return { items: [], chapter, notice: msg, fallback: true };
   }
 
