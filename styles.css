@@ -298,3 +298,10 @@ select:focus, input:focus, textarea:focus { border-color: var(--teal); box-shado
 .knowledge-list span em { font-style: normal; font-size: 11px; color: var(--teal-ink); background: var(--teal-soft); border-radius: 99px; padding: 0 7px; margin-left: 4px; }
 .range-hint { margin-top: 12px; font-size: 13px; color: var(--navy); background: var(--teal-soft); border: 1px solid #bfd7e4; border-radius: var(--radius-md); padding: 10px 12px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
 .range-hint .text-button { margin-left: auto; }
+/* 加载态 / 失败态 / 数据导入 */
+.loading-screen { min-height: 55vh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; color: var(--muted); }
+.loading-spinner { width: 34px; height: 34px; border-radius: 50%; border: 3px solid var(--teal-soft); border-top-color: var(--teal); animation: spin .8s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.load-error { color: var(--red, #d64545); font-weight: 600; }
+.file-import { cursor: pointer; display: inline-flex; align-items: center; justify-content: center; }
+.file-import input { display: none; }
