@@ -14,7 +14,11 @@ const TYPE_NAMES = { choice: "选择题", fill: "填空题", essay: "解答题" 
 const DIFF_OPTS = [["all", "全部难度"], ["basic", "基础（难度≤2）"], ["hard", "拔高（难度≥3）"]];
 const REASON_CODES = ["概念不清", "计算错误", "方法错误", "审题错误", "步骤遗漏", "其他"];
 const STORAGE = "kaoyan-math-m1";
-const today = () => new Date().toISOString().slice(0, 10);
+// 统一用本地时区日期（toISOString 是 UTC，凌晨 0–8 点会记到前一天）
+const pad2 = (n) => String(n).padStart(2, "0");
+const localDate = (d) => `${d.getFullYear()}-${pad2(d.getMonth() + 1)}-${pad2(d.getDate())}`;
+const today = () => localDate(new Date());
+const fmtDate = (iso) => { const d = new Date(iso); return Number.isNaN(d.getTime()) ? String(iso || "").slice(0, 10) : localDate(d); };
 const defaultState = () => ({
   project: "math1", count: 5, attempts: {}, practices: {}, checkins: {}, session: null, presetChapter: "all", presetDifficulty: "all", presetNoteSub: null, presetSub: "all",
   review: {}, exam: null, examResults: [], examSetup: { count: 10, chapter: "all", difficulty: "all" },
@@ -27,6 +31,19 @@ const readState = () => {
   return { ...base, ...(parsed || {}), examSetup: { ...base.examSetup, ...((parsed || {}).examSetup || {}) } };
 };
 let state = readState();
+// 清理 60 天前已完成的题单，防止本地存储无限增长（保留错题/成绩/复习记录）
+(function prunePractices() {
+  const cutoff = Date.now() - 60 * 86400000;
+  let changed = false;
+  Object.keys(state.practices || {}).forEach((key) => {
+    const p = state.practices[key];
+    if (p && p.status === "completed" && new Date(p.createdAt).getTime() < cutoff) {
+      delete state.practices[key];
+      changed = true;
+    }
+  });
+  if (changed) save();
+})();
 let questions = [];
 let curriculum = {};
 let notes = {};
@@ -107,7 +124,7 @@ function checkinDateSet() {
 function streakDays(dateSet) {
   let streak = 0;
   const cursor = dateSet.has(today()) ? new Date() : new Date(Date.now() - 86400000);
-  while (dateSet.has(cursor.toISOString().slice(0, 10))) {
+  while (dateSet.has(localDate(cursor))) {
     streak += 1;
     cursor.setDate(cursor.getDate() - 1);
   }
@@ -117,7 +134,7 @@ function calendarHtml(dateSet) {
   const cells = [];
   for (let i = 29; i >= 0; i -= 1) {
     const d = new Date(Date.now() - i * 86400000);
-    const ds = d.toISOString().slice(0, 10);
+    const ds = localDate(d);
     const cls = ["cal-cell", dateSet.has(ds) ? "checked" : "", ds === today() ? "today" : ""].filter(Boolean).join(" ");
     cells.push(`<span class="${cls}" title="${ds}">${d.getDate()}</span>`);
   }
@@ -166,7 +183,7 @@ function homeView() {
     <section class="section"><div class="section-head"><h2>打卡日历</h2><span class="muted">近 30 天 · 绿点为已打卡</span></div>
       <div class="panel">${calendarHtml(ckSet)}</div>
     </section>
-    <footer class="footer">实验版数据仅保存在当前浏览器。示例题用于验证流程，正式题库需替换为已授权数据。</footer>`;
+    <footer class="footer">进度数据保存在当前浏览器（本地存储），分享链接给朋友后各自进度互不影响。</footer>`;
 }
 
 /* ---------- 章节 ---------- */
@@ -194,7 +211,8 @@ const markSubLearned = (chapter, sub) => {
 
 function learnView() {
   const p = PROJECTS[state.project];
-  const learnedCount = p.chapters.filter((c) => learnedFor(c.name)).length;
+  const learnableChapters = p.chapters.filter((c) => noteFor(c.name));
+  const learnedCount = learnableChapters.filter((c) => learnedFor(c.name)).length;
   // 每章答对题数（按题去重，只看确认过的作答）
   const doneCounts = {};
   const seen = new Set();
@@ -216,7 +234,7 @@ function learnView() {
     return `<div class="chapter-card"><button class="chapter-row ${disabled ? "disabled" : ""} ${learned ? "learned" : ""}" ${disabled ? "" : `data-note-chapter="${escapeHtml(c.name)}"`}><span class="chapter-no">${learned ? "✓" : String(i + 1).padStart(2, "0")}</span><span class="chapter-main"><strong>${escapeHtml(c.name)}</strong><span class="muted">${qty} 道题 · 答对 ${done} · ${note ? (learned ? "已学" : "待学习") : "讲义整理中"} · ${subs.length} 个小节</span></span><span class="chapter-arrow">›</span></button>${subs.length ? `<div class="sub-list">${subChips}</div>` : ""}</div>`;
   }).join("");
   return `<p class="eyebrow">学习中心 / ${p.code}</p><h1>先学会，再练题。</h1><p class="lede">每章有「考点 + 公式 + 方法 + 易错点 + 例题精讲」讲义，先学后练效率更高。</p>
-    <section class="section"><div class="section-head"><h2>${p.name}</h2><span class="muted">已学 ${learnedCount}/${p.chapters.length} 章</span></div><div class="chapter-list">${chapterRows}</div></section>`;
+    <section class="section"><div class="section-head"><h2>${p.name}</h2><span class="muted">已学 ${learnedCount}/${learnableChapters.length} 章</span></div><div class="chapter-list">${chapterRows}</div></section>`;
 }
 
 function notesView() {
@@ -330,7 +348,7 @@ function mistakesView() {
     ? `<div class="success-banner">重做成功，该题已自动移出错题本，并进入记忆曲线排期。</div>` : "";
   return `<p class="eyebrow">复盘 / 错题</p><h1>把做错的题留下。</h1><p class="lede">错误 / 不会 / 部分正确的题自动收录，重做答对即移出。</p>
     ${cleared}
-    <section class="section panel"><div class="filter-row"><label>章节<select id="mistake-chapter"><option value="all">全部章节</option>${PROJECTS[state.project].chapters.map((c) => `<option value="${escapeHtml(c.name)}">${escapeHtml(c.name)}</option>`).join("")}</select></label><label>结果<select id="mistake-result"><option value="all">全部结果</option><option value="incorrect">错误</option><option value="unknown">不会</option><option value="partial">部分正确</option></select></label></div><div id="mistake-list" class="table-like">${mistakeRows(rows)}</div></section>`;
+    <section class="section panel"><div class="filter-row"><label>章节<select id="mistake-chapter"><option value="all">全部章节</option>${PROJECTS[state.project].chapters.map((c) => `<option value="${escapeHtml(c.name)}">${escapeHtml(c.name)}</option>`).join("")}</select></label><label>结果<select id="mistake-result"><option value="all">全部结果</option><option value="incorrect">错误</option><option value="unknown">不会</option><option value="partial">部分正确</option></select></label><label>错因<select id="mistake-reason"><option value="all">全部错因</option>${REASON_CODES.map((c) => `<option value="${c}">${c}</option>`).join("")}</select></label></div><div id="mistake-list" class="table-like">${mistakeRows(rows)}</div></section>`;
 }
 function mistakeRows(rows) {
   if (!rows.length) return `<div class="empty">当前项目还没有错题记录。<span class="empty-sub">做错的题会自动收录到这里。</span><button class="secondary empty-action" data-view="home">去练一题</button></div>`;
@@ -338,7 +356,7 @@ function mistakeRows(rows) {
     const reasonTag = a.reasonCode ? `<span class="tag orange">${escapeHtml(a.reasonCode)}</span>` : "";
     const resultTagClass = a.result === "incorrect" ? "red" : a.result === "partial" ? "orange" : "navy";
     const note = a.note ? `<p class="muted mistake-note">复盘：${escapeHtml(a.note)}</p>` : "";
-    return `<div class="mistake-row" data-chapter="${escapeHtml(a.q.chapter)}" data-result="${a.result}"><div class="question-meta"><span class="tag ${resultTagClass}">${resultName(a.result)}</span>${reasonTag}<span class="tag">${escapeHtml(a.q.chapter)}</span><span class="tag">来源：${escapeHtml(a.q.source)}</span></div>
+    return `<div class="mistake-row" data-chapter="${escapeHtml(a.q.chapter)}" data-result="${a.result}" data-reason="${escapeHtml(a.reasonCode || "")}"><div class="question-meta"><span class="tag ${resultTagClass}">${resultName(a.result)}</span>${reasonTag}<span class="tag">${escapeHtml(a.q.chapter)}</span><span class="tag">来源：${escapeHtml(a.q.source)}</span></div>
       <strong>${escapeHtml(a.q.stem)}</strong>${note}
       <p class="muted">标准答案：${escapeHtml(a.q.answer)}</p>
       <div class="actions"><button class="secondary" data-redo="${a.questionId}">重做此题</button></div></div>`;
@@ -353,7 +371,7 @@ function examSetupView() {
   const history = (state.examResults || []).slice(0, 8).map((r) => {
     const pct = Math.round(r.accuracy * 100);
     const cls = pct >= 80 ? "teal" : pct >= 60 ? "orange" : "red";
-    return `<div class="mistake-row"><div class="question-meta"><span class="tag ${cls}">${pct}%</span><span class="tag">${escapeHtml(r.projectName || "")}</span><span class="tag">${r.count} 题</span><span class="tag">${escapeHtml(r.chapter === "all" ? "全部章节" : r.chapter)}</span></div><div class="exam-result-line"><span>${r.correct}/${r.total} 正确</span><span class="muted">${String(r.date || "").slice(0, 10)} · ${Math.round(r.durationSeconds / 60)} 分钟</span></div></div>`;
+    return `<div class="mistake-row"><div class="question-meta"><span class="tag ${cls}">${pct}%</span><span class="tag">${escapeHtml(r.projectName || "")}</span><span class="tag">${r.count} 题</span><span class="tag">${escapeHtml(r.chapter === "all" ? "全部章节" : r.chapter)}</span></div><div class="exam-result-line"><span>${r.correct}/${r.total} 正确</span><span class="muted">${fmtDate(r.date)} · ${Math.round(r.durationSeconds / 60)} 分钟</span></div></div>`;
   }).join("");
   return `<p class="eyebrow">模拟考试 / ${PROJECTS[state.project].code}</p><h1>限时成套，检验真水平。</h1><p class="lede">从当前科目客观题库随机组卷，题型交替排列。交卷自动判分，成绩自动归档。</p>
     <section class="section panel"><div class="section-head"><h2>组一套卷</h2><span class="muted">每题限时 ${EXAM_MINUTES_PER_QUESTION} 分钟</span></div>
@@ -413,7 +431,7 @@ function bindEvents() {
   document.querySelectorAll("[data-project]").forEach((el) => el.addEventListener("click", () => { state.project = el.dataset.project; state.presetChapter = "all"; save(); render(); }));
   document.querySelectorAll("[data-count]").forEach((el) => el.addEventListener("click", () => { state.count = Math.max(1, Math.min(7, state.count + Number(el.dataset.count))); save(); render(); }));
   document.querySelector("#count-input")?.addEventListener("change", (event) => { state.count = Math.max(1, Math.min(7, Number(event.target.value) || 1)); save(); render(); });
-  document.querySelector("#chapter-select")?.addEventListener("change", (event) => { state.presetChapter = event.target.value; save(); });
+  document.querySelector("#chapter-select")?.addEventListener("change", (event) => { state.presetChapter = event.target.value; save(); render(); });
   document.querySelector("#difficulty-select")?.addEventListener("change", (event) => { state.presetDifficulty = event.target.value; save(); });
   document.querySelectorAll("[data-chapter-practice]").forEach((el) => el.addEventListener("click", () => { state.presetChapter = el.dataset.chapterPractice; state.presetSub = "all"; save(); view = "home"; render(); }));
   document.querySelectorAll("[data-sub-practice]").forEach((el) => el.addEventListener("click", () => { state.presetChapter = el.dataset.subPractice; state.presetSub = el.dataset.subName; save(); view = "home"; render(); }));
@@ -428,7 +446,7 @@ function bindEvents() {
   document.querySelector("[data-action='cancel-mistake']")?.addEventListener("click", () => { confirmDraft = null; render(); });
   document.querySelectorAll("[data-redo]").forEach((el) => el.addEventListener("click", () => startRework(el.dataset.redo, "mistakes")));
   document.querySelectorAll("[data-review-redo]").forEach((el) => el.addEventListener("click", () => startRework(el.dataset.reviewRedo, "review")));
-  ["mistake-chapter", "mistake-result"].forEach((id) => document.querySelector(`#${id}`)?.addEventListener("change", filterMistakes));
+  ["mistake-chapter", "mistake-result", "mistake-reason"].forEach((id) => document.querySelector(`#${id}`)?.addEventListener("change", filterMistakes));
   // 模拟考试
   document.querySelectorAll("[data-exam-count]").forEach((el) => el.addEventListener("click", () => { state.examSetup.count = Number(el.dataset.examCount); save(); render(); }));
   document.querySelectorAll("[data-exam-difficulty]").forEach((el) => el.addEventListener("click", () => { state.examSetup.difficulty = el.dataset.examDifficulty; save(); render(); }));
@@ -630,8 +648,9 @@ function submitExam(auto) {
 function filterMistakes() {
   const chapter = document.querySelector("#mistake-chapter").value;
   const result = document.querySelector("#mistake-result").value;
+  const reason = document.querySelector("#mistake-reason").value;
   document.querySelectorAll(".mistake-row").forEach((row) => {
-    row.hidden = (chapter !== "all" && row.dataset.chapter !== chapter) || (result !== "all" && row.dataset.result !== result);
+    row.hidden = (chapter !== "all" && row.dataset.chapter !== chapter) || (result !== "all" && row.dataset.result !== result) || (reason !== "all" && row.dataset.reason !== reason);
   });
 }
 function setCurriculum(data) {
