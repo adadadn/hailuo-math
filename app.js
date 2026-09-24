@@ -16,7 +16,7 @@ const REASON_CODES = ["概念不清", "计算错误", "方法错误", "审题错
 const STORAGE = "kaoyan-math-m1";
 const today = () => new Date().toISOString().slice(0, 10);
 const defaultState = () => ({
-  project: "math1", count: 5, attempts: {}, practices: {}, checkins: {}, session: null, presetChapter: "all", presetDifficulty: "all", presetNoteSub: null,
+  project: "math1", count: 5, attempts: {}, practices: {}, checkins: {}, session: null, presetChapter: "all", presetDifficulty: "all", presetNoteSub: null, presetSub: "all",
   review: {}, exam: null, examResults: [], examSetup: { count: 10, chapter: "all", difficulty: "all" },
   learned: {}, subLearned: {},
 });
@@ -150,6 +150,7 @@ function homeView() {
       <label>章节范围<select id="chapter-select"><option value="all">全部章节</option>${chapterOptions}</select></label>
       <label>题目难度<select id="difficulty-select">${DIFF_OPTS.map(([v, label]) => `<option value="${v}" ${state.presetDifficulty === v ? "selected" : ""}>${label}</option>`).join("")}</select></label></div>
       <div class="actions"><button class="primary big" data-action="start-practice">${practice ? "继续今日一练" : "开始今日一练"}</button><button class="secondary" data-view="chapters">浏览章节</button></div>
+      ${state.presetSub && state.presetSub !== "all" ? `<p class="range-hint">当前练习范围：${escapeHtml(state.presetChapter)} / ${escapeHtml(state.presetSub)}（${questions.filter((q) => q.project === state.project && q.chapter === state.presetChapter && q.sub === state.presetSub).length} 道题）<button class="text-button" data-action="clear-sub">清除小节范围</button></p>` : ""}
       <p id="home-notice" class="notice" hidden></p>
     </section>
     <section class="section"><div class="section-head"><h2>考试项目</h2><span class="muted">当前：${PROJECTS[state.project].name}</span></div>
@@ -173,7 +174,7 @@ function homeView() {
 function chaptersView() {
   const p = PROJECTS[state.project];
   return `<p class="eyebrow">章节浏览 / ${p.code}</p><h1>${p.name}</h1><p class="lede">按考试范围拆开的完整章节结构。每章都有配套讲义，建议先学习再练习。</p>
-    <section class="section"><div class="section-head"><h2>一级章节 <span class="muted">${p.chapters.length}</span></h2><button class="text-button" data-view="home">返回组卷</button></div><div class="chapter-list">${p.chapters.map((c, i) => `<details class="chapter-item"><summary><strong>${String(i + 1).padStart(2, "0")} · ${escapeHtml(c.name)}</strong><span>${questions.filter((q) => q.project === state.project && q.chapter === c.name).length} 道已导入题目</span></summary><div class="knowledge-list">${(c.children || []).map((child) => `<span>${escapeHtml(child)}</span>`).join("")}</div><div class="chapter-actions"><button class="secondary" data-chapter-practice="${escapeHtml(c.name)}">练习本章</button>${noteFor(c.name) ? `<button class="secondary" data-note-chapter="${escapeHtml(c.name)}">查看讲义</button>` : ""}</div></details>`).join("")}</div></section>`;
+    <section class="section"><div class="section-head"><h2>一级章节 <span class="muted">${p.chapters.length}</span></h2><button class="text-button" data-view="home">返回组卷</button></div><div class="chapter-list">${p.chapters.map((c, i) => `<details class="chapter-item"><summary><strong>${String(i + 1).padStart(2, "0")} · ${escapeHtml(c.name)}</strong><span>${questions.filter((q) => q.project === state.project && q.chapter === c.name).length} 道已导入题目</span></summary><div class="knowledge-list">${(c.children || []).map((child) => `<span>${escapeHtml(child)}<em>${questions.filter((q) => q.project === state.project && q.chapter === c.name && q.sub === child).length}题</em></span>`).join("")}</div><div class="chapter-actions"><button class="secondary" data-chapter-practice="${escapeHtml(c.name)}">练习本章</button>${noteFor(c.name) ? `<button class="secondary" data-note-chapter="${escapeHtml(c.name)}">查看讲义</button>` : ""}</div></details>`).join("")}</div></section>`;
 }
 
 /* ---------- 学习中心 ---------- */
@@ -211,7 +212,7 @@ function learnView() {
     const qty = questions.filter((q) => q.project === state.project && q.chapter === c.name).length;
     const subs = c.children || [];
     const subKey = NOTE_KEY[c.name] || c.name;
-    const subChips = subs.map((s) => `<button class="sub-chip ${state.subLearned?.[subKey]?.[s] ? "done" : ""}" data-note-chapter="${escapeHtml(c.name)}" data-note-sub="${escapeHtml(s)}">${state.subLearned?.[subKey]?.[s] ? "✓ " : ""}${escapeHtml(s)}</button>`).join("");
+    const subChips = subs.map((s) => { const sq = questions.filter((q) => q.project === state.project && q.chapter === c.name && q.sub === s).length; return `<button class="sub-chip ${state.subLearned?.[subKey]?.[s] ? "done" : ""}" data-note-chapter="${escapeHtml(c.name)}" data-note-sub="${escapeHtml(s)}" title="${sq} 道题">${state.subLearned?.[subKey]?.[s] ? "✓ " : ""}${escapeHtml(s)}<span class="sub-count">${sq}</span></button>`; }).join("");
     return `<div class="chapter-card"><button class="chapter-row ${disabled ? "disabled" : ""} ${learned ? "learned" : ""}" ${disabled ? "" : `data-note-chapter="${escapeHtml(c.name)}"`}><span class="chapter-no">${learned ? "✓" : String(i + 1).padStart(2, "0")}</span><span class="chapter-main"><strong>${escapeHtml(c.name)}</strong><span class="muted">${qty} 道题 · 答对 ${done} · ${note ? (learned ? "已学" : "待学习") : "讲义整理中"} · ${subs.length} 个小节</span></span><span class="chapter-arrow">›</span></button>${subs.length ? `<div class="sub-list">${subChips}</div>` : ""}</div>`;
   }).join("");
   return `<p class="eyebrow">学习中心 / ${p.code}</p><h1>先学会，再练题。</h1><p class="lede">每章有「考点 + 公式 + 方法 + 易错点 + 例题精讲」讲义，先学后练效率更高。</p>
@@ -239,7 +240,7 @@ function notesView() {
     ${note.methods?.length ? `<section class="section panel"><h3>解题方法</h3><ol class="method-list">${methodList}</ol></section>` : ""}
     ${note.pitfalls?.length ? `<section class="section panel"><h3>易错点提醒</h3><ul class="pitfall-list">${note.pitfalls.map((t) => `<li>${escapeHtml(t)}</li>`).join("")}</ul></section>` : ""}
     ${exampleList ? `<section class="section"><div class="section-head"><h2>例题精讲</h2><span class="muted">先自己算，再点开看完整过程</span></div><div class="chapter-list">${exampleList}</div></section>` : ""}
-    <div class="actions"><button class="primary" data-chapter-practice="${escapeHtml(chapter)}">练习本章</button><button class="secondary" data-view="learn">返回学习中心</button></div>`;
+    <div class="actions">${sub ? `<button class="primary" data-sub-practice="${escapeHtml(chapter)}" data-sub-name="${escapeHtml(sub)}">练习本小节：${escapeHtml(sub)}</button>` : `<button class="primary" data-chapter-practice="${escapeHtml(chapter)}">练习本章</button>`}<button class="secondary" data-view="learn">返回学习中心</button></div>`;
 }
 
 /* ---------- 练习 ---------- */
@@ -414,9 +415,11 @@ function bindEvents() {
   document.querySelector("#count-input")?.addEventListener("change", (event) => { state.count = Math.max(1, Math.min(7, Number(event.target.value) || 1)); save(); render(); });
   document.querySelector("#chapter-select")?.addEventListener("change", (event) => { state.presetChapter = event.target.value; save(); });
   document.querySelector("#difficulty-select")?.addEventListener("change", (event) => { state.presetDifficulty = event.target.value; save(); });
-  document.querySelectorAll("[data-chapter-practice]").forEach((el) => el.addEventListener("click", () => { state.presetChapter = el.dataset.chapterPractice; save(); view = "home"; render(); }));
+  document.querySelectorAll("[data-chapter-practice]").forEach((el) => el.addEventListener("click", () => { state.presetChapter = el.dataset.chapterPractice; state.presetSub = "all"; save(); view = "home"; render(); }));
+  document.querySelectorAll("[data-sub-practice]").forEach((el) => el.addEventListener("click", () => { state.presetChapter = el.dataset.subPractice; state.presetSub = el.dataset.subName; save(); view = "home"; render(); }));
   document.querySelectorAll("[data-note-chapter]").forEach((el) => el.addEventListener("click", () => { state.presetNoteChapter = el.dataset.noteChapter; state.presetNoteSub = el.dataset.noteSub || null; view = "notes"; render(); }));
   document.querySelector("[data-action='start-practice']")?.addEventListener("click", startPractice);
+  document.querySelector("[data-action='clear-sub']")?.addEventListener("click", () => { state.presetSub = "all"; save(); render(); });
   document.querySelector("[data-action='submit-answer']")?.addEventListener("click", submitAnswer);
   document.querySelectorAll("[data-action='essay-done'], [data-action='essay-giveup']").forEach((el) => el.addEventListener("click", () => submitEssay(el.dataset.question, el.dataset.action === "essay-done" ? "done" : "giveup")));
   document.querySelector("[data-action='next-question']")?.addEventListener("click", nextQuestion);
@@ -445,7 +448,7 @@ function bindEvents() {
 function startPractice() {
   const key = dailyKey();
   if (!state.practices[key]) {
-    const plan = buildDailyPlan({ questions, attempts: state.attempts, project: state.project, chapter: state.presetChapter || "all", count: state.count, now: Date.now(), difficulty: state.presetDifficulty || "all" });
+    const plan = buildDailyPlan({ questions, attempts: state.attempts, project: state.project, chapter: state.presetChapter || "all", sub: state.presetSub || "all", count: state.count, now: Date.now(), difficulty: state.presetDifficulty || "all" });
     if (plan.items.length === 0) {
       // 防呆：无可组卷题目时留在首页并展示原因，不进入白屏练习页
       const notice = document.querySelector("#home-notice");

@@ -289,3 +289,10 @@ select:focus, input:focus, textarea:focus { border-color: var(--teal); box-shado
 .sub-chip.active { background: var(--teal); border-color: var(--teal); color: #fff; }
 .sub-nav { display: flex; flex-wrap: wrap; align-items: center; gap: 7px; margin: 14px 0 4px; }
 .sub-nav-label { color: var(--muted); font-size: 12px; font-weight: 700; margin-right: 2px; }
+.sub-chip { display: inline-flex; align-items: center; gap: 5px; }
+.sub-count { font-size: 11px; font-weight: 700; background: var(--teal-soft); color: var(--teal-ink); border-radius: 99px; padding: 1px 7px; }
+.sub-chip.active .sub-count { background: rgba(255,255,255,.25); color: #fff; }
+.sub-chip.done .sub-count { background: #fff; color: var(--teal-ink); }
+.knowledge-list span em { font-style: normal; font-size: 11px; color: var(--teal-ink); background: var(--teal-soft); border-radius: 99px; padding: 0 7px; margin-left: 4px; }
+.range-hint { margin-top: 12px; font-size: 13px; color: var(--navy); background: var(--teal-soft); border: 1px solid #bfd7e4; border-radius: var(--radius-md); padding: 10px 12px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.range-hint .text-button { margin-left: auto; }

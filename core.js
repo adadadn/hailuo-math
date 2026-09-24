@@ -197,13 +197,13 @@
 
   /**
    * 自适应组卷。
-   * @param {{questions: Array, attempts: Object, project: string, chapter?: string, count: number, now?: number}} input
+   * @param {{questions: Array, attempts: Object, project: string, chapter?: string, sub?: string, count: number, now?: number}} input
    * @returns {{items: Array<{id: string, reason: string}>, chapter: string, notice: string}}
    *   items 为空时表示当前范围无可组卷题目，调用方应阻止创建题单。
    */
-  function buildDailyPlan({ questions, attempts, project, chapter = "all", count, now = Date.now(), difficulty = "all" }) {
+  function buildDailyPlan({ questions, attempts, project, chapter = "all", sub = "all", count, now = Date.now(), difficulty = "all" }) {
     const diffOk = DIFFICULTY_FILTERS[difficulty] || DIFFICULTY_FILTERS.all;
-    let pool = questions.filter((q) => q.project === project && q.reviewStatus === "approved" && (chapter === "all" || q.chapter === chapter) && diffOk(q));
+    let pool = questions.filter((q) => q.project === project && q.reviewStatus === "approved" && (chapter === "all" || q.chapter === chapter) && (sub === "all" || q.sub === sub) && diffOk(q));
     let notice = "";
 
     if (pool.length === 0) {
@@ -211,7 +211,7 @@
       const msg = chapter === "all"
         ? "当前项目还没有满足该难度要求的已审核题目，请更换难度后再试。"
         : "所选章节暂无满足该难度要求的已审核题目，请在章节范围中选择其他章节或「全部章节」，或更换难度后再试。";
-      return { items: [], chapter, notice: msg, fallback: true };
+      return { items: [], chapter, sub, notice: msg, fallback: true };
     }
 
     const cutoff = now - RECENT_WINDOW_MS;
