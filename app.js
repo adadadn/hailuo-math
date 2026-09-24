@@ -77,7 +77,7 @@ function render() {
   document.querySelector("#app").innerHTML = `
     <div class="app-shell">
       <header class="topbar"><div class="topbar-inner">
-        <a class="brand" href="#" data-view="home"><span class="brand-mark">螺</span><span class="brand-text"><strong>海螺游学</strong><small>自适应每日一练</small></span></a>
+        <a class="brand" href="#" data-view="home"><span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="1.15" fill="currentColor" stroke="none"/><path d="M12 13.2a1.2 1.2 0 0 1 1.2 1.2 3.2 3.2 0 0 1 -3.2 3.2 6.2 6.2 0 0 1 -6.2 -6.2 9.8 9.8 0 0 1 9.8 -9.8 10.2 10.2 0 0 1 10.2 10.2"/></svg></span><span class="brand-text"><strong>海螺游学</strong><small>自适应每日一练</small></span></a>
         <span class="topbar-day">${today().slice(5).replace("-", "/")}</span>
       </div></header>
       <main class="page">${main}</main>
