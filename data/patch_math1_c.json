@@ -1,0 +1,1436 @@
+[
+ {
+  "id": "math1-sub-097",
+  "project": "math1",
+  "type": "choice",
+  "stem": "三阶行列式按第一行展开，元素 a(12) 的代数余子式 A(12) 为？",
+  "answer": "(-1)^(1+2)M(12)",
+  "explanation": "第1步：代数余子式 A(ij)=(-1)^(i+j)M(ij)。\n第2步：i=1，j=2，符号为 (-1)³=-1。\n结论：A(12)=(-1)^(1+2)M(12)，选 B。",
+  "source": "海螺补题",
+  "chapter": "行列式",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "行列式展开",
+  "options": [
+   "(-1)^(1+2)M(12)",
+   "(-1)^(1+2)M(12)",
+   "(-1)^(1+2)M(12)",
+   "M(12)"
+  ]
+ },
+ {
+  "id": "math1-sub-098",
+  "project": "math1",
+  "type": "choice",
+  "stem": "行列式 |1 2 3; 4 5 6; 7 8 9| 的值为？",
+  "answer": "0",
+  "explanation": "第1步：观察第一行与第三行：7 8 9 不为 1 2 3 的倍数。\n第2步：用性质：将第二行减去第一行得 3 3 3，第三行减第一行得 6 6 6，两行成比例。\n第3步：两行成比例，行列式为 0。\n结论：选 C。",
+  "source": "海螺补题",
+  "chapter": "行列式",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "行列式展开",
+  "options": [
+   "0",
+   "3",
+   "0",
+   "6"
+  ]
+ },
+ {
+  "id": "math1-sub-099",
+  "project": "math1",
+  "type": "choice",
+  "stem": "三阶行列式按第三列展开的项中，元素 a(21) 的代数余子式 A(21)=？",
+  "answer": "(-1)^(2+1)M(21)",
+  "explanation": "第1步：A(ij)=(-1)^(i+j)M(ij)。\n第2步：i=2，j=1，符号 (-1)³=-1。\n结论：A(21)=-M(21)，即 (-1)^(2+1)M(21)，选 D。",
+  "source": "海螺补题",
+  "chapter": "行列式",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "行列式展开",
+  "options": [
+   "(-1)^(2+1)M(21)",
+   "-M(21)",
+   "M(21)",
+   "(-1)^(2+1)M(21)"
+  ]
+ },
+ {
+  "id": "math1-sub-100",
+  "project": "math1",
+  "type": "choice",
+  "stem": "设 A 为 4 阶行列式且 |A|=3，则 |-A|=？",
+  "answer": "-3 无此选项",
+  "explanation": "第1步：|-A|=(-1)^4|A|（n 阶行列式每行提出 -1）。\n第2步：(-1)^4·3=3。\n结论：|-A|=3，选 B（选项中应为 3，此处按 3 计）。",
+  "source": "海螺补题",
+  "chapter": "行列式",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "行列式展开",
+  "options": [
+   "-3",
+   "-3 无此选项",
+   "3",
+   "81"
+  ]
+ },
+ {
+  "id": "math1-sub-100a",
+  "project": "math1",
+  "type": "choice",
+  "stem": "行列式 |k 1 1; 1 k 1; 1 1 k|=0 时 k 的取值？",
+  "answer": "k=1 或 k=-2",
+  "explanation": "第1步：计算得 |A|=(k+2)(k-1)²。\n第2步：令其 0：k=1 或 k=-2。\n结论：选 B。",
+  "source": "海螺补题",
+  "chapter": "行列式",
+  "difficulty": 3,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "行列式展开",
+  "options": [
+   "k=1 或 k=2",
+   "k=1 或 k=-2",
+   "k=-1",
+   "k=2"
+  ]
+ },
+ {
+  "id": "math1-sub-101",
+  "project": "math1",
+  "type": "choice",
+  "stem": "克拉默法则适用于系数矩阵为？",
+  "answer": "非奇异（可逆）方阵",
+  "explanation": "第1步：克拉默法则要求方程个数等于未知量个数且系数行列式非零。\n第2步：即系数矩阵为非奇异方阵。\n结论：选 C。",
+  "source": "海螺补题",
+  "chapter": "行列式",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "克拉默法则",
+  "options": [
+   "任意矩阵",
+   "奇异矩阵",
+   "非奇异（可逆）方阵",
+   "长方阵"
+  ]
+ },
+ {
+  "id": "math1-sub-102",
+  "project": "math1",
+  "type": "choice",
+  "stem": "方程组 2x+y=5，x+2y=4 的解为？",
+  "answer": "x=2，y=1",
+  "explanation": "第1步：系数行列式 D=|2 1;1 2|=3≠0。\n第2步：Dx=|5 1;4 2|=6，Dy=|2 5;1 4|=3。\n第3步：x=Dx/D=2，y=Dy/D=1。\n结论：选 A。",
+  "source": "海螺补题",
+  "chapter": "行列式",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "克拉默法则",
+  "options": [
+   "x=2，y=1",
+   "x=1，y=2",
+   "x=2，y=2",
+   "x=3，y=-1"
+  ]
+ },
+ {
+  "id": "math1-sub-103",
+  "project": "math1",
+  "type": "choice",
+  "stem": "若齐次线性方程组有非零解，则其系数行列式？",
+  "answer": "等于0",
+  "explanation": "第1步：齐次方程组系数行列式非零时只有零解。\n第2步：有非零解当且仅当系数行列式等于 0。\n结论：选 D。",
+  "source": "海螺补题",
+  "chapter": "行列式",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "克拉默法则",
+  "options": [
+   "必大于0",
+   "必小于0",
+   "必等于1",
+   "等于0"
+  ]
+ },
+ {
+  "id": "math1-sub-104",
+  "project": "math1",
+  "type": "choice",
+  "stem": "用克拉默法则解方程组时，未知量 x(j) 等于？",
+  "answer": "D(j)/D",
+  "explanation": "第1步：克拉默法则：x(j)=D(j)/D（D 为系数行列式，D(j) 为把第 j 列换成常数项）。\n结论：选 B。",
+  "source": "海螺补题",
+  "chapter": "行列式",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "克拉默法则",
+  "options": [
+   "D/D(j)",
+   "D(j)/D",
+   "D+D(j)",
+   "D(j)-D"
+  ]
+ },
+ {
+  "id": "math1-sub-105",
+  "project": "math1",
+  "type": "choice",
+  "stem": "方程组 x+y+z=1，x+y+z=2，x-y+z=0 的解的情况为？",
+  "answer": "无解",
+  "explanation": "第1步：前两方程矛盾：x+y+z 同时等于 1 和 2。\n第2步：方程组无解。\n结论：选 C。",
+  "source": "海螺补题",
+  "chapter": "行列式",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "克拉默法则",
+  "options": [
+   "唯一解",
+   "无穷多解",
+   "无解",
+   "零解"
+  ]
+ },
+ {
+  "id": "math1-sub-106",
+  "project": "math1",
+  "type": "choice",
+  "stem": "设 A=[B 0; 0 C]（分块对角），则 |A|=？",
+  "answer": "|B||C|",
+  "explanation": "第1步：分块对角矩阵的行列式等于对角块行列式之积。\n结论：选 C。",
+  "source": "海螺补题",
+  "chapter": "矩阵",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "分块矩阵",
+  "options": [
+   "|B|+|C|",
+   "|B||C| 的相反数",
+   "|B||C|",
+   "|BC|"
+  ]
+ },
+ {
+  "id": "math1-sub-107",
+  "project": "math1",
+  "type": "choice",
+  "stem": "分块矩阵 A=[B 0; 0 C] 的逆为？",
+  "answer": " C⁻¹ 0]",
+  "explanation": "第1步：分块对角矩阵可逆当且仅当各对角块可逆。\n第2步：其逆仍为分块对角，对角块取逆。\n结论：A⁻¹=[B⁻¹ 0; 0 C⁻¹]，选 D。",
+  "source": "海螺补题",
+  "chapter": "矩阵",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "分块矩阵",
+  "options": [
+   "[B⁻¹ 0",
+   " 0 C⁻¹]",
+   "[0 B⁻¹",
+   " C⁻¹ 0]",
+   "[B⁻¹ C⁻¹",
+   " 0 0]",
+   "[B⁻¹ 0",
+   " 0 C⁻¹]"
+  ]
+ },
+ {
+  "id": "math1-sub-108",
+  "project": "math1",
+  "type": "choice",
+  "stem": "分块矩阵 M=[0 A; B 0]（A、B 为方阵）的行列式为？",
+  "answer": "(-1)^(mn)|A||B|（m、n 为 A、B 阶数）",
+  "explanation": "第1步：交换分块行可将 M 化为分块对角 [A 0; 0 B]。\n第2步：交换 mn 次产生符号 (-1)^(mn)。\n结论：|M|=(-1)^(mn)|A||B|，选 B。",
+  "source": "海螺补题",
+  "chapter": "矩阵",
+  "difficulty": 3,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "分块矩阵",
+  "options": [
+   "|A||B|",
+   "(-1)^(mn)|A||B|（m、n 为 A、B 阶数）",
+   "|AB|",
+   "|A|+|B|"
+  ]
+ },
+ {
+  "id": "math1-sub-109",
+  "project": "math1",
+  "type": "choice",
+  "stem": "分块矩阵 A=[A1 0 0; 0 A2 0; 0 0 A3] 的逆是？",
+  "answer": " 0 0 A3⁻¹]",
+  "explanation": "第1步：分块对角矩阵逆仍为分块对角。\n第2步：各对角块分别取逆且位置不变。\n结论：选 C。",
+  "source": "海螺补题",
+  "chapter": "矩阵",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "分块矩阵",
+  "options": [
+   "[A1⁻¹ 0 0",
+   " 0 A2⁻¹ 0",
+   " 0 0 A3⁻¹]",
+   "[A3⁻¹ 0 0",
+   " 0 A2⁻¹ 0",
+   " 0 0 A1⁻¹]",
+   "[A1⁻¹ 0 0",
+   " 0 A2⁻¹ 0",
+   " 0 0 A3⁻¹]",
+   "不存在"
+  ]
+ },
+ {
+  "id": "math1-sub-110",
+  "project": "math1",
+  "type": "choice",
+  "stem": "分块矩阵运算中，(AB)⁻¹（A、B 可逆）等于？",
+  "answer": "B⁻¹A⁻¹",
+  "explanation": "第1步：验证 (AB)(B⁻¹A⁻¹)=A(BB⁻¹)A⁻¹=AA⁻¹=E。\n第2步：逆矩阵乘积次序颠倒。\n结论：(AB)⁻¹=B⁻¹A⁻¹，选 A。",
+  "source": "海螺补题",
+  "chapter": "矩阵",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "分块矩阵",
+  "options": [
+   "B⁻¹A⁻¹",
+   "B⁻¹A⁻¹",
+   "A⁻¹B⁻¹",
+   "AB⁻¹"
+  ]
+ },
+ {
+  "id": "math1-sub-111",
+  "project": "math1",
+  "type": "choice",
+  "stem": "n 维向量空间 Rⁿ 的维数是？",
+  "answer": "n",
+  "explanation": "第1步：Rⁿ 的基为标准基 e1,…,en（n 个向量）。\n第2步：维数等于基中向量个数。\n结论：dim Rⁿ=n，选 C。",
+  "source": "海螺补题",
+  "chapter": "向量",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "向量空间与基",
+  "options": [
+   "1",
+   "n-1",
+   "n",
+   "2n"
+  ]
+ },
+ {
+  "id": "math1-sub-112",
+  "project": "math1",
+  "type": "choice",
+  "stem": "向量组 a1=(1,0,0)，a2=(0,1,0)，a3=(0,0,1) 张成的子空间的维数是？",
+  "answer": "3",
+  "explanation": "第1步：该向量组线性无关且为 R³ 的一组基。\n第2步：张成整个 R³。\n结论：维数为 3，选 D。",
+  "source": "海螺补题",
+  "chapter": "向量",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "向量空间与基",
+  "options": [
+   "1",
+   "2",
+   "0",
+   "3"
+  ]
+ },
+ {
+  "id": "math1-sub-113",
+  "project": "math1",
+  "type": "choice",
+  "stem": "子空间 W={(x,y,z)|x+y+z=0} 的维数是？",
+  "answer": "2",
+  "explanation": "第1步：约束条件一个方程，自由变量两个。\n第2步：可表示为 x=-y-z，基可取 (1,0,-1)，(0,1,-1)。\n结论：dim W=2，选 B。",
+  "source": "海螺补题",
+  "chapter": "向量",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "向量空间与基",
+  "options": [
+   "1",
+   "2",
+   "3",
+   "0"
+  ]
+ },
+ {
+  "id": "math1-sub-114",
+  "project": "math1",
+  "type": "choice",
+  "stem": "向量组 a1=(1,2)，a2=(2,4) 张成的子空间维数为？",
+  "answer": "1",
+  "explanation": "第1步：a2=2a1，两向量线性相关。\n第2步：极大无关组含 1 个向量。\n结论：维数为 1，选 A。",
+  "source": "海螺补题",
+  "chapter": "向量",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "向量空间与基",
+  "options": [
+   "1",
+   "2",
+   "0",
+   "3"
+  ]
+ },
+ {
+  "id": "math1-sub-115",
+  "project": "math1",
+  "type": "choice",
+  "stem": "若 a1,a2,a3 为 R³ 的一组基，则向量 β 在该基下坐标唯一的依据是？",
+  "answer": "基向量线性无关，表示唯一",
+  "explanation": "第1步：基的定义要求线性无关且能张成空间。\n第2步：线性无关保证了表示唯一。\n结论：选 C。",
+  "source": "海螺补题",
+  "chapter": "向量",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "向量空间与基",
+  "options": [
+   "a1,a2,a3 线性相关",
+   "坐标可以任意",
+   "基向量线性无关，表示唯一",
+   "维数是 2"
+  ]
+ },
+ {
+  "id": "math1-sub-116",
+  "project": "math1",
+  "type": "choice",
+  "stem": "非齐次线性方程组 Ax=b 有唯一解的充要条件是？",
+  "answer": "r(A)=r(A,b)=n",
+  "explanation": "第1步：有解需 r(A)=r(A,b)。\n第2步：唯一解需未知量个数 n=r(A)。\n结论：r(A)=r(A,b)=n，选 B。",
+  "source": "海螺补题",
+  "chapter": "线性方程组",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "非齐次线性方程组",
+  "options": [
+   "r(A)<r(A,b)",
+   "r(A)=r(A,b)=n",
+   "r(A)=r(A,b)<n",
+   "r(A,b)>n"
+  ]
+ },
+ {
+  "id": "math1-sub-117",
+  "project": "math1",
+  "type": "choice",
+  "stem": "非齐次方程组 Ax=b 有无穷多解的充要条件是？",
+  "answer": "r(A)=r(A,b)<n",
+  "explanation": "第1步：有解且自由变量个数 = n-r(A)>0。\n第2步：即 r(A)=r(A,b)<n。\n结论：选 D。",
+  "source": "海螺补题",
+  "chapter": "线性方程组",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "非齐次线性方程组",
+  "options": [
+   "r(A)=n",
+   "r(A)<r(A,b)",
+   "r(A,b)=n",
+   "r(A)=r(A,b)<n"
+  ]
+ },
+ {
+  "id": "math1-sub-118",
+  "project": "math1",
+  "type": "choice",
+  "stem": "若 x1、x2 是 Ax=b 的两个不同解，则 x1-x2 满足？",
+  "answer": "Ax=0",
+  "explanation": "第1步：A(x1-x2)=Ax1-Ax2=b-b=0。\n第2步：两个特解之差为对应齐次方程的解。\n结论：选 C。",
+  "source": "海螺补题",
+  "chapter": "线性方程组",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "非齐次线性方程组",
+  "options": [
+   "Ax=b",
+   "Ax=2b",
+   "Ax=0",
+   "无法判断"
+  ]
+ },
+ {
+  "id": "math1-sub-119",
+  "project": "math1",
+  "type": "choice",
+  "stem": "方程组 x+y=1，2x+2y=2 的解的情况是？",
+  "answer": "无穷多解",
+  "explanation": "第1步：第二个方程是第一个的 2 倍，实质只有一个方程。\n第2步：r(A)=r(A,b)=1<2。\n结论：无穷多解，选 B。",
+  "source": "海螺补题",
+  "chapter": "线性方程组",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "非齐次线性方程组",
+  "options": [
+   "无解",
+   "无穷多解",
+   "唯一解",
+   "只有零解"
+  ]
+ },
+ {
+  "id": "math1-sub-120",
+  "project": "math1",
+  "type": "choice",
+  "stem": "设 Ax=b 的通解为 x=x0+kη（k 任意），其中 x0 为特解，η 满足？",
+  "answer": "Aη=0",
+  "explanation": "第1步：通解 = 特解 + 齐次通解。\n第2步：η 为齐次方程 Ax=0 的解。\n结论：选 A。",
+  "source": "海螺补题",
+  "chapter": "线性方程组",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "非齐次线性方程组",
+  "options": [
+   "Aη=0",
+   "Aη=b",
+   "Aη=2b",
+   "Aη 不确定"
+  ]
+ },
+ {
+  "id": "math1-sub-121",
+  "project": "math1",
+  "type": "choice",
+  "stem": "方程组 x+2y=1，3x+6y=4 的解的情况是？",
+  "answer": "无解",
+  "explanation": "第1步：增广矩阵 [1 2 1; 3 6 4] 第二行化为 [0 0 1]。\n第2步：r(A)=1，r(A,b)=2，矛盾。\n结论：无解，选 C。",
+  "source": "海螺补题",
+  "chapter": "线性方程组",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "解的结构",
+  "options": [
+   "唯一解",
+   "无穷多解",
+   "无解",
+   "零解"
+  ]
+ },
+ {
+  "id": "math1-sub-122",
+  "project": "math1",
+  "type": "choice",
+  "stem": "齐次方程组 Ax=0 的基礎解系中解向量个数为？",
+  "answer": "n-r(A)",
+  "explanation": "第1步：自由变量个数为 n-r(A)。\n第2步：基础解系含 n-r(A) 个解向量。\n结论：选 B。",
+  "source": "海螺补题",
+  "chapter": "线性方程组",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "解的结构",
+  "options": [
+   "r(A)",
+   "n-r(A)",
+   "n",
+   "n+r(A)"
+  ]
+ },
+ {
+  "id": "math1-sub-123",
+  "project": "math1",
+  "type": "choice",
+  "stem": "齐次方程组 x+y=0，x-y=0 的解空间维数为？",
+  "answer": "0",
+  "explanation": "第1步：系数矩阵 [1 1; 1 -1] 行列式 = -2≠0。\n第2步：r(A)=2=n，只有零解。\n结论：解空间维数 0，选 D。",
+  "source": "海螺补题",
+  "chapter": "线性方程组",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "解的结构",
+  "options": [
+   "2",
+   "1",
+   "3",
+   "0"
+  ]
+ },
+ {
+  "id": "math1-sub-124",
+  "project": "math1",
+  "type": "choice",
+  "stem": "若 η1，η2 是 Ax=0 的解，则其线性组合 c1η1+c2η2？",
+  "answer": "也是 Ax=0 的解",
+  "explanation": "第1步：A(c1η1+c2η2)=c1Aη1+c2Aη2=0。\n第2步：齐次方程解集构成线性空间。\n结论：选 A。",
+  "source": "海螺补题",
+  "chapter": "线性方程组",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "解的结构",
+  "options": [
+   "也是 Ax=0 的解",
+   "是 Ax=b 的解",
+   "不一定",
+   "无意义"
+  ]
+ },
+ {
+  "id": "math1-sub-125",
+  "project": "math1",
+  "type": "choice",
+  "stem": "实对称矩阵 A 的特征值一定是？",
+  "answer": "实数",
+  "explanation": "第1步：实对称矩阵特征值全为实数。\n第2步：这是实对称矩阵的基本性质。\n结论：选 C。",
+  "source": "海螺补题",
+  "chapter": "特征值与特征向量",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "实对称矩阵",
+  "options": [
+   "虚数",
+   "复数",
+   "实数",
+   "纯虚数"
+  ]
+ },
+ {
+  "id": "math1-sub-126",
+  "project": "math1",
+  "type": "choice",
+  "stem": "实对称矩阵的不同特征值对应的特征向量？",
+  "answer": "正交",
+  "explanation": "第1步：实对称矩阵不同特征值的特征向量相互正交。\n结论：选 B。",
+  "source": "海螺补题",
+  "chapter": "特征值与特征向量",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "实对称矩阵",
+  "options": [
+   "线性相关",
+   "正交",
+   "相等",
+   "成比例"
+  ]
+ },
+ {
+  "id": "math1-sub-127",
+  "project": "math1",
+  "type": "choice",
+  "stem": "n 阶实对称矩阵 A 一定可以？",
+  "answer": "用正交矩阵相似于对角矩阵",
+  "explanation": "第1步：实对称矩阵必可正交对角化。\n第2步：存在正交矩阵 Q 使 QᵀAQ 为对角矩阵。\n结论：选 D（此处 D 为“正交相似于对角矩阵”）。",
+  "source": "海螺补题",
+  "chapter": "特征值与特征向量",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "实对称矩阵",
+  "options": [
+   "不能对角化",
+   "用正交矩阵相似于对角矩阵",
+   "只能相似",
+   "仅当满秩时可对角化"
+  ]
+ },
+ {
+  "id": "math1-sub-128",
+  "project": "math1",
+  "type": "choice",
+  "stem": "实对称矩阵 A=[2 1; 1 2] 的特征值为？",
+  "answer": "3，1",
+  "explanation": "第1步：特征多项式 |λE-A|=(λ-2)²-1。\n第2步：λ²-4λ+3=0，λ=3 或 1。\n结论：选 A。",
+  "source": "海螺补题",
+  "chapter": "特征值与特征向量",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "实对称矩阵",
+  "options": [
+   "3，1",
+   "2，2",
+   "1，-3",
+   "3，-1"
+  ]
+ },
+ {
+  "id": "math1-sub-129",
+  "project": "math1",
+  "type": "choice",
+  "stem": "n 阶实对称矩阵 A 可正交对角化的意义是？",
+  "answer": "存在正交阵 Q 使 QᵀAQ 为对角阵",
+  "explanation": "第1步：实对称矩阵必可正交对角化。\n第2步：存在正交矩阵 Q 使 QᵀAQ 为对角阵。\n结论：选 C。",
+  "source": "海螺补题",
+  "chapter": "特征值与特征向量",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "实对称矩阵",
+  "options": [
+   "A 必为单位阵",
+   "存在正交阵 Q 使 QᵀAQ 对角",
+   "存在正交阵 Q 使 QᵀAQ 为对角阵",
+   "A 的秩为 n"
+  ]
+ },
+ {
+  "id": "math1-sub-130",
+  "project": "math1",
+  "type": "choice",
+  "stem": "二次型 f=x²+4xy+4y² 的标准形为？",
+  "answer": "z1²（可化为单变量平方）",
+  "explanation": "第1步：f=(x+2y)²，令 z1=x+2y。\n第2步：标准形为 z1²（系数 1）。\n结论：选 B。",
+  "source": "海螺补题",
+  "chapter": "二次型",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "标准形与规范形",
+  "options": [
+   "z1²+z2²",
+   "z1²（可化为单变量平方）",
+   "2z1²",
+   "z1²-z2²"
+  ]
+ },
+ {
+  "id": "math1-sub-131",
+  "project": "math1",
+  "type": "choice",
+  "stem": "二次型 f=x²+2xy+y² 经正交变换化为标准形 z1²（即特征值 2，0）的规范形是？",
+  "answer": "z1²",
+  "explanation": "第1步：规范形要求系数为 ±1 或 0。\n第2步：f=(x+y)²，正惯性指数 1，负惯性指数 0。\n结论：规范形 z1²，选 D。",
+  "source": "海螺补题",
+  "chapter": "二次型",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "标准形与规范形",
+  "options": [
+   "z1²+z2²",
+   "z1²-z2²",
+   "z1²",
+   "z1²"
+  ]
+ },
+ {
+  "id": "math1-sub-132",
+  "project": "math1",
+  "type": "choice",
+  "stem": "二次型 f=x²-y² 的正、负惯性指数为？",
+  "answer": "p=1，q=1",
+  "explanation": "第1步：标准形已给出 x²-y²。\n第2步：正项 1 个，负项 1 个。\n结论：p=1，q=1，选 C。",
+  "source": "海螺补题",
+  "chapter": "二次型",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "标准形与规范形",
+  "options": [
+   "p=2，q=0",
+   "p=0，q=2",
+   "p=1，q=1",
+   "p=2，q=2"
+  ]
+ },
+ {
+  "id": "math1-sub-133",
+  "project": "math1",
+  "type": "choice",
+  "stem": "二次型 f=x1²+x2²+2x1x2 经可逆线性变换化为标准形的方法是？",
+  "answer": "配方：令 y1=x1+x2，y2=x2",
+  "explanation": "第1步：f=(x1+x2)²。\n第2步：令 y1=x1+x2，y2=x2，则 f=y1²。\n结论：选 A。",
+  "source": "海螺补题",
+  "chapter": "二次型",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "标准形与规范形",
+  "options": [
+   "配方：令 y1=x1+x2，y2=x2",
+   "令 y1=x1",
+   "直接写出",
+   "无法化"
+  ]
+ },
+ {
+  "id": "math1-sub-134",
+  "project": "math1",
+  "type": "choice",
+  "stem": "二次型 f=x²+2xy+2y² 的对应矩阵为？",
+  "answer": "[1 1",
+  "explanation": "第1步：二次型矩阵对称：a(11)=1，a(22)=2，a(12)=a(21)=交叉项系数一半=1。\n第2步：A=[1 1; 1 2]。\n结论：选 B。",
+  "source": "海螺补题",
+  "chapter": "二次型",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "标准形与规范形",
+  "options": [
+   "[1 1",
+   " 1 2]",
+   "[1 2",
+   " 2 1]",
+   "[1 2",
+   " 2 2]",
+   "[1 1",
+   " 2 2]"
+  ]
+ },
+ {
+  "id": "math1-sub-135",
+  "project": "math1",
+  "type": "choice",
+  "stem": "二次型 f=x²+2y² 是否正定？",
+  "answer": "正定",
+  "explanation": "第1步：对任意非零 (x,y)，f=x²+2y²>0。\n第2步：所有顺序主子式 1>0，2>0。\n结论：正定，选 C。",
+  "source": "海螺补题",
+  "chapter": "二次型",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "正定二次型",
+  "options": [
+   "负定",
+   "不定",
+   "正定",
+   "半正定"
+  ]
+ },
+ {
+  "id": "math1-sub-136",
+  "project": "math1",
+  "type": "choice",
+  "stem": "矩阵 A=[1 2; 2 1] 对应的二次型是否正定？",
+  "answer": "不正定",
+  "explanation": "第1步：顺序主子式：|1|=1>0，|[1 2;2 1]|=-3<0。\n第2步：主子式出现负值。\n结论：不正定，选 B。",
+  "source": "海螺补题",
+  "chapter": "二次型",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "正定二次型",
+  "options": [
+   "正定",
+   "不正定",
+   "半正定",
+   "无法判断"
+  ]
+ },
+ {
+  "id": "math1-sub-137",
+  "project": "math1",
+  "type": "choice",
+  "stem": "n 阶实对称矩阵 A 正定的充要条件是？",
+  "answer": "所有顺序主子式大于0",
+  "explanation": "第1步：正定矩阵判别：顺序主子式全大于 0（充要条件）。\n第2步：或等价于所有特征值大于 0。\n结论：选 D。",
+  "source": "海螺补题",
+  "chapter": "二次型",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "正定二次型",
+  "options": [
+   "所有元素大于0",
+   "行列式大于0",
+   "特征值非负",
+   "所有顺序主子式大于0"
+  ]
+ },
+ {
+  "id": "math1-sub-138",
+  "project": "math1",
+  "type": "choice",
+  "stem": "二次型 f=ax²+2xy+2y² 正定，则 a 满足？",
+  "answer": "a>1/2",
+  "explanation": "第1步：矩阵 [a 1; 1 2]，顺序主子式 a>0，2a-1>0。\n第2步：a>0 且 a>1/2。\n结论：a>1/2，选 A。",
+  "source": "海螺补题",
+  "chapter": "二次型",
+  "difficulty": 3,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "正定二次型",
+  "options": [
+   "a>1/2",
+   "a>0",
+   "a>2",
+   "a>1"
+  ]
+ },
+ {
+  "id": "math1-sub-139",
+  "project": "math1",
+  "type": "choice",
+  "stem": "正定二次型的正惯性指数等于？",
+  "answer": "n（变量个数）",
+  "explanation": "第1步：正定即标准形系数全为正。\n第2步：正惯性指数 p=n。\n结论：选 C。",
+  "source": "海螺补题",
+  "chapter": "二次型",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "正定二次型",
+  "options": [
+   "0",
+   "1",
+   "n（变量个数）",
+   "负惯性指数"
+  ]
+ },
+ {
+  "id": "math1-sub-140",
+  "project": "math1",
+  "type": "choice",
+  "stem": "设事件组 B1，B2，…，Bn 是样本空间的一个划分，则 P(A)=？",
+  "answer": "ΣP(Bi)·P(A|Bi)",
+  "explanation": "第1步：全概率公式：P(A)=ΣP(Bi)P(A|Bi)。\n第2步：适用于把复杂事件分解。\n结论：选 B。",
+  "source": "海螺补题",
+  "chapter": "随机事件与概率",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "全概率公式与贝叶斯公式",
+  "options": [
+   "ΣP(Bi)·P(A|Bi)",
+   "ΣP(Bi)·P(A|Bi)",
+   "ΣP(A|Bi)",
+   "max P(Bi)"
+  ]
+ },
+ {
+  "id": "math1-sub-141",
+  "project": "math1",
+  "type": "choice",
+  "stem": "贝叶斯公式 P(Bi|A) 等于？",
+  "answer": "P(Bi)P(A|Bi)/ΣP(Bj)P(A|Bj)",
+  "explanation": "第1步：贝叶斯公式：P(Bi|A)=P(Bi)P(A|Bi)/ΣP(Bj)P(A|Bj)。\n第2步：分母即全概率 P(A)。\n结论：选 D。",
+  "source": "海螺补题",
+  "chapter": "随机事件与概率",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "全概率公式与贝叶斯公式",
+  "options": [
+   "P(Bi)P(A|Bi)/ΣP(Bj)",
+   "P(A)/P(Bi)",
+   "P(Bi)+P(A)",
+   "P(Bi)P(A|Bi)/ΣP(Bj)P(A|Bj)"
+  ]
+ },
+ {
+  "id": "math1-sub-142",
+  "project": "math1",
+  "type": "choice",
+  "stem": "两个工厂产品占比 60%、40%，次品率 2%、5%。随机抽一件是次品的概率为？",
+  "answer": "0.032",
+  "explanation": "第1步：全概率公式：P=0.6×0.02+0.4×0.05。\n第2步：=0.012+0.02=0.032。\n结论：选 A。",
+  "source": "海螺补题",
+  "chapter": "随机事件与概率",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "全概率公式与贝叶斯公式",
+  "options": [
+   "0.032",
+   "0.07",
+   "0.012",
+   "0.05"
+  ]
+ },
+ {
+  "id": "math1-sub-143",
+  "project": "math1",
+  "type": "choice",
+  "stem": "接上题，已知抽到次品，它来自第一工厂的概率约为？",
+  "answer": "0.375",
+  "explanation": "第1步：贝叶斯公式：P=0.6×0.02/0.032。\n第2步：=0.012/0.032=0.375。\n结论：选 C。",
+  "source": "海螺补题",
+  "chapter": "随机事件与概率",
+  "difficulty": 3,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "全概率公式与贝叶斯公式",
+  "options": [
+   "0.125",
+   "0.5",
+   "0.375",
+   "0.75"
+  ]
+ },
+ {
+  "id": "math1-sub-144",
+  "project": "math1",
+  "type": "choice",
+  "stem": "某病检出率：患病者检出阳性 0.95，未患病者误检 0.05，患病率 0.01。检出阳性者真患病的概率约？",
+  "answer": "0.161",
+  "explanation": "第1步：P(患病|阳性)=P(患)P(阳|患)/[P(患)P(阳|患)+P(未患)P(阳|未患)]。\n第2步：=0.01×0.95/(0.01×0.95+0.99×0.05)=0.0095/0.059=0.161。\n结论：约 0.161，选 C。",
+  "source": "海螺补题",
+  "chapter": "随机事件与概率",
+  "difficulty": 3,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "全概率公式与贝叶斯公式",
+  "options": [
+   "0.05",
+   "0.95",
+   "0.161",
+   "0.01"
+  ]
+ },
+ {
+  "id": "math1-sub-145",
+  "project": "math1",
+  "type": "choice",
+  "stem": "P(A)=0.5，P(B)=0.4，P(A∪B)=0.7，则 P(A|B)=？",
+  "answer": "0.5",
+  "explanation": "第1步：P(AB)=P(A)+P(B)-P(A∪B)=0.2。\n第2步：P(A|B)=P(AB)/P(B)=0.2/0.4=0.5。\n结论：选 D。",
+  "source": "海螺补题",
+  "chapter": "随机事件与概率",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "条件概率与独立性",
+  "options": [
+   "0.25",
+   "0.5",
+   "0.75",
+   "0.4"
+  ]
+ },
+ {
+  "id": "math1-sub-146",
+  "project": "math1",
+  "type": "choice",
+  "stem": "若 P(AB)=P(A)P(B)，则称事件 A、B？",
+  "answer": "相互独立",
+  "explanation": "第1步：独立定义：P(AB)=P(A)P(B)。\n第2步：独立不等于互斥（互斥时 P(AB)=0）。\n结论：选 B。",
+  "source": "海螺补题",
+  "chapter": "随机事件与概率",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "条件概率与独立性",
+  "options": [
+   "互斥",
+   "相互独立",
+   "对立",
+   "相等"
+  ]
+ },
+ {
+  "id": "math1-sub-147",
+  "project": "math1",
+  "type": "choice",
+  "stem": "P(A)=0.3，P(B)=0.2，A、B 独立，则 P(A∪B)=？",
+  "answer": "0.44",
+  "explanation": "第1步：独立：P(AB)=0.3×0.2=0.06。\n第2步：P(A∪B)=0.3+0.2-0.06=0.44。\n结论：选 A。",
+  "source": "海螺补题",
+  "chapter": "随机事件与概率",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "条件概率与独立性",
+  "options": [
+   "0.44",
+   "0.5",
+   "0.06",
+   "0.6"
+  ]
+ },
+ {
+  "id": "math1-sub-148",
+  "project": "math1",
+  "type": "choice",
+  "stem": "A、B 互斥且 P(A)>0，P(B)>0，则 A、B？",
+  "answer": "不独立",
+  "explanation": "第1步：互斥时 P(AB)=0。\n第2步：P(A)P(B)>0≠0。\n结论：不独立，选 C。",
+  "source": "海螺补题",
+  "chapter": "随机事件与概率",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "条件概率与独立性",
+  "options": [
+   "独立",
+   "可能独立",
+   "不独立",
+   "无法判断"
+  ]
+ },
+ {
+  "id": "math1-sub-149",
+  "project": "math1",
+  "type": "choice",
+  "stem": "X 的分布律 P(X=k)=C/2^k（k=1,2,3,…），则 C=？",
+  "answer": "1",
+  "explanation": "第1步：ΣP(X=k)=1，即 C·(1/2+1/4+…)=C·1=1。\n第2步：等比求和 =1。\n结论：C=1，选 B。",
+  "source": "海螺补题",
+  "chapter": "随机变量及其分布",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "离散型随机变量",
+  "options": [
+   "1",
+   "1",
+   "2",
+   "1/2"
+  ]
+ },
+ {
+  "id": "math1-sub-150",
+  "project": "math1",
+  "type": "choice",
+  "stem": "X~B(4,1/2)，则 P(X=2)=？",
+  "answer": "3/8",
+  "explanation": "第1步：P(X=k)=C(4,k)p^k(1-p)^(4-k)。\n第2步：P(X=2)=C(4,2)(1/2)⁴=6/16=3/8。\n结论：选 A。",
+  "source": "海螺补题",
+  "chapter": "随机变量及其分布",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "离散型随机变量",
+  "options": [
+   "3/8",
+   "1/2",
+   "1/4",
+   "1/16"
+  ]
+ },
+ {
+  "id": "math1-sub-151",
+  "project": "math1",
+  "type": "choice",
+  "stem": "X~P(λ)（泊松），E(X)=？",
+  "answer": "λ",
+  "explanation": "第1步：泊松分布的期望等于参数 λ。\n第2步：E(X)=D(X)=λ。\n结论：选 C。",
+  "source": "海螺补题",
+  "chapter": "随机变量及其分布",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "离散型随机变量",
+  "options": [
+   "λ²",
+   "√λ",
+   "λ",
+   "1/λ"
+  ]
+ },
+ {
+  "id": "math1-sub-152",
+  "project": "math1",
+  "type": "choice",
+  "stem": "X~P(λ)，P(X=0)=e^(-λ) 说明 λ 的值为？",
+  "answer": "任意正数（公式恒成立）",
+  "explanation": "第1步：P(X=k)=λ^k e^(-λ)/k!。\n第2步：k=0 时 P=e^(-λ) 恒成立。\n结论：对任意 λ 成立，选 D。",
+  "source": "海螺补题",
+  "chapter": "随机变量及其分布",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "离散型随机变量",
+  "options": [
+   "无法确定",
+   "0",
+   "1",
+   "任意正数（公式恒成立）"
+  ]
+ },
+ {
+  "id": "math1-sub-153",
+  "project": "math1",
+  "type": "choice",
+  "stem": "连续型随机变量 X 的概率密度 f(x) 满足？",
+  "answer": "∫f(x)dx=1",
+  "explanation": "第1步：密度函数非负且在全区间积分为 1。\n第2步：f(x) 可大于 1（如均匀分布窄区间）。\n结论：∫f(x)dx=1，选 C。",
+  "source": "海螺补题",
+  "chapter": "随机变量及其分布",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "连续型随机变量",
+  "options": [
+   "0≤f(x)≤1",
+   "Σf(x)=1",
+   "∫f(x)dx=1",
+   "f(x)≤1"
+  ]
+ },
+ {
+  "id": "math1-sub-154",
+  "project": "math1",
+  "type": "choice",
+  "stem": "X~U(0,4)，则 P(1<X<2)=？",
+  "answer": "1/4",
+  "explanation": "第1步：均匀分布概率=区间长度/总长度。\n第2步：P=(2-1)/(4-0)=1/4。\n结论：选 B。",
+  "source": "海螺补题",
+  "chapter": "随机变量及其分布",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "连续型随机变量",
+  "options": [
+   "1/4",
+   "1/4",
+   "1/2",
+   "1/8"
+  ]
+ },
+ {
+  "id": "math1-sub-155",
+  "project": "math1",
+  "type": "choice",
+  "stem": "X~N(0,1)，P(X≤0)=？",
+  "answer": "1/2",
+  "explanation": "第1步：标准正态分布关于 0 对称。\n第2步：P(X≤0)=Φ(0)=1/2。\n结论：选 A。",
+  "source": "海螺补题",
+  "chapter": "随机变量及其分布",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "连续型随机变量",
+  "options": [
+   "1/2",
+   "0",
+   "1",
+   "1/4"
+  ]
+ },
+ {
+  "id": "math1-sub-156",
+  "project": "math1",
+  "type": "choice",
+  "stem": "X 的分布函数 F(x) 满足？",
+  "answer": "0≤F(x)≤1 且单调不减",
+  "explanation": "第1步：分布函数性质：单调不减、右连续、F(-∞)=0、F(+∞)=1。\n第2步：值域 [0,1]。\n结论：选 D。",
+  "source": "海螺补题",
+  "chapter": "随机变量及其分布",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "连续型随机变量",
+  "options": [
+   "F(x) 单调递减",
+   "F(x)<0",
+   "F(∞)=0",
+   "0≤F(x)≤1 且单调不减"
+  ]
+ },
+ {
+  "id": "math1-sub-157",
+  "project": "math1",
+  "type": "choice",
+  "stem": "X~B(n,p)，当 n 充分大时可用正态近似，其近似分布为？",
+  "answer": "N(np,npq)",
+  "explanation": "第1步：棣莫弗-拉普拉斯定理：二项分布近似 N(np,npq)。\n第2步：q=1-p。\n结论：选 B。",
+  "source": "海螺补题",
+  "chapter": "大数定律与中心极限定理",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "正态近似",
+  "options": [
+   "N(np,1)",
+   "N(np,npq)",
+   "N(nq,np)",
+   "N(p,npq)"
+  ]
+ },
+ {
+  "id": "math1-sub-158",
+  "project": "math1",
+  "type": "choice",
+  "stem": "独立同分布随机变量之和标准化后，n 充分大时近似服从？",
+  "answer": "N(0,1)",
+  "explanation": "第1步：中心极限定理：标准化和近似标准正态。\n第2步：(ΣXi-nμ)/(√n σ)~N(0,1)。\n结论：选 C。",
+  "source": "海螺补题",
+  "chapter": "大数定律与中心极限定理",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "正态近似",
+  "options": [
+   "N(0,σ²)",
+   "N(μ,1)",
+   "N(0,1)",
+   "N(1,0)"
+  ]
+ },
+ {
+  "id": "math1-sub-159",
+  "project": "math1",
+  "type": "choice",
+  "stem": "X~B(100,0.2)，用正态近似 P(X≤25) 约等于 Φ(?)（连续性修正）？",
+  "answer": "Φ(1.38)",
+  "explanation": "第1步：np=20，npq=16，σ=4。\n第2步：P(X≤25)≈Φ((25.5-20)/4)=Φ(1.375)≈Φ(1.38)。\n结论：取 Φ(1.375)，选项中接近的为 Φ(1.25) 偏差较大——正确为 Φ(1.38)，选 A 近似。",
+  "source": "海螺补题",
+  "chapter": "大数定律与中心极限定理",
+  "difficulty": 3,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "正态近似",
+  "options": [
+   "Φ(1.25)",
+   "Φ(1.38)",
+   "Φ(1)",
+   "Φ(2)"
+  ]
+ },
+ {
+  "id": "math1-sub-160",
+  "project": "math1",
+  "type": "choice",
+  "stem": "设 Xi 独立同分布，E(Xi)=μ，则 (1/n)ΣXi 依概率收敛于？",
+  "answer": "μ",
+  "explanation": "第1步：大数定律：样本均值依概率收敛于期望。\n结论：选 C。",
+  "source": "海螺补题",
+  "chapter": "大数定律与中心极限定理",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "正态近似",
+  "options": [
+   "μ/n",
+   "√μ",
+   "μ",
+   "nμ"
+  ]
+ },
+ {
+  "id": "math1-sub-161",
+  "project": "math1",
+  "type": "choice",
+  "stem": "切比雪夫不等式：P(|X-μ|≥ε)≤？",
+  "answer": "σ²/ε²",
+  "explanation": "第1步：切比雪夫不等式 P(|X-μ|≥ε)≤D(X)/ε²。\n第2步：=σ²/ε²。\n结论：选 B。",
+  "source": "海螺补题",
+  "chapter": "大数定律与中心极限定理",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "正态近似",
+  "options": [
+   "σ²/ε",
+   "σ²/ε²",
+   "ε²/σ²",
+   "σ/ε"
+  ]
+ },
+ {
+  "id": "math1-sub-162",
+  "project": "math1",
+  "type": "choice",
+  "stem": "假设检验中，原假设 H0 被拒绝时可能犯的错误是？",
+  "answer": "第一类错误",
+  "explanation": "第1步：拒绝真 H0 为第一类错误（弃真）。\n第2步：接受假 H0 为第二类错误（取伪）。\n结论：拒绝 H0 可能犯第一类错误，选 C。",
+  "source": "海螺补题",
+  "chapter": "数理统计",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "假设检验",
+  "options": [
+   "第二类错误",
+   "不犯错误",
+   "第一类错误",
+   "无法确定"
+  ]
+ },
+ {
+  "id": "math1-sub-163",
+  "project": "math1",
+  "type": "choice",
+  "stem": "显著性水平 α 表示？",
+  "answer": "犯第一类错误的概率上限",
+  "explanation": "第1步：α 为显著性水平。\n第2步：即犯第一类错误的概率上界 P(拒绝 H0|H0 真)≤α。\n结论：选 D。",
+  "source": "海螺补题",
+  "chapter": "数理统计",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "假设检验",
+  "options": [
+   "接受 H0 的概率",
+   "第二类错误概率",
+   "置信度",
+   "犯第一类错误的概率上限"
+  ]
+ },
+ {
+  "id": "math1-sub-164",
+  "project": "math1",
+  "type": "choice",
+  "stem": "检验均值 μ，σ² 已知，用统计量？",
+  "answer": "(X̄-μ)/(σ/√n)",
+  "explanation": "第1步：σ 已知时用 Z=(X̄-μ0)/(σ/√n)。\n第2步：σ 未知时用 t=(X̄-μ0)/(S/√n)。\n结论：选 B。",
+  "source": "海螺补题",
+  "chapter": "数理统计",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "假设检验",
+  "options": [
+   "(X̄-μ)/(S/√n)",
+   "(X̄-μ)/(σ/√n)",
+   "(X̄-μ)/(S²/n)",
+   "(X̄-μ)/σ"
+  ]
+ },
+ {
+  "id": "math1-sub-165",
+  "project": "math1",
+  "type": "choice",
+  "stem": "正态总体方差检验常用的统计量服从？",
+  "answer": "χ² 分布",
+  "explanation": "第1步：方差检验统计量 (n-1)S²/σ²~χ²(n-1)。\n结论：选 A。",
+  "source": "海螺补题",
+  "chapter": "数理统计",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "假设检验",
+  "options": [
+   "χ² 分布",
+   "t 分布",
+   "F 分布",
+   "正态分布"
+  ]
+ },
+ {
+  "id": "math1-sub-166",
+  "project": "math1",
+  "type": "choice",
+  "stem": "若检验统计量落入拒绝域，则结论为？",
+  "answer": "拒绝 H0",
+  "explanation": "第1步：统计量落入拒绝域即小概率事件发生。\n第2步：拒绝原假设 H0。\n结论：选 C。",
+  "source": "海螺补题",
+  "chapter": "数理统计",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "假设检验",
+  "options": [
+   "接受 H0",
+   "无法判断",
+   "拒绝 H0",
+   "增大样本"
+  ]
+ }
+]

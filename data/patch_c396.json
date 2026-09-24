@@ -1,0 +1,622 @@
+[
+ {
+  "id": "c396-sub-401",
+  "project": "calc396",
+  "type": "choice",
+  "stem": "曲线 y=x² 与 y=x 所围图形的面积是？",
+  "answer": "1/6",
+  "explanation": "第1步：求交点：x²=x 得 x=0,1。\n第2步：面积 S=∫(0,1)(x-x²)dx。\n第3步：=[x²/2-x³/3](0,1)=1/2-1/3=1/6。\n结论：选 C。",
+  "source": "海螺补题",
+  "chapter": "一元函数积分学",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "积分应用",
+  "options": [
+   "1/3",
+   "1/2",
+   "1/6",
+   "1/4"
+  ]
+ },
+ {
+  "id": "c396-sub-402",
+  "project": "calc396",
+  "type": "choice",
+  "stem": "曲线 y=√x 与 y=x 所围图形的面积为？",
+  "answer": "1/6",
+  "explanation": "第1步：交点：√x=x 得 x=0,1。\n第2步：S=∫(0,1)(√x-x)dx。\n第3步：=[2/3·x^(3/2)-x²/2](0,1)=2/3-1/2=1/6。\n结论：选 A。",
+  "source": "海螺补题",
+  "chapter": "一元函数积分学",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "积分应用",
+  "options": [
+   "1/6",
+   "1/3",
+   "1/2",
+   "2/3"
+  ]
+ },
+ {
+  "id": "c396-sub-403",
+  "project": "calc396",
+  "type": "choice",
+  "stem": "由曲线 y=√x、x 轴与直线 x=1 围成的图形绕 x 轴旋转所得旋转体体积为？",
+  "answer": "π/2",
+  "explanation": "第1步：绕 x 轴旋转体积 V=π∫(a,b) y² dx。\n第2步：V=π∫(0,1) x dx=π·[x²/2](0,1)。\n结论：V=π/2，选 B。",
+  "source": "海螺补题",
+  "chapter": "一元函数积分学",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "积分应用",
+  "options": [
+   "π/3",
+   "π/2",
+   "π",
+   "π/4"
+  ]
+ },
+ {
+  "id": "c396-sub-404",
+  "project": "calc396",
+  "type": "choice",
+  "stem": "半径为 R 的圆的周长用定积分弧长公式计算的结果是？",
+  "answer": "2πR",
+  "explanation": "第1步：弧长公式 s=∫√(1+(y')²)dx 或参数式 ∫√((x')²+(y')²)dt。\n第2步：圆的参数方程 x=Rcos t，y=Rsin t，t∈[0,2π]。\n第3步：s=∫(0,2π) R dt=2πR。\n结论：选 D。",
+  "source": "海螺补题",
+  "chapter": "一元函数积分学",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "积分应用",
+  "options": [
+   "πR",
+   "2R",
+   "πR²",
+   "2πR"
+  ]
+ },
+ {
+  "id": "c396-sub-405",
+  "project": "calc396",
+  "type": "choice",
+  "stem": "函数 f(x)=x 在 [0,2] 上的平均值为？",
+  "answer": "1",
+  "explanation": "第1步：函数在区间上的平均值 =(1/(b-a))∫(a,b) f(x)dx。\n第2步：=(1/2)∫(0,2) x dx=(1/2)·2=1。\n结论：选 C。",
+  "source": "海螺补题",
+  "chapter": "一元函数积分学",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "积分应用",
+  "options": [
+   "1/2",
+   "2/3",
+   "1",
+   "3/2"
+  ]
+ },
+ {
+  "id": "c396-sub-406",
+  "project": "calc396",
+  "type": "choice",
+  "stem": "曲线 y=x² 与 y=2-x² 所围图形的面积为？",
+  "answer": "8/3",
+  "explanation": "第1步：交点：x²=2-x² 得 x=±1。\n第2步：S=∫(-1,1)(2-2x²)dx。\n第3步：=[2x-2x³/3](-1,1)=4-4/3=8/3。\n结论：选 A。",
+  "source": "海螺补题",
+  "chapter": "一元函数积分学",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "积分应用",
+  "options": [
+   "8/3",
+   "4/3",
+   "16/3",
+   "2"
+  ]
+ },
+ {
+  "id": "c396-sub-407",
+  "project": "calc396",
+  "type": "choice",
+  "stem": "P(A)=0.5，P(B)=0.4，P(A∪B)=0.7，则 P(A|B)=？",
+  "answer": "0.5",
+  "explanation": "第1步：P(AB)=P(A)+P(B)-P(A∪B)=0.2。\n第2步：P(A|B)=P(AB)/P(B)=0.2/0.4=0.5。\n结论：选 D。",
+  "source": "海螺补题",
+  "chapter": "随机事件与概率",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "条件概率",
+  "options": [
+   "0.25",
+   "0.5",
+   "0.75",
+   "0.4"
+  ]
+ },
+ {
+  "id": "c396-sub-408",
+  "project": "calc396",
+  "type": "choice",
+  "stem": "若 P(AB)=P(A)P(B)，则称事件 A、B？",
+  "answer": "相互独立",
+  "explanation": "第1步：独立定义：P(AB)=P(A)P(B)。\n第2步：独立不等于互斥（互斥时 P(AB)=0）。\n结论：选 B。",
+  "source": "海螺补题",
+  "chapter": "随机事件与概率",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "条件概率",
+  "options": [
+   "互斥",
+   "相互独立",
+   "对立",
+   "相等"
+  ]
+ },
+ {
+  "id": "c396-sub-409",
+  "project": "calc396",
+  "type": "choice",
+  "stem": "P(A)=0.3，P(B)=0.2，A、B 独立，则 P(A∪B)=？",
+  "answer": "0.44",
+  "explanation": "第1步：独立：P(AB)=0.3×0.2=0.06。\n第2步：P(A∪B)=0.3+0.2-0.06=0.44。\n结论：选 A。",
+  "source": "海螺补题",
+  "chapter": "随机事件与概率",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "条件概率",
+  "options": [
+   "0.44",
+   "0.5",
+   "0.06",
+   "0.6"
+  ]
+ },
+ {
+  "id": "c396-sub-410",
+  "project": "calc396",
+  "type": "choice",
+  "stem": "A、B 互斥且 P(A)>0，P(B)>0，则 A、B？",
+  "answer": "不独立",
+  "explanation": "第1步：互斥时 P(AB)=0。\n第2步：P(A)P(B)>0≠0。\n结论：不独立，选 C。",
+  "source": "海螺补题",
+  "chapter": "随机事件与概率",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "条件概率",
+  "options": [
+   "独立",
+   "可能独立",
+   "不独立",
+   "无法判断"
+  ]
+ },
+ {
+  "id": "c396-sub-411",
+  "project": "calc396",
+  "type": "choice",
+  "stem": "方程组 x+2y=1，3x+6y=4 的解的情况是？",
+  "answer": "无解",
+  "explanation": "第1步：增广矩阵 [1 2 1; 3 6 4] 第二行化为 [0 0 1]。\n第2步：r(A)=1，r(A,b)=2，矛盾。\n结论：无解，选 C。",
+  "source": "海螺补题",
+  "chapter": "向量与线性方程组",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "解的结构",
+  "options": [
+   "唯一解",
+   "无穷多解",
+   "无解",
+   "零解"
+  ]
+ },
+ {
+  "id": "c396-sub-412",
+  "project": "calc396",
+  "type": "choice",
+  "stem": "齐次方程组 Ax=0 的基礎解系中解向量个数为？",
+  "answer": "n-r(A)",
+  "explanation": "第1步：自由变量个数为 n-r(A)。\n第2步：基础解系含 n-r(A) 个解向量。\n结论：选 B。",
+  "source": "海螺补题",
+  "chapter": "向量与线性方程组",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "解的结构",
+  "options": [
+   "r(A)",
+   "n-r(A)",
+   "n",
+   "n+r(A)"
+  ]
+ },
+ {
+  "id": "c396-sub-413",
+  "project": "calc396",
+  "type": "choice",
+  "stem": "齐次方程组 x+y=0，x-y=0 的解空间维数为？",
+  "answer": "0",
+  "explanation": "第1步：系数矩阵 [1 1; 1 -1] 行列式 = -2≠0。\n第2步：r(A)=2=n，只有零解。\n结论：解空间维数 0，选 D。",
+  "source": "海螺补题",
+  "chapter": "向量与线性方程组",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "解的结构",
+  "options": [
+   "2",
+   "1",
+   "3",
+   "0"
+  ]
+ },
+ {
+  "id": "c396-sub-414",
+  "project": "calc396",
+  "type": "choice",
+  "stem": "若 η1，η2 是 Ax=0 的解，则其线性组合 c1η1+c2η2？",
+  "answer": "也是 Ax=0 的解",
+  "explanation": "第1步：A(c1η1+c2η2)=c1Aη1+c2Aη2=0。\n第2步：齐次方程解集构成线性空间。\n结论：选 A。",
+  "source": "海螺补题",
+  "chapter": "向量与线性方程组",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "解的结构",
+  "options": [
+   "也是 Ax=0 的解",
+   "是 Ax=b 的解",
+   "不一定",
+   "无意义"
+  ]
+ },
+ {
+  "id": "c396-sub-415",
+  "project": "calc396",
+  "type": "choice",
+  "stem": "X 的分布律 P(X=k)=C/2^k（k=1,2,3,…），则 C=？",
+  "answer": "1",
+  "explanation": "第1步：ΣP(X=k)=1，即 C·(1/2+1/4+…)=C·1=1。\n第2步：等比求和 =1。\n结论：C=1，选 B。",
+  "source": "海螺补题",
+  "chapter": "随机变量及其分布",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "离散型随机变量",
+  "options": [
+   "1",
+   "1",
+   "2",
+   "1/2"
+  ]
+ },
+ {
+  "id": "c396-sub-416",
+  "project": "calc396",
+  "type": "choice",
+  "stem": "X~B(4,1/2)，则 P(X=2)=？",
+  "answer": "3/8",
+  "explanation": "第1步：P(X=k)=C(4,k)p^k(1-p)^(4-k)。\n第2步：P(X=2)=C(4,2)(1/2)⁴=6/16=3/8。\n结论：选 A。",
+  "source": "海螺补题",
+  "chapter": "随机变量及其分布",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "离散型随机变量",
+  "options": [
+   "3/8",
+   "1/2",
+   "1/4",
+   "1/16"
+  ]
+ },
+ {
+  "id": "c396-sub-417",
+  "project": "calc396",
+  "type": "choice",
+  "stem": "X~P(λ)（泊松），E(X)=？",
+  "answer": "λ",
+  "explanation": "第1步：泊松分布的期望等于参数 λ。\n第2步：E(X)=D(X)=λ。\n结论：选 C。",
+  "source": "海螺补题",
+  "chapter": "随机变量及其分布",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "离散型随机变量",
+  "options": [
+   "λ²",
+   "√λ",
+   "λ",
+   "1/λ"
+  ]
+ },
+ {
+  "id": "c396-sub-418",
+  "project": "calc396",
+  "type": "choice",
+  "stem": "X~P(λ)，P(X=0)=e^(-λ) 说明 λ 的值为？",
+  "answer": "任意正数（公式恒成立）",
+  "explanation": "第1步：P(X=k)=λ^k e^(-λ)/k!。\n第2步：k=0 时 P=e^(-λ) 恒成立。\n结论：对任意 λ 成立，选 D。",
+  "source": "海螺补题",
+  "chapter": "随机变量及其分布",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "离散型随机变量",
+  "options": [
+   "无法确定",
+   "0",
+   "1",
+   "任意正数（公式恒成立）"
+  ]
+ },
+ {
+  "id": "c396-sub-419",
+  "project": "calc396",
+  "type": "choice",
+  "stem": "连续型随机变量 X 的概率密度 f(x) 满足？",
+  "answer": "∫f(x)dx=1",
+  "explanation": "第1步：密度函数非负且在全区间积分为 1。\n第2步：f(x) 可大于 1（如均匀分布窄区间）。\n结论：∫f(x)dx=1，选 C。",
+  "source": "海螺补题",
+  "chapter": "随机变量及其分布",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "连续型随机变量",
+  "options": [
+   "0≤f(x)≤1",
+   "Σf(x)=1",
+   "∫f(x)dx=1",
+   "f(x)≤1"
+  ]
+ },
+ {
+  "id": "c396-sub-420",
+  "project": "calc396",
+  "type": "choice",
+  "stem": "X~U(0,4)，则 P(1<X<2)=？",
+  "answer": "1/4",
+  "explanation": "第1步：均匀分布概率=区间长度/总长度。\n第2步：P=(2-1)/(4-0)=1/4。\n结论：选 B。",
+  "source": "海螺补题",
+  "chapter": "随机变量及其分布",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "连续型随机变量",
+  "options": [
+   "1/4",
+   "1/4",
+   "1/2",
+   "1/8"
+  ]
+ },
+ {
+  "id": "c396-sub-421",
+  "project": "calc396",
+  "type": "choice",
+  "stem": "X~N(0,1)，P(X≤0)=？",
+  "answer": "1/2",
+  "explanation": "第1步：标准正态分布关于 0 对称。\n第2步：P(X≤0)=Φ(0)=1/2。\n结论：选 A。",
+  "source": "海螺补题",
+  "chapter": "随机变量及其分布",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "连续型随机变量",
+  "options": [
+   "1/2",
+   "0",
+   "1",
+   "1/4"
+  ]
+ },
+ {
+  "id": "c396-sub-422",
+  "project": "calc396",
+  "type": "choice",
+  "stem": "X 的分布函数 F(x) 满足？",
+  "answer": "0≤F(x)≤1 且单调不减",
+  "explanation": "第1步：分布函数性质：单调不减、右连续、F(-∞)=0、F(+∞)=1。\n第2步：值域 [0,1]。\n结论：选 D。",
+  "source": "海螺补题",
+  "chapter": "随机变量及其分布",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "连续型随机变量",
+  "options": [
+   "F(x) 单调递减",
+   "F(x)<0",
+   "F(∞)=0",
+   "0≤F(x)≤1 且单调不减"
+  ]
+ },
+ {
+  "id": "c396-sub-801",
+  "project": "calc396",
+  "type": "choice",
+  "stem": "罗尔定理的三个条件是？",
+  "answer": "C",
+  "explanation": "第1步：罗尔定理：f 在 [a,b] 连续，在 (a,b) 可导，且 f(a)=f(b)。\n第2步：则存在 ξ 使 f'(ξ)=0。\n结论：选 C。",
+  "source": "海螺补题",
+  "chapter": "一元函数微分学",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "中值定理",
+  "options": [
+   "f 连续、可导、f(a)=f(b)",
+   "f 连续、可导",
+   "f 连续、可导、f(a)=f(b)",
+   "f 可导、f(a)=f(b)"
+  ]
+ },
+ {
+  "id": "c396-sub-802",
+  "project": "calc396",
+  "type": "choice",
+  "stem": "f(x)=x²-2x 在 [0,2] 上，罗尔定理中的 ξ=？",
+  "answer": "B",
+  "explanation": "第1步：f(0)=0，f(2)=0，满足罗尔条件。\n第2步：f'(x)=2x-2=0 得 x=1。\n结论：ξ=1，选 B。",
+  "source": "海螺补题",
+  "chapter": "一元函数微分学",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "中值定理",
+  "options": [
+   "0",
+   "1",
+   "2",
+   "1/2"
+  ]
+ },
+ {
+  "id": "c396-sub-803",
+  "project": "calc396",
+  "type": "choice",
+  "stem": "拉格朗日中值定理的结论是？",
+  "answer": "D",
+  "explanation": "第1步：拉格朗日中值定理：存在 ξ 使 f(b)-f(a)=f'(ξ)(b-a)。\n结论：选 D。",
+  "source": "海螺补题",
+  "chapter": "一元函数微分学",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "中值定理",
+  "options": [
+   "f'(ξ)=0",
+   "f(b)-f(a)=f'(a)(b-a)",
+   "f(b)=f(a)",
+   "f(b)-f(a)=f'(ξ)(b-a)"
+  ]
+ },
+ {
+  "id": "c396-sub-804",
+  "project": "calc396",
+  "type": "choice",
+  "stem": "f(x)=x³ 在 [0,1] 上，拉格朗日中值定理中的 ξ=？",
+  "answer": "A",
+  "explanation": "第1步：f(1)-f(0)=1=3ξ²·1。\n第2步：ξ²=1/3，ξ=√3/3（取正）。\n结论：选 A。",
+  "source": "海螺补题",
+  "chapter": "一元函数微分学",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "中值定理",
+  "options": [
+   "√3/3",
+   "1/3",
+   "1/2",
+   "√3"
+  ]
+ },
+ {
+  "id": "c396-sub-805",
+  "project": "calc396",
+  "type": "choice",
+  "stem": "柯西中值定理中涉及的两个函数需满足？",
+  "answer": "B",
+  "explanation": "第1步：柯西中值定理：f、g 连续可导且 g'(x)≠0。\n第2步：则存在 ξ 使 [f(b)-f(a)]/[g(b)-g(a)]=f'(ξ)/g'(ξ)。\n结论：选 B。",
+  "source": "海螺补题",
+  "chapter": "一元函数微分学",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "中值定理",
+  "options": [
+   "仅连续",
+   "在 [a,b] 连续、(a,b) 可导且 g'(x)≠0",
+   "仅可导",
+   "可导且 f(a)=f(b)"
+  ]
+ },
+ {
+  "id": "c396-sub-806",
+  "project": "calc396",
+  "type": "choice",
+  "stem": "Cov(X,Y)=E(XY)-E(X)E(Y)，若 X、Y 独立则 Cov(X,Y)=？",
+  "answer": "A",
+  "explanation": "第1步：独立时 E(XY)=E(X)E(Y)。\n第2步：故协方差为 0。\n结论：选 A。",
+  "source": "海螺补题",
+  "chapter": "数字特征与统计基础",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "协方差与相关系数",
+  "options": [
+   "0",
+   "E(XY)",
+   "1",
+   "D(X)"
+  ]
+ },
+ {
+  "id": "c396-sub-807",
+  "project": "calc396",
+  "type": "choice",
+  "stem": "相关系数 ρ=1 说明？",
+  "answer": "C",
+  "explanation": "第1步：|ρ|=1 表示完全线性相关。\n第2步：ρ=1 为正线性相关。\n结论：选 C。",
+  "source": "海螺补题",
+  "chapter": "数字特征与统计基础",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "协方差与相关系数",
+  "options": [
+   "X、Y 无关",
+   "X、Y 独立",
+   "X、Y 正线性相关",
+   "X=Y"
+  ]
+ },
+ {
+  "id": "c396-sub-808",
+  "project": "calc396",
+  "type": "choice",
+  "stem": "D(X+Y) 与协方差的关系为？",
+  "answer": "B",
+  "explanation": "第1步：D(X+Y)=D(X)+D(Y)+2Cov(X,Y)。\n第2步：独立时协方差为 0 退化为 D(X)+D(Y)。\n结论：选 B。",
+  "source": "海螺补题",
+  "chapter": "数字特征与统计基础",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "协方差与相关系数",
+  "options": [
+   "D(X)+D(Y)",
+   "D(X)+D(Y)+2Cov(X,Y)",
+   "D(X)D(Y)",
+   "D(X)-D(Y)"
+  ]
+ },
+ {
+  "id": "c396-sub-809",
+  "project": "calc396",
+  "type": "choice",
+  "stem": "P(A)=0.4，P(B)=0.5，P(A|B)=0.5，则 P(A∪B)=？",
+  "answer": "C",
+  "explanation": "第1步：P(AB)=P(B)P(A|B)=0.5×0.5=0.25。\n第2步：P(A∪B)=0.4+0.5-0.25=0.65。\n结论：P(A∪B)=0.65，选 C。",
+  "source": "海螺补题",
+  "chapter": "随机事件与概率",
+  "difficulty": 3,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "条件概率",
+  "options": [
+   "0.9",
+   "0.2",
+   "0.65",
+   "0.7"
+  ]
+ }
+]

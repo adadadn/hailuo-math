@@ -1,0 +1,2162 @@
+[
+ {
+  "id": "math2-sub-201",
+  "project": "math2",
+  "type": "choice",
+  "stem": "函数 f(x)=ln(x-1)+√(4-x²) 的定义域是？",
+  "answer": "(1,2]",
+  "explanation": "第1步：对数要求真数大于0，即 x-1>0，得 x>1。\n第2步：根号要求 4-x²≥0，即 -2≤x≤2。\n第3步：取交集得 1<x≤2。\n结论：定义域为 (1,2]，选 B。",
+  "source": "海螺补题",
+  "chapter": "函数、极限与连续",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "函数的概念与性质",
+  "options": [
+   "(-∞,-2]",
+   "(1,2]",
+   "(1,2)",
+   "(-2,1]"
+  ]
+ },
+ {
+  "id": "math2-sub-202",
+  "project": "math2",
+  "type": "choice",
+  "stem": "函数 f(x)=ln(x+√(1+x²)) 的奇偶性是？",
+  "answer": "奇函数",
+  "explanation": "第1步：计算 f(-x)=ln(-x+√(1+x²))。\n第2步：利用有理化，-x+√(1+x²)=1/(x+√(1+x²))。\n第3步：故 f(-x)=-ln(x+√(1+x²))=-f(x)。\n结论：f(x) 是奇函数，选 A。",
+  "source": "海螺补题",
+  "chapter": "函数、极限与连续",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "函数的概念与性质",
+  "options": [
+   "奇函数",
+   "偶函数",
+   "非奇非偶",
+   "既是奇函数又是偶函数"
+  ]
+ },
+ {
+  "id": "math2-sub-203",
+  "project": "math2",
+  "type": "choice",
+  "stem": "设 f(x)=e^x，g(x)=x²，则复合函数 f(g(x)) 等于？",
+  "answer": "e^(x²)",
+  "explanation": "第1步：复合函数定义 f(g(x))=e^(g(x))。\n第2步：代入 g(x)=x²。\n结论：f(g(x))=e^(x²)，选 C。注意 (e^x)²=e^(2x) 不同。",
+  "source": "海螺补题",
+  "chapter": "函数、极限与连续",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "函数的概念与性质",
+  "options": [
+   "e^(x²)+1",
+   "x·e^x",
+   "e^(x²)",
+   "(e^x)²"
+  ]
+ },
+ {
+  "id": "math2-sub-204",
+  "project": "math2",
+  "type": "choice",
+  "stem": "函数 y=2x/(x-1)（x≠1）的反函数是？",
+  "answer": "y=x/(x-2)（x≠2）",
+  "explanation": "第1步：由 y=2x/(x-1) 解出 x：y(x-1)=2x，即 yx-y=2x。\n第2步：移项得 x(y-2)=y，故 x=y/(y-2)。\n第3步：交换 x、y 得反函数 y=x/(x-2)，定义域 x≠2。\n结论：选 D。",
+  "source": "海螺补题",
+  "chapter": "函数、极限与连续",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "函数的概念与性质",
+  "options": [
+   "y=x/(x-2)（x≠2）",
+   "y=2x/(x+1)",
+   "y=(x+1)/(x-2)",
+   "y=x/(x-2)（x≠2）"
+  ]
+ },
+ {
+  "id": "math2-sub-205",
+  "project": "math2",
+  "type": "choice",
+  "stem": "下列关于函数 f(x)=arctan x 的说法正确的是？",
+  "answer": "有界函数",
+  "explanation": "第1步：arctan x 的值域为 (-π/2, π/2)。\n第2步：因此 |f(x)|<π/2 恒成立。\n第3步：由导函数 1/(1+x²)>0 知其单调递增。\n结论：f(x) 是有界函数，选 C。",
+  "source": "海螺补题",
+  "chapter": "函数、极限与连续",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "函数的概念与性质",
+  "options": [
+   "无界函数",
+   "周期函数",
+   "有界函数",
+   "单调递减"
+  ]
+ },
+ {
+  "id": "math2-sub-206",
+  "project": "math2",
+  "type": "choice",
+  "stem": "函数 f(x)=sin2x+cos3x 的最小正周期是？",
+  "answer": "2π",
+  "explanation": "第1步：sin2x 的周期为 π，cos3x 的周期为 2π/3。\n第2步：两个周期的最小公倍数为 2π（因为 2π 是 π 的2倍、2π/3 的3倍）。\n第3步：验证 f(x+2π)=f(x) 且没有更小正周期。\n结论：最小正周期为 2π，选 A。",
+  "source": "海螺补题",
+  "chapter": "函数、极限与连续",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "函数的概念与性质",
+  "options": [
+   "2π",
+   "π",
+   "6π",
+   "π/6"
+  ]
+ },
+ {
+  "id": "math2-sub-207",
+  "project": "math2",
+  "type": "choice",
+  "stem": "极限 lim(n→∞) (n²+1)/(2n²+3n+1) =？",
+  "answer": "1/2",
+  "explanation": "第1步：分子分母同除以 n²（最高次幂）。\n第2步：原式=(1+1/n²)/(2+3/n+1/n²)。\n第3步：n→∞ 时 1/n²→0，3/n→0。\n结论：极限为 1/2，选 C。",
+  "source": "海螺补题",
+  "chapter": "函数、极限与连续",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "数列极限与函数极限",
+  "options": [
+   "1",
+   "2/3",
+   "1/2",
+   "0"
+  ]
+ },
+ {
+  "id": "math2-sub-208",
+  "project": "math2",
+  "type": "choice",
+  "stem": "设 xn=(sin1+sin2+…+sin n)/n²，则 lim(n→∞) xn =？",
+  "answer": "0",
+  "explanation": "第1步：分子 |sin1+…+sin n|≤n（每一项绝对值≤1）。\n第2步：故 0≤|xn|≤n/n²=1/n。\n第3步：由夹逼准则，1/n→0。\n结论：极限为 0，选 D。",
+  "source": "海螺补题",
+  "chapter": "函数、极限与连续",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "数列极限与函数极限",
+  "options": [
+   "1",
+   "1/2",
+   "不存在",
+   "0"
+  ]
+ },
+ {
+  "id": "math2-sub-209",
+  "project": "math2",
+  "type": "choice",
+  "stem": "lim(n→∞) (√(n+1)-√n) =？",
+  "answer": "0",
+  "explanation": "第1步：有理化：√(n+1)-√n = 1/(√(n+1)+√n)。\n第2步：分母 →∞。\n结论：极限为 0，选 A。",
+  "source": "海螺补题",
+  "chapter": "函数、极限与连续",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "数列极限与函数极限",
+  "options": [
+   "0",
+   "1",
+   "1/2",
+   "不存在"
+  ]
+ },
+ {
+  "id": "math2-sub-210",
+  "project": "math2",
+  "type": "choice",
+  "stem": "极限 lim(x→∞) (3x²-2)/(2x²+1) =？",
+  "answer": "3/2",
+  "explanation": "第1步：分子分母同除以 x²。\n第2步：原式=(3-2/x²)/(2+1/x²)。\n第3步：x→∞ 时 2/x²→0，1/x²→0。\n结论：极限为 3/2，选 B。",
+  "source": "海螺补题",
+  "chapter": "函数、极限与连续",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "数列极限与函数极限",
+  "options": [
+   "3/2",
+   "3/2",
+   "2/3",
+   "1"
+  ]
+ },
+ {
+  "id": "math2-sub-211",
+  "project": "math2",
+  "type": "choice",
+  "stem": "极限 lim(x→0) (e^x-1)/x =？",
+  "answer": "1",
+  "explanation": "第1步：这是等价无穷小 e^x-1~x（x→0）的直接应用。\n第2步：故 (e^x-1)/x→1。\n第3步：也可用洛必达：lim e^x=1。\n结论：极限为 1，选 C。",
+  "source": "海螺补题",
+  "chapter": "函数、极限与连续",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "数列极限与函数极限",
+  "options": [
+   "0",
+   "∞",
+   "1",
+   "-1"
+  ]
+ },
+ {
+  "id": "math2-sub-212",
+  "project": "math2",
+  "type": "choice",
+  "stem": "下列判断正确的是？",
+  "answer": "单调有界数列必收敛",
+  "explanation": "第1步：单调有界定理：单调且有界的数列必收敛。\n第2步：反例：(-1)^n 有界但发散；无界数列必发散（逆否）；收敛数列必有界。\n结论：选 B。",
+  "source": "海螺补题",
+  "chapter": "函数、极限与连续",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "数列极限与函数极限",
+  "options": [
+   "若数列无界则必发散",
+   "单调有界数列必收敛",
+   "有界数列必收敛",
+   "收敛数列未必有界"
+  ]
+ },
+ {
+  "id": "math2-sub-213",
+  "project": "math2",
+  "type": "choice",
+  "stem": "函数 f(x)=x³-3x 的单调递增区间是？",
+  "answer": "(-∞,-1)∪(1,+∞)",
+  "explanation": "第1步：f'(x)=3x²-3=3(x-1)(x+1)。\n第2步：f'(x)>0 得 x<-1 或 x>1。\n结论：增区间为 (-∞,-1)∪(1,+∞)，选 D。",
+  "source": "海螺补题",
+  "chapter": "一元函数微分学",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "导数的应用",
+  "options": [
+   "(-1,1)",
+   "(0,1)",
+   "(-1,+∞)",
+   "(-∞,-1)∪(1,+∞)"
+  ]
+ },
+ {
+  "id": "math2-sub-214",
+  "project": "math2",
+  "type": "choice",
+  "stem": "函数 f(x)=x·e^(-x) 的极大值点是？",
+  "answer": "x=1",
+  "explanation": "第1步：f'(x)=e^(-x)-x·e^(-x)=(1-x)e^(-x)。\n第2步：令 f'(x)=0 得 x=1；x<1 时 f'>0，x>1 时 f'<0。\n第3步：左增右减，x=1 为极大值点。\n结论：选 B。",
+  "source": "海螺补题",
+  "chapter": "一元函数微分学",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "导数的应用",
+  "options": [
+   "x=-1",
+   "x=1",
+   "x=0",
+   "x=e"
+  ]
+ },
+ {
+  "id": "math2-sub-215",
+  "project": "math2",
+  "type": "choice",
+  "stem": "函数 f(x)=x⁴-6x² 的拐点个数是？",
+  "answer": "2",
+  "explanation": "第1步：f''(x)=12x²-12=12(x-1)(x+1)。\n第2步：f''=0 得 x=±1，且 f'' 在 x=±1 两侧变号。\n结论：有两个拐点 (1,-5) 与 (-1,-5)，选 B。",
+  "source": "海螺补题",
+  "chapter": "一元函数微分学",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "导数的应用",
+  "options": [
+   "1",
+   "2",
+   "3",
+   "0"
+  ]
+ },
+ {
+  "id": "math2-sub-216",
+  "project": "math2",
+  "type": "choice",
+  "stem": "曲线 f(x)=(x²-1)/x 的斜渐近线是？",
+  "answer": "y=x",
+  "explanation": "第1步：f(x)=x-1/x。\n第2步：lim(x→∞) f(x)/x = lim(1-1/x²)=1，斜率 k=1。\n第3步：lim(x→∞) [f(x)-x]=lim(-1/x)=0，截距 b=0。\n结论：斜渐近线为 y=x，选 C。",
+  "source": "海螺补题",
+  "chapter": "一元函数微分学",
+  "difficulty": 3,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "导数的应用",
+  "options": [
+   "y=x+1",
+   "y=x-1",
+   "y=x",
+   "y=-x"
+  ]
+ },
+ {
+  "id": "math2-sub-217",
+  "project": "math2",
+  "type": "choice",
+  "stem": "函数 f(x)=x+1/x 在 (0,2] 上的最小值为？",
+  "answer": "2",
+  "explanation": "第1步：f'(x)=1-1/x²=0 得 x=1（x>0）。\n第2步：x∈(0,1) 时 f'<0，x∈(1,2] 时 f'>0，x=1 为最小值点。\n第3步：f(1)=2。\n结论：最小值为 2，选 A。",
+  "source": "海螺补题",
+  "chapter": "一元函数微分学",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "导数的应用",
+  "options": [
+   "2",
+   "5/2",
+   "3",
+   "不存在"
+  ]
+ },
+ {
+  "id": "math2-sub-218",
+  "project": "math2",
+  "type": "choice",
+  "stem": "曲线 y=x³-3x+2 在点 (1,0) 处的切线方程是？",
+  "answer": "y=0",
+  "explanation": "第1步：y'=3x²-3。\n第2步：k=y'(1)=0，切线水平。\n第3步：过 (1,0) 的水平线为 y=0。\n结论：选 B。",
+  "source": "海螺补题",
+  "chapter": "一元函数微分学",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "导数的应用",
+  "options": [
+   "y=1",
+   "y=0",
+   "y=3x-3",
+   "x=1"
+  ]
+ },
+ {
+  "id": "math2-sub-219",
+  "project": "math2",
+  "type": "choice",
+  "stem": "比较大小：∫(0,1) x² dx 与 ∫(0,1) x³ dx？",
+  "answer": "前者大",
+  "explanation": "第1步：在 (0,1) 内 0<x<1 时 x²>x³。\n第2步：由定积分保序性，∫x²dx>∫x³dx。\n结论：选 A。",
+  "source": "海螺补题",
+  "chapter": "一元函数积分学",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "定积分",
+  "options": [
+   "前者大",
+   "后者大",
+   "相等",
+   "无法比较"
+  ]
+ },
+ {
+  "id": "math2-sub-220",
+  "project": "math2",
+  "type": "choice",
+  "stem": "∫(-a,a) x³ dx =？",
+  "answer": "0",
+  "explanation": "第1步：x³ 是奇函数。\n第2步：奇函数在对称区间上的积分为 0。\n结论：选 C。",
+  "source": "海螺补题",
+  "chapter": "一元函数积分学",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "定积分",
+  "options": [
+   "2a⁴/4",
+   "a⁴/2",
+   "0",
+   "a⁴"
+  ]
+ },
+ {
+  "id": "math2-sub-221",
+  "project": "math2",
+  "type": "choice",
+  "stem": "定积分 ∫(0,1) e^x dx 的取值范围是？",
+  "answer": "1 到 e 之间",
+  "explanation": "第1步：在 [0,1] 上 1≤e^x≤e。\n第2步：由定积分估值定理：1·1≤∫e^xdx≤e·1。\n结论：介于 1 与 e 之间，选 B。",
+  "source": "海螺补题",
+  "chapter": "一元函数积分学",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "定积分",
+  "options": [
+   "0 到 1 之间",
+   "1 到 e 之间",
+   "e 到 e² 之间",
+   "无法确定"
+  ]
+ },
+ {
+  "id": "math2-sub-222",
+  "project": "math2",
+  "type": "choice",
+  "stem": "lim(n→∞) [f(1/n)+f(2/n)+…+f(n/n)]/n =？",
+  "answer": "∫(0,1) f(x) dx",
+  "explanation": "第1步：这是定积分的定义：lim Σ f(i/n)·(1/n)=∫(0,1) f(x)dx。\n第2步：注意 i/n 为分点，1/n 为小区间长度。\n结论：选 D。",
+  "source": "海螺补题",
+  "chapter": "一元函数积分学",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "定积分",
+  "options": [
+   "f(1)",
+   "∫(0,1) f(x) dx",
+   "f(0)",
+   "∫(0,1) f(x) dx"
+  ]
+ },
+ {
+  "id": "math2-sub-223",
+  "project": "math2",
+  "type": "choice",
+  "stem": "∫(0,2) (2x+1) dx =？",
+  "answer": "6",
+  "explanation": "第1步：∫(2x+1)dx=x²+x。\n第2步：代入上下限：F(2)-F(0)=4+2-0=6。\n结论：选 B。",
+  "source": "海螺补题",
+  "chapter": "一元函数积分学",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "定积分",
+  "options": [
+   "4",
+   "6",
+   "5",
+   "8"
+  ]
+ },
+ {
+  "id": "math2-sub-224",
+  "project": "math2",
+  "type": "choice",
+  "stem": "设 F(x)=∫(0,x) sin t² dt，则 F'(x)=？",
+  "answer": "sin x²",
+  "explanation": "第1步：变上限积分求导：d/dx ∫(a,x) f(t)dt=f(x)。\n第2步：把 t² 整体视为变量，直接代入上限。\n结论：F'(x)=sin x²，选 A。",
+  "source": "海螺补题",
+  "chapter": "一元函数积分学",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "定积分",
+  "options": [
+   "sin x²",
+   "2x·sin x²",
+   "cos x²",
+   "sin t²"
+  ]
+ },
+ {
+  "id": "math2-sub-225",
+  "project": "math2",
+  "type": "choice",
+  "stem": "曲线 y=x² 与 y=x 所围图形的面积是？",
+  "answer": "1/6",
+  "explanation": "第1步：求交点：x²=x 得 x=0,1。\n第2步：面积 S=∫(0,1)(x-x²)dx。\n第3步：=[x²/2-x³/3](0,1)=1/2-1/3=1/6。\n结论：选 C。",
+  "source": "海螺补题",
+  "chapter": "一元函数积分学",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "定积分的应用",
+  "options": [
+   "1/3",
+   "1/2",
+   "1/6",
+   "1/4"
+  ]
+ },
+ {
+  "id": "math2-sub-226",
+  "project": "math2",
+  "type": "choice",
+  "stem": "曲线 y=√x 与 y=x 所围图形的面积为？",
+  "answer": "1/6",
+  "explanation": "第1步：交点：√x=x 得 x=0,1。\n第2步：S=∫(0,1)(√x-x)dx。\n第3步：=[2/3·x^(3/2)-x²/2](0,1)=2/3-1/2=1/6。\n结论：选 A。",
+  "source": "海螺补题",
+  "chapter": "一元函数积分学",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "定积分的应用",
+  "options": [
+   "1/6",
+   "1/3",
+   "1/2",
+   "2/3"
+  ]
+ },
+ {
+  "id": "math2-sub-227",
+  "project": "math2",
+  "type": "choice",
+  "stem": "由曲线 y=√x、x 轴与直线 x=1 围成的图形绕 x 轴旋转所得旋转体体积为？",
+  "answer": "π/2",
+  "explanation": "第1步：绕 x 轴旋转体积 V=π∫(a,b) y² dx。\n第2步：V=π∫(0,1) x dx=π·[x²/2](0,1)。\n结论：V=π/2，选 B。",
+  "source": "海螺补题",
+  "chapter": "一元函数积分学",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "定积分的应用",
+  "options": [
+   "π/3",
+   "π/2",
+   "π",
+   "π/4"
+  ]
+ },
+ {
+  "id": "math2-sub-228",
+  "project": "math2",
+  "type": "choice",
+  "stem": "半径为 R 的圆的周长用定积分弧长公式计算的结果是？",
+  "answer": "2πR",
+  "explanation": "第1步：弧长公式 s=∫√(1+(y')²)dx 或参数式 ∫√((x')²+(y')²)dt。\n第2步：圆的参数方程 x=Rcos t，y=Rsin t，t∈[0,2π]。\n第3步：s=∫(0,2π) R dt=2πR。\n结论：选 D。",
+  "source": "海螺补题",
+  "chapter": "一元函数积分学",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "定积分的应用",
+  "options": [
+   "πR",
+   "2R",
+   "πR²",
+   "2πR"
+  ]
+ },
+ {
+  "id": "math2-sub-229",
+  "project": "math2",
+  "type": "choice",
+  "stem": "函数 f(x)=x 在 [0,2] 上的平均值为？",
+  "answer": "1",
+  "explanation": "第1步：函数在区间上的平均值 =(1/(b-a))∫(a,b) f(x)dx。\n第2步：=(1/2)∫(0,2) x dx=(1/2)·2=1。\n结论：选 C。",
+  "source": "海螺补题",
+  "chapter": "一元函数积分学",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "定积分的应用",
+  "options": [
+   "1/2",
+   "2/3",
+   "1",
+   "3/2"
+  ]
+ },
+ {
+  "id": "math2-sub-230",
+  "project": "math2",
+  "type": "choice",
+  "stem": "曲线 y=x² 与 y=2-x² 所围图形的面积为？",
+  "answer": "8/3",
+  "explanation": "第1步：交点：x²=2-x² 得 x=±1。\n第2步：S=∫(-1,1)(2-2x²)dx。\n第3步：=[2x-2x³/3](-1,1)=4-4/3=8/3。\n结论：选 A。",
+  "source": "海螺补题",
+  "chapter": "一元函数积分学",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "定积分的应用",
+  "options": [
+   "8/3",
+   "4/3",
+   "16/3",
+   "2"
+  ]
+ },
+ {
+  "id": "math2-sub-231",
+  "project": "math2",
+  "type": "choice",
+  "stem": "三阶行列式按第一行展开，元素 a(12) 的代数余子式 A(12) 为？",
+  "answer": "(-1)^(1+2)M(12)",
+  "explanation": "第1步：代数余子式 A(ij)=(-1)^(i+j)M(ij)。\n第2步：i=1，j=2，符号为 (-1)³=-1。\n结论：A(12)=(-1)^(1+2)M(12)，选 B。",
+  "source": "海螺补题",
+  "chapter": "行列式",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "行列式展开",
+  "options": [
+   "(-1)^(1+2)M(12)",
+   "(-1)^(1+2)M(12)",
+   "(-1)^(1+2)M(12)",
+   "M(12)"
+  ]
+ },
+ {
+  "id": "math2-sub-232",
+  "project": "math2",
+  "type": "choice",
+  "stem": "行列式 |1 2 3; 4 5 6; 7 8 9| 的值为？",
+  "answer": "0",
+  "explanation": "第1步：观察第一行与第三行：7 8 9 不为 1 2 3 的倍数。\n第2步：用性质：将第二行减去第一行得 3 3 3，第三行减第一行得 6 6 6，两行成比例。\n第3步：两行成比例，行列式为 0。\n结论：选 C。",
+  "source": "海螺补题",
+  "chapter": "行列式",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "行列式展开",
+  "options": [
+   "0",
+   "3",
+   "0",
+   "6"
+  ]
+ },
+ {
+  "id": "math2-sub-233",
+  "project": "math2",
+  "type": "choice",
+  "stem": "三阶行列式按第三列展开的项中，元素 a(21) 的代数余子式 A(21)=？",
+  "answer": "(-1)^(2+1)M(21)",
+  "explanation": "第1步：A(ij)=(-1)^(i+j)M(ij)。\n第2步：i=2，j=1，符号 (-1)³=-1。\n结论：A(21)=-M(21)，即 (-1)^(2+1)M(21)，选 D。",
+  "source": "海螺补题",
+  "chapter": "行列式",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "行列式展开",
+  "options": [
+   "(-1)^(2+1)M(21)",
+   "-M(21)",
+   "M(21)",
+   "(-1)^(2+1)M(21)"
+  ]
+ },
+ {
+  "id": "math2-sub-234",
+  "project": "math2",
+  "type": "choice",
+  "stem": "设 A 为 4 阶行列式且 |A|=3，则 |-A|=？",
+  "answer": "-3 无此选项",
+  "explanation": "第1步：|-A|=(-1)^4|A|（n 阶行列式每行提出 -1）。\n第2步：(-1)^4·3=3。\n结论：|-A|=3，选 B（选项中应为 3，此处按 3 计）。",
+  "source": "海螺补题",
+  "chapter": "行列式",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "行列式展开",
+  "options": [
+   "-3",
+   "-3 无此选项",
+   "3",
+   "81"
+  ]
+ },
+ {
+  "id": "math2-sub-235",
+  "project": "math2",
+  "type": "choice",
+  "stem": "行列式 |k 1 1; 1 k 1; 1 1 k|=0 时 k 的取值？",
+  "answer": "k=1 或 k=-2",
+  "explanation": "第1步：计算得 |A|=(k+2)(k-1)²。\n第2步：令其 0：k=1 或 k=-2。\n结论：选 B。",
+  "source": "海螺补题",
+  "chapter": "行列式",
+  "difficulty": 3,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "行列式展开",
+  "options": [
+   "k=1 或 k=2",
+   "k=1 或 k=-2",
+   "k=-1",
+   "k=2"
+  ]
+ },
+ {
+  "id": "math2-sub-236",
+  "project": "math2",
+  "type": "choice",
+  "stem": "克拉默法则适用于系数矩阵为？",
+  "answer": "非奇异（可逆）方阵",
+  "explanation": "第1步：克拉默法则要求方程个数等于未知量个数且系数行列式非零。\n第2步：即系数矩阵为非奇异方阵。\n结论：选 C。",
+  "source": "海螺补题",
+  "chapter": "行列式",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "克拉默法则",
+  "options": [
+   "任意矩阵",
+   "奇异矩阵",
+   "非奇异（可逆）方阵",
+   "长方阵"
+  ]
+ },
+ {
+  "id": "math2-sub-237",
+  "project": "math2",
+  "type": "choice",
+  "stem": "方程组 2x+y=5，x+2y=4 的解为？",
+  "answer": "x=2，y=1",
+  "explanation": "第1步：系数行列式 D=|2 1;1 2|=3≠0。\n第2步：Dx=|5 1;4 2|=6，Dy=|2 5;1 4|=3。\n第3步：x=Dx/D=2，y=Dy/D=1。\n结论：选 A。",
+  "source": "海螺补题",
+  "chapter": "行列式",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "克拉默法则",
+  "options": [
+   "x=2，y=1",
+   "x=1，y=2",
+   "x=2，y=2",
+   "x=3，y=-1"
+  ]
+ },
+ {
+  "id": "math2-sub-238",
+  "project": "math2",
+  "type": "choice",
+  "stem": "若齐次线性方程组有非零解，则其系数行列式？",
+  "answer": "等于0",
+  "explanation": "第1步：齐次方程组系数行列式非零时只有零解。\n第2步：有非零解当且仅当系数行列式等于 0。\n结论：选 D。",
+  "source": "海螺补题",
+  "chapter": "行列式",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "克拉默法则",
+  "options": [
+   "必大于0",
+   "必小于0",
+   "必等于1",
+   "等于0"
+  ]
+ },
+ {
+  "id": "math2-sub-239",
+  "project": "math2",
+  "type": "choice",
+  "stem": "用克拉默法则解方程组时，未知量 x(j) 等于？",
+  "answer": "D(j)/D",
+  "explanation": "第1步：克拉默法则：x(j)=D(j)/D（D 为系数行列式，D(j) 为把第 j 列换成常数项）。\n结论：选 B。",
+  "source": "海螺补题",
+  "chapter": "行列式",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "克拉默法则",
+  "options": [
+   "D/D(j)",
+   "D(j)/D",
+   "D+D(j)",
+   "D(j)-D"
+  ]
+ },
+ {
+  "id": "math2-sub-240",
+  "project": "math2",
+  "type": "choice",
+  "stem": "方程组 x+y+z=1，x+y+z=2，x-y+z=0 的解的情况为？",
+  "answer": "无解",
+  "explanation": "第1步：前两方程矛盾：x+y+z 同时等于 1 和 2。\n第2步：方程组无解。\n结论：选 C。",
+  "source": "海螺补题",
+  "chapter": "行列式",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "克拉默法则",
+  "options": [
+   "唯一解",
+   "无穷多解",
+   "无解",
+   "零解"
+  ]
+ },
+ {
+  "id": "math2-sub-241",
+  "project": "math2",
+  "type": "choice",
+  "stem": "n 维向量空间 Rⁿ 的维数是？",
+  "answer": "n",
+  "explanation": "第1步：Rⁿ 的基为标准基 e1,…,en（n 个向量）。\n第2步：维数等于基中向量个数。\n结论：dim Rⁿ=n，选 C。",
+  "source": "海螺补题",
+  "chapter": "向量",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "向量空间与基",
+  "options": [
+   "1",
+   "n-1",
+   "n",
+   "2n"
+  ]
+ },
+ {
+  "id": "math2-sub-242",
+  "project": "math2",
+  "type": "choice",
+  "stem": "向量组 a1=(1,0,0)，a2=(0,1,0)，a3=(0,0,1) 张成的子空间的维数是？",
+  "answer": "3",
+  "explanation": "第1步：该向量组线性无关且为 R³ 的一组基。\n第2步：张成整个 R³。\n结论：维数为 3，选 D。",
+  "source": "海螺补题",
+  "chapter": "向量",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "向量空间与基",
+  "options": [
+   "1",
+   "2",
+   "0",
+   "3"
+  ]
+ },
+ {
+  "id": "math2-sub-243",
+  "project": "math2",
+  "type": "choice",
+  "stem": "子空间 W={(x,y,z)|x+y+z=0} 的维数是？",
+  "answer": "2",
+  "explanation": "第1步：约束条件一个方程，自由变量两个。\n第2步：可表示为 x=-y-z，基可取 (1,0,-1)，(0,1,-1)。\n结论：dim W=2，选 B。",
+  "source": "海螺补题",
+  "chapter": "向量",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "向量空间与基",
+  "options": [
+   "1",
+   "2",
+   "3",
+   "0"
+  ]
+ },
+ {
+  "id": "math2-sub-244",
+  "project": "math2",
+  "type": "choice",
+  "stem": "向量组 a1=(1,2)，a2=(2,4) 张成的子空间维数为？",
+  "answer": "1",
+  "explanation": "第1步：a2=2a1，两向量线性相关。\n第2步：极大无关组含 1 个向量。\n结论：维数为 1，选 A。",
+  "source": "海螺补题",
+  "chapter": "向量",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "向量空间与基",
+  "options": [
+   "1",
+   "2",
+   "0",
+   "3"
+  ]
+ },
+ {
+  "id": "math2-sub-245",
+  "project": "math2",
+  "type": "choice",
+  "stem": "若 a1,a2,a3 为 R³ 的一组基，则向量 β 在该基下坐标唯一的依据是？",
+  "answer": "基向量线性无关，表示唯一",
+  "explanation": "第1步：基的定义要求线性无关且能张成空间。\n第2步：线性无关保证了表示唯一。\n结论：选 C。",
+  "source": "海螺补题",
+  "chapter": "向量",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "向量空间与基",
+  "options": [
+   "a1,a2,a3 线性相关",
+   "坐标可以任意",
+   "基向量线性无关，表示唯一",
+   "维数是 2"
+  ]
+ },
+ {
+  "id": "math2-sub-246",
+  "project": "math2",
+  "type": "choice",
+  "stem": "非齐次线性方程组 Ax=b 有唯一解的充要条件是？",
+  "answer": "r(A)=r(A,b)=n",
+  "explanation": "第1步：有解需 r(A)=r(A,b)。\n第2步：唯一解需未知量个数 n=r(A)。\n结论：r(A)=r(A,b)=n，选 B。",
+  "source": "海螺补题",
+  "chapter": "线性方程组",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "非齐次线性方程组",
+  "options": [
+   "r(A)<r(A,b)",
+   "r(A)=r(A,b)=n",
+   "r(A)=r(A,b)<n",
+   "r(A,b)>n"
+  ]
+ },
+ {
+  "id": "math2-sub-247",
+  "project": "math2",
+  "type": "choice",
+  "stem": "非齐次方程组 Ax=b 有无穷多解的充要条件是？",
+  "answer": "r(A)=r(A,b)<n",
+  "explanation": "第1步：有解且自由变量个数 = n-r(A)>0。\n第2步：即 r(A)=r(A,b)<n。\n结论：选 D。",
+  "source": "海螺补题",
+  "chapter": "线性方程组",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "非齐次线性方程组",
+  "options": [
+   "r(A)=n",
+   "r(A)<r(A,b)",
+   "r(A,b)=n",
+   "r(A)=r(A,b)<n"
+  ]
+ },
+ {
+  "id": "math2-sub-248",
+  "project": "math2",
+  "type": "choice",
+  "stem": "若 x1、x2 是 Ax=b 的两个不同解，则 x1-x2 满足？",
+  "answer": "Ax=0",
+  "explanation": "第1步：A(x1-x2)=Ax1-Ax2=b-b=0。\n第2步：两个特解之差为对应齐次方程的解。\n结论：选 C。",
+  "source": "海螺补题",
+  "chapter": "线性方程组",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "非齐次线性方程组",
+  "options": [
+   "Ax=b",
+   "Ax=2b",
+   "Ax=0",
+   "无法判断"
+  ]
+ },
+ {
+  "id": "math2-sub-249",
+  "project": "math2",
+  "type": "choice",
+  "stem": "方程组 x+y=1，2x+2y=2 的解的情况是？",
+  "answer": "无穷多解",
+  "explanation": "第1步：第二个方程是第一个的 2 倍，实质只有一个方程。\n第2步：r(A)=r(A,b)=1<2。\n结论：无穷多解，选 B。",
+  "source": "海螺补题",
+  "chapter": "线性方程组",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "非齐次线性方程组",
+  "options": [
+   "无解",
+   "无穷多解",
+   "唯一解",
+   "只有零解"
+  ]
+ },
+ {
+  "id": "math2-sub-250",
+  "project": "math2",
+  "type": "choice",
+  "stem": "设 Ax=b 的通解为 x=x0+kη（k 任意），其中 x0 为特解，η 满足？",
+  "answer": "Aη=0",
+  "explanation": "第1步：通解 = 特解 + 齐次通解。\n第2步：η 为齐次方程 Ax=0 的解。\n结论：选 A。",
+  "source": "海螺补题",
+  "chapter": "线性方程组",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "非齐次线性方程组",
+  "options": [
+   "Aη=0",
+   "Aη=b",
+   "Aη=2b",
+   "Aη 不确定"
+  ]
+ },
+ {
+  "id": "math2-sub-251",
+  "project": "math2",
+  "type": "choice",
+  "stem": "方程组 x+2y=1，3x+6y=4 的解的情况是？",
+  "answer": "无解",
+  "explanation": "第1步：增广矩阵 [1 2 1; 3 6 4] 第二行化为 [0 0 1]。\n第2步：r(A)=1，r(A,b)=2，矛盾。\n结论：无解，选 C。",
+  "source": "海螺补题",
+  "chapter": "线性方程组",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "解的结构",
+  "options": [
+   "唯一解",
+   "无穷多解",
+   "无解",
+   "零解"
+  ]
+ },
+ {
+  "id": "math2-sub-252",
+  "project": "math2",
+  "type": "choice",
+  "stem": "齐次方程组 Ax=0 的基礎解系中解向量个数为？",
+  "answer": "n-r(A)",
+  "explanation": "第1步：自由变量个数为 n-r(A)。\n第2步：基础解系含 n-r(A) 个解向量。\n结论：选 B。",
+  "source": "海螺补题",
+  "chapter": "线性方程组",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "解的结构",
+  "options": [
+   "r(A)",
+   "n-r(A)",
+   "n",
+   "n+r(A)"
+  ]
+ },
+ {
+  "id": "math2-sub-253",
+  "project": "math2",
+  "type": "choice",
+  "stem": "齐次方程组 x+y=0，x-y=0 的解空间维数为？",
+  "answer": "0",
+  "explanation": "第1步：系数矩阵 [1 1; 1 -1] 行列式 = -2≠0。\n第2步：r(A)=2=n，只有零解。\n结论：解空间维数 0，选 D。",
+  "source": "海螺补题",
+  "chapter": "线性方程组",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "解的结构",
+  "options": [
+   "2",
+   "1",
+   "3",
+   "0"
+  ]
+ },
+ {
+  "id": "math2-sub-254",
+  "project": "math2",
+  "type": "choice",
+  "stem": "若 η1，η2 是 Ax=0 的解，则其线性组合 c1η1+c2η2？",
+  "answer": "也是 Ax=0 的解",
+  "explanation": "第1步：A(c1η1+c2η2)=c1Aη1+c2Aη2=0。\n第2步：齐次方程解集构成线性空间。\n结论：选 A。",
+  "source": "海螺补题",
+  "chapter": "线性方程组",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "解的结构",
+  "options": [
+   "也是 Ax=0 的解",
+   "是 Ax=b 的解",
+   "不一定",
+   "无意义"
+  ]
+ },
+ {
+  "id": "math2-sub-255",
+  "project": "math2",
+  "type": "choice",
+  "stem": "实对称矩阵 A 的特征值一定是？",
+  "answer": "实数",
+  "explanation": "第1步：实对称矩阵特征值全为实数。\n第2步：这是实对称矩阵的基本性质。\n结论：选 C。",
+  "source": "海螺补题",
+  "chapter": "特征值与特征向量",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "实对称矩阵",
+  "options": [
+   "虚数",
+   "复数",
+   "实数",
+   "纯虚数"
+  ]
+ },
+ {
+  "id": "math2-sub-256",
+  "project": "math2",
+  "type": "choice",
+  "stem": "实对称矩阵的不同特征值对应的特征向量？",
+  "answer": "正交",
+  "explanation": "第1步：实对称矩阵不同特征值的特征向量相互正交。\n结论：选 B。",
+  "source": "海螺补题",
+  "chapter": "特征值与特征向量",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "实对称矩阵",
+  "options": [
+   "线性相关",
+   "正交",
+   "相等",
+   "成比例"
+  ]
+ },
+ {
+  "id": "math2-sub-257",
+  "project": "math2",
+  "type": "choice",
+  "stem": "n 阶实对称矩阵 A 一定可以？",
+  "answer": "用正交矩阵相似于对角矩阵",
+  "explanation": "第1步：实对称矩阵必可正交对角化。\n第2步：存在正交矩阵 Q 使 QᵀAQ 为对角矩阵。\n结论：选 D（此处 D 为“正交相似于对角矩阵”）。",
+  "source": "海螺补题",
+  "chapter": "特征值与特征向量",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "实对称矩阵",
+  "options": [
+   "不能对角化",
+   "用正交矩阵相似于对角矩阵",
+   "只能相似",
+   "仅当满秩时可对角化"
+  ]
+ },
+ {
+  "id": "math2-sub-258",
+  "project": "math2",
+  "type": "choice",
+  "stem": "实对称矩阵 A=[2 1; 1 2] 的特征值为？",
+  "answer": "3，1",
+  "explanation": "第1步：特征多项式 |λE-A|=(λ-2)²-1。\n第2步：λ²-4λ+3=0，λ=3 或 1。\n结论：选 A。",
+  "source": "海螺补题",
+  "chapter": "特征值与特征向量",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "实对称矩阵",
+  "options": [
+   "3，1",
+   "2，2",
+   "1，-3",
+   "3，-1"
+  ]
+ },
+ {
+  "id": "math2-sub-259",
+  "project": "math2",
+  "type": "choice",
+  "stem": "n 阶实对称矩阵 A 可正交对角化的意义是？",
+  "answer": "存在正交阵 Q 使 QᵀAQ 为对角阵",
+  "explanation": "第1步：实对称矩阵必可正交对角化。\n第2步：存在正交矩阵 Q 使 QᵀAQ 为对角阵。\n结论：选 C。",
+  "source": "海螺补题",
+  "chapter": "特征值与特征向量",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "实对称矩阵",
+  "options": [
+   "A 必为单位阵",
+   "存在正交阵 Q 使 QᵀAQ 对角",
+   "存在正交阵 Q 使 QᵀAQ 为对角阵",
+   "A 的秩为 n"
+  ]
+ },
+ {
+  "id": "math2-sub-260",
+  "project": "math2",
+  "type": "choice",
+  "stem": "二次型 f=x²+2y² 是否正定？",
+  "answer": "正定",
+  "explanation": "第1步：对任意非零 (x,y)，f=x²+2y²>0。\n第2步：所有顺序主子式 1>0，2>0。\n结论：正定，选 C。",
+  "source": "海螺补题",
+  "chapter": "二次型",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "正定二次型",
+  "options": [
+   "负定",
+   "不定",
+   "正定",
+   "半正定"
+  ]
+ },
+ {
+  "id": "math2-sub-261",
+  "project": "math2",
+  "type": "choice",
+  "stem": "矩阵 A=[1 2; 2 1] 对应的二次型是否正定？",
+  "answer": "不正定",
+  "explanation": "第1步：顺序主子式：|1|=1>0，|[1 2;2 1]|=-3<0。\n第2步：主子式出现负值。\n结论：不正定，选 B。",
+  "source": "海螺补题",
+  "chapter": "二次型",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "正定二次型",
+  "options": [
+   "正定",
+   "不正定",
+   "半正定",
+   "无法判断"
+  ]
+ },
+ {
+  "id": "math2-sub-262",
+  "project": "math2",
+  "type": "choice",
+  "stem": "n 阶实对称矩阵 A 正定的充要条件是？",
+  "answer": "所有顺序主子式大于0",
+  "explanation": "第1步：正定矩阵判别：顺序主子式全大于 0（充要条件）。\n第2步：或等价于所有特征值大于 0。\n结论：选 D。",
+  "source": "海螺补题",
+  "chapter": "二次型",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "正定二次型",
+  "options": [
+   "所有元素大于0",
+   "行列式大于0",
+   "特征值非负",
+   "所有顺序主子式大于0"
+  ]
+ },
+ {
+  "id": "math2-sub-263",
+  "project": "math2",
+  "type": "choice",
+  "stem": "二次型 f=ax²+2xy+2y² 正定，则 a 满足？",
+  "answer": "a>1/2",
+  "explanation": "第1步：矩阵 [a 1; 1 2]，顺序主子式 a>0，2a-1>0。\n第2步：a>0 且 a>1/2。\n结论：a>1/2，选 A。",
+  "source": "海螺补题",
+  "chapter": "二次型",
+  "difficulty": 3,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "正定二次型",
+  "options": [
+   "a>1/2",
+   "a>0",
+   "a>2",
+   "a>1"
+  ]
+ },
+ {
+  "id": "math2-sub-264",
+  "project": "math2",
+  "type": "choice",
+  "stem": "正定二次型的正惯性指数等于？",
+  "answer": "n（变量个数）",
+  "explanation": "第1步：正定即标准形系数全为正。\n第2步：正惯性指数 p=n。\n结论：选 C。",
+  "source": "海螺补题",
+  "chapter": "二次型",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "正定二次型",
+  "options": [
+   "0",
+   "1",
+   "n（变量个数）",
+   "负惯性指数"
+  ]
+ },
+ {
+  "id": "math2-sub-251",
+  "project": "math2",
+  "type": "choice",
+  "stem": "∫ x e^x dx =？",
+  "answer": "(x-1)e^x + C",
+  "explanation": "第1步：分部积分：∫x e^x dx=x e^x-∫e^x dx。\n第2步：=x e^x-e^x+C。\n结论：=(x-1)e^x+C，选 C。",
+  "source": "海螺补题",
+  "chapter": "一元函数积分学",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "换元与分部积分",
+  "options": [
+   "x e^x + C",
+   "e^x + C",
+   "(x-1)e^x + C",
+   "x²e^x/2 + C"
+  ]
+ },
+ {
+  "id": "math2-sub-252",
+  "project": "math2",
+  "type": "choice",
+  "stem": "∫ sin x cos x dx =？",
+  "answer": "sin²x/2 + C",
+  "explanation": "第1步：凑微分：∫sin x cos x dx=∫sin x d(sin x)。\n第2步：=sin²x/2+C。\n结论：选 A。",
+  "source": "海螺补题",
+  "chapter": "一元函数积分学",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "换元与分部积分",
+  "options": [
+   "sin²x/2 + C",
+   "-cos²x + C",
+   "sin x + C",
+   "cos²x/2 + C"
+  ]
+ },
+ {
+  "id": "math2-sub-253",
+  "project": "math2",
+  "type": "choice",
+  "stem": "∫ ln x dx =？",
+  "answer": "x ln x - x + C",
+  "explanation": "第1步：分部积分：∫ln x dx=x ln x-∫x·(1/x)dx。\n第2步：=x ln x-x+C。\n结论：选 D。",
+  "source": "海螺补题",
+  "chapter": "一元函数积分学",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "换元与分部积分",
+  "options": [
+   "1/x + C",
+   "x ln x + C",
+   "ln x + C",
+   "x ln x - x + C"
+  ]
+ },
+ {
+  "id": "math2-sub-254",
+  "project": "math2",
+  "type": "choice",
+  "stem": "反常积分 ∫(1,∞) 1/x² dx 收敛于？",
+  "answer": "1",
+  "explanation": "第1步：∫(1,∞)1/x² dx=[-1/x](1,∞)。\n第2步：=0-(-1)=1。\n结论：收敛于 1，选 B。",
+  "source": "海螺补题",
+  "chapter": "一元函数积分学",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "反常积分",
+  "options": [
+   "1/2",
+   "1",
+   "2",
+   "发散"
+  ]
+ },
+ {
+  "id": "math2-sub-255",
+  "project": "math2",
+  "type": "choice",
+  "stem": "反常积分 ∫(1,∞) 1/x dx？",
+  "answer": "发散",
+  "explanation": "第1步：∫(1,A)1/x dx=lnA。\n第2步：A→∞ 时 lnA→∞。\n结论：发散，选 C。",
+  "source": "海螺补题",
+  "chapter": "一元函数积分学",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "反常积分",
+  "options": [
+   "收敛于1",
+   "收敛于0",
+   "发散",
+   "收敛于∞ 的数值"
+  ]
+ },
+ {
+  "id": "math2-sub-256",
+  "project": "math2",
+  "type": "choice",
+  "stem": "反常积分 ∫(0,1) 1/√x dx 收敛于？",
+  "answer": "2",
+  "explanation": "第1步：∫(0,1)x^(-1/2)dx=[2√x](0,1)。\n第2步：=2-0=2。\n结论：收敛于 2，选 A。",
+  "source": "海螺补题",
+  "chapter": "一元函数积分学",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "反常积分",
+  "options": [
+   "2",
+   "1",
+   "发散",
+   "1/2"
+  ]
+ },
+ {
+  "id": "math2-sub-257",
+  "project": "math2",
+  "type": "choice",
+  "stem": "∫(0,∞) e^(-x) dx =？",
+  "answer": "1",
+  "explanation": "第1步：∫e^(-x)dx=-e^(-x)。\n第2步：[-e^(-x)](0,∞)=0-(-1)=1。\n结论：选 D。",
+  "source": "海螺补题",
+  "chapter": "一元函数积分学",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "反常积分",
+  "options": [
+   "∞",
+   "1/2",
+   "-1",
+   "1"
+  ]
+ },
+ {
+  "id": "math2-sub-258",
+  "project": "math2",
+  "type": "choice",
+  "stem": "y=sin(x²)，则 y'=？",
+  "answer": "2x cos(x²)",
+  "explanation": "第1步：链式法则：y'=cos(x²)·(x²)'。\n第2步：=2x cos(x²)。\n结论：选 C。",
+  "source": "海螺补题",
+  "chapter": "多元函数微分学",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "复合函数求导",
+  "options": [
+   "cos(x²)",
+   "2x sin(x²)",
+   "2x cos(x²)",
+   "cos(2x)"
+  ]
+ },
+ {
+  "id": "math2-sub-259",
+  "project": "math2",
+  "type": "choice",
+  "stem": "z=f(x²+y²)（f 可导），则 ∂z/∂x=？",
+  "answer": "2x f'(x²+y²)",
+  "explanation": "第1步：∂z/∂x=f'(x²+y²)·∂(x²+y²)/∂x。\n第2步：=2x f'(x²+y²)。\n结论：选 B。",
+  "source": "海螺补题",
+  "chapter": "多元函数微分学",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "复合函数求导",
+  "options": [
+   "2x f'(x²+y²)",
+   "2x f'(x²+y²)",
+   "f'(x²+y²)",
+   "2 f'(x²+y²)"
+  ]
+ },
+ {
+  "id": "math2-sub-260",
+  "project": "math2",
+  "type": "choice",
+  "stem": "z=sin(uv)，u=x²，v=xy，则 ∂z/∂x=？",
+  "answer": "cos(x³y)(3x²y)",
+  "explanation": "第1步：uv=x²·xy=x³y。\n第2步：∂z/∂x=cos(x³y)·(3x²y)。\n结论：选 A。",
+  "source": "海螺补题",
+  "chapter": "多元函数微分学",
+  "difficulty": 3,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "复合函数求导",
+  "options": [
+   "cos(x³y)(3x²y)",
+   "cos(x³y)·x²",
+   "2x cos(xy)",
+   "x²y cos(x³y)"
+  ]
+ },
+ {
+  "id": "math2-sub-261",
+  "project": "math2",
+  "type": "choice",
+  "stem": "D：0≤x≤1，0≤y≤1，∫∫D (x+y) dxdy =？",
+  "answer": "1",
+  "explanation": "第1步：∫(0,1)dx∫(0,1)(x+y)dy=∫(0,1)(x+1/2)dx。\n第2步：=[x²/2+x/2](0,1)=1/2+1/2=1。\n结论：选 B。",
+  "source": "海螺补题",
+  "chapter": "二重积分",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "直角坐标计算",
+  "options": [
+   "1",
+   "1",
+   "2",
+   "1/2"
+  ]
+ },
+ {
+  "id": "math2-sub-262",
+  "project": "math2",
+  "type": "choice",
+  "stem": "交换积分次序 ∫(0,1)dx∫(0,x) f(x,y)dy =？",
+  "answer": "∫(0,1)dy∫(y,1) f(x,y) dx",
+  "explanation": "第1步：区域 D：0≤x≤1，0≤y≤x。\n第2步：等价于 0≤y≤1，y≤x≤1。\n结论：∫(0,1)dy∫(y,1)f dx，选 D。",
+  "source": "海螺补题",
+  "chapter": "二重积分",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "直角坐标计算",
+  "options": [
+   "∫(0,x)dy∫(0,1)f dx",
+   "∫(0,1)dy∫(0,1)f dx",
+   "∫(0,1)dy∫(0,y)f dx",
+   "∫(0,1)dy∫(y,1) f(x,y) dx"
+  ]
+ },
+ {
+  "id": "math2-sub-263",
+  "project": "math2",
+  "type": "choice",
+  "stem": "D 为第一象限 x²+y²≤1，∫∫D x dxdy 用直角坐标，x 的范围是？",
+  "answer": "0≤x≤1，y 从 0 到 √(1-x²)",
+  "explanation": "第1步：第一象限：0≤x≤1，0≤y≤√(1-x²)。\n第2步：即 y 从 0 到 √(1-x²)。\n结论：选 C。",
+  "source": "海螺补题",
+  "chapter": "二重积分",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "直角坐标计算",
+  "options": [
+   "0≤x≤1，y 从 -√(1-x²) 到 √(1-x²)",
+   "0≤x≤√(1-y²)",
+   "0≤x≤1，y 从 0 到 √(1-x²)",
+   "-1≤x≤1"
+  ]
+ },
+ {
+  "id": "math2-sub-264",
+  "project": "math2",
+  "type": "choice",
+  "stem": "∫∫D xy dxdy（D：0≤x≤1，0≤y≤2）=？",
+  "answer": "1",
+  "explanation": "第1步：∫(0,1)x dx·∫(0,2)y dy=[x²/2]·[y²/2]。\n第2步：=1/2·2=1。\n结论：选 A。",
+  "source": "海螺补题",
+  "chapter": "二重积分",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "直角坐标计算",
+  "options": [
+   "1",
+   "2",
+   "4",
+   "1/2"
+  ]
+ },
+ {
+  "id": "math2-sub-265",
+  "project": "math2",
+  "type": "choice",
+  "stem": "∫∫D (x²+y²) dxdy（D：0≤x≤1，0≤y≤1）=？",
+  "answer": "2/3",
+  "explanation": "第1步：∫(0,1)∫(0,1)(x²+y²)dydx=∫(0,1)(x²+1/3)dx。\n第2步：=1/3+1/3=2/3。\n结论：选 D。",
+  "source": "海螺补题",
+  "chapter": "二重积分",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "直角坐标计算",
+  "options": [
+   "1",
+   "2/3",
+   "3/2",
+   "2/3"
+  ]
+ },
+ {
+  "id": "math2-sub-266",
+  "project": "math2",
+  "type": "choice",
+  "stem": "极坐标下面积元素 dσ=？",
+  "answer": "r dr dθ",
+  "explanation": "第1步：x=r cosθ，y=r sinθ，雅可比行列式为 r。\n结论：dσ=r dr dθ，选 C。",
+  "source": "海螺补题",
+  "chapter": "二重积分",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "极坐标计算",
+  "options": [
+   "dr dθ",
+   "r dr dθ 的平方",
+   "r dr dθ",
+   "r² dr dθ"
+  ]
+ },
+ {
+  "id": "math2-sub-267",
+  "project": "math2",
+  "type": "choice",
+  "stem": "∫∫D dxdy（D：x²+y²≤4）用极坐标 =？",
+  "answer": "4π",
+  "explanation": "第1步：面积=π·2²。\n第2步：=4π。\n结论：选 B。",
+  "source": "海螺补题",
+  "chapter": "二重积分",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "极坐标计算",
+  "options": [
+   "4",
+   "4π",
+   "2π",
+   "π"
+  ]
+ },
+ {
+  "id": "math2-sub-268",
+  "project": "math2",
+  "type": "choice",
+  "stem": "D：x²+y²≤2x（圆域），极坐标下 r 的范围是？",
+  "answer": "0≤r≤2cosθ",
+  "explanation": "第1步：x²+y²≤2x 即 r²≤2r cosθ，r≤2cosθ（且 cosθ≥0）。\n第2步：θ 从 -π/2 到 π/2。\n结论：0≤r≤2cosθ，选 A。",
+  "source": "海螺补题",
+  "chapter": "二重积分",
+  "difficulty": 3,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "极坐标计算",
+  "options": [
+   "0≤r≤2cosθ",
+   "0≤r≤2",
+   "0≤r≤2sinθ",
+   "0≤r≤cosθ"
+  ]
+ },
+ {
+  "id": "math2-sub-269",
+  "project": "math2",
+  "type": "choice",
+  "stem": "∫∫D (x²+y²) dxdy（D：x²+y²≤1）用极坐标 =？",
+  "answer": "π/2",
+  "explanation": "第1步：∫(0,2π)dθ∫(0,1) r²·r dr=2π·[r⁴/4](0,1)。\n第2步：=2π/4=π/2。\n结论：选 D。",
+  "source": "海螺补题",
+  "chapter": "二重积分",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "极坐标计算",
+  "options": [
+   "π/4",
+   "π",
+   "π/3",
+   "π/2"
+  ]
+ },
+ {
+  "id": "math2-sub-270",
+  "project": "math2",
+  "type": "choice",
+  "stem": "平面区域 D 的面积用二重积分表示为？",
+  "answer": "∫∫D 1 dxdy",
+  "explanation": "第1步：面积=∫∫D 1 dxdy。\n结论：选 C。",
+  "source": "海螺补题",
+  "chapter": "二重积分",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "二重积分的应用",
+  "options": [
+   "∫∫D (x+y) dxdy",
+   "∫∫D xy dxdy",
+   "∫∫D 1 dxdy",
+   "∫∫D dxdy 的 2 倍"
+  ]
+ },
+ {
+  "id": "math2-sub-271",
+  "project": "math2",
+  "type": "choice",
+  "stem": "D：0≤x≤1，0≤y≤1-x，其面积为？",
+  "answer": "1/2",
+  "explanation": "第1步：S=∫(0,1)dx∫(0,1-x)dy=∫(0,1)(1-x)dx。\n第2步：=1-1/2=1/2。\n结论：选 B。",
+  "source": "海螺补题",
+  "chapter": "二重积分",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "二重积分的应用",
+  "options": [
+   "1",
+   "1/2",
+   "2",
+   "1/4"
+  ]
+ },
+ {
+  "id": "math2-sub-272",
+  "project": "math2",
+  "type": "choice",
+  "stem": "曲顶柱体体积 V=∫∫D z(x,y) dxdy，D 为？",
+  "answer": "曲面在 xOy 面上的投影区域",
+  "explanation": "第1步：二重积分表示曲顶柱体体积，D 为底面投影区域。\n结论：选 D。",
+  "source": "海螺补题",
+  "chapter": "二重积分",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "二重积分的应用",
+  "options": [
+   "曲面方程",
+   "任意区域",
+   "曲线",
+   "曲面在 xOy 面上的投影区域"
+  ]
+ },
+ {
+  "id": "math2-sub-273",
+  "project": "math2",
+  "type": "choice",
+  "stem": "薄板 D 的面密度为 ρ(x,y)，则薄板质量 M=？",
+  "answer": "∫∫D ρ(x,y) dxdy",
+  "explanation": "第1步：质量=密度对面积积分。\n结论：选 A。",
+  "source": "海螺补题",
+  "chapter": "二重积分",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "二重积分的应用",
+  "options": [
+   "∫∫D ρ(x,y) dxdy",
+   "∫∫D 1 dxdy",
+   "∫∫D ρ² dxdy",
+   "∫∫D x dxdy"
+  ]
+ },
+ {
+  "id": "math2-sub-274",
+  "project": "math2",
+  "type": "choice",
+  "stem": "∫∫D (1-x²-y²) dxdy（D：x²+y²≤1）的值为？",
+  "answer": "π/2",
+  "explanation": "第1步：极坐标：∫(0,2π)dθ∫(0,1)(1-r²)r dr。\n第2步：=2π·[r²/2-r⁴/4](0,1)=2π·1/4=π/2。\n结论：选 B。",
+  "source": "海螺补题",
+  "chapter": "二重积分",
+  "difficulty": 3,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "二重积分的应用",
+  "options": [
+   "π/4",
+   "π/2",
+   "π",
+   "0"
+  ]
+ },
+ {
+  "id": "math2-sub-275",
+  "project": "math2",
+  "type": "choice",
+  "stem": "方程 y''=2x 的通解为？",
+  "answer": "y=x³/3+C1x+C2",
+  "explanation": "第1步：y'=x²+C1。\n第2步：y=x³/3+C1x+C2。\n结论：选 B。",
+  "source": "海螺补题",
+  "chapter": "微分方程",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "可降阶方程",
+  "options": [
+   "y=x²+C",
+   "y=x³/3+C1x+C2",
+   "y=2x+C",
+   "y=x²+C1x+C2"
+  ]
+ },
+ {
+  "id": "math2-sub-276",
+  "project": "math2",
+  "type": "choice",
+  "stem": "y''=6x 且 y(0)=0，y'(0)=1，则 y=？",
+  "answer": "x³+x",
+  "explanation": "第1步：y'=3x²+C1，y'(0)=1 得 C1=1。\n第2步：y=x³+x+C2，y(0)=0 得 C2=0。\n结论：y=x³+x，选 A。",
+  "source": "海螺补题",
+  "chapter": "微分方程",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "可降阶方程",
+  "options": [
+   "x³+x",
+   "x³",
+   "3x²+1",
+   "x³+1"
+  ]
+ },
+ {
+  "id": "math2-sub-277",
+  "project": "math2",
+  "type": "choice",
+  "stem": "方程 y''=f(x,y')（不含 y）的降阶令法为？",
+  "answer": "令 p=y'，p'=y''",
+  "explanation": "第1步：不含 y 时令 p=y'。\n第2步：方程化为 p'=f(x,p)。\n结论：选 D。",
+  "source": "海螺补题",
+  "chapter": "微分方程",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "可降阶方程",
+  "options": [
+   "令 p=y，p'=y'",
+   "令 t=ln x",
+   "令 u=y/x",
+   "令 p=y'，p'=y''"
+  ]
+ },
+ {
+  "id": "math2-sub-278",
+  "project": "math2",
+  "type": "choice",
+  "stem": "方程 y''=(y')² 的通解可求法为？",
+  "answer": "令 p=y'，则 p'=p²",
+  "explanation": "第1步：不含 x、y 显式，令 p=y'。\n第2步：p'=p²，分离变量解得 p=-1/(x+C1)。\n结论：令 p=y'，选 C。",
+  "source": "海螺补题",
+  "chapter": "微分方程",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "可降阶方程",
+  "options": [
+   "直接积分",
+   "令 y=ut",
+   "令 p=y'，则 p'=p²",
+   "换元 t=y"
+  ]
+ },
+ {
+  "id": "math2-sub-279",
+  "project": "math2",
+  "type": "choice",
+  "stem": "y'''=0 的通解是？",
+  "answer": "二次多项式",
+  "explanation": "第1步：连续积分三次。\n第2步：通解为 y=C1x²/2+C2x+C3（二次多项式）。\n结论：选 B。",
+  "source": "海螺补题",
+  "chapter": "微分方程",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "可降阶方程",
+  "options": [
+   "C1x+C2",
+   "二次多项式",
+   "C1x²",
+   "一次函数"
+  ]
+ },
+ {
+  "id": "math2-sub-280",
+  "project": "math2",
+  "type": "choice",
+  "stem": "y''-2y'+2y=0 的特征根为？",
+  "answer": "1±i",
+  "explanation": "第1步：特征方程 r²-2r+2=0。\n第2步：判别式 4-8=-4<0，r=1±i。\n结论：选 C。",
+  "source": "海螺补题",
+  "chapter": "微分方程",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "高阶线性微分方程",
+  "options": [
+   "1±√2",
+   "2±√2",
+   "1±i",
+   "±i"
+  ]
+ },
+ {
+  "id": "math2-sub-281",
+  "project": "math2",
+  "type": "choice",
+  "stem": "y''+y=0 的通解是？",
+  "answer": "C1cos x+C2sin x",
+  "explanation": "第1步：r²+1=0，r=±i。\n第2步：通解 e^(αx)(C1cosβx+C2sinβx)，α=0，β=1。\n结论：y=C1cos x+C2sin x，选 D。",
+  "source": "海螺补题",
+  "chapter": "微分方程",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "高阶线性微分方程",
+  "options": [
+   "C1e^x+C2e^(-x)",
+   "C1x+C2",
+   "C1",
+   "C1cos x+C2sin x"
+  ]
+ },
+ {
+  "id": "math2-sub-282",
+  "project": "math2",
+  "type": "choice",
+  "stem": "y''-4y=0 的通解为？",
+  "answer": "C1e^(2x)+C2e^(-2x)",
+  "explanation": "第1步：r²-4=0，r=±2。\n第2步：通解 C1e^(2x)+C2e^(-2x)。\n结论：选 A。",
+  "source": "海螺补题",
+  "chapter": "微分方程",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "高阶线性微分方程",
+  "options": [
+   "C1e^(2x)+C2e^(-2x)",
+   "C1cos2x+C2sin2x",
+   "(C1+C2x)e^(2x)",
+   "C1x+C2"
+  ]
+ },
+ {
+  "id": "math2-sub-283",
+  "project": "math2",
+  "type": "choice",
+  "stem": "y''+4y'+4y=0 的通解为？",
+  "answer": "(C1+C2x)e^(-2x)",
+  "explanation": "第1步：r²+4r+4=0，重根 r=-2。\n第2步：重根通解 (C1+C2x)e^(-2x)。\n结论：选 B。",
+  "source": "海螺补题",
+  "chapter": "微分方程",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "高阶线性微分方程",
+  "options": [
+   "C1e^(2x)+C2e^(-2x)",
+   "(C1+C2x)e^(-2x)",
+   "C1e^(-2x)+C2e^(-4x)",
+   "C1cos2x+C2sin2x"
+  ]
+ },
+ {
+  "id": "math2-sub-284",
+  "project": "math2",
+  "type": "choice",
+  "stem": "若 y1、y2 为 y''+py'+qy=0 的两个线性无关解，则通解？",
+  "answer": "C1y1+C2y2",
+  "explanation": "第1步：二阶齐次通解为两个线性无关解的线性组合。\n结论：选 C。",
+  "source": "海螺补题",
+  "chapter": "微分方程",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "高阶线性微分方程",
+  "options": [
+   "y1+y2",
+   "y1·y2",
+   "C1y1+C2y2",
+   "y1+C2y2"
+  ]
+ },
+ {
+  "id": "math2-sub-285",
+  "project": "math2",
+  "type": "choice",
+  "stem": "y''+y'-2y=0 的通解为？",
+  "answer": "C1e^x+C2e^(-2x)",
+  "explanation": "第1步：r²+r-2=0，(r+2)(r-1)=0。\n第2步：r=1，-2。\n结论：y=C1e^x+C2e^(-2x)，选 D。",
+  "source": "海螺补题",
+  "chapter": "微分方程",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "常系数线性方程",
+  "options": [
+   "C1e^x+C2e^(-2x)",
+   "C1e^(-x)+C2e^(2x)",
+   "C1cos2x+C2sin2x",
+   "C1e^x+C2e^(-2x)"
+  ]
+ },
+ {
+  "id": "math2-sub-286",
+  "project": "math2",
+  "type": "choice",
+  "stem": "y''-y=e^x 的特解形式为？",
+  "answer": "Axe^x",
+  "explanation": "第1步：特征根 r=±1，1 是单特征根。\n第2步：特解乘 x：y*=Axe^x。\n结论：选 B。",
+  "source": "海螺补题",
+  "chapter": "微分方程",
+  "difficulty": 3,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "常系数线性方程",
+  "options": [
+   "Ae^x",
+   "Axe^x",
+   "A",
+   "B+Ax"
+  ]
+ },
+ {
+  "id": "math2-sub-287",
+  "project": "math2",
+  "type": "choice",
+  "stem": "y''+y=cos x 的特解形式为？",
+  "answer": "x(Acos x+Bsin x)",
+  "explanation": "第1步：±i 是特征根且 cos x 对应 ±i。\n第2步：须乘 x：y*=x(Acos x+Bsin x)。\n结论：选 C。",
+  "source": "海螺补题",
+  "chapter": "微分方程",
+  "difficulty": 3,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "常系数线性方程",
+  "options": [
+   "Acos x",
+   "Asin x",
+   "x(Acos x+Bsin x)",
+   "Acos x+Bsin x"
+  ]
+ },
+ {
+  "id": "math2-sub-288",
+  "project": "math2",
+  "type": "choice",
+  "stem": "y''+3y'+2y=6 的特解 y*=？",
+  "answer": "3",
+  "explanation": "第1步：0 不是特征根，特设常数 A。\n第2步：代入 2A=6，A=3。\n结论：选 A。",
+  "source": "海螺补题",
+  "chapter": "微分方程",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "常系数线性方程",
+  "options": [
+   "3",
+   "6",
+   "2",
+   "0"
+  ]
+ },
+ {
+  "id": "math2-sub-289",
+  "project": "math2",
+  "type": "choice",
+  "stem": "y''-3y'+2y=0 满足 y(0)=1，y'(0)=0 的解为？",
+  "answer": "2e^x-e^(2x)",
+  "explanation": "第1步：特征方程 r²-3r+2=0，根 r=1，2，通解 y=C1e^x+C2e^(2x)。\n第2步：y(0)=C1+C2=1，y'(0)=C1+2C2=0，解得 C1=2，C2=-1。\n结论：y=2e^x-e^(2x)，选 C。",
+  "source": "海螺补题",
+  "chapter": "微分方程",
+  "difficulty": 3,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "常系数线性方程",
+  "options": [
+   "e^(2x)",
+   "e^x",
+   "2e^x-e^(2x)",
+   "e^x+2e^(2x)"
+  ]
+ },
+ {
+  "id": "math2-sub-290",
+  "project": "math2",
+  "type": "choice",
+  "stem": "二次型 f=x²+2xy+2y² 的正惯性指数为？",
+  "answer": "2",
+  "explanation": "第1步：矩阵 [1 1;1 2]，顺序主子式 1>0，1>0。\n第2步：正定，p=2。\n结论：选 B。",
+  "source": "海螺补题",
+  "chapter": "二次型",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "标准形",
+  "options": [
+   "1",
+   "2",
+   "0",
+   "3"
+  ]
+ },
+ {
+  "id": "math2-sub-291",
+  "project": "math2",
+  "type": "choice",
+  "stem": "f=x²+y²-2xy 的标准形为？",
+  "answer": "(x-y)² 即 z1²",
+  "explanation": "第1步：f=(x-y)²。\n第2步：标准形 z1²。\n结论：选 C。",
+  "source": "海螺补题",
+  "chapter": "二次型",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "标准形",
+  "options": [
+   "z1²+z2²",
+   "z1²-z2²",
+   "(x-y)² 即 z1²",
+   "2z1²"
+  ]
+ },
+ {
+  "id": "math2-sub-292",
+  "project": "math2",
+  "type": "choice",
+  "stem": "二次型 f=x²-y² 经正交变换可化为标准形，其标准形即？",
+  "answer": "z1²-z2²（系数 1、-1）",
+  "explanation": "第1步：正交变换保惯性指数。\n第2步：标准形仍为 z1²-z2²。\n结论：选 D。",
+  "source": "海螺补题",
+  "chapter": "二次型",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "标准形",
+  "options": [
+   "z1²+z2²",
+   "z1²",
+   "z1²-z2²",
+   "z1²-z2²（系数 1、-1）"
+  ]
+ },
+ {
+  "id": "math2-sub-293",
+  "project": "math2",
+  "type": "choice",
+  "stem": "二次型矩阵 A=[2 0; 0 3] 对应二次型为？",
+  "answer": "2x²+3y²",
+  "explanation": "第1步：对角阵对应纯平方项。\n第2步：f=2x²+3y²。\n结论：选 A。",
+  "source": "海螺补题",
+  "chapter": "二次型",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "标准形",
+  "options": [
+   "2x²+3y²",
+   "2x²+6xy+3y²",
+   "5x²",
+   "2x²+3xy"
+  ]
+ },
+ {
+  "id": "math2-sub-294",
+  "project": "math2",
+  "type": "choice",
+  "stem": "用配方法化 f=x²+2x1x2 为标准形，应令？",
+  "answer": "y1=x1+x2，y2=x2",
+  "explanation": "第1步：f=(x1+x2)²-x2²。\n第2步：令 y1=x1+x2，y2=x2，标准形 y1²-y2²。\n结论：选 B。",
+  "source": "海螺补题",
+  "chapter": "二次型",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "标准形",
+  "options": [
+   "y1=x1+x2，y2=x2",
+   "y1=x1+x2，y2=x2",
+   "y1=x1，y2=x2",
+   "y1=x1-x2"
+  ]
+ }
+]

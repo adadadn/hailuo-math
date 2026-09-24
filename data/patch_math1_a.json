@@ -1,0 +1,722 @@
+[
+ {
+  "id": "math1-sub-001",
+  "project": "math1",
+  "type": "choice",
+  "stem": "函数 f(x)=ln(x-1)+√(4-x²) 的定义域是？",
+  "answer": "(1,2]",
+  "explanation": "第1步：对数要求真数大于0，即 x-1>0，得 x>1。\n第2步：根号要求 4-x²≥0，即 -2≤x≤2。\n第3步：取交集得 1<x≤2。\n结论：定义域为 (1,2]，选 B。",
+  "source": "海螺补题",
+  "chapter": "函数、极限与连续",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "函数的概念与性质",
+  "options": [
+   "(-∞,-2]",
+   "(1,2]",
+   "(1,2)",
+   "(-2,1]"
+  ]
+ },
+ {
+  "id": "math1-sub-002",
+  "project": "math1",
+  "type": "choice",
+  "stem": "函数 f(x)=ln(x+√(1+x²)) 的奇偶性是？",
+  "answer": "奇函数",
+  "explanation": "第1步：计算 f(-x)=ln(-x+√(1+x²))。\n第2步：利用有理化，-x+√(1+x²)=1/(x+√(1+x²))。\n第3步：故 f(-x)=-ln(x+√(1+x²))=-f(x)。\n结论：f(x) 是奇函数，选 A。",
+  "source": "海螺补题",
+  "chapter": "函数、极限与连续",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "函数的概念与性质",
+  "options": [
+   "奇函数",
+   "偶函数",
+   "非奇非偶",
+   "既是奇函数又是偶函数"
+  ]
+ },
+ {
+  "id": "math1-sub-003",
+  "project": "math1",
+  "type": "choice",
+  "stem": "设 f(x)=e^x，g(x)=x²，则复合函数 f(g(x)) 等于？",
+  "answer": "e^(x²)",
+  "explanation": "第1步：复合函数定义 f(g(x))=e^(g(x))。\n第2步：代入 g(x)=x²。\n结论：f(g(x))=e^(x²)，选 C。注意 (e^x)²=e^(2x) 不同。",
+  "source": "海螺补题",
+  "chapter": "函数、极限与连续",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "函数的概念与性质",
+  "options": [
+   "e^(x²)+1",
+   "x·e^x",
+   "e^(x²)",
+   "(e^x)²"
+  ]
+ },
+ {
+  "id": "math1-sub-004",
+  "project": "math1",
+  "type": "choice",
+  "stem": "函数 y=2x/(x-1)（x≠1）的反函数是？",
+  "answer": "y=x/(x-2)（x≠2）",
+  "explanation": "第1步：由 y=2x/(x-1) 解出 x：y(x-1)=2x，即 yx-y=2x。\n第2步：移项得 x(y-2)=y，故 x=y/(y-2)。\n第3步：交换 x、y 得反函数 y=x/(x-2)，定义域 x≠2。\n结论：选 D。",
+  "source": "海螺补题",
+  "chapter": "函数、极限与连续",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "函数的概念与性质",
+  "options": [
+   "y=x/(x-2)（x≠2）",
+   "y=2x/(x+1)",
+   "y=(x+1)/(x-2)",
+   "y=x/(x-2)（x≠2）"
+  ]
+ },
+ {
+  "id": "math1-sub-005",
+  "project": "math1",
+  "type": "choice",
+  "stem": "下列关于函数 f(x)=arctan x 的说法正确的是？",
+  "answer": "有界函数",
+  "explanation": "第1步：arctan x 的值域为 (-π/2, π/2)。\n第2步：因此 |f(x)|<π/2 恒成立。\n第3步：由导函数 1/(1+x²)>0 知其单调递增。\n结论：f(x) 是有界函数，选 C。",
+  "source": "海螺补题",
+  "chapter": "函数、极限与连续",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "函数的概念与性质",
+  "options": [
+   "无界函数",
+   "周期函数",
+   "有界函数",
+   "单调递减"
+  ]
+ },
+ {
+  "id": "math1-sub-006",
+  "project": "math1",
+  "type": "choice",
+  "stem": "函数 f(x)=sin2x+cos3x 的最小正周期是？",
+  "answer": "2π",
+  "explanation": "第1步：sin2x 的周期为 π，cos3x 的周期为 2π/3。\n第2步：两个周期的最小公倍数为 2π（因为 2π 是 π 的2倍、2π/3 的3倍）。\n第3步：验证 f(x+2π)=f(x) 且没有更小正周期。\n结论：最小正周期为 2π，选 A。",
+  "source": "海螺补题",
+  "chapter": "函数、极限与连续",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "函数的概念与性质",
+  "options": [
+   "2π",
+   "π",
+   "6π",
+   "π/6"
+  ]
+ },
+ {
+  "id": "math1-sub-007",
+  "project": "math1",
+  "type": "choice",
+  "stem": "极限 lim(n→∞) (n²+1)/(2n²+3n+1) =？",
+  "answer": "1/2",
+  "explanation": "第1步：分子分母同除以 n²（最高次幂）。\n第2步：原式=(1+1/n²)/(2+3/n+1/n²)。\n第3步：n→∞ 时 1/n²→0，3/n→0。\n结论：极限为 1/2，选 C。",
+  "source": "海螺补题",
+  "chapter": "函数、极限与连续",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "数列极限与函数极限",
+  "options": [
+   "1",
+   "2/3",
+   "1/2",
+   "0"
+  ]
+ },
+ {
+  "id": "math1-sub-008",
+  "project": "math1",
+  "type": "choice",
+  "stem": "设 xn=(sin1+sin2+…+sin n)/n²，则 lim(n→∞) xn =？",
+  "answer": "0",
+  "explanation": "第1步：分子 |sin1+…+sin n|≤n（每一项绝对值≤1）。\n第2步：故 0≤|xn|≤n/n²=1/n。\n第3步：由夹逼准则，1/n→0。\n结论：极限为 0，选 D。",
+  "source": "海螺补题",
+  "chapter": "函数、极限与连续",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "数列极限与函数极限",
+  "options": [
+   "1",
+   "1/2",
+   "不存在",
+   "0"
+  ]
+ },
+ {
+  "id": "math1-sub-009",
+  "project": "math1",
+  "type": "choice",
+  "stem": "lim(n→∞) (√(n+1)-√n) =？",
+  "answer": "0",
+  "explanation": "第1步：有理化：√(n+1)-√n = 1/(√(n+1)+√n)。\n第2步：分母 →∞。\n结论：极限为 0，选 A。",
+  "source": "海螺补题",
+  "chapter": "函数、极限与连续",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "数列极限与函数极限",
+  "options": [
+   "0",
+   "1",
+   "1/2",
+   "不存在"
+  ]
+ },
+ {
+  "id": "math1-sub-010",
+  "project": "math1",
+  "type": "choice",
+  "stem": "极限 lim(x→∞) (3x²-2)/(2x²+1) =？",
+  "answer": "3/2",
+  "explanation": "第1步：分子分母同除以 x²。\n第2步：原式=(3-2/x²)/(2+1/x²)。\n第3步：x→∞ 时 2/x²→0，1/x²→0。\n结论：极限为 3/2，选 B。",
+  "source": "海螺补题",
+  "chapter": "函数、极限与连续",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "数列极限与函数极限",
+  "options": [
+   "3/2",
+   "3/2",
+   "2/3",
+   "1"
+  ]
+ },
+ {
+  "id": "math1-sub-011",
+  "project": "math1",
+  "type": "choice",
+  "stem": "极限 lim(x→0) (e^x-1)/x =？",
+  "answer": "1",
+  "explanation": "第1步：这是等价无穷小 e^x-1~x（x→0）的直接应用。\n第2步：故 (e^x-1)/x→1。\n第3步：也可用洛必达：lim e^x=1。\n结论：极限为 1，选 C。",
+  "source": "海螺补题",
+  "chapter": "函数、极限与连续",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "数列极限与函数极限",
+  "options": [
+   "0",
+   "∞",
+   "1",
+   "-1"
+  ]
+ },
+ {
+  "id": "math1-sub-012",
+  "project": "math1",
+  "type": "choice",
+  "stem": "下列判断正确的是？",
+  "answer": "单调有界数列必收敛",
+  "explanation": "第1步：单调有界定理：单调且有界的数列必收敛。\n第2步：反例：(-1)^n 有界但发散；无界数列必发散（逆否）；收敛数列必有界。\n结论：选 B。",
+  "source": "海螺补题",
+  "chapter": "函数、极限与连续",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "数列极限与函数极限",
+  "options": [
+   "若数列无界则必发散",
+   "单调有界数列必收敛",
+   "有界数列必收敛",
+   "收敛数列未必有界"
+  ]
+ },
+ {
+  "id": "math1-sub-013",
+  "project": "math1",
+  "type": "choice",
+  "stem": "函数 f(x)=x³-3x 的单调递增区间是？",
+  "answer": "(-∞,-1)∪(1,+∞)",
+  "explanation": "第1步：f'(x)=3x²-3=3(x-1)(x+1)。\n第2步：f'(x)>0 得 x<-1 或 x>1。\n结论：增区间为 (-∞,-1)∪(1,+∞)，选 D。",
+  "source": "海螺补题",
+  "chapter": "一元函数微分学",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "导数的应用",
+  "options": [
+   "(-1,1)",
+   "(0,1)",
+   "(-1,+∞)",
+   "(-∞,-1)∪(1,+∞)"
+  ]
+ },
+ {
+  "id": "math1-sub-014",
+  "project": "math1",
+  "type": "choice",
+  "stem": "函数 f(x)=x·e^(-x) 的极大值点是？",
+  "answer": "x=1",
+  "explanation": "第1步：f'(x)=e^(-x)-x·e^(-x)=(1-x)e^(-x)。\n第2步：令 f'(x)=0 得 x=1；x<1 时 f'>0，x>1 时 f'<0。\n第3步：左增右减，x=1 为极大值点。\n结论：选 B。",
+  "source": "海螺补题",
+  "chapter": "一元函数微分学",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "导数的应用",
+  "options": [
+   "x=-1",
+   "x=1",
+   "x=0",
+   "x=e"
+  ]
+ },
+ {
+  "id": "math1-sub-015",
+  "project": "math1",
+  "type": "choice",
+  "stem": "函数 f(x)=x⁴-6x² 的拐点个数是？",
+  "answer": "2",
+  "explanation": "第1步：f''(x)=12x²-12=12(x-1)(x+1)。\n第2步：f''=0 得 x=±1，且 f'' 在 x=±1 两侧变号。\n结论：有两个拐点 (1,-5) 与 (-1,-5)，选 B。",
+  "source": "海螺补题",
+  "chapter": "一元函数微分学",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "导数的应用",
+  "options": [
+   "1",
+   "2",
+   "3",
+   "0"
+  ]
+ },
+ {
+  "id": "math1-sub-016",
+  "project": "math1",
+  "type": "choice",
+  "stem": "曲线 f(x)=(x²-1)/x 的斜渐近线是？",
+  "answer": "y=x",
+  "explanation": "第1步：f(x)=x-1/x。\n第2步：lim(x→∞) f(x)/x = lim(1-1/x²)=1，斜率 k=1。\n第3步：lim(x→∞) [f(x)-x]=lim(-1/x)=0，截距 b=0。\n结论：斜渐近线为 y=x，选 C。",
+  "source": "海螺补题",
+  "chapter": "一元函数微分学",
+  "difficulty": 3,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "导数的应用",
+  "options": [
+   "y=x+1",
+   "y=x-1",
+   "y=x",
+   "y=-x"
+  ]
+ },
+ {
+  "id": "math1-sub-017",
+  "project": "math1",
+  "type": "choice",
+  "stem": "函数 f(x)=x+1/x 在 (0,2] 上的最小值为？",
+  "answer": "2",
+  "explanation": "第1步：f'(x)=1-1/x²=0 得 x=1（x>0）。\n第2步：x∈(0,1) 时 f'<0，x∈(1,2] 时 f'>0，x=1 为最小值点。\n第3步：f(1)=2。\n结论：最小值为 2，选 A。",
+  "source": "海螺补题",
+  "chapter": "一元函数微分学",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "导数的应用",
+  "options": [
+   "2",
+   "5/2",
+   "3",
+   "不存在"
+  ]
+ },
+ {
+  "id": "math1-sub-018",
+  "project": "math1",
+  "type": "choice",
+  "stem": "曲线 y=x³-3x+2 在点 (1,0) 处的切线方程是？",
+  "answer": "y=0",
+  "explanation": "第1步：y'=3x²-3。\n第2步：k=y'(1)=0，切线水平。\n第3步：过 (1,0) 的水平线为 y=0。\n结论：选 B。",
+  "source": "海螺补题",
+  "chapter": "一元函数微分学",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "导数的应用",
+  "options": [
+   "y=1",
+   "y=0",
+   "y=3x-3",
+   "x=1"
+  ]
+ },
+ {
+  "id": "math1-sub-019",
+  "project": "math1",
+  "type": "choice",
+  "stem": "半径为 2 的圆上任一点的曲率为？",
+  "answer": "1/2",
+  "explanation": "第1步：圆的曲率为常数 κ=1/R（R 为半径）。\n第2步：代入 R=2。\n结论：κ=1/2，选 C。",
+  "source": "海螺补题",
+  "chapter": "一元函数微分学",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "曲率与方程近似解",
+  "options": [
+   "2",
+   "1",
+   "1/2",
+   "π"
+  ]
+ },
+ {
+  "id": "math1-sub-020",
+  "project": "math1",
+  "type": "choice",
+  "stem": "抛物线 y=x² 在顶点 (0,0) 处的曲率半径是？",
+  "answer": "1/2",
+  "explanation": "第1步：曲率 κ=|y''|/(1+(y')²)^(3/2)。\n第2步：顶点处 y'=0，y''=2。\n第3步：κ=2，曲率半径 R=1/κ=1/2。\n结论：选 A。",
+  "source": "海螺补题",
+  "chapter": "一元函数微分学",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "曲率与方程近似解",
+  "options": [
+   "1/2",
+   "2",
+   "1",
+   "4"
+  ]
+ },
+ {
+  "id": "math1-sub-021",
+  "project": "math1",
+  "type": "choice",
+  "stem": "曲线 y=f(x) 的曲率公式是？",
+  "answer": "κ=|y''|/(1+(y')²)^(3/2)",
+  "explanation": "第1步：平面曲线 y=f(x) 的曲率公式为 κ=|y''|/(1+(y')²)^(3/2)。\n第2步：注意分母指数为 3/2 而非 2。\n结论：选 D。",
+  "source": "海螺补题",
+  "chapter": "一元函数微分学",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "曲率与方程近似解",
+  "options": [
+   "κ=y''/(1+y')²",
+   "κ=|y''|/(1+y')²",
+   "κ=y''/(1+(y')²)^(1/2)",
+   "κ=|y''|/(1+(y')²)^(3/2)"
+  ]
+ },
+ {
+  "id": "math1-sub-022",
+  "project": "math1",
+  "type": "choice",
+  "stem": "用二分法求方程 x³-x-1=0 在 [1,2] 内的根，第一次二分后应取的新区间是？",
+  "answer": "[1,1.5]",
+  "explanation": "第1步：f(1)=1-1-1=-1<0，f(2)=8-2-1=5>0。\n第2步：中点 x=1.5，f(1.5)=3.375-1.5-1=0.875>0。\n第3步：f(1)·f(1.5)<0，根在 [1,1.5]。\n结论：选 B。",
+  "source": "海螺补题",
+  "chapter": "一元函数微分学",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "曲率与方程近似解",
+  "options": [
+   "[1.25,2]",
+   "[1,1.5]",
+   "[1.5,2]",
+   "[1,1.25]"
+  ]
+ },
+ {
+  "id": "math1-sub-023",
+  "project": "math1",
+  "type": "choice",
+  "stem": "牛顿迭代法解方程 f(x)=0 的迭代格式是？",
+  "answer": "x(n+1)=x(n)-f(x(n))/f'(x(n))",
+  "explanation": "第1步：牛顿法用切线近似：f(x)≈f(xn)+f'(xn)(x-xn)。\n第2步：令其为 0 解出 x=xn-f(xn)/f'(xn)。\n结论：迭代格式 x(n+1)=x(n)-f(x(n))/f'(x(n))，选 C。",
+  "source": "海螺补题",
+  "chapter": "一元函数微分学",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "曲率与方程近似解",
+  "options": [
+   "x(n+1)=x(n)+f(x(n))/f'(x(n))",
+   "x(n+1)=x(n)·f(x(n))",
+   "x(n+1)=x(n)-f(x(n))/f'(x(n))",
+   "x(n+1)=f(x(n))"
+  ]
+ },
+ {
+  "id": "math1-sub-024",
+  "project": "math1",
+  "type": "choice",
+  "stem": "曲线 y=e^x 在 x=0 处的曲率半径是？",
+  "answer": "2√2",
+  "explanation": "第1步：y'=e^x，y''=e^x，在 x=0 处 y'=1，y''=1。\n第2步：κ=1/(1+1)^(3/2)=1/(2√2)。\n第3步：曲率半径 R=1/κ=2√2。\n结论：选 D。",
+  "source": "海螺补题",
+  "chapter": "一元函数微分学",
+  "difficulty": 3,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "曲率与方程近似解",
+  "options": [
+   "1/2",
+   "1",
+   "√2",
+   "2√2"
+  ]
+ },
+ {
+  "id": "math1-sub-025",
+  "project": "math1",
+  "type": "choice",
+  "stem": "比较大小：∫(0,1) x² dx 与 ∫(0,1) x³ dx？",
+  "answer": "前者大",
+  "explanation": "第1步：在 (0,1) 内 0<x<1 时 x²>x³。\n第2步：由定积分保序性，∫x²dx>∫x³dx。\n结论：选 A。",
+  "source": "海螺补题",
+  "chapter": "一元函数积分学",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "定积分及其性质",
+  "options": [
+   "前者大",
+   "后者大",
+   "相等",
+   "无法比较"
+  ]
+ },
+ {
+  "id": "math1-sub-026",
+  "project": "math1",
+  "type": "choice",
+  "stem": "∫(-a,a) x³ dx =？",
+  "answer": "0",
+  "explanation": "第1步：x³ 是奇函数。\n第2步：奇函数在对称区间上的积分为 0。\n结论：选 C。",
+  "source": "海螺补题",
+  "chapter": "一元函数积分学",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "定积分及其性质",
+  "options": [
+   "2a⁴/4",
+   "a⁴/2",
+   "0",
+   "a⁴"
+  ]
+ },
+ {
+  "id": "math1-sub-027",
+  "project": "math1",
+  "type": "choice",
+  "stem": "定积分 ∫(0,1) e^x dx 的取值范围是？",
+  "answer": "1 到 e 之间",
+  "explanation": "第1步：在 [0,1] 上 1≤e^x≤e。\n第2步：由定积分估值定理：1·1≤∫e^xdx≤e·1。\n结论：介于 1 与 e 之间，选 B。",
+  "source": "海螺补题",
+  "chapter": "一元函数积分学",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "定积分及其性质",
+  "options": [
+   "0 到 1 之间",
+   "1 到 e 之间",
+   "e 到 e² 之间",
+   "无法确定"
+  ]
+ },
+ {
+  "id": "math1-sub-028",
+  "project": "math1",
+  "type": "choice",
+  "stem": "lim(n→∞) [f(1/n)+f(2/n)+…+f(n/n)]/n =？",
+  "answer": "∫(0,1) f(x) dx",
+  "explanation": "第1步：这是定积分的定义：lim Σ f(i/n)·(1/n)=∫(0,1) f(x)dx。\n第2步：注意 i/n 为分点，1/n 为小区间长度。\n结论：选 D。",
+  "source": "海螺补题",
+  "chapter": "一元函数积分学",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "定积分及其性质",
+  "options": [
+   "f(1)",
+   "∫(0,1) f(x) dx",
+   "f(0)",
+   "∫(0,1) f(x) dx"
+  ]
+ },
+ {
+  "id": "math1-sub-029",
+  "project": "math1",
+  "type": "choice",
+  "stem": "∫(0,2) (2x+1) dx =？",
+  "answer": "6",
+  "explanation": "第1步：∫(2x+1)dx=x²+x。\n第2步：代入上下限：F(2)-F(0)=4+2-0=6。\n结论：选 B。",
+  "source": "海螺补题",
+  "chapter": "一元函数积分学",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "定积分及其性质",
+  "options": [
+   "4",
+   "6",
+   "5",
+   "8"
+  ]
+ },
+ {
+  "id": "math1-sub-030",
+  "project": "math1",
+  "type": "choice",
+  "stem": "设 F(x)=∫(0,x) sin t² dt，则 F'(x)=？",
+  "answer": "sin x²",
+  "explanation": "第1步：变上限积分求导：d/dx ∫(a,x) f(t)dt=f(x)。\n第2步：把 t² 整体视为变量，直接代入上限。\n结论：F'(x)=sin x²，选 A。",
+  "source": "海螺补题",
+  "chapter": "一元函数积分学",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "定积分及其性质",
+  "options": [
+   "sin x²",
+   "2x·sin x²",
+   "cos x²",
+   "sin t²"
+  ]
+ },
+ {
+  "id": "math1-sub-031",
+  "project": "math1",
+  "type": "choice",
+  "stem": "曲线 y=x² 与 y=x 所围图形的面积是？",
+  "answer": "1/6",
+  "explanation": "第1步：求交点：x²=x 得 x=0,1。\n第2步：面积 S=∫(0,1)(x-x²)dx。\n第3步：=[x²/2-x³/3](0,1)=1/2-1/3=1/6。\n结论：选 C。",
+  "source": "海螺补题",
+  "chapter": "一元函数积分学",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "定积分的应用",
+  "options": [
+   "1/3",
+   "1/2",
+   "1/6",
+   "1/4"
+  ]
+ },
+ {
+  "id": "math1-sub-032",
+  "project": "math1",
+  "type": "choice",
+  "stem": "曲线 y=√x 与 y=x 所围图形的面积为？",
+  "answer": "1/6",
+  "explanation": "第1步：交点：√x=x 得 x=0,1。\n第2步：S=∫(0,1)(√x-x)dx。\n第3步：=[2/3·x^(3/2)-x²/2](0,1)=2/3-1/2=1/6。\n结论：选 A。",
+  "source": "海螺补题",
+  "chapter": "一元函数积分学",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "定积分的应用",
+  "options": [
+   "1/6",
+   "1/3",
+   "1/2",
+   "2/3"
+  ]
+ },
+ {
+  "id": "math1-sub-033",
+  "project": "math1",
+  "type": "choice",
+  "stem": "由曲线 y=√x、x 轴与直线 x=1 围成的图形绕 x 轴旋转所得旋转体体积为？",
+  "answer": "π/2",
+  "explanation": "第1步：绕 x 轴旋转体积 V=π∫(a,b) y² dx。\n第2步：V=π∫(0,1) x dx=π·[x²/2](0,1)。\n结论：V=π/2，选 B。",
+  "source": "海螺补题",
+  "chapter": "一元函数积分学",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "定积分的应用",
+  "options": [
+   "π/3",
+   "π/2",
+   "π",
+   "π/4"
+  ]
+ },
+ {
+  "id": "math1-sub-034",
+  "project": "math1",
+  "type": "choice",
+  "stem": "半径为 R 的圆的周长用定积分弧长公式计算的结果是？",
+  "answer": "2πR",
+  "explanation": "第1步：弧长公式 s=∫√(1+(y')²)dx 或参数式 ∫√((x')²+(y')²)dt。\n第2步：圆的参数方程 x=Rcos t，y=Rsin t，t∈[0,2π]。\n第3步：s=∫(0,2π) R dt=2πR。\n结论：选 D。",
+  "source": "海螺补题",
+  "chapter": "一元函数积分学",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "定积分的应用",
+  "options": [
+   "πR",
+   "2R",
+   "πR²",
+   "2πR"
+  ]
+ },
+ {
+  "id": "math1-sub-035",
+  "project": "math1",
+  "type": "choice",
+  "stem": "函数 f(x)=x 在 [0,2] 上的平均值为？",
+  "answer": "1",
+  "explanation": "第1步：函数在区间上的平均值 =(1/(b-a))∫(a,b) f(x)dx。\n第2步：=(1/2)∫(0,2) x dx=(1/2)·2=1。\n结论：选 C。",
+  "source": "海螺补题",
+  "chapter": "一元函数积分学",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "定积分的应用",
+  "options": [
+   "1/2",
+   "2/3",
+   "1",
+   "3/2"
+  ]
+ },
+ {
+  "id": "math1-sub-036",
+  "project": "math1",
+  "type": "choice",
+  "stem": "曲线 y=x² 与 y=2-x² 所围图形的面积为？",
+  "answer": "8/3",
+  "explanation": "第1步：交点：x²=2-x² 得 x=±1。\n第2步：S=∫(-1,1)(2-2x²)dx。\n第3步：=[2x-2x³/3](-1,1)=4-4/3=8/3。\n结论：选 A。",
+  "source": "海螺补题",
+  "chapter": "一元函数积分学",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved",
+  "sub": "定积分的应用",
+  "options": [
+   "8/3",
+   "4/3",
+   "16/3",
+   "2"
+  ]
+ }
+]
