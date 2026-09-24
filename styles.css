@@ -278,3 +278,14 @@ select:focus, input:focus, textarea:focus { border-color: var(--teal); box-shado
   h1 { font-size: 24px; }
   .exam-count { font-size: 11.5px; padding: 9px 4px; }
 }
+
+/* ---- 学习中心 · 小节细分 ---- */
+.chapter-card { border: 1px solid var(--line); border-radius: var(--radius-md); background: #fff; overflow: hidden; }
+.chapter-card .chapter-row { border: 0; border-radius: 0; }
+.sub-list { display: flex; flex-wrap: wrap; gap: 7px; padding: 11px 14px 13px; border-top: 1px solid var(--line); background: #fafcfd; }
+.sub-chip { border: 1px solid var(--line-strong); border-radius: 99px; padding: 5px 11px; background: #fff; color: var(--navy); font-size: 12px; font-weight: 600; cursor: pointer; transition: border-color .15s ease, background .15s ease; }
+.sub-chip:hover { border-color: #9cc8de; background: #f4fafc; }
+.sub-chip.done { background: var(--teal-soft); border-color: #bfd7e4; color: var(--teal-ink); }
+.sub-chip.active { background: var(--teal); border-color: var(--teal); color: #fff; }
+.sub-nav { display: flex; flex-wrap: wrap; align-items: center; gap: 7px; margin: 14px 0 4px; }
+.sub-nav-label { color: var(--muted); font-size: 12px; font-weight: 700; margin-right: 2px; }

@@ -16,9 +16,9 @@ const REASON_CODES = ["概念不清", "计算错误", "方法错误", "审题错
 const STORAGE = "kaoyan-math-m1";
 const today = () => new Date().toISOString().slice(0, 10);
 const defaultState = () => ({
-  project: "math1", count: 5, attempts: {}, practices: {}, checkins: {}, session: null, presetChapter: "all", presetDifficulty: "all",
+  project: "math1", count: 5, attempts: {}, practices: {}, checkins: {}, session: null, presetChapter: "all", presetDifficulty: "all", presetNoteSub: null,
   review: {}, exam: null, examResults: [], examSetup: { count: 10, chapter: "all", difficulty: "all" },
-  learned: {},
+  learned: {}, subLearned: {},
 });
 const readState = () => {
   let parsed = null;
@@ -185,6 +185,11 @@ function markLearned(chapter) {
   state.learned[key] = { ...rec, lastSeen: Date.now(), count: rec.count + 1 };
   save();
 }
+const markSubLearned = (chapter, sub) => {
+  const key = NOTE_KEY[chapter] || chapter;
+  state.subLearned[key] = { ...(state.subLearned[key] || {}), [sub]: true };
+  save();
+};
 
 function learnView() {
   const p = PROJECTS[state.project];
@@ -204,7 +209,10 @@ function learnView() {
     const disabled = !note;
     const done = doneCounts[c.name] || 0;
     const qty = questions.filter((q) => q.project === state.project && q.chapter === c.name).length;
-    return `<button class="chapter-row ${disabled ? "disabled" : ""} ${learned ? "learned" : ""}" ${disabled ? "" : `data-note-chapter="${escapeHtml(c.name)}"`}><span class="chapter-no">${learned ? "✓" : String(i + 1).padStart(2, "0")}</span><span class="chapter-main"><strong>${escapeHtml(c.name)}</strong><span class="muted">${qty} 道题 · 答对 ${done} · ${note ? (learned ? "已学" : "待学习") : "讲义整理中"}</span></span><span class="chapter-arrow">›</span></button>`;
+    const subs = c.children || [];
+    const subKey = NOTE_KEY[c.name] || c.name;
+    const subChips = subs.map((s) => `<button class="sub-chip ${state.subLearned?.[subKey]?.[s] ? "done" : ""}" data-note-chapter="${escapeHtml(c.name)}" data-note-sub="${escapeHtml(s)}">${state.subLearned?.[subKey]?.[s] ? "✓ " : ""}${escapeHtml(s)}</button>`).join("");
+    return `<div class="chapter-card"><button class="chapter-row ${disabled ? "disabled" : ""} ${learned ? "learned" : ""}" ${disabled ? "" : `data-note-chapter="${escapeHtml(c.name)}"`}><span class="chapter-no">${learned ? "✓" : String(i + 1).padStart(2, "0")}</span><span class="chapter-main"><strong>${escapeHtml(c.name)}</strong><span class="muted">${qty} 道题 · 答对 ${done} · ${note ? (learned ? "已学" : "待学习") : "讲义整理中"} · ${subs.length} 个小节</span></span><span class="chapter-arrow">›</span></button>${subs.length ? `<div class="sub-list">${subChips}</div>` : ""}</div>`;
   }).join("");
   return `<p class="eyebrow">学习中心 / ${p.code}</p><h1>先学会，再练题。</h1><p class="lede">每章有「考点 + 公式 + 方法 + 易错点 + 例题精讲」讲义，先学后练效率更高。</p>
     <section class="section"><div class="section-head"><h2>${p.name}</h2><span class="muted">已学 ${learnedCount}/${p.chapters.length} 章</span></div><div class="chapter-list">${chapterRows}</div></section>`;
@@ -212,14 +220,19 @@ function learnView() {
 
 function notesView() {
   const chapter = state.presetNoteChapter || "";
+  const sub = state.presetNoteSub || "";
   const note = noteFor(chapter);
   const p = PROJECTS[state.project];
   if (!note) return `<section class="panel"><h2>讲义未找到</h2><p class="muted">该章节暂时没有讲义，先去题库练习吧。</p><button class="primary" data-view="learn">返回学习中心</button></section>`;
   markLearned(chapter);
+  if (sub) markSubLearned(chapter, sub);
+  const subs = (p.chapters.find((c) => c.name === chapter)?.children) || [];
+  const subNav = subs.length ? `<div class="sub-nav"><span class="sub-nav-label">小节导航</span>${subs.map((s) => `<button class="sub-chip ${s === sub ? "active" : ""}" data-note-chapter="${escapeHtml(chapter)}" data-note-sub="${escapeHtml(s)}">${s === sub ? "▸ " : ""}${escapeHtml(s)}</button>`).join("")}</div>` : "";
   const formulaRows = (note.formulas || []).map((f) => `<tr><td>${escapeHtml(f.name)}</td><td>${escapeHtml(f.body)}</td></tr>`).join("");
   const methodList = (note.methods || []).map((m) => `<li><strong>${escapeHtml(m.name)}</strong><div class="muted">${escapeHtml(m.body)}</div></li>`).join("");
   const exampleList = (note.examples || []).map((ex, i) => `<details class="example-item"><summary><span class="tag navy">例 ${i + 1}</span>${escapeHtml(ex.stem)}</summary><div class="example-body"><p class="muted">标准答案：${escapeHtml(ex.answer)}</p><div class="example-solution">${escapeHtml(ex.solution)}</div></div></details>`).join("");
   return `<p class="eyebrow">学习中心 / ${p.code}</p><div class="section-head"><h1>${escapeHtml(chapter)}</h1><button class="text-button" data-view="learn">返回章节</button></div>
+    ${subNav}
     <section class="section panel"><h3>本章概述</h3><p class="lede" style="margin-bottom:0">${escapeHtml(note.summary)}</p></section>
     <section class="section panel"><h3>核心考点</h3><ul class="check-list">${(note.keyPoints || []).map((k) => `<li>${escapeHtml(k)}</li>`).join("")}</ul></section>
     ${note.formulas?.length ? `<section class="section panel"><h3>必备公式</h3><div class="formula-table"><table><tbody>${formulaRows}</tbody></table></div></section>` : ""}
@@ -402,7 +415,7 @@ function bindEvents() {
   document.querySelector("#chapter-select")?.addEventListener("change", (event) => { state.presetChapter = event.target.value; save(); });
   document.querySelector("#difficulty-select")?.addEventListener("change", (event) => { state.presetDifficulty = event.target.value; save(); });
   document.querySelectorAll("[data-chapter-practice]").forEach((el) => el.addEventListener("click", () => { state.presetChapter = el.dataset.chapterPractice; save(); view = "home"; render(); }));
-  document.querySelectorAll("[data-note-chapter]").forEach((el) => el.addEventListener("click", () => { state.presetNoteChapter = el.dataset.noteChapter; view = "notes"; render(); }));
+  document.querySelectorAll("[data-note-chapter]").forEach((el) => el.addEventListener("click", () => { state.presetNoteChapter = el.dataset.noteChapter; state.presetNoteSub = el.dataset.noteSub || null; view = "notes"; render(); }));
   document.querySelector("[data-action='start-practice']")?.addEventListener("click", startPractice);
   document.querySelector("[data-action='submit-answer']")?.addEventListener("click", submitAnswer);
   document.querySelectorAll("[data-action='essay-done'], [data-action='essay-giveup']").forEach((el) => el.addEventListener("click", () => submitEssay(el.dataset.question, el.dataset.action === "essay-done" ? "done" : "giveup")));
