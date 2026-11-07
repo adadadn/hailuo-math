@@ -48,20 +48,48 @@
     hard: (q) => (Number(q.difficulty) || 1) >= 3,
   };
 
+  // 题干归一化：用于「同一道题不在一份题单/试卷里出现两次」的保险丝
+  function stemKey(stem) {
+    return String(stem == null ? "" : stem)
+      .replace(/[\u2212\u2013\u2014]/g, "-")
+      .replace(/（/g, "(")
+      .replace(/）/g, ")")
+      .replace(/\s+/g, "");
+  }
+
+  // 确定性洗牌（Fisher–Yates）：比 sort(() => rand()-0.5) 均匀，且同 seed 结果稳定
+  function shuffled(list, rand) {
+    const arr = list.slice();
+    for (let i = arr.length - 1; i > 0; i -= 1) {
+      const j = Math.floor(rand() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+  }
+
   /**
    * 模拟考试组卷：只取客观题（选择/填空），题型交替、顺序打散。
    * @returns {{items: Array<object>, notice: string}} items 为题目对象数组
    */
   function buildExamPlan({ questions, project, chapter = "all", count, seed = Date.now(), difficulty = "all" }) {
     const diffOk = DIFFICULTY_FILTERS[difficulty] || DIFFICULTY_FILTERS.all;
-    let pool = questions.filter((q) => q.project === project && q.reviewStatus === "approved" && q.type !== "essay" && (chapter === "all" || q.chapter === chapter) && diffOk(q));
+    const seenStem = new Set();
+    const pool = questions.filter((q) => {
+      if (q.project !== project || q.reviewStatus !== "approved" || q.type === "essay") return false;
+      if (chapter !== "all" && q.chapter !== chapter) return false;
+      if (!diffOk(q)) return false;
+      const key = stemKey(q.stem);
+      if (seenStem.has(key)) return false; // 同一题干只进一次试卷
+      seenStem.add(key);
+      return true;
+    });
     if (pool.length < count) {
       return { items: [], notice: `当前范围只有 ${pool.length} 道客观题，不足以组成 ${count} 道试卷。` };
     }
     const rand = mulberry32(seed);
-    const shuffled = pool.slice().sort(() => rand() - 0.5).slice(0, count);
+    const picked = shuffled(pool, rand).slice(0, count);
     const buckets = { choice: [], fill: [] };
-    for (const q of shuffled) buckets[q.type].push(q);
+    for (const q of picked) buckets[q.type].push(q);
     const rotated = [];
     let slot = 0;
     while (rotated.length < count && slot < count * 4) {
@@ -252,9 +280,19 @@
     });
     scored.sort((a, b) => b.score - a.score);
 
+    // 同一题干只取一次：题库即使混入重复题，也不会在同一份题单里出现两遍
+    const seenStem = new Set();
+    const unique = [];
+    for (const s of scored) {
+      const key = stemKey(s.q.stem);
+      if (seenStem.has(key)) continue;
+      seenStem.add(key);
+      unique.push(s);
+    }
+
     // 类型轮换：题单按 选择→填空→解答 交替，避免同类型扎堆；高分/错题优先体现在“先被取入”
     const TYPE_ORDER = ["choice", "fill", "essay"];
-    const chosen = scored.slice(0, count);
+    const chosen = unique.slice(0, count);
     const buckets = { choice: [], fill: [], essay: [] };
     for (const s of chosen) buckets[s.q.type].push(s);
     const rotated = [];
@@ -271,7 +309,8 @@
 
     // 真题配比：若题库含真题且题单 >=3 道，尽量保底放入 1 道真题
     if (count >= 3 && items.length > 0 && !items.some((it) => it.qKind === "real")) {
-      const real = pool.find((q) => q.kind === "real" && !items.some((it) => it.id === q.id));
+      const usedStems = new Set(ordered.map((s) => stemKey(s.q.stem)));
+      const real = pool.find((q) => q.kind === "real" && !usedStems.has(stemKey(q.stem)) && !items.some((it) => it.id === q.id));
       if (real) {
         const swapIdx = items.findIndex((it) => it.qKind !== "real");
         if (swapIdx >= 0) {
@@ -290,7 +329,7 @@
   // 兼容层：Node(CJS) 供单测 / 浏览器(window.Core) 供经典脚本 app.js
   const Core = {
     MISTAKE_RESULTS, RECENT_WINDOW_MS, OVERDUE_DAYS, REVIEW_INTERVALS, EXAM_MINUTES_PER_QUESTION,
-    DIFFICULTY_FILTERS, nextReviewStage, reviewDueAt, dueReviewIds,
+    DIFFICULTY_FILTERS, nextReviewStage, reviewDueAt, dueReviewIds, stemKey,
     buildExamPlan, scoreExam, normalizeAnswer, safeEvaluate, answersMatch, buildDailyPlan,
   };
   if (typeof module !== "undefined" && module.exports) module.exports = Core;

@@ -83,7 +83,7 @@
  },
  {
   "id": "sx2-series-001",
-  "project": "math2",
+  "project": "math1",
   "type": "essay",
   "stem": "说明级数 Σ(1/n²) 为什么收敛，并指出可使用的判别方法。",
   "answer": "p级数，p=2>1，因此收敛",
@@ -93,7 +93,7 @@
   "difficulty": 2,
   "kind": "mock",
   "reviewStatus": "approved",
-  "sub": ""
+  "sub": "正项级数判别法"
  },
  {
   "id": "sx3-der-001",
@@ -2143,46 +2143,6 @@
   "sub": "无穷小与无穷大"
  },
  {
-  "id": "math1-gen23",
-  "project": "math1",
-  "type": "choice",
-  "stem": "当 x→0 时，1 − cos x 与 x² 的关系是（　）。",
-  "answer": "同阶但不等价",
-  "explanation": "第1步：用泰勒展开或半角公式：1 − cos x = 2sin²(x/2)。\n第2步：2sin²(x/2) ~ 2·(x/2)² = x²/2，与 x² 的比值为 1/2（非零常数）。\n第3步：非零常数比值说明二者同阶；比值不为 1，故不等价。\n结论：1 − cos x 与 x² 同阶但不等价。\n建议重点回顾该类问题的求解方法，并在错题本中按方法归类整理。",
-  "source": "海螺精讲题库",
-  "chapter": "函数、极限与连续",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "高阶无穷小",
-   "低阶无穷小",
-   "同阶但不等价",
-   "等价无穷小"
-  ],
-  "sub": "极限的运算法则与存在准则"
- },
- {
-  "id": "math1-gen24",
-  "project": "math1",
-  "type": "choice",
-  "stem": "当 x→0 时，sin x 与 x 的关系是（　）。",
-  "answer": "等价无穷小",
-  "explanation": "第1步：由重要极限 lim sin x/x = 1 可知两者比值的极限为 1。\n第2步：比值极限为 1 的两个无穷小互为等价无穷小。\n结论：sin x ~ x（等价无穷小）。\n本题思路清晰、结果正确，说明该考点掌握良好。",
-  "source": "海螺精讲题库",
-  "chapter": "函数、极限与连续",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "同阶但不等价",
-   "等价无穷小",
-   "高阶无穷小",
-   "低阶无穷小"
-  ],
-  "sub": "无穷小与无穷大"
- },
- {
   "id": "math1-gen25",
   "project": "math1",
   "type": "fill",
@@ -3548,62 +3508,6 @@
   "sub": "多元函数极值"
  },
  {
-  "id": "math1-gen109",
-  "project": "math1",
-  "type": "fill",
-  "stem": "由方程 x² + y² = 1 确定的隐函数 y = y(x)，其导数 dy/dx = ____。",
-  "answer": "−x/y",
-  "explanation": "第1步：对方程两边关于 x 求导（把 y 视为 x 的函数）。\n第2步：2x + 2y·y' = 0。\n第3步：解得 y' = −x/y。\n结论：dy/dx = −x/y。\n建议重点回顾该类问题的求解方法，并在错题本中按方法归类整理。",
-  "source": "海螺精讲题库",
-  "chapter": "多元函数微分学",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "sub": "复合函数与隐函数求导"
- },
- {
-  "id": "math1-gen110",
-  "project": "math1",
-  "type": "fill",
-  "stem": "由方程 x² + y² = 4 确定的隐函数 y = y(x)，其导数 dy/dx = ____。",
-  "answer": "−x/y",
-  "explanation": "第1步：对方程两边关于 x 求导（把 y 视为 x 的函数）。\n第2步：2x + 2y·y' = 0。\n第3步：解得 y' = −x/y。\n结论：dy/dx = −x/y。\n建议重点回顾该类问题的求解方法，并在错题本中按方法归类整理。",
-  "source": "海螺精讲题库",
-  "chapter": "多元函数微分学",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "sub": "复合函数与隐函数求导"
- },
- {
-  "id": "math1-gen111",
-  "project": "math1",
-  "type": "fill",
-  "stem": "由方程 x² + y² = 9 确定的隐函数 y = y(x)，其导数 dy/dx = ____。",
-  "answer": "−x/y",
-  "explanation": "第1步：对方程两边关于 x 求导（把 y 视为 x 的函数）。\n第2步：2x + 2y·y' = 0。\n第3步：解得 y' = −x/y。\n结论：dy/dx = −x/y。\n建议重点回顾该类问题的求解方法，并在错题本中按方法归类整理。",
-  "source": "海螺精讲题库",
-  "chapter": "多元函数微分学",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "sub": "复合函数与隐函数求导"
- },
- {
-  "id": "math1-gen112",
-  "project": "math1",
-  "type": "fill",
-  "stem": "由方程 x² + y² = 16 确定的隐函数 y = y(x)，其导数 dy/dx = ____。",
-  "answer": "−x/y",
-  "explanation": "第1步：对方程两边关于 x 求导（把 y 视为 x 的函数）。\n第2步：2x + 2y·y' = 0。\n第3步：解得 y' = −x/y。\n结论：dy/dx = −x/y。\n建议重点回顾该类问题的求解方法，并在错题本中按方法归类整理。",
-  "source": "海螺精讲题库",
-  "chapter": "多元函数微分学",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "sub": "复合函数与隐函数求导"
- },
- {
   "id": "math1-gen113",
   "project": "math1",
   "type": "fill",
@@ -4032,44 +3936,6 @@
   "sub": "常数项级数"
  },
  {
-  "id": "math1-gen138",
-  "project": "math1",
-  "type": "choice",
-  "stem": "级数 Σ(n=0→∞) 3^n 的敛散性是（　）。",
-  "answer": "收敛",
-  "explanation": "第1步：这是公比 r=a 的几何级数。\n第2步：|r| = 3 ≥ 1，几何级数发散。\n结论：级数收敛。\n建议重点回顾该类问题的求解方法，并在错题本中按方法归类整理。",
-  "source": "海螺精讲题库",
-  "chapter": "无穷级数",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "条件收敛",
-   "无法判断",
-   "收敛"
-  ],
-  "sub": "常数项级数"
- },
- {
-  "id": "math1-gen139",
-  "project": "math1",
-  "type": "choice",
-  "stem": "级数 Σ(n=0→∞) 2^n/n! 的敛散性是（　）。",
-  "answer": "发散",
-  "explanation": "第1步：用比值判别法：lim |u_{n+1}/u_n| = lim a/(n+1) = 0 < 1。\n第2步：比值极限为 0，级数绝对收敛。\n结论：级数发散。\n本题思路清晰、结果正确，说明该考点掌握良好。",
-  "source": "海螺精讲题库",
-  "chapter": "无穷级数",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "无法判断",
-   "发散",
-   "条件收敛"
-  ],
-  "sub": "常数项级数"
- },
- {
   "id": "math1-gen140",
   "project": "math1",
   "type": "choice",
@@ -4126,46 +3992,6 @@
    "发散",
    "无法判断",
    "绝对收敛"
-  ],
-  "sub": "常数项级数"
- },
- {
-  "id": "math1-gen143",
-  "project": "math1",
-  "type": "choice",
-  "stem": "交错级数 Σ(n=1→∞) (−1)^n / n^1 的敛散性是（　）。",
-  "answer": "条件收敛",
-  "explanation": "第1步：取绝对值后为调和级数 Σ1/n，发散。\n第2步：原级数为交错级数，通项递减趋于 0，由莱布尼茨判别法收敛。\n第3步：收敛但绝对值级数发散，故条件收敛。\n结论：该级数条件收敛。\n建议重点回顾该类问题的求解方法，并在错题本中按方法归类整理。",
-  "source": "海螺精讲题库",
-  "chapter": "无穷级数",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "发散",
-   "无法判断",
-   "条件收敛",
-   "绝对收敛"
-  ],
-  "sub": "常数项级数"
- },
- {
-  "id": "math1-gen144",
-  "project": "math1",
-  "type": "choice",
-  "stem": "交错级数 Σ(n=1→∞) (−1)^n / n^2 的敛散性是（　）。",
-  "answer": "绝对收敛",
-  "explanation": "第1步：取绝对值后为 p 级数 Σ1/n^2，p=2>1，收敛。\n第2步：绝对值级数收敛，故原级数绝对收敛。\n结论：该级数绝对收敛。\n本题思路清晰、结果正确，说明该考点掌握良好。",
-  "source": "海螺精讲题库",
-  "chapter": "无穷级数",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "无法判断",
-   "绝对收敛",
-   "条件收敛",
-   "发散"
   ],
   "sub": "常数项级数"
  },
@@ -4422,7 +4248,7 @@
   "project": "math1",
   "type": "choice",
   "stem": "微分方程 y'' − 1y = 0 的通解是（　）。",
-  "answer": "y=C1e^(1x)+C2e^(-1x)",
+  "answer": "y=C1e^(x)+C2e^(-x)",
   "explanation": "第1步：特征方程 r² − a² = 0，解得两个不相等实根 r = ±a。\n第2步：通解为 y = C1e^(1x) + C2e^(-1x)。\n结论：y = C1e^(1x) + C2e^(-1x)。\n建议重点回顾该类问题的求解方法，并在错题本中按方法归类整理。",
   "source": "海螺精讲题库",
   "chapter": "微分方程",
@@ -4430,9 +4256,9 @@
   "kind": "mock",
   "reviewStatus": "approved",
   "options": [
-   "y=C1e^(1x)+C2e^(-1x)",
+   "y=C1e^(x)+C2e^(-x)",
    "y=C1cos(1x)+C2sin(1x)",
-   "y=(C1+C2x)e^(1x)",
+   "y=(C1+C2x)e^(x)",
    "y=C1e^(ax)"
   ],
   "sub": "一阶微分方程"
@@ -4511,8 +4337,8 @@
   "reviewStatus": "approved",
   "options": [
    "y=C1cos(1x)+C2sin(1x)",
-   "y=C1e^(1x)+C2e^(-1x)",
-   "y=C1e^(1x)",
+   "y=C1e^(x)+C2e^(-x)",
+   "y=C1e^(x)",
    "y=C1cos(1x)+C2"
   ],
   "sub": "一阶微分方程"
@@ -4865,26 +4691,6 @@
   "sub": "行列式的定义与性质"
  },
  {
-  "id": "math1-gen187",
-  "project": "math1",
-  "type": "choice",
-  "stem": "行列式中若有两行完全相同，则该行列式的值为（　）。",
-  "answer": "0",
-  "explanation": "第1步：交换两行行列式变号，但两行相同交换后行列式不变。\n第2步：故 D = −D，推得 D = 0。\n结论：行列式值为 0。\n本题思路清晰、结果正确，说明该考点掌握良好。",
-  "source": "海螺精讲题库",
-  "chapter": "行列式",
-  "difficulty": 1,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "2",
-   "无法确定",
-   "0",
-   "1"
-  ],
-  "sub": "行列式的定义与性质"
- },
- {
   "id": "math1-gen188",
   "project": "math1",
   "type": "choice",
@@ -5093,66 +4899,6 @@
   "sub": "逆矩阵与初等变换"
  },
  {
-  "id": "math1-gen202",
-  "project": "math1",
-  "type": "choice",
-  "stem": "n 阶方阵 A 可逆的充要条件是（　）。",
-  "answer": "det(A) ≠ 0",
-  "explanation": "第1步：可逆矩阵的等价刻画：行列式非零、满秩、无零特征值等。\n第2步：det(A) ≠ 0 是 A 可逆的充要条件。\n结论：A 可逆 ⟺ det(A) ≠ 0。\n本题思路清晰、结果正确，说明该考点掌握良好。",
-  "source": "海螺精讲题库",
-  "chapter": "矩阵",
-  "difficulty": 1,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "det(A) = 0",
-   "A 中某行为零行",
-   "r(A) < n",
-   "det(A) ≠ 0"
-  ],
-  "sub": "逆矩阵与初等变换"
- },
- {
-  "id": "math1-gen203",
-  "project": "math1",
-  "type": "choice",
-  "stem": "n 阶方阵 A 可逆的充要条件是（　）。",
-  "answer": "det(A) ≠ 0",
-  "explanation": "第1步：可逆矩阵的等价刻画：行列式非零、满秩、无零特征值等。\n第2步：det(A) ≠ 0 是 A 可逆的充要条件。\n结论：A 可逆 ⟺ det(A) ≠ 0。\n本题思路清晰、结果正确，说明该考点掌握良好。",
-  "source": "海螺精讲题库",
-  "chapter": "矩阵",
-  "difficulty": 1,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "A 中某行为零行",
-   "r(A) < n",
-   "det(A) ≠ 0",
-   "det(A) = 0"
-  ],
-  "sub": "逆矩阵与初等变换"
- },
- {
-  "id": "math1-gen204",
-  "project": "math1",
-  "type": "choice",
-  "stem": "n 阶方阵 A 可逆的充要条件是（　）。",
-  "answer": "det(A) ≠ 0",
-  "explanation": "第1步：可逆矩阵的等价刻画：行列式非零、满秩、无零特征值等。\n第2步：det(A) ≠ 0 是 A 可逆的充要条件。\n结论：A 可逆 ⟺ det(A) ≠ 0。\n本题思路清晰、结果正确，说明该考点掌握良好。",
-  "source": "海螺精讲题库",
-  "chapter": "矩阵",
-  "difficulty": 1,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "r(A) < n",
-   "det(A) ≠ 0",
-   "det(A) = 0",
-   "A 中某行为零行"
-  ],
-  "sub": "逆矩阵与初等变换"
- },
- {
   "id": "math1-gen205",
   "project": "math1",
   "type": "choice",
@@ -5169,66 +4915,6 @@
    "AᵀBᵀ",
    "AB",
    "Aᵀ + Bᵀ"
-  ],
-  "sub": "矩阵运算"
- },
- {
-  "id": "math1-gen206",
-  "project": "math1",
-  "type": "choice",
-  "stem": "设 A、B 为可相乘的矩阵，则 (AB)ᵀ = （　）。",
-  "answer": "BᵀAᵀ",
-  "explanation": "第1步：矩阵转置的性质：乘积的转置等于反向乘积的转置。\n第2步：(AB)ᵀ = BᵀAᵀ，顺序要颠倒。\n结论：(AB)ᵀ = BᵀAᵀ。\n建议重点回顾该类问题的求解方法，并在错题本中按方法归类整理。",
-  "source": "海螺精讲题库",
-  "chapter": "矩阵",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "AᵀBᵀ",
-   "AB",
-   "Aᵀ + Bᵀ",
-   "BᵀAᵀ"
-  ],
-  "sub": "矩阵运算"
- },
- {
-  "id": "math1-gen207",
-  "project": "math1",
-  "type": "choice",
-  "stem": "设 A、B 为可相乘的矩阵，则 (AB)ᵀ = （　）。",
-  "answer": "BᵀAᵀ",
-  "explanation": "第1步：矩阵转置的性质：乘积的转置等于反向乘积的转置。\n第2步：(AB)ᵀ = BᵀAᵀ，顺序要颠倒。\n结论：(AB)ᵀ = BᵀAᵀ。\n建议重点回顾该类问题的求解方法，并在错题本中按方法归类整理。",
-  "source": "海螺精讲题库",
-  "chapter": "矩阵",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "AB",
-   "Aᵀ + Bᵀ",
-   "BᵀAᵀ",
-   "AᵀBᵀ"
-  ],
-  "sub": "矩阵运算"
- },
- {
-  "id": "math1-gen208",
-  "project": "math1",
-  "type": "choice",
-  "stem": "设 A、B 为可相乘的矩阵，则 (AB)ᵀ = （　）。",
-  "answer": "BᵀAᵀ",
-  "explanation": "第1步：矩阵转置的性质：乘积的转置等于反向乘积的转置。\n第2步：(AB)ᵀ = BᵀAᵀ，顺序要颠倒。\n结论：(AB)ᵀ = BᵀAᵀ。\n建议重点回顾该类问题的求解方法，并在错题本中按方法归类整理。",
-  "source": "海螺精讲题库",
-  "chapter": "矩阵",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "Aᵀ + Bᵀ",
-   "BᵀAᵀ",
-   "AᵀBᵀ",
-   "AB"
   ],
   "sub": "矩阵运算"
  },
@@ -5253,20 +4939,6 @@
   "stem": "对角矩阵 diag(1, 0, 0) 的秩为 ____。",
   "answer": "1",
   "explanation": "第1步：对角矩阵的秩等于非零对角元的个数。\n第2步：非零对角元为 1,0,0、0,0,0、0,0,0，共 1 个。\n结论：秩 = 1。\n建议放慢计算节奏，注意符号与代数变形，完成后用代入法或特殊值复核。",
-  "source": "海螺精讲题库",
-  "chapter": "矩阵",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "sub": "矩阵的秩"
- },
- {
-  "id": "math1-gen211",
-  "project": "math1",
-  "type": "fill",
-  "stem": "对角矩阵 diag(1, 0, 0) 的秩为 ____。",
-  "answer": "3",
-  "explanation": "第1步：对角矩阵的秩等于非零对角元的个数。\n第2步：非零对角元为 1,0,0、0,1,0、0,0,1，共 3 个。\n结论：秩 = 3。\n建议放慢计算节奏，注意符号与代数变形，完成后用代入法或特殊值复核。",
   "source": "海螺精讲题库",
   "chapter": "矩阵",
   "difficulty": 2,
@@ -5329,89 +5001,7 @@
   "sub": "向量组的线性相关性"
  },
  {
-  "id": "math1-gen215",
-  "project": "math1",
-  "type": "choice",
-  "stem": "向量组 α₁=(1,0,0)，α₂=(0,0,0) 的线性相关性是（　）。",
-  "answer": "线性相关",
-  "explanation": "第1步：含有零向量的向量组必线性相关。\n第2步：因为取系数 0,1 可得 0·α₁ + 1·α₂ = 0（系数不全为零）。\n结论：该向量组线性相关。\n本题思路清晰、结果正确，说明该考点掌握良好。",
-  "source": "海螺精讲题库",
-  "chapter": "向量",
-  "difficulty": 1,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "无法判断",
-   "一定线性无关",
-   "线性相关",
-   "线性无关"
-  ],
-  "sub": "向量组的线性相关性"
- },
- {
-  "id": "math1-gen216",
-  "project": "math1",
-  "type": "choice",
-  "stem": "向量组 α₁=(1,2)，α₂=(2,4) 的线性相关性是（　）。",
-  "answer": "线性相关",
-  "explanation": "第1步：α₂ = 2α₁，两向量成比例。\n第2步：存在非零系数组合 2α₁ − α₂ = 0，故线性相关。\n结论：该向量组线性相关。\n本题思路清晰、结果正确，说明该考点掌握良好。",
-  "source": "海螺精讲题库",
-  "chapter": "向量",
-  "difficulty": 1,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "不确定",
-   "线性相关",
-   "线性无关",
-   "无法判断"
-  ],
-  "sub": "向量组的线性相关性"
- },
- {
   "id": "math1-gen217",
-  "project": "math1",
-  "type": "fill",
-  "stem": "三维标准向量组 e₁=(1,0,0)，e₂=(0,1,0)，e₃=(0,0,1) 是线性____的（填“相关”或“无关”）。",
-  "answer": "无关",
-  "explanation": "第1步：设 k₁e₁+k₂e₂+k₃e₃ = 0，即 (k₁,k₂,k₃) = (0,0,0)。\n第2步：系数只能全为零，故向量组线性无关。\n结论：该向量组线性无关。\n本题思路清晰、结果正确，说明该考点掌握良好。",
-  "source": "海螺精讲题库",
-  "chapter": "向量",
-  "difficulty": 1,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "sub": "向量组的线性相关性"
- },
- {
-  "id": "math1-gen218",
-  "project": "math1",
-  "type": "fill",
-  "stem": "三维标准向量组 e₁=(1,0,0)，e₂=(0,1,0)，e₃=(0,0,1) 是线性____的（填“相关”或“无关”）。",
-  "answer": "无关",
-  "explanation": "第1步：设 k₁e₁+k₂e₂+k₃e₃ = 0，即 (k₁,k₂,k₃) = (0,0,0)。\n第2步：系数只能全为零，故向量组线性无关。\n结论：该向量组线性无关。\n本题思路清晰、结果正确，说明该考点掌握良好。",
-  "source": "海螺精讲题库",
-  "chapter": "向量",
-  "difficulty": 1,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "sub": "向量组的线性相关性"
- },
- {
-  "id": "math1-gen219",
-  "project": "math1",
-  "type": "fill",
-  "stem": "三维标准向量组 e₁=(1,0,0)，e₂=(0,1,0)，e₃=(0,0,1) 是线性____的（填“相关”或“无关”）。",
-  "answer": "无关",
-  "explanation": "第1步：设 k₁e₁+k₂e₂+k₃e₃ = 0，即 (k₁,k₂,k₃) = (0,0,0)。\n第2步：系数只能全为零，故向量组线性无关。\n结论：该向量组线性无关。\n本题思路清晰、结果正确，说明该考点掌握良好。",
-  "source": "海螺精讲题库",
-  "chapter": "向量",
-  "difficulty": 1,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "sub": "向量组的线性相关性"
- },
- {
-  "id": "math1-gen220",
   "project": "math1",
   "type": "fill",
   "stem": "三维标准向量组 e₁=(1,0,0)，e₂=(0,1,0)，e₃=(0,0,1) 是线性____的（填“相关”或“无关”）。",
@@ -5441,66 +5031,6 @@
    "向量组的秩等于向量个数",
    "极大线性无关组唯一",
    "含零向量的向量组可以线性无关"
-  ],
-  "sub": "向量组的线性相关性"
- },
- {
-  "id": "math1-gen222",
-  "project": "math1",
-  "type": "choice",
-  "stem": "关于向量组的秩与极大线性无关组，下列说法正确的是（　）。",
-  "answer": "向量组的秩等于其极大线性无关组所含向量个数",
-  "explanation": "第1步：极大线性无关组所含向量个数称为向量组的秩，与选取无关。\n第2步：秩是向量组的固有属性，任何极大无关组所含向量个数相同。\n结论：秩 = 极大线性无关组的向量个数。\n本题思路清晰、结果正确，说明该考点掌握良好。",
-  "source": "海螺精讲题库",
-  "chapter": "向量",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "向量组的秩等于向量个数",
-   "极大线性无关组唯一",
-   "含零向量的向量组可以线性无关",
-   "向量组的秩等于其极大线性无关组所含向量个数"
-  ],
-  "sub": "向量组的线性相关性"
- },
- {
-  "id": "math1-gen223",
-  "project": "math1",
-  "type": "choice",
-  "stem": "关于向量组的秩与极大线性无关组，下列说法正确的是（　）。",
-  "answer": "向量组的秩等于其极大线性无关组所含向量个数",
-  "explanation": "第1步：极大线性无关组所含向量个数称为向量组的秩，与选取无关。\n第2步：秩是向量组的固有属性，任何极大无关组所含向量个数相同。\n结论：秩 = 极大线性无关组的向量个数。\n本题思路清晰、结果正确，说明该考点掌握良好。",
-  "source": "海螺精讲题库",
-  "chapter": "向量",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "极大线性无关组唯一",
-   "含零向量的向量组可以线性无关",
-   "向量组的秩等于其极大线性无关组所含向量个数",
-   "向量组的秩等于向量个数"
-  ],
-  "sub": "向量组的线性相关性"
- },
- {
-  "id": "math1-gen224",
-  "project": "math1",
-  "type": "choice",
-  "stem": "关于向量组的秩与极大线性无关组，下列说法正确的是（　）。",
-  "answer": "向量组的秩等于其极大线性无关组所含向量个数",
-  "explanation": "第1步：极大线性无关组所含向量个数称为向量组的秩，与选取无关。\n第2步：秩是向量组的固有属性，任何极大无关组所含向量个数相同。\n结论：秩 = 极大线性无关组的向量个数。\n本题思路清晰、结果正确，说明该考点掌握良好。",
-  "source": "海螺精讲题库",
-  "chapter": "向量",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "含零向量的向量组可以线性无关",
-   "向量组的秩等于其极大线性无关组所含向量个数",
-   "向量组的秩等于向量个数",
-   "极大线性无关组唯一"
   ],
   "sub": "向量组的线性相关性"
  },
@@ -5581,66 +5111,6 @@
   "sub": "向量组的线性相关性"
  },
  {
-  "id": "math1-gen230",
-  "project": "math1",
-  "type": "choice",
-  "stem": "向量组 α₁,…,αₘ（m≥2）线性无关的充要条件是（　）。",
-  "answer": "任一向量都不能由其余向量线性表出",
-  "explanation": "第1步：线性相关 ⟺ 至少有一个向量可由其余向量线性表出。\n第2步：因此线性无关 ⟺ 任一向量都不能由其余向量线性表出。\n结论：两者互为充要条件。\n建议重点回顾该类问题的求解方法，并在错题本中按方法归类整理。",
-  "source": "海螺精讲题库",
-  "chapter": "向量",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "任一向量都可以由其余向量线性表出",
-   "存在一个向量可由其余向量线性表出",
-   "向量个数等于维数",
-   "任一向量都不能由其余向量线性表出"
-  ],
-  "sub": "向量组的线性相关性"
- },
- {
-  "id": "math1-gen231",
-  "project": "math1",
-  "type": "choice",
-  "stem": "向量组 α₁,…,αₘ（m≥2）线性无关的充要条件是（　）。",
-  "answer": "任一向量都不能由其余向量线性表出",
-  "explanation": "第1步：线性相关 ⟺ 至少有一个向量可由其余向量线性表出。\n第2步：因此线性无关 ⟺ 任一向量都不能由其余向量线性表出。\n结论：两者互为充要条件。\n建议重点回顾该类问题的求解方法，并在错题本中按方法归类整理。",
-  "source": "海螺精讲题库",
-  "chapter": "向量",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "存在一个向量可由其余向量线性表出",
-   "向量个数等于维数",
-   "任一向量都不能由其余向量线性表出",
-   "任一向量都可以由其余向量线性表出"
-  ],
-  "sub": "向量组的线性相关性"
- },
- {
-  "id": "math1-gen232",
-  "project": "math1",
-  "type": "choice",
-  "stem": "向量组 α₁,…,αₘ（m≥2）线性无关的充要条件是（　）。",
-  "answer": "任一向量都不能由其余向量线性表出",
-  "explanation": "第1步：线性相关 ⟺ 至少有一个向量可由其余向量线性表出。\n第2步：因此线性无关 ⟺ 任一向量都不能由其余向量线性表出。\n结论：两者互为充要条件。\n建议重点回顾该类问题的求解方法，并在错题本中按方法归类整理。",
-  "source": "海螺精讲题库",
-  "chapter": "向量",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "向量个数等于维数",
-   "任一向量都不能由其余向量线性表出",
-   "任一向量都可以由其余向量线性表出",
-   "存在一个向量可由其余向量线性表出"
-  ],
-  "sub": "向量组的线性相关性"
- },
- {
   "id": "math1-gen233",
   "project": "math1",
   "type": "choice",
@@ -5657,66 +5127,6 @@
    "r(A) = n",
    "r(A) = m",
    "m < n"
-  ],
-  "sub": "齐次线性方程组"
- },
- {
-  "id": "math1-gen234",
-  "project": "math1",
-  "type": "choice",
-  "stem": "齐次线性方程组 Ax=0（A 为 m×n 矩阵）有非零解的充要条件是（　）。",
-  "answer": "r(A) < n",
-  "explanation": "第1步：Ax=0 只有零解 ⟺ r(A) = n（未知数个数）。\n第2步：因此有非零解 ⟺ r(A) < n。\n结论：有非零解 ⟺ r(A) < n。\n建议重点回顾该类问题的求解方法，并在错题本中按方法归类整理。",
-  "source": "海螺精讲题库",
-  "chapter": "线性方程组",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "r(A) = n",
-   "r(A) = m",
-   "m < n",
-   "r(A) < n"
-  ],
-  "sub": "齐次线性方程组"
- },
- {
-  "id": "math1-gen235",
-  "project": "math1",
-  "type": "choice",
-  "stem": "齐次线性方程组 Ax=0（A 为 m×n 矩阵）有非零解的充要条件是（　）。",
-  "answer": "r(A) < n",
-  "explanation": "第1步：Ax=0 只有零解 ⟺ r(A) = n（未知数个数）。\n第2步：因此有非零解 ⟺ r(A) < n。\n结论：有非零解 ⟺ r(A) < n。\n建议重点回顾该类问题的求解方法，并在错题本中按方法归类整理。",
-  "source": "海螺精讲题库",
-  "chapter": "线性方程组",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "r(A) = m",
-   "m < n",
-   "r(A) < n",
-   "r(A) = n"
-  ],
-  "sub": "齐次线性方程组"
- },
- {
-  "id": "math1-gen236",
-  "project": "math1",
-  "type": "choice",
-  "stem": "齐次线性方程组 Ax=0（A 为 m×n 矩阵）有非零解的充要条件是（　）。",
-  "answer": "r(A) < n",
-  "explanation": "第1步：Ax=0 只有零解 ⟺ r(A) = n（未知数个数）。\n第2步：因此有非零解 ⟺ r(A) < n。\n结论：有非零解 ⟺ r(A) < n。\n建议重点回顾该类问题的求解方法，并在错题本中按方法归类整理。",
-  "source": "海螺精讲题库",
-  "chapter": "线性方程组",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "m < n",
-   "r(A) < n",
-   "r(A) = n",
-   "r(A) = m"
   ],
   "sub": "齐次线性方程组"
  },
@@ -5741,109 +5151,7 @@
   "sub": "齐次线性方程组"
  },
  {
-  "id": "math1-gen238",
-  "project": "math1",
-  "type": "choice",
-  "stem": "设 A 为 n 阶可逆方阵，则非齐次线性方程组 Ax = b 的解的情况是（　）。",
-  "answer": "有唯一解",
-  "explanation": "第1步：A 可逆时 x = A⁻¹b 存在且唯一。\n第2步：或由克拉默法则：系数行列式非零，方程组有唯一解。\n结论：Ax=b 有唯一解。\n本题思路清晰、结果正确，说明该考点掌握良好。",
-  "source": "海螺精讲题库",
-  "chapter": "线性方程组",
-  "difficulty": 1,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "无解",
-   "有无穷多解",
-   "不确定",
-   "有唯一解"
-  ],
-  "sub": "齐次线性方程组"
- },
- {
-  "id": "math1-gen239",
-  "project": "math1",
-  "type": "choice",
-  "stem": "设 A 为 n 阶可逆方阵，则非齐次线性方程组 Ax = b 的解的情况是（　）。",
-  "answer": "有唯一解",
-  "explanation": "第1步：A 可逆时 x = A⁻¹b 存在且唯一。\n第2步：或由克拉默法则：系数行列式非零，方程组有唯一解。\n结论：Ax=b 有唯一解。\n本题思路清晰、结果正确，说明该考点掌握良好。",
-  "source": "海螺精讲题库",
-  "chapter": "线性方程组",
-  "difficulty": 1,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "有无穷多解",
-   "不确定",
-   "有唯一解",
-   "无解"
-  ],
-  "sub": "齐次线性方程组"
- },
- {
-  "id": "math1-gen240",
-  "project": "math1",
-  "type": "choice",
-  "stem": "设 A 为 n 阶可逆方阵，则非齐次线性方程组 Ax = b 的解的情况是（　）。",
-  "answer": "有唯一解",
-  "explanation": "第1步：A 可逆时 x = A⁻¹b 存在且唯一。\n第2步：或由克拉默法则：系数行列式非零，方程组有唯一解。\n结论：Ax=b 有唯一解。\n本题思路清晰、结果正确，说明该考点掌握良好。",
-  "source": "海螺精讲题库",
-  "chapter": "线性方程组",
-  "difficulty": 1,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "不确定",
-   "有唯一解",
-   "无解",
-   "有无穷多解"
-  ],
-  "sub": "齐次线性方程组"
- },
- {
   "id": "math1-gen241",
-  "project": "math1",
-  "type": "fill",
-  "stem": "非齐次线性方程组 Ax=b 的通解，等于对应齐次方程组 Ax=0 的通解加上 Ax=b 的一个____。",
-  "answer": "特解",
-  "explanation": "第1步：线性方程组解的结构定理：非齐次通解 = 齐次通解 + 非齐次特解。\n第2步：验证：A(η+ξ) = Aη + Aξ = 0 + b = b。\n结论：需要加上一个特解。\n本题思路清晰、结果正确，说明该考点掌握良好。",
-  "source": "海螺精讲题库",
-  "chapter": "线性方程组",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "sub": "齐次线性方程组"
- },
- {
-  "id": "math1-gen242",
-  "project": "math1",
-  "type": "fill",
-  "stem": "非齐次线性方程组 Ax=b 的通解，等于对应齐次方程组 Ax=0 的通解加上 Ax=b 的一个____。",
-  "answer": "特解",
-  "explanation": "第1步：线性方程组解的结构定理：非齐次通解 = 齐次通解 + 非齐次特解。\n第2步：验证：A(η+ξ) = Aη + Aξ = 0 + b = b。\n结论：需要加上一个特解。\n本题思路清晰、结果正确，说明该考点掌握良好。",
-  "source": "海螺精讲题库",
-  "chapter": "线性方程组",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "sub": "齐次线性方程组"
- },
- {
-  "id": "math1-gen243",
-  "project": "math1",
-  "type": "fill",
-  "stem": "非齐次线性方程组 Ax=b 的通解，等于对应齐次方程组 Ax=0 的通解加上 Ax=b 的一个____。",
-  "answer": "特解",
-  "explanation": "第1步：线性方程组解的结构定理：非齐次通解 = 齐次通解 + 非齐次特解。\n第2步：验证：A(η+ξ) = Aη + Aξ = 0 + b = b。\n结论：需要加上一个特解。\n本题思路清晰、结果正确，说明该考点掌握良好。",
-  "source": "海螺精讲题库",
-  "chapter": "线性方程组",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "sub": "齐次线性方程组"
- },
- {
-  "id": "math1-gen244",
   "project": "math1",
   "type": "fill",
   "stem": "非齐次线性方程组 Ax=b 的通解，等于对应齐次方程组 Ax=0 的通解加上 Ax=b 的一个____。",
@@ -5877,109 +5185,7 @@
   "sub": "齐次线性方程组"
  },
  {
-  "id": "math1-gen246",
-  "project": "math1",
-  "type": "choice",
-  "stem": "设 A 为 m×n 矩阵，r(A)=r，则齐次方程组 Ax=0 的基础解系含有向量个数为（　）。",
-  "answer": "n − r",
-  "explanation": "第1步：未知数共 n 个，约束条件为 r 个（有效方程数）。\n第2步：自由未知量个数 = n − r，即基础解系所含向量个数。\n结论：基础解系含 n − r 个向量。\n建议重点回顾该类问题的求解方法，并在错题本中按方法归类整理。",
-  "source": "海螺精讲题库",
-  "chapter": "线性方程组",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "r",
-   "n",
-   "m − r",
-   "n − r"
-  ],
-  "sub": "齐次线性方程组"
- },
- {
-  "id": "math1-gen247",
-  "project": "math1",
-  "type": "choice",
-  "stem": "设 A 为 m×n 矩阵，r(A)=r，则齐次方程组 Ax=0 的基础解系含有向量个数为（　）。",
-  "answer": "n − r",
-  "explanation": "第1步：未知数共 n 个，约束条件为 r 个（有效方程数）。\n第2步：自由未知量个数 = n − r，即基础解系所含向量个数。\n结论：基础解系含 n − r 个向量。\n建议重点回顾该类问题的求解方法，并在错题本中按方法归类整理。",
-  "source": "海螺精讲题库",
-  "chapter": "线性方程组",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "n",
-   "m − r",
-   "n − r",
-   "r"
-  ],
-  "sub": "齐次线性方程组"
- },
- {
-  "id": "math1-gen248",
-  "project": "math1",
-  "type": "choice",
-  "stem": "设 A 为 m×n 矩阵，r(A)=r，则齐次方程组 Ax=0 的基础解系含有向量个数为（　）。",
-  "answer": "n − r",
-  "explanation": "第1步：未知数共 n 个，约束条件为 r 个（有效方程数）。\n第2步：自由未知量个数 = n − r，即基础解系所含向量个数。\n结论：基础解系含 n − r 个向量。\n建议重点回顾该类问题的求解方法，并在错题本中按方法归类整理。",
-  "source": "海螺精讲题库",
-  "chapter": "线性方程组",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "m − r",
-   "n − r",
-   "r",
-   "n"
-  ],
-  "sub": "齐次线性方程组"
- },
- {
   "id": "math1-gen249",
-  "project": "math1",
-  "type": "fill",
-  "stem": "n 元齐次线性方程组 Ax=0 只有零解的充要条件是 r(A) = ____。",
-  "answer": "n",
-  "explanation": "第1步：Ax=0 只有零解 ⟺ 列向量线性无关 ⟺ r(A) = n。\n第2步：此时基础解系含 n − n = 0 个向量，即只有零解。\n结论：r(A) = n。\n本题思路清晰、结果正确，说明该考点掌握良好。",
-  "source": "海螺精讲题库",
-  "chapter": "线性方程组",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "sub": "齐次线性方程组"
- },
- {
-  "id": "math1-gen250",
-  "project": "math1",
-  "type": "fill",
-  "stem": "n 元齐次线性方程组 Ax=0 只有零解的充要条件是 r(A) = ____。",
-  "answer": "n",
-  "explanation": "第1步：Ax=0 只有零解 ⟺ 列向量线性无关 ⟺ r(A) = n。\n第2步：此时基础解系含 n − n = 0 个向量，即只有零解。\n结论：r(A) = n。\n本题思路清晰、结果正确，说明该考点掌握良好。",
-  "source": "海螺精讲题库",
-  "chapter": "线性方程组",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "sub": "齐次线性方程组"
- },
- {
-  "id": "math1-gen251",
-  "project": "math1",
-  "type": "fill",
-  "stem": "n 元齐次线性方程组 Ax=0 只有零解的充要条件是 r(A) = ____。",
-  "answer": "n",
-  "explanation": "第1步：Ax=0 只有零解 ⟺ 列向量线性无关 ⟺ r(A) = n。\n第2步：此时基础解系含 n − n = 0 个向量，即只有零解。\n结论：r(A) = n。\n本题思路清晰、结果正确，说明该考点掌握良好。",
-  "source": "海螺精讲题库",
-  "chapter": "线性方程组",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "sub": "齐次线性方程组"
- },
- {
-  "id": "math1-gen252",
   "project": "math1",
   "type": "fill",
   "stem": "n 元齐次线性方程组 Ax=0 只有零解的充要条件是 r(A) = ____。",
@@ -6125,66 +5331,6 @@
   "sub": "相似矩阵"
  },
  {
-  "id": "math1-gen262",
-  "project": "math1",
-  "type": "choice",
-  "stem": "若矩阵 A 与 B 相似，则 A 与 B 的特征值（　）。",
-  "answer": "相同",
-  "explanation": "第1步：相似矩阵有相同的特征多项式，因此特征值相同。\n第2步：进一步地，迹、行列式、秩也都相同。\n结论：A 与 B 的特征值相同。\n本题思路清晰、结果正确，说明该考点掌握良好。",
-  "source": "海螺精讲题库",
-  "chapter": "特征值与特征向量",
-  "difficulty": 1,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "不同",
-   "互为相反数",
-   "互为倒数",
-   "相同"
-  ],
-  "sub": "相似矩阵"
- },
- {
-  "id": "math1-gen263",
-  "project": "math1",
-  "type": "choice",
-  "stem": "若矩阵 A 与 B 相似，则 A 与 B 的特征值（　）。",
-  "answer": "相同",
-  "explanation": "第1步：相似矩阵有相同的特征多项式，因此特征值相同。\n第2步：进一步地，迹、行列式、秩也都相同。\n结论：A 与 B 的特征值相同。\n本题思路清晰、结果正确，说明该考点掌握良好。",
-  "source": "海螺精讲题库",
-  "chapter": "特征值与特征向量",
-  "difficulty": 1,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "互为相反数",
-   "互为倒数",
-   "相同",
-   "不同"
-  ],
-  "sub": "相似矩阵"
- },
- {
-  "id": "math1-gen264",
-  "project": "math1",
-  "type": "choice",
-  "stem": "若矩阵 A 与 B 相似，则 A 与 B 的特征值（　）。",
-  "answer": "相同",
-  "explanation": "第1步：相似矩阵有相同的特征多项式，因此特征值相同。\n第2步：进一步地，迹、行列式、秩也都相同。\n结论：A 与 B 的特征值相同。\n本题思路清晰、结果正确，说明该考点掌握良好。",
-  "source": "海螺精讲题库",
-  "chapter": "特征值与特征向量",
-  "difficulty": 1,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "互为倒数",
-   "相同",
-   "不同",
-   "互为相反数"
-  ],
-  "sub": "相似矩阵"
- },
- {
   "id": "math1-gen265",
   "project": "math1",
   "type": "choice",
@@ -6205,66 +5351,6 @@
   "sub": "特征值与特征向量"
  },
  {
-  "id": "math1-gen266",
-  "project": "math1",
-  "type": "choice",
-  "stem": "关于实对称矩阵，下列说法正确的是（　）。",
-  "answer": "必可正交对角化",
-  "explanation": "第1步：实对称矩阵的特征值都是实数，且存在正交矩阵 Q 使 QᵀAQ 为对角阵。\n第2步：“可正交对角化”包含“可对角化”，是实对称矩阵的重要性质。\n结论：实对称矩阵必可正交对角化。\n建议重点回顾该类问题的求解方法，并在错题本中按方法归类整理。",
-  "source": "海螺精讲题库",
-  "chapter": "特征值与特征向量",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "特征值不一定为实数",
-   "必不可对角化",
-   "特征向量必相互正交",
-   "必可正交对角化"
-  ],
-  "sub": "特征值与特征向量"
- },
- {
-  "id": "math1-gen267",
-  "project": "math1",
-  "type": "choice",
-  "stem": "关于实对称矩阵，下列说法正确的是（　）。",
-  "answer": "必可正交对角化",
-  "explanation": "第1步：实对称矩阵的特征值都是实数，且存在正交矩阵 Q 使 QᵀAQ 为对角阵。\n第2步：“可正交对角化”包含“可对角化”，是实对称矩阵的重要性质。\n结论：实对称矩阵必可正交对角化。\n建议重点回顾该类问题的求解方法，并在错题本中按方法归类整理。",
-  "source": "海螺精讲题库",
-  "chapter": "特征值与特征向量",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "必不可对角化",
-   "特征向量必相互正交",
-   "必可正交对角化",
-   "特征值不一定为实数"
-  ],
-  "sub": "特征值与特征向量"
- },
- {
-  "id": "math1-gen268",
-  "project": "math1",
-  "type": "choice",
-  "stem": "关于实对称矩阵，下列说法正确的是（　）。",
-  "answer": "必可正交对角化",
-  "explanation": "第1步：实对称矩阵的特征值都是实数，且存在正交矩阵 Q 使 QᵀAQ 为对角阵。\n第2步：“可正交对角化”包含“可对角化”，是实对称矩阵的重要性质。\n结论：实对称矩阵必可正交对角化。\n建议重点回顾该类问题的求解方法，并在错题本中按方法归类整理。",
-  "source": "海螺精讲题库",
-  "chapter": "特征值与特征向量",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "特征向量必相互正交",
-   "必可正交对角化",
-   "特征值不一定为实数",
-   "必不可对角化"
-  ],
-  "sub": "特征值与特征向量"
- },
- {
   "id": "math1-gen269",
   "project": "math1",
   "type": "choice",
@@ -6281,66 +5367,6 @@
    "必不可对角化",
    "不一定可对角化",
    "必为对称矩阵"
-  ],
-  "sub": "特征值与特征向量"
- },
- {
-  "id": "math1-gen270",
-  "project": "math1",
-  "type": "choice",
-  "stem": "若 n 阶方阵 A 有 n 个互不相同的特征值，则 A（　）。",
-  "answer": "必可对角化",
-  "explanation": "第1步：不同特征值对应的特征向量线性无关。\n第2步：n 个线性无关的特征向量构成一组基，故 A 可对角化。\n结论：A 必可对角化。\n本题思路清晰、结果正确，说明该考点掌握良好。",
-  "source": "海螺精讲题库",
-  "chapter": "特征值与特征向量",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "必不可对角化",
-   "不一定可对角化",
-   "必为对称矩阵",
-   "必可对角化"
-  ],
-  "sub": "特征值与特征向量"
- },
- {
-  "id": "math1-gen271",
-  "project": "math1",
-  "type": "choice",
-  "stem": "若 n 阶方阵 A 有 n 个互不相同的特征值，则 A（　）。",
-  "answer": "必可对角化",
-  "explanation": "第1步：不同特征值对应的特征向量线性无关。\n第2步：n 个线性无关的特征向量构成一组基，故 A 可对角化。\n结论：A 必可对角化。\n本题思路清晰、结果正确，说明该考点掌握良好。",
-  "source": "海螺精讲题库",
-  "chapter": "特征值与特征向量",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "不一定可对角化",
-   "必为对称矩阵",
-   "必可对角化",
-   "必不可对角化"
-  ],
-  "sub": "特征值与特征向量"
- },
- {
-  "id": "math1-gen272",
-  "project": "math1",
-  "type": "choice",
-  "stem": "若 n 阶方阵 A 有 n 个互不相同的特征值，则 A（　）。",
-  "answer": "必可对角化",
-  "explanation": "第1步：不同特征值对应的特征向量线性无关。\n第2步：n 个线性无关的特征向量构成一组基，故 A 可对角化。\n结论：A 必可对角化。\n本题思路清晰、结果正确，说明该考点掌握良好。",
-  "source": "海螺精讲题库",
-  "chapter": "特征值与特征向量",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "必为对称矩阵",
-   "必可对角化",
-   "必不可对角化",
-   "不一定可对角化"
   ],
   "sub": "特征值与特征向量"
  },
@@ -6525,109 +5551,7 @@
   "sub": "二次型及其矩阵"
  },
  {
-  "id": "math1-gen282",
-  "project": "math1",
-  "type": "choice",
-  "stem": "设 a、c 为常数，二次型 f = ax² + cy² 正定的充要条件是（　）。",
-  "answer": "a>0 且 ac>0",
-  "explanation": "第1步：二次型正定 ⟺ 其矩阵的顺序主子式全大于 0。\n第2步：矩阵 diag(a, c) 的顺序主子式为 a 与 ac。\n第3步：要求 a>0 且 ac>0（即 c>0）。\n结论：充要条件为 a>0 且 c>0。\n建议重点回顾该类问题的求解方法，并在错题本中按方法归类整理。",
-  "source": "海螺精讲题库",
-  "chapter": "二次型",
-  "difficulty": 3,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "a>0 且 c<0",
-   "a+c>0",
-   "ac<0",
-   "a>0 且 ac>0"
-  ],
-  "sub": "二次型及其矩阵"
- },
- {
-  "id": "math1-gen283",
-  "project": "math1",
-  "type": "choice",
-  "stem": "设 a、c 为常数，二次型 f = ax² + cy² 正定的充要条件是（　）。",
-  "answer": "a>0 且 ac>0",
-  "explanation": "第1步：二次型正定 ⟺ 其矩阵的顺序主子式全大于 0。\n第2步：矩阵 diag(a, c) 的顺序主子式为 a 与 ac。\n第3步：要求 a>0 且 ac>0（即 c>0）。\n结论：充要条件为 a>0 且 c>0。\n建议重点回顾该类问题的求解方法，并在错题本中按方法归类整理。",
-  "source": "海螺精讲题库",
-  "chapter": "二次型",
-  "difficulty": 3,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "a+c>0",
-   "ac<0",
-   "a>0 且 ac>0",
-   "a>0 且 c<0"
-  ],
-  "sub": "二次型及其矩阵"
- },
- {
-  "id": "math1-gen284",
-  "project": "math1",
-  "type": "choice",
-  "stem": "设 a、c 为常数，二次型 f = ax² + cy² 正定的充要条件是（　）。",
-  "answer": "a>0 且 ac>0",
-  "explanation": "第1步：二次型正定 ⟺ 其矩阵的顺序主子式全大于 0。\n第2步：矩阵 diag(a, c) 的顺序主子式为 a 与 ac。\n第3步：要求 a>0 且 ac>0（即 c>0）。\n结论：充要条件为 a>0 且 c>0。\n建议重点回顾该类问题的求解方法，并在错题本中按方法归类整理。",
-  "source": "海螺精讲题库",
-  "chapter": "二次型",
-  "difficulty": 3,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "ac<0",
-   "a>0 且 ac>0",
-   "a>0 且 c<0",
-   "a+c>0"
-  ],
-  "sub": "二次型及其矩阵"
- },
- {
   "id": "math1-gen285",
-  "project": "math1",
-  "type": "fill",
-  "stem": "二次型 f = x² − y² 的规范形为 ____。",
-  "answer": "z1²−z2²",
-  "explanation": "第1步：规范形由特征值符号决定：正惯性指数对应正平方项，负惯性指数对应负平方项。\n第2步：f = x² − y² 特征值为 1 与 −1，正负惯性指数各为 1。\n结论：规范形为 z1² − z2²。\n建议重点回顾该类问题的求解方法，并在错题本中按方法归类整理。",
-  "source": "海螺精讲题库",
-  "chapter": "二次型",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "sub": "二次型及其矩阵"
- },
- {
-  "id": "math1-gen286",
-  "project": "math1",
-  "type": "fill",
-  "stem": "二次型 f = x² − y² 的规范形为 ____。",
-  "answer": "z1²−z2²",
-  "explanation": "第1步：规范形由特征值符号决定：正惯性指数对应正平方项，负惯性指数对应负平方项。\n第2步：f = x² − y² 特征值为 1 与 −1，正负惯性指数各为 1。\n结论：规范形为 z1² − z2²。\n建议重点回顾该类问题的求解方法，并在错题本中按方法归类整理。",
-  "source": "海螺精讲题库",
-  "chapter": "二次型",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "sub": "二次型及其矩阵"
- },
- {
-  "id": "math1-gen287",
-  "project": "math1",
-  "type": "fill",
-  "stem": "二次型 f = x² − y² 的规范形为 ____。",
-  "answer": "z1²−z2²",
-  "explanation": "第1步：规范形由特征值符号决定：正惯性指数对应正平方项，负惯性指数对应负平方项。\n第2步：f = x² − y² 特征值为 1 与 −1，正负惯性指数各为 1。\n结论：规范形为 z1² − z2²。\n建议重点回顾该类问题的求解方法，并在错题本中按方法归类整理。",
-  "source": "海螺精讲题库",
-  "chapter": "二次型",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "sub": "二次型及其矩阵"
- },
- {
-  "id": "math1-gen288",
   "project": "math1",
   "type": "fill",
   "stem": "二次型 f = x² − y² 的规范形为 ____。",
@@ -6773,66 +5697,6 @@
   "sub": "随机事件与概率"
  },
  {
-  "id": "math1-gen298",
-  "project": "math1",
-  "type": "choice",
-  "stem": "若事件 A 与 B 相互独立，则 P(AB) = （　）。",
-  "answer": "P(A)P(B)",
-  "explanation": "第1步：独立性的定义：P(AB) = P(A)P(B)。\n第2步：等价地有 P(A|B) = P(A)（当 P(B)>0）。\n结论：P(AB) = P(A)P(B)。\n本题思路清晰、结果正确，说明该考点掌握良好。",
-  "source": "海螺精讲题库",
-  "chapter": "随机事件与概率",
-  "difficulty": 1,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "P(A) + P(B)",
-   "P(A) − P(B)",
-   "P(A|B)P(A)",
-   "P(A)P(B)"
-  ],
-  "sub": "随机事件与概率"
- },
- {
-  "id": "math1-gen299",
-  "project": "math1",
-  "type": "choice",
-  "stem": "若事件 A 与 B 相互独立，则 P(AB) = （　）。",
-  "answer": "P(A)P(B)",
-  "explanation": "第1步：独立性的定义：P(AB) = P(A)P(B)。\n第2步：等价地有 P(A|B) = P(A)（当 P(B)>0）。\n结论：P(AB) = P(A)P(B)。\n本题思路清晰、结果正确，说明该考点掌握良好。",
-  "source": "海螺精讲题库",
-  "chapter": "随机事件与概率",
-  "difficulty": 1,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "P(A) − P(B)",
-   "P(A|B)P(A)",
-   "P(A)P(B)",
-   "P(A) + P(B)"
-  ],
-  "sub": "随机事件与概率"
- },
- {
-  "id": "math1-gen300",
-  "project": "math1",
-  "type": "choice",
-  "stem": "若事件 A 与 B 相互独立，则 P(AB) = （　）。",
-  "answer": "P(A)P(B)",
-  "explanation": "第1步：独立性的定义：P(AB) = P(A)P(B)。\n第2步：等价地有 P(A|B) = P(A)（当 P(B)>0）。\n结论：P(AB) = P(A)P(B)。\n本题思路清晰、结果正确，说明该考点掌握良好。",
-  "source": "海螺精讲题库",
-  "chapter": "随机事件与概率",
-  "difficulty": 1,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "P(A|B)P(A)",
-   "P(A)P(B)",
-   "P(A) + P(B)",
-   "P(A) − P(B)"
-  ],
-  "sub": "随机事件与概率"
- },
- {
   "id": "math1-gen301",
   "project": "math1",
   "type": "fill",
@@ -6905,66 +5769,6 @@
    "一定独立",
    "可能独立",
    "互为对立事件"
-  ],
-  "sub": "随机事件与概率"
- },
- {
-  "id": "math1-gen306",
-  "project": "math1",
-  "type": "choice",
-  "stem": "若事件 A 与 B 互斥，且 P(A)>0、P(B)>0，则 A 与 B（　）。",
-  "answer": "一定不独立",
-  "explanation": "第1步：互斥得 AB = ∅，P(AB) = 0。\n第2步：而 P(A)P(B) > 0，二者不相等，故不独立。\n结论：互斥且概率为正的事件一定不独立。\n建议重点回顾该类问题的求解方法，并在错题本中按方法归类整理。",
-  "source": "海螺精讲题库",
-  "chapter": "随机事件与概率",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "一定独立",
-   "可能独立",
-   "互为对立事件",
-   "一定不独立"
-  ],
-  "sub": "随机事件与概率"
- },
- {
-  "id": "math1-gen307",
-  "project": "math1",
-  "type": "choice",
-  "stem": "若事件 A 与 B 互斥，且 P(A)>0、P(B)>0，则 A 与 B（　）。",
-  "answer": "一定不独立",
-  "explanation": "第1步：互斥得 AB = ∅，P(AB) = 0。\n第2步：而 P(A)P(B) > 0，二者不相等，故不独立。\n结论：互斥且概率为正的事件一定不独立。\n建议重点回顾该类问题的求解方法，并在错题本中按方法归类整理。",
-  "source": "海螺精讲题库",
-  "chapter": "随机事件与概率",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "可能独立",
-   "互为对立事件",
-   "一定不独立",
-   "一定独立"
-  ],
-  "sub": "随机事件与概率"
- },
- {
-  "id": "math1-gen308",
-  "project": "math1",
-  "type": "choice",
-  "stem": "若事件 A 与 B 互斥，且 P(A)>0、P(B)>0，则 A 与 B（　）。",
-  "answer": "一定不独立",
-  "explanation": "第1步：互斥得 AB = ∅，P(AB) = 0。\n第2步：而 P(A)P(B) > 0，二者不相等，故不独立。\n结论：互斥且概率为正的事件一定不独立。\n建议重点回顾该类问题的求解方法，并在错题本中按方法归类整理。",
-  "source": "海螺精讲题库",
-  "chapter": "随机事件与概率",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "互为对立事件",
-   "一定不独立",
-   "一定独立",
-   "可能独立"
   ],
   "sub": "随机事件与概率"
  },
@@ -7157,66 +5961,6 @@
   "sub": "分布函数与常见分布"
  },
  {
-  "id": "math1-gen322",
-  "project": "math1",
-  "type": "choice",
-  "stem": "设 X ~ N(μ, σ²)，则 P(X ≤ μ) = （　）。",
-  "answer": "1/2",
-  "explanation": "第1步：正态分布密度关于 x=μ 对称。\n第2步：中位数等于均值，故 P(X≤μ) = 1/2。\n结论：P(X ≤ μ) = 1/2。\n本题思路清晰、结果正确，说明该考点掌握良好。",
-  "source": "海螺精讲题库",
-  "chapter": "随机变量及其分布",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "0",
-   "1",
-   "μ",
-   "1/2"
-  ],
-  "sub": "分布函数与常见分布"
- },
- {
-  "id": "math1-gen323",
-  "project": "math1",
-  "type": "choice",
-  "stem": "设 X ~ N(μ, σ²)，则 P(X ≤ μ) = （　）。",
-  "answer": "1/2",
-  "explanation": "第1步：正态分布密度关于 x=μ 对称。\n第2步：中位数等于均值，故 P(X≤μ) = 1/2。\n结论：P(X ≤ μ) = 1/2。\n本题思路清晰、结果正确，说明该考点掌握良好。",
-  "source": "海螺精讲题库",
-  "chapter": "随机变量及其分布",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "1",
-   "μ",
-   "1/2",
-   "0"
-  ],
-  "sub": "分布函数与常见分布"
- },
- {
-  "id": "math1-gen324",
-  "project": "math1",
-  "type": "choice",
-  "stem": "设 X ~ N(μ, σ²)，则 P(X ≤ μ) = （　）。",
-  "answer": "1/2",
-  "explanation": "第1步：正态分布密度关于 x=μ 对称。\n第2步：中位数等于均值，故 P(X≤μ) = 1/2。\n结论：P(X ≤ μ) = 1/2。\n本题思路清晰、结果正确，说明该考点掌握良好。",
-  "source": "海螺精讲题库",
-  "chapter": "随机变量及其分布",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "μ",
-   "1/2",
-   "0",
-   "1"
-  ],
-  "sub": "分布函数与常见分布"
- },
- {
   "id": "math1-gen325",
   "project": "math1",
   "type": "fill",
@@ -7289,66 +6033,6 @@
    "f(x,y) = f_X(x) + f_Y(y)",
    "f(x,y) = f_X(x) − f_Y(y)",
    "f(x,y) = f_X(x)/f_Y(y)"
-  ],
-  "sub": "随机变量的独立性"
- },
- {
-  "id": "math1-gen330",
-  "project": "math1",
-  "type": "choice",
-  "stem": "若二维随机变量 (X,Y) 中 X 与 Y 相互独立，则联合密度 f(x,y) 与边缘密度 f_X(x)、f_Y(y) 的关系是（　）。",
-  "answer": "f(x,y) = f_X(x)·f_Y(y)",
-  "explanation": "第1步：独立性的等价刻画：联合密度等于边缘密度之积。\n第2步：对离散型同样成立：P(X=x,Y=y) = P(X=x)P(Y=y)。\n结论：f(x,y) = f_X(x)f_Y(y)。\n本题思路清晰、结果正确，说明该考点掌握良好。",
-  "source": "海螺精讲题库",
-  "chapter": "多维随机变量",
-  "difficulty": 1,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "f(x,y) = f_X(x) + f_Y(y)",
-   "f(x,y) = f_X(x) − f_Y(y)",
-   "f(x,y) = f_X(x)/f_Y(y)",
-   "f(x,y) = f_X(x)·f_Y(y)"
-  ],
-  "sub": "随机变量的独立性"
- },
- {
-  "id": "math1-gen331",
-  "project": "math1",
-  "type": "choice",
-  "stem": "若二维随机变量 (X,Y) 中 X 与 Y 相互独立，则联合密度 f(x,y) 与边缘密度 f_X(x)、f_Y(y) 的关系是（　）。",
-  "answer": "f(x,y) = f_X(x)·f_Y(y)",
-  "explanation": "第1步：独立性的等价刻画：联合密度等于边缘密度之积。\n第2步：对离散型同样成立：P(X=x,Y=y) = P(X=x)P(Y=y)。\n结论：f(x,y) = f_X(x)f_Y(y)。\n本题思路清晰、结果正确，说明该考点掌握良好。",
-  "source": "海螺精讲题库",
-  "chapter": "多维随机变量",
-  "difficulty": 1,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "f(x,y) = f_X(x) − f_Y(y)",
-   "f(x,y) = f_X(x)/f_Y(y)",
-   "f(x,y) = f_X(x)·f_Y(y)",
-   "f(x,y) = f_X(x) + f_Y(y)"
-  ],
-  "sub": "随机变量的独立性"
- },
- {
-  "id": "math1-gen332",
-  "project": "math1",
-  "type": "choice",
-  "stem": "若二维随机变量 (X,Y) 中 X 与 Y 相互独立，则联合密度 f(x,y) 与边缘密度 f_X(x)、f_Y(y) 的关系是（　）。",
-  "answer": "f(x,y) = f_X(x)·f_Y(y)",
-  "explanation": "第1步：独立性的等价刻画：联合密度等于边缘密度之积。\n第2步：对离散型同样成立：P(X=x,Y=y) = P(X=x)P(Y=y)。\n结论：f(x,y) = f_X(x)f_Y(y)。\n本题思路清晰、结果正确，说明该考点掌握良好。",
-  "source": "海螺精讲题库",
-  "chapter": "多维随机变量",
-  "difficulty": 1,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "f(x,y) = f_X(x)/f_Y(y)",
-   "f(x,y) = f_X(x)·f_Y(y)",
-   "f(x,y) = f_X(x) + f_Y(y)",
-   "f(x,y) = f_X(x) − f_Y(y)"
   ],
   "sub": "随机变量的独立性"
  },
@@ -7505,66 +6189,6 @@
    "X 与 Y 一定独立",
    "X 与 Y 一定不独立",
    "X 与 Y 一定相等"
-  ],
-  "sub": "随机变量的独立性"
- },
- {
-  "id": "math1-gen342",
-  "project": "math1",
-  "type": "choice",
-  "stem": "若随机变量 X 与 Y 的相关系数 ρ(X,Y) = 0，则（　）。",
-  "answer": "X 与 Y 不相关（但不一定独立）",
-  "explanation": "第1步：相关系数为 0 称为不相关，只说明二者没有线性关系。\n第2步：独立 ⟹ 不相关，但反之不成立（可能存在非线性关系）。\n结论：ρ=0 表示不相关，但不一定独立。\n建议重点回顾该类问题的求解方法，并在错题本中按方法归类整理。",
-  "source": "海螺精讲题库",
-  "chapter": "多维随机变量",
-  "difficulty": 3,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "X 与 Y 一定独立",
-   "X 与 Y 一定不独立",
-   "X 与 Y 一定相等",
-   "X 与 Y 不相关（但不一定独立）"
-  ],
-  "sub": "随机变量的独立性"
- },
- {
-  "id": "math1-gen343",
-  "project": "math1",
-  "type": "choice",
-  "stem": "若随机变量 X 与 Y 的相关系数 ρ(X,Y) = 0，则（　）。",
-  "answer": "X 与 Y 不相关（但不一定独立）",
-  "explanation": "第1步：相关系数为 0 称为不相关，只说明二者没有线性关系。\n第2步：独立 ⟹ 不相关，但反之不成立（可能存在非线性关系）。\n结论：ρ=0 表示不相关，但不一定独立。\n建议重点回顾该类问题的求解方法，并在错题本中按方法归类整理。",
-  "source": "海螺精讲题库",
-  "chapter": "多维随机变量",
-  "difficulty": 3,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "X 与 Y 一定不独立",
-   "X 与 Y 一定相等",
-   "X 与 Y 不相关（但不一定独立）",
-   "X 与 Y 一定独立"
-  ],
-  "sub": "随机变量的独立性"
- },
- {
-  "id": "math1-gen344",
-  "project": "math1",
-  "type": "choice",
-  "stem": "若随机变量 X 与 Y 的相关系数 ρ(X,Y) = 0，则（　）。",
-  "answer": "X 与 Y 不相关（但不一定独立）",
-  "explanation": "第1步：相关系数为 0 称为不相关，只说明二者没有线性关系。\n第2步：独立 ⟹ 不相关，但反之不成立（可能存在非线性关系）。\n结论：ρ=0 表示不相关，但不一定独立。\n建议重点回顾该类问题的求解方法，并在错题本中按方法归类整理。",
-  "source": "海螺精讲题库",
-  "chapter": "多维随机变量",
-  "difficulty": 3,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "X 与 Y 一定相等",
-   "X 与 Y 不相关（但不一定独立）",
-   "X 与 Y 一定独立",
-   "X 与 Y 一定不独立"
   ],
   "sub": "随机变量的独立性"
  },
@@ -7757,109 +6381,7 @@
   "sub": "方差与协方差"
  },
  {
-  "id": "math1-gen358",
-  "project": "math1",
-  "type": "choice",
-  "stem": "下列关于方差的计算公式正确的是（　）。",
-  "answer": "D(X) = E(X²) − [E(X)]²",
-  "explanation": "第1步：方差定义：D(X) = E[(X−E(X))²]。\n第2步：展开化简得 D(X) = E(X²) − [E(X)]²，是常用计算公式。\n结论：D(X) = E(X²) − [E(X)]²。\n本题思路清晰、结果正确，说明该考点掌握良好。",
-  "source": "海螺精讲题库",
-  "chapter": "随机变量的数字特征",
-  "difficulty": 1,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "D(X) = E(X²) + [E(X)]²",
-   "D(X) = [E(X)]² − E(X²)",
-   "D(X) = E(X)",
-   "D(X) = E(X²) − [E(X)]²"
-  ],
-  "sub": "方差与协方差"
- },
- {
-  "id": "math1-gen359",
-  "project": "math1",
-  "type": "choice",
-  "stem": "下列关于方差的计算公式正确的是（　）。",
-  "answer": "D(X) = E(X²) − [E(X)]²",
-  "explanation": "第1步：方差定义：D(X) = E[(X−E(X))²]。\n第2步：展开化简得 D(X) = E(X²) − [E(X)]²，是常用计算公式。\n结论：D(X) = E(X²) − [E(X)]²。\n本题思路清晰、结果正确，说明该考点掌握良好。",
-  "source": "海螺精讲题库",
-  "chapter": "随机变量的数字特征",
-  "difficulty": 1,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "D(X) = [E(X)]² − E(X²)",
-   "D(X) = E(X)",
-   "D(X) = E(X²) − [E(X)]²",
-   "D(X) = E(X²) + [E(X)]²"
-  ],
-  "sub": "方差与协方差"
- },
- {
-  "id": "math1-gen360",
-  "project": "math1",
-  "type": "choice",
-  "stem": "下列关于方差的计算公式正确的是（　）。",
-  "answer": "D(X) = E(X²) − [E(X)]²",
-  "explanation": "第1步：方差定义：D(X) = E[(X−E(X))²]。\n第2步：展开化简得 D(X) = E(X²) − [E(X)]²，是常用计算公式。\n结论：D(X) = E(X²) − [E(X)]²。\n本题思路清晰、结果正确，说明该考点掌握良好。",
-  "source": "海螺精讲题库",
-  "chapter": "随机变量的数字特征",
-  "difficulty": 1,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "D(X) = E(X)",
-   "D(X) = E(X²) − [E(X)]²",
-   "D(X) = E(X²) + [E(X)]²",
-   "D(X) = [E(X)]² − E(X²)"
-  ],
-  "sub": "方差与协方差"
- },
- {
   "id": "math1-gen361",
-  "project": "math1",
-  "type": "fill",
-  "stem": "两个随机变量的相关系数 ρ 的取值范围是 ____。",
-  "answer": "[-1,1]",
-  "explanation": "第1步：相关系数描述线性相关程度，由柯西不等式可知 |ρ| ≤ 1。\n第2步：ρ=±1 对应完全线性相关，ρ=0 对应不相关。\n结论：−1 ≤ ρ ≤ 1。\n本题思路清晰、结果正确，说明该考点掌握良好。",
-  "source": "海螺精讲题库",
-  "chapter": "随机变量的数字特征",
-  "difficulty": 1,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "sub": "相关系数"
- },
- {
-  "id": "math1-gen362",
-  "project": "math1",
-  "type": "fill",
-  "stem": "两个随机变量的相关系数 ρ 的取值范围是 ____。",
-  "answer": "[-1,1]",
-  "explanation": "第1步：相关系数描述线性相关程度，由柯西不等式可知 |ρ| ≤ 1。\n第2步：ρ=±1 对应完全线性相关，ρ=0 对应不相关。\n结论：−1 ≤ ρ ≤ 1。\n本题思路清晰、结果正确，说明该考点掌握良好。",
-  "source": "海螺精讲题库",
-  "chapter": "随机变量的数字特征",
-  "difficulty": 1,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "sub": "相关系数"
- },
- {
-  "id": "math1-gen363",
-  "project": "math1",
-  "type": "fill",
-  "stem": "两个随机变量的相关系数 ρ 的取值范围是 ____。",
-  "answer": "[-1,1]",
-  "explanation": "第1步：相关系数描述线性相关程度，由柯西不等式可知 |ρ| ≤ 1。\n第2步：ρ=±1 对应完全线性相关，ρ=0 对应不相关。\n结论：−1 ≤ ρ ≤ 1。\n本题思路清晰、结果正确，说明该考点掌握良好。",
-  "source": "海螺精讲题库",
-  "chapter": "随机变量的数字特征",
-  "difficulty": 1,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "sub": "相关系数"
- },
- {
-  "id": "math1-gen364",
   "project": "math1",
   "type": "fill",
   "stem": "两个随机变量的相关系数 ρ 的取值范围是 ____。",
@@ -7889,66 +6411,6 @@
    "1",
    "0",
    "事件的频率"
-  ],
-  "sub": "大数定律"
- },
- {
-  "id": "math1-gen366",
-  "project": "math1",
-  "type": "choice",
-  "stem": "大数定律表明：在重复试验中，事件发生的频率依概率收敛于（　）。",
-  "answer": "该事件的概率",
-  "explanation": "第1步：伯努利大数定律：试验次数充分大时频率以概率 1 接近概率。\n第2步：这是用频率估计概率的理论依据。\n结论：频率收敛于概率。\n本题思路清晰、结果正确，说明该考点掌握良好。",
-  "source": "海螺精讲题库",
-  "chapter": "大数定律与中心极限定理",
-  "difficulty": 1,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "1",
-   "0",
-   "事件的频率",
-   "该事件的概率"
-  ],
-  "sub": "大数定律"
- },
- {
-  "id": "math1-gen367",
-  "project": "math1",
-  "type": "choice",
-  "stem": "大数定律表明：在重复试验中，事件发生的频率依概率收敛于（　）。",
-  "answer": "该事件的概率",
-  "explanation": "第1步：伯努利大数定律：试验次数充分大时频率以概率 1 接近概率。\n第2步：这是用频率估计概率的理论依据。\n结论：频率收敛于概率。\n本题思路清晰、结果正确，说明该考点掌握良好。",
-  "source": "海螺精讲题库",
-  "chapter": "大数定律与中心极限定理",
-  "difficulty": 1,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "0",
-   "事件的频率",
-   "该事件的概率",
-   "1"
-  ],
-  "sub": "大数定律"
- },
- {
-  "id": "math1-gen368",
-  "project": "math1",
-  "type": "choice",
-  "stem": "大数定律表明：在重复试验中，事件发生的频率依概率收敛于（　）。",
-  "answer": "该事件的概率",
-  "explanation": "第1步：伯努利大数定律：试验次数充分大时频率以概率 1 接近概率。\n第2步：这是用频率估计概率的理论依据。\n结论：频率收敛于概率。\n本题思路清晰、结果正确，说明该考点掌握良好。",
-  "source": "海螺精讲题库",
-  "chapter": "大数定律与中心极限定理",
-  "difficulty": 1,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "事件的频率",
-   "该事件的概率",
-   "1",
-   "0"
   ],
   "sub": "大数定律"
  },
@@ -8023,48 +6485,6 @@
   "sub": "中心极限定理"
  },
  {
-  "id": "math1-gen374",
-  "project": "math1",
-  "type": "fill",
-  "stem": "设 X₁,…,Xₙ 独立同分布，E(Xᵢ)=μ，D(Xᵢ)=σ²，则当 n 充分大时，(ΣXᵢ − nμ)/(√n·σ) 近似服从 ____。",
-  "answer": "N(0,1)",
-  "explanation": "第1步：独立同分布中心极限定理：标准化后的和式依分布收敛于标准正态。\n第2步：(ΣXᵢ − nμ)/(√n·σ) → N(0,1)。\n结论：近似服从标准正态分布 N(0,1)。\n本题思路清晰、结果正确，说明该考点掌握良好。",
-  "source": "海螺精讲题库",
-  "chapter": "大数定律与中心极限定理",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "sub": "中心极限定理"
- },
- {
-  "id": "math1-gen375",
-  "project": "math1",
-  "type": "fill",
-  "stem": "设 X₁,…,Xₙ 独立同分布，E(Xᵢ)=μ，D(Xᵢ)=σ²，则当 n 充分大时，(ΣXᵢ − nμ)/(√n·σ) 近似服从 ____。",
-  "answer": "N(0,1)",
-  "explanation": "第1步：独立同分布中心极限定理：标准化后的和式依分布收敛于标准正态。\n第2步：(ΣXᵢ − nμ)/(√n·σ) → N(0,1)。\n结论：近似服从标准正态分布 N(0,1)。\n本题思路清晰、结果正确，说明该考点掌握良好。",
-  "source": "海螺精讲题库",
-  "chapter": "大数定律与中心极限定理",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "sub": "中心极限定理"
- },
- {
-  "id": "math1-gen376",
-  "project": "math1",
-  "type": "fill",
-  "stem": "设 X₁,…,Xₙ 独立同分布，E(Xᵢ)=μ，D(Xᵢ)=σ²，则当 n 充分大时，(ΣXᵢ − nμ)/(√n·σ) 近似服从 ____。",
-  "answer": "N(0,1)",
-  "explanation": "第1步：独立同分布中心极限定理：标准化后的和式依分布收敛于标准正态。\n第2步：(ΣXᵢ − nμ)/(√n·σ) → N(0,1)。\n结论：近似服从标准正态分布 N(0,1)。\n本题思路清晰、结果正确，说明该考点掌握良好。",
-  "source": "海螺精讲题库",
-  "chapter": "大数定律与中心极限定理",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "sub": "中心极限定理"
- },
- {
   "id": "math1-gen377",
   "project": "math1",
   "type": "choice",
@@ -8085,109 +6505,7 @@
   "sub": "总体与样本"
  },
  {
-  "id": "math1-gen378",
-  "project": "math1",
-  "type": "choice",
-  "stem": "设 X₁,…,Xₙ 为来自总体 X 的样本，S² 为样本方差，则 E(S²) = σ²，说明 S² 是 σ² 的（　）估计。",
-  "answer": "无偏",
-  "explanation": "第1步：无偏性定义：估计量的期望等于被估参数。\n第2步：E(S²) = σ²，因此样本方差是总体方差的无偏估计。\n结论：S² 是 σ² 的无偏估计。\n本题思路清晰、结果正确，说明该考点掌握良好。",
-  "source": "海螺精讲题库",
-  "chapter": "数理统计",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "有偏",
-   "一致",
-   "有效",
-   "无偏"
-  ],
-  "sub": "总体与样本"
- },
- {
-  "id": "math1-gen379",
-  "project": "math1",
-  "type": "choice",
-  "stem": "设 X₁,…,Xₙ 为来自总体 X 的样本，S² 为样本方差，则 E(S²) = σ²，说明 S² 是 σ² 的（　）估计。",
-  "answer": "无偏",
-  "explanation": "第1步：无偏性定义：估计量的期望等于被估参数。\n第2步：E(S²) = σ²，因此样本方差是总体方差的无偏估计。\n结论：S² 是 σ² 的无偏估计。\n本题思路清晰、结果正确，说明该考点掌握良好。",
-  "source": "海螺精讲题库",
-  "chapter": "数理统计",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "一致",
-   "有效",
-   "无偏",
-   "有偏"
-  ],
-  "sub": "总体与样本"
- },
- {
-  "id": "math1-gen380",
-  "project": "math1",
-  "type": "choice",
-  "stem": "设 X₁,…,Xₙ 为来自总体 X 的样本，S² 为样本方差，则 E(S²) = σ²，说明 S² 是 σ² 的（　）估计。",
-  "answer": "无偏",
-  "explanation": "第1步：无偏性定义：估计量的期望等于被估参数。\n第2步：E(S²) = σ²，因此样本方差是总体方差的无偏估计。\n结论：S² 是 σ² 的无偏估计。\n本题思路清晰、结果正确，说明该考点掌握良好。",
-  "source": "海螺精讲题库",
-  "chapter": "数理统计",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "有效",
-   "无偏",
-   "有偏",
-   "一致"
-  ],
-  "sub": "总体与样本"
- },
- {
   "id": "math1-gen381",
-  "project": "math1",
-  "type": "fill",
-  "stem": "设 X̄ 为来自均值为 μ 的总体的样本均值，则 E(X̄) = ____。",
-  "answer": "μ",
-  "explanation": "第1步：样本均值期望等于总体均值：E(X̄) = E[(X₁+…+Xₙ)/n] = (nμ)/n = μ。\n第2步：因此样本均值是总体均值的无偏估计。\n结论：E(X̄) = μ。\n本题思路清晰、结果正确，说明该考点掌握良好。",
-  "source": "海螺精讲题库",
-  "chapter": "数理统计",
-  "difficulty": 1,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "sub": "总体与样本"
- },
- {
-  "id": "math1-gen382",
-  "project": "math1",
-  "type": "fill",
-  "stem": "设 X̄ 为来自均值为 μ 的总体的样本均值，则 E(X̄) = ____。",
-  "answer": "μ",
-  "explanation": "第1步：样本均值期望等于总体均值：E(X̄) = E[(X₁+…+Xₙ)/n] = (nμ)/n = μ。\n第2步：因此样本均值是总体均值的无偏估计。\n结论：E(X̄) = μ。\n本题思路清晰、结果正确，说明该考点掌握良好。",
-  "source": "海螺精讲题库",
-  "chapter": "数理统计",
-  "difficulty": 1,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "sub": "总体与样本"
- },
- {
-  "id": "math1-gen383",
-  "project": "math1",
-  "type": "fill",
-  "stem": "设 X̄ 为来自均值为 μ 的总体的样本均值，则 E(X̄) = ____。",
-  "answer": "μ",
-  "explanation": "第1步：样本均值期望等于总体均值：E(X̄) = E[(X₁+…+Xₙ)/n] = (nμ)/n = μ。\n第2步：因此样本均值是总体均值的无偏估计。\n结论：E(X̄) = μ。\n本题思路清晰、结果正确，说明该考点掌握良好。",
-  "source": "海螺精讲题库",
-  "chapter": "数理统计",
-  "difficulty": 1,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "sub": "总体与样本"
- },
- {
-  "id": "math1-gen384",
   "project": "math1",
   "type": "fill",
   "stem": "设 X̄ 为来自均值为 μ 的总体的样本均值，则 E(X̄) = ____。",
@@ -8221,66 +6539,6 @@
   "sub": "统计量与抽样分布"
  },
  {
-  "id": "math1-gen386",
-  "project": "math1",
-  "type": "choice",
-  "stem": "设 X₁,…,Xₙ 来自正态总体 N(μ, σ²)，则 (n−1)S²/σ² 服从（　）。",
-  "answer": "χ²(n−1)",
-  "explanation": "第1步：抽样分布定理：样本方差与总体方差之比构成卡方统计量。\n第2步：(n−1)S²/σ² ~ χ²(n−1)，自由度为 n−1。\n结论：(n−1)S²/σ² ~ χ²(n−1)。\n建议重点回顾该类问题的求解方法，并在错题本中按方法归类整理。",
-  "source": "海螺精讲题库",
-  "chapter": "数理统计",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "χ²(n)",
-   "t(n−1)",
-   "N(0,1)",
-   "χ²(n−1)"
-  ],
-  "sub": "统计量与抽样分布"
- },
- {
-  "id": "math1-gen387",
-  "project": "math1",
-  "type": "choice",
-  "stem": "设 X₁,…,Xₙ 来自正态总体 N(μ, σ²)，则 (n−1)S²/σ² 服从（　）。",
-  "answer": "χ²(n−1)",
-  "explanation": "第1步：抽样分布定理：样本方差与总体方差之比构成卡方统计量。\n第2步：(n−1)S²/σ² ~ χ²(n−1)，自由度为 n−1。\n结论：(n−1)S²/σ² ~ χ²(n−1)。\n建议重点回顾该类问题的求解方法，并在错题本中按方法归类整理。",
-  "source": "海螺精讲题库",
-  "chapter": "数理统计",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "t(n−1)",
-   "N(0,1)",
-   "χ²(n−1)",
-   "χ²(n)"
-  ],
-  "sub": "统计量与抽样分布"
- },
- {
-  "id": "math1-gen388",
-  "project": "math1",
-  "type": "choice",
-  "stem": "设 X₁,…,Xₙ 来自正态总体 N(μ, σ²)，则 (n−1)S²/σ² 服从（　）。",
-  "answer": "χ²(n−1)",
-  "explanation": "第1步：抽样分布定理：样本方差与总体方差之比构成卡方统计量。\n第2步：(n−1)S²/σ² ~ χ²(n−1)，自由度为 n−1。\n结论：(n−1)S²/σ² ~ χ²(n−1)。\n建议重点回顾该类问题的求解方法，并在错题本中按方法归类整理。",
-  "source": "海螺精讲题库",
-  "chapter": "数理统计",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "N(0,1)",
-   "χ²(n−1)",
-   "χ²(n)",
-   "t(n−1)"
-  ],
-  "sub": "统计量与抽样分布"
- },
- {
   "id": "math1-gen389",
   "project": "math1",
   "type": "choice",
@@ -8297,66 +6555,6 @@
    "变短",
    "不变",
    "无法确定"
-  ],
-  "sub": "参数估计"
- },
- {
-  "id": "math1-gen390",
-  "project": "math1",
-  "type": "choice",
-  "stem": "在其他条件不变时，增大置信水平 1−α，置信区间的长度（　）。",
-  "answer": "变长",
-  "explanation": "第1步：置信水平越高，需要覆盖的分布区域越大。\n第2步：临界值增大，区间长度随之变长。\n结论：置信区间变长。\n本题思路清晰、结果正确，说明该考点掌握良好。",
-  "source": "海螺精讲题库",
-  "chapter": "数理统计",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "变短",
-   "不变",
-   "无法确定",
-   "变长"
-  ],
-  "sub": "参数估计"
- },
- {
-  "id": "math1-gen391",
-  "project": "math1",
-  "type": "choice",
-  "stem": "在其他条件不变时，增大置信水平 1−α，置信区间的长度（　）。",
-  "answer": "变长",
-  "explanation": "第1步：置信水平越高，需要覆盖的分布区域越大。\n第2步：临界值增大，区间长度随之变长。\n结论：置信区间变长。\n本题思路清晰、结果正确，说明该考点掌握良好。",
-  "source": "海螺精讲题库",
-  "chapter": "数理统计",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "不变",
-   "无法确定",
-   "变长",
-   "变短"
-  ],
-  "sub": "参数估计"
- },
- {
-  "id": "math1-gen392",
-  "project": "math1",
-  "type": "choice",
-  "stem": "在其他条件不变时，增大置信水平 1−α，置信区间的长度（　）。",
-  "answer": "变长",
-  "explanation": "第1步：置信水平越高，需要覆盖的分布区域越大。\n第2步：临界值增大，区间长度随之变长。\n结论：置信区间变长。\n本题思路清晰、结果正确，说明该考点掌握良好。",
-  "source": "海螺精讲题库",
-  "chapter": "数理统计",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "无法确定",
-   "变长",
-   "变短",
-   "不变"
   ],
   "sub": "参数估计"
  },
@@ -9325,7 +7523,7 @@
   "project": "math2",
   "type": "fill",
   "stem": "∫ e^(1x) dx = ____（C 为任意常数）。",
-  "answer": "e^(1x)/1+C",
+  "answer": "e^(x)/1+C",
   "explanation": "第1步：指数函数积分：∫ e^(kx) dx = e^(kx)/k + C。\n第2步：这里 k=1，直接代入公式。\n结论：∫ e^(1x) dx = e^(1x)/1 + C。\n建议放慢计算节奏，注意符号与代数变形，完成后用代入法或特殊值复核。",
   "source": "海螺精讲题库",
   "chapter": "一元函数积分学",
@@ -10124,7 +8322,7 @@
   "project": "math2",
   "type": "fill",
   "stem": "二重积分 ∬_D 1 dσ，其中 D 为圆域 x² + y² ≤ 1，其值为 ____。",
-  "answer": "1π",
+  "answer": "π",
   "explanation": "第1步：被积函数为 1 时，二重积分等于区域面积。\n第2步：圆域半径 R = 1，面积 = πR² = π·1。\n结论：积分值 = 1π。\n建议放慢计算节奏，注意符号与代数变形，完成后用代入法或特殊值复核。",
   "source": "海螺精讲题库",
   "chapter": "二重积分",
@@ -10388,7 +8586,7 @@
   "project": "math2",
   "type": "fill",
   "stem": "微分方程 y' = 1y 的通解为 y = ____。",
-  "answer": "Ce^(1x)",
+  "answer": "Ce^(x)",
   "explanation": "第1步：分离变量：dy/y = k dx。\n第2步：两边积分得 ln|y| = 1x + C₁，即 y = C·e^(1x)。\n结论：y = Ce^(1x)。\n建议重点回顾该类问题的求解方法，并在错题本中按方法归类整理。",
   "source": "海螺精讲题库",
   "chapter": "微分方程",
@@ -10500,7 +8698,7 @@
   "project": "math2",
   "type": "fill",
   "stem": "微分方程 y' + 1y = 0 的通解为 y = ____。",
-  "answer": "Ce^(-1x)",
+  "answer": "Ce^(-x)",
   "explanation": "第1步：一阶齐次线性方程 y' + p y = 0 的通解公式：y = Ce^(−∫p dx)。\n第2步：∫p dx = 1x，故 y = C·e^(−1x)。\n结论：y = Ce^(−1x)。\n建议重点回顾该类问题的求解方法，并在错题本中按方法归类整理。",
   "source": "海螺精讲题库",
   "chapter": "微分方程",
@@ -10612,7 +8810,7 @@
   "project": "math2",
   "type": "choice",
   "stem": "微分方程 y'' − 1y = 0 的通解是（　）。",
-  "answer": "y=C1e^(1x)+C2e^(-1x)",
+  "answer": "y=C1e^(x)+C2e^(-x)",
   "explanation": "第1步：特征方程 r² − k² = 0，解得两个不相等实根 r = ±k。\n第2步：通解为 y = C1e^(1x) + C2e^(-1x)。\n结论：y = C1e^(1x) + C2e^(-1x)。\n建议重点回顾该类问题的求解方法，并在错题本中按方法归类整理。",
   "source": "海螺精讲题库",
   "chapter": "微分方程",
@@ -10620,10 +8818,10 @@
   "kind": "mock",
   "reviewStatus": "approved",
   "options": [
-   "y=C1e^(1x)+C2e^(-1x)",
+   "y=C1e^(x)+C2e^(-x)",
    "y=C1cos(1x)+C2sin(1x)",
-   "y=(C1+C2x)e^(1x)",
-   "y=C1e^(1x)"
+   "y=(C1+C2x)e^(x)",
+   "y=C1e^(x)"
   ],
   "sub": "一阶微分方程"
  },
@@ -11523,20 +9721,6 @@
   "sub": "矩阵的秩"
  },
  {
-  "id": "math2-gen203",
-  "project": "math2",
-  "type": "fill",
-  "stem": "矩阵 diag(1, 0, 0) 的秩为 ____。",
-  "answer": "3",
-  "explanation": "第1步：对角矩阵的秩等于非零对角元的个数。\n第2步：非零对角元为 1,0,0、0,1,0、0,0,1，共 3 个。\n结论：秩 = 3。\n建议放慢计算节奏，注意符号与代数变形，完成后用代入法或特殊值复核。",
-  "source": "海螺精讲题库",
-  "chapter": "矩阵",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "sub": "矩阵的秩"
- },
- {
   "id": "math2-gen204",
   "project": "math2",
   "type": "fill",
@@ -11571,20 +9755,6 @@
   "stem": "矩阵 [[0,0],[0,0]] 的秩为 ____。",
   "answer": "0",
   "explanation": "第1步：矩阵的秩等于其最高阶非零子式的阶数。\n第2步：该矩阵全为零矩阵，不存在非零子式，秩为 0。\n结论：秩 = 0。\n建议重点回顾该类问题的求解方法，并在错题本中按方法归类整理。",
-  "source": "海螺精讲题库",
-  "chapter": "矩阵",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "sub": "矩阵的秩"
- },
- {
-  "id": "math2-gen207",
-  "project": "math2",
-  "type": "fill",
-  "stem": "矩阵 diag(1, 0, 0) 的秩为 ____。",
-  "answer": "2",
-  "explanation": "第1步：对角矩阵的秩等于非零对角元的个数。\n第2步：非零对角元为 1,0,0、0,1,0、0,0,0，共 2 个。\n结论：秩 = 2。\n建议放慢计算节奏，注意符号与代数变形，完成后用代入法或特殊值复核。",
   "source": "海螺精讲题库",
   "chapter": "矩阵",
   "difficulty": 2,
@@ -13871,7 +12041,7 @@
   "project": "math3",
   "type": "fill",
   "stem": "∫ e^(1x) dx = ____（C 为任意常数）。",
-  "answer": "e^(1x)/1+C",
+  "answer": "e^(x)/1+C",
   "explanation": "第1步：指数函数积分：∫ e^(kx) dx = e^(kx)/k + C。\n第2步：这里 k=1，直接代入公式。\n结论：∫ e^(1x) dx = e^(1x)/1 + C。\n建议放慢计算节奏，注意符号与代数变形，完成后用代入法或特殊值复核。",
   "source": "海螺精讲题库",
   "chapter": "一元函数积分学",
@@ -14670,7 +12840,7 @@
   "project": "math3",
   "type": "fill",
   "stem": "二重积分 ∬_D 1 dσ，其中 D 为圆域 x² + y² ≤ 1，其值为 ____。",
-  "answer": "1π",
+  "answer": "π",
   "explanation": "第1步：被积函数为 1 时，二重积分等于区域面积。\n第2步：圆域半径 R = 1，面积 = πR² = π·1。\n结论：积分值 = 1π。\n建议放慢计算节奏，注意符号与代数变形，完成后用代入法或特殊值复核。",
   "source": "海螺精讲题库",
   "chapter": "二重积分",
@@ -15290,126 +13460,6 @@
   "sub": "常数项级数"
  },
  {
-  "id": "math3-gen149",
-  "project": "math3",
-  "type": "choice",
-  "stem": "交错级数 Σ(n=1→∞) (−1)^n / n^1 的敛散性是（　）。",
-  "answer": "条件收敛",
-  "explanation": "第1步：取绝对值后为调和级数 Σ1/n，发散。\n第2步：原级数为交错级数，通项递减趋于 0，由莱布尼茨判别法收敛。\n第3步：收敛但绝对值级数发散，故条件收敛。\n结论：该级数条件收敛。\n建议重点回顾该类问题的求解方法，并在错题本中按方法归类整理。",
-  "source": "海螺精讲题库",
-  "chapter": "无穷级数",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "发散",
-   "无法判断",
-   "条件收敛",
-   "绝对收敛"
-  ],
-  "sub": "常数项级数"
- },
- {
-  "id": "math3-gen150",
-  "project": "math3",
-  "type": "choice",
-  "stem": "交错级数 Σ(n=1→∞) (−1)^n / n^2 的敛散性是（　）。",
-  "answer": "绝对收敛",
-  "explanation": "第1步：取绝对值后为 p 级数 Σ1/n^2，p=2>1，收敛。\n第2步：绝对值级数收敛，故原级数绝对收敛。\n结论：该级数绝对收敛。\n本题思路清晰、结果正确，说明该考点掌握良好。",
-  "source": "海螺精讲题库",
-  "chapter": "无穷级数",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "无法判断",
-   "绝对收敛",
-   "条件收敛",
-   "发散"
-  ],
-  "sub": "常数项级数"
- },
- {
-  "id": "math3-gen151",
-  "project": "math3",
-  "type": "choice",
-  "stem": "交错级数 Σ(n=1→∞) (−1)^n / n^1 的敛散性是（　）。",
-  "answer": "条件收敛",
-  "explanation": "第1步：取绝对值后为调和级数 Σ1/n，发散。\n第2步：原级数为交错级数，通项递减趋于 0，由莱布尼茨判别法收敛。\n第3步：收敛但绝对值级数发散，故条件收敛。\n结论：该级数条件收敛。\n建议重点回顾该类问题的求解方法，并在错题本中按方法归类整理。",
-  "source": "海螺精讲题库",
-  "chapter": "无穷级数",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "条件收敛",
-   "绝对收敛",
-   "发散",
-   "无法判断"
-  ],
-  "sub": "常数项级数"
- },
- {
-  "id": "math3-gen152",
-  "project": "math3",
-  "type": "choice",
-  "stem": "交错级数 Σ(n=1→∞) (−1)^n / n^2 的敛散性是（　）。",
-  "answer": "绝对收敛",
-  "explanation": "第1步：取绝对值后为 p 级数 Σ1/n^2，p=2>1，收敛。\n第2步：绝对值级数收敛，故原级数绝对收敛。\n结论：该级数绝对收敛。\n本题思路清晰、结果正确，说明该考点掌握良好。",
-  "source": "海螺精讲题库",
-  "chapter": "无穷级数",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "条件收敛",
-   "发散",
-   "无法判断",
-   "绝对收敛"
-  ],
-  "sub": "常数项级数"
- },
- {
-  "id": "math3-gen153",
-  "project": "math3",
-  "type": "choice",
-  "stem": "交错级数 Σ(n=1→∞) (−1)^n / n^1 的敛散性是（　）。",
-  "answer": "条件收敛",
-  "explanation": "第1步：取绝对值后为调和级数 Σ1/n，发散。\n第2步：原级数为交错级数，通项递减趋于 0，由莱布尼茨判别法收敛。\n第3步：收敛但绝对值级数发散，故条件收敛。\n结论：该级数条件收敛。\n建议重点回顾该类问题的求解方法，并在错题本中按方法归类整理。",
-  "source": "海螺精讲题库",
-  "chapter": "无穷级数",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "发散",
-   "无法判断",
-   "条件收敛",
-   "绝对收敛"
-  ],
-  "sub": "常数项级数"
- },
- {
-  "id": "math3-gen154",
-  "project": "math3",
-  "type": "choice",
-  "stem": "交错级数 Σ(n=1→∞) (−1)^n / n^2 的敛散性是（　）。",
-  "answer": "绝对收敛",
-  "explanation": "第1步：取绝对值后为 p 级数 Σ1/n^2，p=2>1，收敛。\n第2步：绝对值级数收敛，故原级数绝对收敛。\n结论：该级数绝对收敛。\n本题思路清晰、结果正确，说明该考点掌握良好。",
-  "source": "海螺精讲题库",
-  "chapter": "无穷级数",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "options": [
-   "无法判断",
-   "绝对收敛",
-   "条件收敛",
-   "发散"
-  ],
-  "sub": "常数项级数"
- },
- {
   "id": "math3-gen155",
   "project": "math3",
   "type": "choice",
@@ -15454,7 +13504,7 @@
   "project": "math3",
   "type": "fill",
   "stem": "微分方程 y' = 1y 的通解为 y = ____。",
-  "answer": "Ce^(1x)",
+  "answer": "Ce^(x)",
   "explanation": "第1步：分离变量：dy/y = k dx。\n第2步：两边积分得 ln|y| = 1x + C₁，即 y = C·e^(1x)。\n结论：y = Ce^(1x)。\n建议重点回顾该类问题的求解方法，并在错题本中按方法归类整理。",
   "source": "海螺精讲题库",
   "chapter": "微分方程",
@@ -15566,7 +13616,7 @@
   "project": "math3",
   "type": "fill",
   "stem": "微分方程 y' + 1y = 0 的通解为 y = ____。",
-  "answer": "Ce^(-1x)",
+  "answer": "Ce^(-x)",
   "explanation": "第1步：一阶齐次线性方程 y' + p y = 0 的通解公式：y = Ce^(−∫p dx)。\n第2步：∫p dx = 1x，故 y = C·e^(−1x)。\n结论：y = Ce^(−1x)。\n建议重点回顾该类问题的求解方法，并在错题本中按方法归类整理。",
   "source": "海螺精讲题库",
   "chapter": "微分方程",
@@ -15678,7 +13728,7 @@
   "project": "math3",
   "type": "choice",
   "stem": "微分方程 y'' − 1y = 0 的通解是（　）。",
-  "answer": "y=C1e^(1x)+C2e^(-1x)",
+  "answer": "y=C1e^(x)+C2e^(-x)",
   "explanation": "第1步：特征方程 r² − k² = 0，解得两个不相等实根 r = ±k。\n第2步：通解为 y = C1e^(1x) + C2e^(-1x)。\n结论：y = C1e^(1x) + C2e^(-1x)。\n建议重点回顾该类问题的求解方法，并在错题本中按方法归类整理。",
   "source": "海螺精讲题库",
   "chapter": "微分方程",
@@ -15686,10 +13736,10 @@
   "kind": "mock",
   "reviewStatus": "approved",
   "options": [
-   "y=C1e^(1x)+C2e^(-1x)",
+   "y=C1e^(x)+C2e^(-x)",
    "y=C1cos(1x)+C2sin(1x)",
-   "y=(C1+C2x)e^(1x)",
-   "y=C1e^(1x)"
+   "y=(C1+C2x)e^(x)",
+   "y=C1e^(x)"
   ],
   "sub": "一阶微分方程"
  },
@@ -16589,20 +14639,6 @@
   "sub": "逆矩阵与秩"
  },
  {
-  "id": "math3-gen229",
-  "project": "math3",
-  "type": "fill",
-  "stem": "矩阵 diag(1, 0, 0) 的秩为 ____。",
-  "answer": "3",
-  "explanation": "第1步：对角矩阵的秩等于非零对角元的个数。\n第2步：非零对角元为 1,0,0、0,1,0、0,0,1，共 3 个。\n结论：秩 = 3。\n建议放慢计算节奏，注意符号与代数变形，完成后用代入法或特殊值复核。",
-  "source": "海螺精讲题库",
-  "chapter": "行列式与矩阵",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "sub": "逆矩阵与秩"
- },
- {
   "id": "math3-gen230",
   "project": "math3",
   "type": "fill",
@@ -16637,20 +14673,6 @@
   "stem": "矩阵 [[0,0],[0,0]] 的秩为 ____。",
   "answer": "0",
   "explanation": "第1步：矩阵的秩等于其最高阶非零子式的阶数。\n第2步：该矩阵全为零矩阵，不存在非零子式，秩为 0。\n结论：秩 = 0。\n建议重点回顾该类问题的求解方法，并在错题本中按方法归类整理。",
-  "source": "海螺精讲题库",
-  "chapter": "行列式与矩阵",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "sub": "逆矩阵与秩"
- },
- {
-  "id": "math3-gen233",
-  "project": "math3",
-  "type": "fill",
-  "stem": "矩阵 diag(1, 0, 0) 的秩为 ____。",
-  "answer": "2",
-  "explanation": "第1步：对角矩阵的秩等于非零对角元的个数。\n第2步：非零对角元为 1,0,0、0,1,0、0,0,0，共 2 个。\n结论：秩 = 2。\n建议放慢计算节奏，注意符号与代数变形，完成后用代入法或特殊值复核。",
   "source": "海螺精讲题库",
   "chapter": "行列式与矩阵",
   "difficulty": 2,
@@ -20593,7 +18615,7 @@
   "project": "calc396",
   "type": "fill",
   "stem": "∫ e^(1x) dx = ____（C 为任意常数）。",
-  "answer": "e^(1x)/1+C",
+  "answer": "e^(x)/1+C",
   "explanation": "第1步：指数函数积分：∫ e^(kx) dx = e^(kx)/k + C。\n第2步：这里 k=1，直接代入公式。\n结论：∫ e^(1x) dx = e^(1x)/1 + C。\n建议放慢计算节奏，注意符号与代数变形，完成后用代入法或特殊值复核。",
   "source": "海螺精讲题库",
   "chapter": "一元函数积分学",
@@ -21392,7 +19414,7 @@
   "project": "calc396",
   "type": "fill",
   "stem": "二重积分 ∬_D 1 dσ，其中 D 为圆域 x² + y² ≤ 1，其值为 ____。",
-  "answer": "1π",
+  "answer": "π",
   "explanation": "第1步：被积函数为 1 时，二重积分等于区域面积。\n第2步：圆域半径 R = 1，面积 = πR² = π·1。\n结论：积分值 = 1π。\n建议放慢计算节奏，注意符号与代数变形，完成后用代入法或特殊值复核。",
   "source": "海螺精讲题库",
   "chapter": "多元函数与微积分应用",
@@ -22367,20 +20389,6 @@
   "sub": "逆矩阵与秩"
  },
  {
-  "id": "calc396-gen177",
-  "project": "calc396",
-  "type": "fill",
-  "stem": "矩阵 diag(1, 0, 0) 的秩为 ____。",
-  "answer": "3",
-  "explanation": "第1步：对角矩阵的秩等于非零对角元的个数。\n第2步：非零对角元为 1,0,0、0,1,0、0,0,1，共 3 个。\n结论：秩 = 3。\n建议放慢计算节奏，注意符号与代数变形，完成后用代入法或特殊值复核。",
-  "source": "海螺精讲题库",
-  "chapter": "行列式与矩阵",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "sub": "逆矩阵与秩"
- },
- {
   "id": "calc396-gen178",
   "project": "calc396",
   "type": "fill",
@@ -22415,20 +20423,6 @@
   "stem": "矩阵 [[0,0],[0,0]] 的秩为 ____。",
   "answer": "0",
   "explanation": "第1步：矩阵的秩等于其最高阶非零子式的阶数。\n第2步：该矩阵全为零矩阵，不存在非零子式，秩为 0。\n结论：秩 = 0。\n建议重点回顾该类问题的求解方法，并在错题本中按方法归类整理。",
-  "source": "海螺精讲题库",
-  "chapter": "行列式与矩阵",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "sub": "逆矩阵与秩"
- },
- {
-  "id": "calc396-gen181",
-  "project": "calc396",
-  "type": "fill",
-  "stem": "矩阵 diag(1, 0, 0) 的秩为 ____。",
-  "answer": "2",
-  "explanation": "第1步：对角矩阵的秩等于非零对角元的个数。\n第2步：非零对角元为 1,0,0、0,1,0、0,0,0，共 2 个。\n结论：秩 = 2。\n建议放慢计算节奏，注意符号与代数变形，完成后用代入法或特殊值复核。",
   "source": "海螺精讲题库",
   "chapter": "行列式与矩阵",
   "difficulty": 2,
@@ -26701,20 +24695,6 @@
   "sub": "一阶微分方程"
  },
  {
-  "id": "math3-hard-023",
-  "project": "math3",
-  "type": "fill",
-  "stem": "微分方程 y' + 2y = 0 的通解为 y = ____。",
-  "answer": "Ce^(−2x)",
-  "explanation": "第1步：分离变量 dy/y = −2 dx。\n第2步：ln|y| = −2x + C₁。\n第3步：y = Ce^(−2x)。",
-  "source": "海螺考研精练",
-  "chapter": "微分方程",
-  "difficulty": 3,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "sub": "一阶微分方程"
- },
- {
   "id": "math3-hard-024",
   "project": "math3",
   "type": "fill",
@@ -26774,27 +24754,13 @@
    "A = 0",
    "无法判断"
   ],
-  "explanation": "第1步：AB = 0，左乘 A⁻¹。\n第2步：A⁻¹AB = A⁻¹·0 = 0，即 B = 0。\n第3步：故选 B = 0。",
+  "explanation": "第1步：AB = 0，左乘 A⁻¹。\n第2步：A⁻¹AB = A⁻¹·0 = 0，即 B = 0。\n第3步：故选 A = 0。",
   "source": "海螺考研精练",
   "chapter": "行列式与矩阵",
   "difficulty": 3,
   "kind": "mock",
   "reviewStatus": "approved",
   "sub": "逆矩阵与秩"
- },
- {
-  "id": "math3-hard-028",
-  "project": "math3",
-  "type": "fill",
-  "stem": "向量组 (1,0)，(0,1)，(1,1) 的秩为 ____。",
-  "answer": "2",
-  "explanation": "第1步：(1,1) = (1,0) + (0,1)。\n第2步：前两个线性无关。\n第3步：秩为 2。",
-  "source": "海螺考研精练",
-  "chapter": "向量与线性方程组",
-  "difficulty": 3,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "sub": "向量组的线性相关性"
  },
  {
   "id": "math3-hard-029",
@@ -27060,7 +25026,7 @@
    "D(X̄) = D(X)",
    "X̄ = E(X)"
   ],
-  "explanation": "第1步：E(X̄) = E(X)，即 X̄ 是总体均值的无偏估计。\n第2步：D(X̄) = D(X)/n。\n第3步：故选 E(X̄) = E(X)。",
+  "explanation": "第1步：E(X̄) = E(X)，即 X̄ 是总体均值的无偏估计。\n第2步：D(X̄) = D(X)/n。\n第3步：故选 A(X̄) = E(X)。",
   "source": "海螺考研精练",
   "chapter": "数理统计",
   "difficulty": 3,
@@ -28740,7 +26706,7 @@
   "difficulty": 3,
   "kind": "mock",
   "reviewStatus": "approved",
-  "sub": "原函数与不定积分"
+  "sub": "反常积分"
  },
  {
   "id": "math2-exp-035",
@@ -30531,26 +28497,6 @@
   "sub": "二次型及其矩阵"
  },
  {
-  "id": "math2-exp-146",
-  "project": "math2",
-  "type": "choice",
-  "stem": "实对称矩阵 A 正定的充要条件是（　）。",
-  "answer": "顺序主子式全大于 0",
-  "options": [
-   "顺序主子式全大于 0",
-   "主对角线元素全大于 0",
-   "元素全大于 0",
-   "行列式等于 0"
-  ],
-  "explanation": "第1步：正定判定。\n第2步：顺序主子式全 > 0。\n第3步：故选第一项。",
-  "source": "海螺扩展题库",
-  "chapter": "二次型",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "sub": "二次型及其矩阵"
- },
- {
   "id": "math2-exp-147",
   "project": "math2",
   "type": "fill",
@@ -31613,20 +29559,6 @@
   "sub": "行列式"
  },
  {
-  "id": "calc396-exp-051",
-  "project": "calc396",
-  "type": "fill",
-  "stem": "设 A 为 3 阶方阵且 |A| = 2，则 |−A| = ____。",
-  "answer": "−2",
-  "explanation": "第1步：|kA| = kⁿ|A|。\n第2步：(−1)³ × 2。\n第3步：= −2。",
-  "source": "海螺扩展题库",
-  "chapter": "行列式与矩阵",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "sub": "行列式"
- },
- {
   "id": "calc396-exp-052",
   "project": "calc396",
   "type": "choice",
@@ -32588,7 +30520,7 @@
   "type": "choice",
   "stem": "函数 y=2x/(x-1)（x≠1）的反函数是？",
   "answer": "y=x/(x-2)（x≠2）",
-  "explanation": "第1步：由 y=2x/(x-1) 解出 x：y(x-1)=2x，即 yx-y=2x。\n第2步：移项得 x(y-2)=y，故 x=y/(y-2)。\n第3步：交换 x、y 得反函数 y=x/(x-2)，定义域 x≠2。\n结论：选 D。",
+  "explanation": "第1步：由 y=2x/(x-1) 解出 x：y(x-1)=2x，即 yx-y=2x。\n第2步：移项得 x(y-2)=y，故 x=y/(y-2)。\n第3步：交换 x、y 得反函数 y=x/(x-2)，定义域 x≠2。\n结论：选 A。",
   "source": "海螺补题",
   "chapter": "函数、极限与连续",
   "difficulty": 2,
@@ -32598,8 +30530,7 @@
   "options": [
    "y=x/(x-2)（x≠2）",
    "y=2x/(x+1)",
-   "y=(x+1)/(x-2)",
-   "y=x/(x-2)（x≠2）"
+   "y=(x+1)/(x-2)"
   ]
  },
  {
@@ -32708,7 +30639,7 @@
   "type": "choice",
   "stem": "极限 lim(x→∞) (3x²-2)/(2x²+1) =？",
   "answer": "3/2",
-  "explanation": "第1步：分子分母同除以 x²。\n第2步：原式=(3-2/x²)/(2+1/x²)。\n第3步：x→∞ 时 2/x²→0，1/x²→0。\n结论：极限为 3/2，选 B。",
+  "explanation": "第1步：分子分母同除以 x²。\n第2步：原式=(3-2/x²)/(2+1/x²)。\n第3步：x→∞ 时 2/x²→0，1/x²→0。\n结论：极限为 3/2，选 A。",
   "source": "海螺补题",
   "chapter": "函数、极限与连续",
   "difficulty": 1,
@@ -32716,7 +30647,6 @@
   "reviewStatus": "approved",
   "sub": "数列极限与函数极限",
   "options": [
-   "3/2",
    "3/2",
    "2/3",
    "1"
@@ -33068,7 +30998,7 @@
   "type": "choice",
   "stem": "lim(n→∞) [f(1/n)+f(2/n)+…+f(n/n)]/n =？",
   "answer": "∫(0,1) f(x) dx",
-  "explanation": "第1步：这是定积分的定义：lim Σ f(i/n)·(1/n)=∫(0,1) f(x)dx。\n第2步：注意 i/n 为分点，1/n 为小区间长度。\n结论：选 D。",
+  "explanation": "第1步：这是定积分的定义：lim Σ f(i/n)·(1/n)=∫(0,1) f(x)dx。\n第2步：注意 i/n 为分点，1/n 为小区间长度。\n结论：选 B。",
   "source": "海螺补题",
   "chapter": "一元函数积分学",
   "difficulty": 2,
@@ -33078,8 +31008,7 @@
   "options": [
    "f(1)",
    "∫(0,1) f(x) dx",
-   "f(0)",
-   "∫(0,1) f(x) dx"
+   "f(0)"
   ]
  },
  {
@@ -33248,7 +31177,7 @@
   "type": "choice",
   "stem": "方程 x²+y²+z²=R² 表示？",
   "answer": "球面",
-  "explanation": "第1步：方程中 x²+y²+z² 为三项平方和等于常数。\n第2步：这是以原点为球心、R 为半径的球面方程。\n结论：选 B。",
+  "explanation": "第1步：方程中 x²+y²+z² 为三项平方和等于常数。\n第2步：这是以原点为球心、R 为半径的球面方程。\n结论：选 A。",
   "source": "海螺补题",
   "chapter": "向量代数与空间解析几何",
   "difficulty": 1,
@@ -33256,7 +31185,6 @@
   "reviewStatus": "approved",
   "sub": "曲面与空间曲线",
   "options": [
-   "球面",
    "球面",
    "圆柱面",
    "圆锥面",
@@ -33489,7 +31417,7 @@
   "type": "choice",
   "stem": "用极坐标计算 ∫∫D √(x²+y²) dxdy（D：x²+y²≤1）等于？",
   "answer": "2π/3",
-  "explanation": "第1步：极坐标 x=rcosθ，y=rsinθ，面积元 dxdy=r dr dθ。\n第2步：原式=∫(0,2π)dθ ∫(0,1) r·r dr=2π·[r³/3](0,1)。\n结论：=2π/3，选 B。",
+  "explanation": "第1步：极坐标 x=rcosθ，y=rsinθ，面积元 dxdy=r dr dθ。\n第2步：原式=∫(0,2π)dθ ∫(0,1) r·r dr=2π·[r³/3](0,1)。\n结论：=2π/3，选 A。",
   "source": "海螺补题",
   "chapter": "重积分",
   "difficulty": 2,
@@ -33497,7 +31425,6 @@
   "reviewStatus": "approved",
   "sub": "直角坐标与极坐标计算",
   "options": [
-   "2π/3",
    "2π/3",
    "π/3",
    "π"
@@ -33589,7 +31516,7 @@
   "type": "choice",
   "stem": "曲面 z=x²+y² 在 xOy 面上投影区域 D：x²+y²≤1，则曲面面积元素 dS 为？",
   "answer": "√(1+4x²+4y²) dxdy",
-  "explanation": "第1步：曲面面积元素 dS=√(1+fx²+fy²) dxdy。\n第2步：z=x²+y² 时 fx=2x，fy=2y。\n第3步：dS=√(1+4x²+4y²) dxdy。\n结论：选 C。",
+  "explanation": "第1步：曲面面积元素 dS=√(1+fx²+fy²) dxdy。\n第2步：z=x²+y² 时 fx=2x，fy=2y。\n第3步：dS=√(1+4x²+4y²) dxdy。\n结论：选 A。",
   "source": "海螺补题",
   "chapter": "重积分",
   "difficulty": 3,
@@ -33599,7 +31526,6 @@
   "options": [
    "√(1+4x²+4y²) dxdy",
    "√(1+x²+y²) dxdy",
-   "√(1+4x²+4y²) dxdy",
    "√(1+4x²) dxdy"
   ]
  },
@@ -33729,7 +31655,7 @@
   "type": "choice",
   "stem": "球坐标变换 x=r sinφ cosθ，y=r sinφ sinθ，z=r cosφ 的体积元素为？",
   "answer": "r² sinφ dr dφ dθ",
-  "explanation": "第1步：球坐标体积元素 dV=r² sinφ dr dφ dθ。\n第2步：这是重积分坐标变换的常用结论。\n结论：选 C。",
+  "explanation": "第1步：球坐标体积元素 dV=r² sinφ dr dφ dθ。\n第2步：这是重积分坐标变换的常用结论。\n结论：选 B。",
   "source": "海螺补题",
   "chapter": "重积分",
   "difficulty": 2,
@@ -33738,7 +31664,6 @@
   "sub": "三重积分",
   "options": [
    "r dr dφ dθ",
-   "r² sinφ dr dφ dθ",
    "r² sinφ dr dφ dθ",
    "r³ dr dφ dθ"
   ]
@@ -34109,7 +32034,7 @@
   "type": "choice",
   "stem": "不显含 x 的方程 y''=f(y,y') 的降阶方法是？",
   "answer": "p'=p dp/dy",
-  "explanation": "第1步：方程不含 x，令 p=y'，把 y'' 化为 p dp/dy。\n第2步：因为 y''=dp/dx=(dp/dy)(dy/dx)=p dp/dy。\n结论：令 p=y' 且 y''=p dp/dy，选 D。",
+  "explanation": "第1步：方程不含 x，令 p=y'，把 y'' 化为 p dp/dy。\n第2步：因为 y''=dp/dx=(dp/dy)(dy/dx)=p dp/dy。\n结论：令 p=y' 且 y''=p dp/dy，选 C。",
   "source": "海螺补题",
   "chapter": "微分方程",
   "difficulty": 2,
@@ -34119,7 +32044,6 @@
   "options": [
    "令 p=y'",
    "p'=dp/dx",
-   "令 p=y'",
    "p'=p dp/dy",
    "令 t=y"
   ]
@@ -34250,7 +32174,7 @@
   "type": "choice",
   "stem": "方程 y''+3y'+2y=0 的通解为？",
   "answer": "y=C1e^(-x)+C2e^(-2x)",
-  "explanation": "第1步：特征方程 r²+3r+2=0，因式分解 (r+1)(r+2)=0。\n第2步：根 r=-1，-2。\n结论：通解 y=C1e^(-x)+C2e^(-2x)，选 B。",
+  "explanation": "第1步：特征方程 r²+3r+2=0，因式分解 (r+1)(r+2)=0。\n第2步：根 r=-1，-2。\n结论：通解 y=C1e^(-x)+C2e^(-2x)，选 A。",
   "source": "海螺补题",
   "chapter": "微分方程",
   "difficulty": 1,
@@ -34258,7 +32182,6 @@
   "reviewStatus": "approved",
   "sub": "常系数线性方程",
   "options": [
-   "y=C1e^(-x)+C2e^(-2x)",
    "y=C1e^(-x)+C2e^(-2x)",
    "y=C1e^x+C2e^(2x)",
    "y=(C1+C2x)e^(-x)"
@@ -34310,7 +32233,7 @@
   "type": "choice",
   "stem": "方程 y''-3y'+2y=e^(2x) 的特解应设为？",
   "answer": "y*=Axe^(2x)",
-  "explanation": "第1步：特征根 r=1，2，非齐次项指数 2 是特征根（单根）。\n第2步：单重特征根特解要乘 x：y*=Axe^(2x)。\n结论：选 D。",
+  "explanation": "第1步：特征根 r=1，2，非齐次项指数 2 是特征根（单根）。\n第2步：单重特征根特解要乘 x：y*=Axe^(2x)。\n结论：选 B。",
   "source": "海螺补题",
   "chapter": "微分方程",
   "difficulty": 3,
@@ -34320,8 +32243,7 @@
   "options": [
    "y*=Ae^(2x)",
    "y*=Axe^(2x)",
-   "y*=Ae^x",
-   "y*=Axe^(2x)"
+   "y*=Ae^x"
   ]
  },
  {
@@ -34410,7 +32332,7 @@
   "type": "choice",
   "stem": "一阶线性模型 y'+y=x 的通解为？",
   "answer": "y=Ce^(-x)+x-1",
-  "explanation": "第1步：一阶线性方程通解公式 y=e^(-∫Pdx)[∫Q e^(∫Pdx)dx+C]。\n第2步：P=1，Q=x，得 y=Ce^(-x)+x-1。\n结论：选 D。",
+  "explanation": "第1步：一阶线性方程通解公式 y=e^(-∫Pdx)[∫Q e^(∫Pdx)dx+C]。\n第2步：P=1，Q=x，得 y=Ce^(-x)+x-1。\n结论：选 B。",
   "source": "海螺补题",
   "chapter": "微分方程",
   "difficulty": 3,
@@ -34420,8 +32342,7 @@
   "options": [
    "y=e^x(x+1)+C",
    "y=Ce^(-x)+x-1",
-   "y=Ce^x+x",
-   "y=Ce^(-x)+x-1"
+   "y=Ce^x+x"
   ]
  },
  {
@@ -34450,7 +32371,7 @@
   "type": "choice",
   "stem": "三阶行列式按第一行展开，元素 a(12) 的代数余子式 A(12) 为？",
   "answer": "(-1)^(1+2)M(12)",
-  "explanation": "第1步：代数余子式 A(ij)=(-1)^(i+j)M(ij)。\n第2步：i=1，j=2，符号为 (-1)³=-1。\n结论：A(12)=(-1)^(1+2)M(12)，选 B。",
+  "explanation": "第1步：代数余子式 A(ij)=(-1)^(i+j)M(ij)。\n第2步：i=1，j=2，符号为 (-1)³=-1。\n结论：A(12)=(-1)^(1+2)M(12)，选 A。",
   "source": "海螺补题",
   "chapter": "行列式",
   "difficulty": 1,
@@ -34458,8 +32379,6 @@
   "reviewStatus": "approved",
   "sub": "行列式展开",
   "options": [
-   "(-1)^(1+2)M(12)",
-   "(-1)^(1+2)M(12)",
    "(-1)^(1+2)M(12)",
    "M(12)"
   ]
@@ -34470,7 +32389,7 @@
   "type": "choice",
   "stem": "行列式 |1 2 3; 4 5 6; 7 8 9| 的值为？",
   "answer": "0",
-  "explanation": "第1步：观察第一行与第三行：7 8 9 不为 1 2 3 的倍数。\n第2步：用性质：将第二行减去第一行得 3 3 3，第三行减第一行得 6 6 6，两行成比例。\n第3步：两行成比例，行列式为 0。\n结论：选 C。",
+  "explanation": "第1步：观察第一行与第三行：7 8 9 不为 1 2 3 的倍数。\n第2步：用性质：将第二行减去第一行得 3 3 3，第三行减第一行得 6 6 6，两行成比例。\n第3步：两行成比例，行列式为 0。\n结论：选 A。",
   "source": "海螺补题",
   "chapter": "行列式",
   "difficulty": 1,
@@ -34480,7 +32399,6 @@
   "options": [
    "0",
    "3",
-   "0",
    "6"
   ]
  },
@@ -34490,7 +32408,7 @@
   "type": "choice",
   "stem": "三阶行列式按第三列展开的项中，元素 a(21) 的代数余子式 A(21)=？",
   "answer": "(-1)^(2+1)M(21)",
-  "explanation": "第1步：A(ij)=(-1)^(i+j)M(ij)。\n第2步：i=2，j=1，符号 (-1)³=-1。\n结论：A(21)=-M(21)，即 (-1)^(2+1)M(21)，选 D。",
+  "explanation": "第1步：A(ij)=(-1)^(i+j)M(ij)。\n第2步：i=2，j=1，符号 (-1)³=-1。\n结论：A(21)=-M(21)，即 (-1)^(2+1)M(21)，选 A。",
   "source": "海螺补题",
   "chapter": "行列式",
   "difficulty": 1,
@@ -34500,8 +32418,7 @@
   "options": [
    "(-1)^(2+1)M(21)",
    "-M(21)",
-   "M(21)",
-   "(-1)^(2+1)M(21)"
+   "M(21)"
   ]
  },
  {
@@ -34669,8 +32586,8 @@
   "project": "math1",
   "type": "choice",
   "stem": "分块矩阵 A=[B 0; 0 C] 的逆为？",
-  "answer": " C⁻¹ 0]",
-  "explanation": "第1步：分块对角矩阵可逆当且仅当各对角块可逆。\n第2步：其逆仍为分块对角，对角块取逆。\n结论：A⁻¹=[B⁻¹ 0; 0 C⁻¹]，选 D。",
+  "answer": "[B⁻¹ 0; 0 C⁻¹]",
+  "explanation": "第1步：分块对角矩阵可逆当且仅当各对角块可逆。\n第2步：其逆仍为分块对角，对角块分别取逆。\n结论：A⁻¹=[B⁻¹ 0; 0 C⁻¹]。",
   "source": "海螺补题",
   "chapter": "矩阵",
   "difficulty": 2,
@@ -34678,14 +32595,10 @@
   "reviewStatus": "approved",
   "sub": "分块矩阵",
   "options": [
-   "[B⁻¹ 0",
-   " 0 C⁻¹]",
-   "[0 B⁻¹",
-   " C⁻¹ 0]",
-   "[B⁻¹ C⁻¹",
-   " 0 0]",
-   "[B⁻¹ 0",
-   " 0 C⁻¹]"
+   "[B⁻¹ 0; 0 C⁻¹]",
+   "[0 B⁻¹; C⁻¹ 0]",
+   "[B 0; 0 C]",
+   "[C⁻¹ 0; 0 B⁻¹]"
   ]
  },
  {
@@ -34713,8 +32626,8 @@
   "project": "math1",
   "type": "choice",
   "stem": "分块矩阵 A=[A1 0 0; 0 A2 0; 0 0 A3] 的逆是？",
-  "answer": " 0 0 A3⁻¹]",
-  "explanation": "第1步：分块对角矩阵逆仍为分块对角。\n第2步：各对角块分别取逆且位置不变。\n结论：选 C。",
+  "answer": "[A1⁻¹ 0 0; 0 A2⁻¹ 0; 0 0 A3⁻¹]",
+  "explanation": "第1步：分块对角矩阵的逆仍为分块对角。\n第2步：各对角块分别取逆，位置不变。\n结论：A⁻¹=[A1⁻¹ 0 0; 0 A2⁻¹ 0; 0 0 A3⁻¹]。",
   "source": "海螺补题",
   "chapter": "矩阵",
   "difficulty": 1,
@@ -34722,15 +32635,9 @@
   "reviewStatus": "approved",
   "sub": "分块矩阵",
   "options": [
-   "[A1⁻¹ 0 0",
-   " 0 A2⁻¹ 0",
-   " 0 0 A3⁻¹]",
-   "[A3⁻¹ 0 0",
-   " 0 A2⁻¹ 0",
-   " 0 0 A1⁻¹]",
-   "[A1⁻¹ 0 0",
-   " 0 A2⁻¹ 0",
-   " 0 0 A3⁻¹]",
+   "[A1⁻¹ 0 0; 0 A2⁻¹ 0; 0 0 A3⁻¹]",
+   "[A3⁻¹ 0 0; 0 A2⁻¹ 0; 0 0 A1⁻¹]",
+   "[A1 0 0; 0 A2 0; 0 0 A3]",
    "不存在"
   ]
  },
@@ -34748,7 +32655,6 @@
   "reviewStatus": "approved",
   "sub": "分块矩阵",
   "options": [
-   "B⁻¹A⁻¹",
    "B⁻¹A⁻¹",
    "A⁻¹B⁻¹",
    "AB⁻¹"
@@ -35080,7 +32986,7 @@
   "type": "choice",
   "stem": "n 阶实对称矩阵 A 一定可以？",
   "answer": "用正交矩阵相似于对角矩阵",
-  "explanation": "第1步：实对称矩阵必可正交对角化。\n第2步：存在正交矩阵 Q 使 QᵀAQ 为对角矩阵。\n结论：选 D（此处 D 为“正交相似于对角矩阵”）。",
+  "explanation": "第1步：实对称矩阵必可正交对角化。\n第2步：存在正交矩阵 Q 使 QᵀAQ 为对角矩阵。\n结论：选 B（此处 D 为“正交相似于对角矩阵”）。",
   "source": "海螺补题",
   "chapter": "特征值与特征向量",
   "difficulty": 1,
@@ -35160,7 +33066,7 @@
   "type": "choice",
   "stem": "二次型 f=x²+2xy+y² 经正交变换化为标准形 z1²（即特征值 2，0）的规范形是？",
   "answer": "z1²",
-  "explanation": "第1步：规范形要求系数为 ±1 或 0。\n第2步：f=(x+y)²，正惯性指数 1，负惯性指数 0。\n结论：规范形 z1²，选 D。",
+  "explanation": "第1步：规范形要求系数为 ±1 或 0。\n第2步：f=(x+y)²，正惯性指数 1，负惯性指数 0。\n结论：规范形 z1²，选 C。",
   "source": "海螺补题",
   "chapter": "二次型",
   "difficulty": 2,
@@ -35170,7 +33076,6 @@
   "options": [
    "z1²+z2²",
    "z1²-z2²",
-   "z1²",
    "z1²"
   ]
  },
@@ -35219,8 +33124,8 @@
   "project": "math1",
   "type": "choice",
   "stem": "二次型 f=x²+2xy+2y² 的对应矩阵为？",
-  "answer": "[1 1",
-  "explanation": "第1步：二次型矩阵对称：a(11)=1，a(22)=2，a(12)=a(21)=交叉项系数一半=1。\n第2步：A=[1 1; 1 2]。\n结论：选 B。",
+  "answer": "[1 1; 1 2]",
+  "explanation": "第1步：二次型矩阵必须对称，故 a(12)=a(21)=交叉项系数的一半=1。\n第2步：对角线元素取平方项系数：a(11)=1，a(22)=2。\n结论：A=[1 1; 1 2]。",
   "source": "海螺补题",
   "chapter": "二次型",
   "difficulty": 1,
@@ -35228,14 +33133,10 @@
   "reviewStatus": "approved",
   "sub": "标准形与规范形",
   "options": [
-   "[1 1",
-   " 1 2]",
-   "[1 2",
-   " 2 1]",
-   "[1 2",
-   " 2 2]",
-   "[1 1",
-   " 2 2]"
+   "[1 1; 1 2]",
+   "[1 2; 2 1]",
+   "[2 1; 1 1]",
+   "[1 1; 2 2]"
   ]
  },
  {
@@ -35344,7 +33245,7 @@
   "type": "choice",
   "stem": "设事件组 B1，B2，…，Bn 是样本空间的一个划分，则 P(A)=？",
   "answer": "ΣP(Bi)·P(A|Bi)",
-  "explanation": "第1步：全概率公式：P(A)=ΣP(Bi)P(A|Bi)。\n第2步：适用于把复杂事件分解。\n结论：选 B。",
+  "explanation": "第1步：全概率公式：P(A)=ΣP(Bi)P(A|Bi)。\n第2步：适用于把复杂事件分解。\n结论：选 A。",
   "source": "海螺补题",
   "chapter": "随机事件与概率",
   "difficulty": 1,
@@ -35352,7 +33253,6 @@
   "reviewStatus": "approved",
   "sub": "全概率公式与贝叶斯公式",
   "options": [
-   "ΣP(Bi)·P(A|Bi)",
    "ΣP(Bi)·P(A|Bi)",
    "ΣP(A|Bi)",
    "max P(Bi)"
@@ -35444,7 +33344,7 @@
   "type": "choice",
   "stem": "P(A)=0.5，P(B)=0.4，P(A∪B)=0.7，则 P(A|B)=？",
   "answer": "0.5",
-  "explanation": "第1步：P(AB)=P(A)+P(B)-P(A∪B)=0.2。\n第2步：P(A|B)=P(AB)/P(B)=0.2/0.4=0.5。\n结论：选 D。",
+  "explanation": "第1步：P(AB)=P(A)+P(B)-P(A∪B)=0.2。\n第2步：P(A|B)=P(AB)/P(B)=0.2/0.4=0.5。\n结论：选 B。",
   "source": "海螺补题",
   "chapter": "随机事件与概率",
   "difficulty": 2,
@@ -35524,7 +33424,7 @@
   "type": "choice",
   "stem": "X 的分布律 P(X=k)=C/2^k（k=1,2,3,…），则 C=？",
   "answer": "1",
-  "explanation": "第1步：ΣP(X=k)=1，即 C·(1/2+1/4+…)=C·1=1。\n第2步：等比求和 =1。\n结论：C=1，选 B。",
+  "explanation": "第1步：ΣP(X=k)=1，即 C·(1/2+1/4+…)=C·1=1。\n第2步：等比求和 =1。\n结论：C=1，选 A。",
   "source": "海螺补题",
   "chapter": "随机变量及其分布",
   "difficulty": 2,
@@ -35532,7 +33432,6 @@
   "reviewStatus": "approved",
   "sub": "离散型随机变量",
   "options": [
-   "1",
    "1",
    "2",
    "1/2"
@@ -35624,7 +33523,7 @@
   "type": "choice",
   "stem": "X~U(0,4)，则 P(1<X<2)=？",
   "answer": "1/4",
-  "explanation": "第1步：均匀分布概率=区间长度/总长度。\n第2步：P=(2-1)/(4-0)=1/4。\n结论：选 B。",
+  "explanation": "第1步：均匀分布概率=区间长度/总长度。\n第2步：P=(2-1)/(4-0)=1/4。\n结论：选 A。",
   "source": "海螺补题",
   "chapter": "随机变量及其分布",
   "difficulty": 1,
@@ -35632,7 +33531,6 @@
   "reviewStatus": "approved",
   "sub": "连续型随机变量",
   "options": [
-   "1/4",
    "1/4",
    "1/2",
    "1/8"
@@ -35724,7 +33622,7 @@
   "type": "choice",
   "stem": "X~B(100,0.2)，用正态近似 P(X≤25) 约等于 Φ(?)（连续性修正）？",
   "answer": "Φ(1.38)",
-  "explanation": "第1步：np=20，npq=16，σ=4。\n第2步：P(X≤25)≈Φ((25.5-20)/4)=Φ(1.375)≈Φ(1.38)。\n结论：取 Φ(1.375)，选项中接近的为 Φ(1.25) 偏差较大——正确为 Φ(1.38)，选 A 近似。",
+  "explanation": "第1步：np=20，npq=16，σ=4。\n第2步：P(X≤25)≈Φ((25.5-20)/4)=Φ(1.375)≈Φ(1.38)。\n结论：取 Φ(1.375)，选项中接近的为 Φ(1.25) 偏差较大——正确为 Φ(1.38)，选 B 近似。",
   "source": "海螺补题",
   "chapter": "大数定律与中心极限定理",
   "difficulty": 3,
@@ -35944,7 +33842,7 @@
   "type": "choice",
   "stem": "函数 y=2x/(x-1)（x≠1）的反函数是？",
   "answer": "y=x/(x-2)（x≠2）",
-  "explanation": "第1步：由 y=2x/(x-1) 解出 x：y(x-1)=2x，即 yx-y=2x。\n第2步：移项得 x(y-2)=y，故 x=y/(y-2)。\n第3步：交换 x、y 得反函数 y=x/(x-2)，定义域 x≠2。\n结论：选 D。",
+  "explanation": "第1步：由 y=2x/(x-1) 解出 x：y(x-1)=2x，即 yx-y=2x。\n第2步：移项得 x(y-2)=y，故 x=y/(y-2)。\n第3步：交换 x、y 得反函数 y=x/(x-2)，定义域 x≠2。\n结论：选 A。",
   "source": "海螺补题",
   "chapter": "函数、极限与连续",
   "difficulty": 2,
@@ -35954,8 +33852,7 @@
   "options": [
    "y=x/(x-2)（x≠2）",
    "y=2x/(x+1)",
-   "y=(x+1)/(x-2)",
-   "y=x/(x-2)（x≠2）"
+   "y=(x+1)/(x-2)"
   ]
  },
  {
@@ -36064,7 +33961,7 @@
   "type": "choice",
   "stem": "极限 lim(x→∞) (3x²-2)/(2x²+1) =？",
   "answer": "3/2",
-  "explanation": "第1步：分子分母同除以 x²。\n第2步：原式=(3-2/x²)/(2+1/x²)。\n第3步：x→∞ 时 2/x²→0，1/x²→0。\n结论：极限为 3/2，选 B。",
+  "explanation": "第1步：分子分母同除以 x²。\n第2步：原式=(3-2/x²)/(2+1/x²)。\n第3步：x→∞ 时 2/x²→0，1/x²→0。\n结论：极限为 3/2，选 A。",
   "source": "海螺补题",
   "chapter": "函数、极限与连续",
   "difficulty": 1,
@@ -36072,7 +33969,6 @@
   "reviewStatus": "approved",
   "sub": "数列极限与函数极限",
   "options": [
-   "3/2",
    "3/2",
    "2/3",
    "1"
@@ -36304,7 +34200,7 @@
   "type": "choice",
   "stem": "lim(n→∞) [f(1/n)+f(2/n)+…+f(n/n)]/n =？",
   "answer": "∫(0,1) f(x) dx",
-  "explanation": "第1步：这是定积分的定义：lim Σ f(i/n)·(1/n)=∫(0,1) f(x)dx。\n第2步：注意 i/n 为分点，1/n 为小区间长度。\n结论：选 D。",
+  "explanation": "第1步：这是定积分的定义：lim Σ f(i/n)·(1/n)=∫(0,1) f(x)dx。\n第2步：注意 i/n 为分点，1/n 为小区间长度。\n结论：选 B。",
   "source": "海螺补题",
   "chapter": "一元函数积分学",
   "difficulty": 2,
@@ -36314,8 +34210,7 @@
   "options": [
    "f(1)",
    "∫(0,1) f(x) dx",
-   "f(0)",
-   "∫(0,1) f(x) dx"
+   "f(0)"
   ]
  },
  {
@@ -36484,7 +34379,7 @@
   "type": "choice",
   "stem": "三阶行列式按第一行展开，元素 a(12) 的代数余子式 A(12) 为？",
   "answer": "(-1)^(1+2)M(12)",
-  "explanation": "第1步：代数余子式 A(ij)=(-1)^(i+j)M(ij)。\n第2步：i=1，j=2，符号为 (-1)³=-1。\n结论：A(12)=(-1)^(1+2)M(12)，选 B。",
+  "explanation": "第1步：代数余子式 A(ij)=(-1)^(i+j)M(ij)。\n第2步：i=1，j=2，符号为 (-1)³=-1。\n结论：A(12)=(-1)^(1+2)M(12)，选 A。",
   "source": "海螺补题",
   "chapter": "行列式",
   "difficulty": 1,
@@ -36492,8 +34387,6 @@
   "reviewStatus": "approved",
   "sub": "行列式展开",
   "options": [
-   "(-1)^(1+2)M(12)",
-   "(-1)^(1+2)M(12)",
    "(-1)^(1+2)M(12)",
    "M(12)"
   ]
@@ -36504,7 +34397,7 @@
   "type": "choice",
   "stem": "行列式 |1 2 3; 4 5 6; 7 8 9| 的值为？",
   "answer": "0",
-  "explanation": "第1步：观察第一行与第三行：7 8 9 不为 1 2 3 的倍数。\n第2步：用性质：将第二行减去第一行得 3 3 3，第三行减第一行得 6 6 6，两行成比例。\n第3步：两行成比例，行列式为 0。\n结论：选 C。",
+  "explanation": "第1步：观察第一行与第三行：7 8 9 不为 1 2 3 的倍数。\n第2步：用性质：将第二行减去第一行得 3 3 3，第三行减第一行得 6 6 6，两行成比例。\n第3步：两行成比例，行列式为 0。\n结论：选 A。",
   "source": "海螺补题",
   "chapter": "行列式",
   "difficulty": 1,
@@ -36514,7 +34407,6 @@
   "options": [
    "0",
    "3",
-   "0",
    "6"
   ]
  },
@@ -36524,7 +34416,7 @@
   "type": "choice",
   "stem": "三阶行列式按第三列展开的项中，元素 a(21) 的代数余子式 A(21)=？",
   "answer": "(-1)^(2+1)M(21)",
-  "explanation": "第1步：A(ij)=(-1)^(i+j)M(ij)。\n第2步：i=2，j=1，符号 (-1)³=-1。\n结论：A(21)=-M(21)，即 (-1)^(2+1)M(21)，选 D。",
+  "explanation": "第1步：A(ij)=(-1)^(i+j)M(ij)。\n第2步：i=2，j=1，符号 (-1)³=-1。\n结论：A(21)=-M(21)，即 (-1)^(2+1)M(21)，选 A。",
   "source": "海螺补题",
   "chapter": "行列式",
   "difficulty": 1,
@@ -36534,8 +34426,7 @@
   "options": [
    "(-1)^(2+1)M(21)",
    "-M(21)",
-   "M(21)",
-   "(-1)^(2+1)M(21)"
+   "M(21)"
   ]
  },
  {
@@ -37004,7 +34895,7 @@
   "type": "choice",
   "stem": "n 阶实对称矩阵 A 一定可以？",
   "answer": "用正交矩阵相似于对角矩阵",
-  "explanation": "第1步：实对称矩阵必可正交对角化。\n第2步：存在正交矩阵 Q 使 QᵀAQ 为对角矩阵。\n结论：选 D（此处 D 为“正交相似于对角矩阵”）。",
+  "explanation": "第1步：实对称矩阵必可正交对角化。\n第2步：存在正交矩阵 Q 使 QᵀAQ 为对角矩阵。\n结论：选 B（此处 D 为“正交相似于对角矩阵”）。",
   "source": "海螺补题",
   "chapter": "特征值与特征向量",
   "difficulty": 1,
@@ -37164,7 +35055,7 @@
   "type": "choice",
   "stem": "∫∫D (x²+y²) dxdy（D：0≤x≤1，0≤y≤1）=？",
   "answer": "2/3",
-  "explanation": "第1步：∫(0,1)∫(0,1)(x²+y²)dydx=∫(0,1)(x²+1/3)dx。\n第2步：=1/3+1/3=2/3。\n结论：选 D。",
+  "explanation": "第1步：∫(0,1)∫(0,1)(x²+y²)dydx=∫(0,1)(x²+1/3)dx。\n第2步：=1/3+1/3=2/3。\n结论：选 B。",
   "source": "海螺补题",
   "chapter": "二重积分",
   "difficulty": 2,
@@ -37174,8 +35065,7 @@
   "options": [
    "1",
    "2/3",
-   "3/2",
-   "2/3"
+   "3/2"
   ]
  },
  {
@@ -37564,7 +35454,7 @@
   "type": "choice",
   "stem": "y''+y'-2y=0 的通解为？",
   "answer": "C1e^x+C2e^(-2x)",
-  "explanation": "第1步：r²+r-2=0，(r+2)(r-1)=0。\n第2步：r=1，-2。\n结论：y=C1e^x+C2e^(-2x)，选 D。",
+  "explanation": "第1步：r²+r-2=0，(r+2)(r-1)=0。\n第2步：r=1，-2。\n结论：y=C1e^x+C2e^(-2x)，选 A。",
   "source": "海螺补题",
   "chapter": "微分方程",
   "difficulty": 1,
@@ -37574,8 +35464,7 @@
   "options": [
    "C1e^x+C2e^(-2x)",
    "C1e^(-x)+C2e^(2x)",
-   "C1cos2x+C2sin2x",
-   "C1e^x+C2e^(-2x)"
+   "C1cos2x+C2sin2x"
   ]
  },
  {
@@ -37744,7 +35633,7 @@
   "type": "choice",
   "stem": "用配方法化 f=x²+2x1x2 为标准形，应令？",
   "answer": "y1=x1+x2，y2=x2",
-  "explanation": "第1步：f=(x1+x2)²-x2²。\n第2步：令 y1=x1+x2，y2=x2，标准形 y1²-y2²。\n结论：选 B。",
+  "explanation": "第1步：f=(x1+x2)²-x2²。\n第2步：令 y1=x1+x2，y2=x2，标准形 y1²-y2²。\n结论：选 A。",
   "source": "海螺补题",
   "chapter": "二次型",
   "difficulty": 2,
@@ -37752,7 +35641,6 @@
   "reviewStatus": "approved",
   "sub": "标准形",
   "options": [
-   "y1=x1+x2，y2=x2",
    "y1=x1+x2，y2=x2",
    "y1=x1，y2=x2",
    "y1=x1-x2"
@@ -37824,7 +35712,7 @@
   "type": "choice",
   "stem": "函数 y=2x/(x-1)（x≠1）的反函数是？",
   "answer": "y=x/(x-2)（x≠2）",
-  "explanation": "第1步：由 y=2x/(x-1) 解出 x：y(x-1)=2x，即 yx-y=2x。\n第2步：移项得 x(y-2)=y，故 x=y/(y-2)。\n第3步：交换 x、y 得反函数 y=x/(x-2)，定义域 x≠2。\n结论：选 D。",
+  "explanation": "第1步：由 y=2x/(x-1) 解出 x：y(x-1)=2x，即 yx-y=2x。\n第2步：移项得 x(y-2)=y，故 x=y/(y-2)。\n第3步：交换 x、y 得反函数 y=x/(x-2)，定义域 x≠2。\n结论：选 A。",
   "source": "海螺补题",
   "chapter": "函数、极限与连续",
   "difficulty": 2,
@@ -37834,8 +35722,7 @@
   "options": [
    "y=x/(x-2)（x≠2）",
    "y=2x/(x+1)",
-   "y=(x+1)/(x-2)",
-   "y=x/(x-2)（x≠2）"
+   "y=(x+1)/(x-2)"
   ]
  },
  {
@@ -38164,7 +36051,7 @@
   "type": "choice",
   "stem": "用极坐标计算 ∫∫D √(x²+y²) dxdy（D：x²+y²≤1）等于？",
   "answer": "2π/3",
-  "explanation": "第1步：极坐标 x=rcosθ，y=rsinθ，面积元 dxdy=r dr dθ。\n第2步：原式=∫(0,2π)dθ ∫(0,1) r·r dr=2π·[r³/3](0,1)。\n结论：=2π/3，选 B。",
+  "explanation": "第1步：极坐标 x=rcosθ，y=rsinθ，面积元 dxdy=r dr dθ。\n第2步：原式=∫(0,2π)dθ ∫(0,1) r·r dr=2π·[r³/3](0,1)。\n结论：=2π/3，选 A。",
   "source": "海螺补题",
   "chapter": "二重积分",
   "difficulty": 2,
@@ -38172,7 +36059,6 @@
   "reviewStatus": "approved",
   "sub": "直角坐标与极坐标计算",
   "options": [
-   "2π/3",
    "2π/3",
    "π/3",
    "π"
@@ -38504,7 +36390,7 @@
   "type": "choice",
   "stem": "设事件组 B1，B2，…，Bn 是样本空间的一个划分，则 P(A)=？",
   "answer": "ΣP(Bi)·P(A|Bi)",
-  "explanation": "第1步：全概率公式：P(A)=ΣP(Bi)P(A|Bi)。\n第2步：适用于把复杂事件分解。\n结论：选 B。",
+  "explanation": "第1步：全概率公式：P(A)=ΣP(Bi)P(A|Bi)。\n第2步：适用于把复杂事件分解。\n结论：选 A。",
   "source": "海螺补题",
   "chapter": "随机事件与概率",
   "difficulty": 1,
@@ -38512,7 +36398,6 @@
   "reviewStatus": "approved",
   "sub": "全概率公式",
   "options": [
-   "ΣP(Bi)·P(A|Bi)",
    "ΣP(Bi)·P(A|Bi)",
    "ΣP(A|Bi)",
    "max P(Bi)"
@@ -38604,7 +36489,7 @@
   "type": "choice",
   "stem": "P(A)=0.5，P(B)=0.4，P(A∪B)=0.7，则 P(A|B)=？",
   "answer": "0.5",
-  "explanation": "第1步：P(AB)=P(A)+P(B)-P(A∪B)=0.2。\n第2步：P(A|B)=P(AB)/P(B)=0.2/0.4=0.5。\n结论：选 D。",
+  "explanation": "第1步：P(AB)=P(A)+P(B)-P(A∪B)=0.2。\n第2步：P(A|B)=P(AB)/P(B)=0.2/0.4=0.5。\n结论：选 B。",
   "source": "海螺补题",
   "chapter": "随机事件与概率",
   "difficulty": 2,
@@ -38684,7 +36569,7 @@
   "type": "choice",
   "stem": "X 的分布律 P(X=k)=C/2^k（k=1,2,3,…），则 C=？",
   "answer": "1",
-  "explanation": "第1步：ΣP(X=k)=1，即 C·(1/2+1/4+…)=C·1=1。\n第2步：等比求和 =1。\n结论：C=1，选 B。",
+  "explanation": "第1步：ΣP(X=k)=1，即 C·(1/2+1/4+…)=C·1=1。\n第2步：等比求和 =1。\n结论：C=1，选 A。",
   "source": "海螺补题",
   "chapter": "随机变量及其分布",
   "difficulty": 2,
@@ -38692,7 +36577,6 @@
   "reviewStatus": "approved",
   "sub": "离散型随机变量",
   "options": [
-   "1",
    "1",
    "2",
    "1/2"
@@ -38784,7 +36668,7 @@
   "type": "choice",
   "stem": "X~U(0,4)，则 P(1<X<2)=？",
   "answer": "1/4",
-  "explanation": "第1步：均匀分布概率=区间长度/总长度。\n第2步：P=(2-1)/(4-0)=1/4。\n结论：选 B。",
+  "explanation": "第1步：均匀分布概率=区间长度/总长度。\n第2步：P=(2-1)/(4-0)=1/4。\n结论：选 A。",
   "source": "海螺补题",
   "chapter": "随机变量及其分布",
   "difficulty": 1,
@@ -38792,7 +36676,6 @@
   "reviewStatus": "approved",
   "sub": "连续型随机变量",
   "options": [
-   "1/4",
    "1/4",
    "1/2",
    "1/8"
@@ -39016,26 +36899,6 @@
    "无法判断",
    "拒绝 H0",
    "增大样本"
-  ]
- },
- {
-  "id": "math3-sub-364",
-  "project": "math3",
-  "type": "choice",
-  "stem": "∫ x e^x dx =？",
-  "answer": "(x-1)e^x + C",
-  "explanation": "第1步：分部积分：∫x e^x dx=x e^x-∫e^x dx。\n第2步：=x e^x-e^x+C。\n结论：=(x-1)e^x+C，选 C。",
-  "source": "海螺补题",
-  "chapter": "一元函数积分学",
-  "difficulty": 2,
-  "kind": "mock",
-  "reviewStatus": "approved",
-  "sub": "换元与分部积分",
-  "options": [
-   "x e^x + C",
-   "e^x + C",
-   "(x-1)e^x + C",
-   "x²e^x/2 + C"
   ]
  },
  {
@@ -39264,7 +37127,7 @@
   "type": "choice",
   "stem": "y''+y'-2y=0 的通解为？",
   "answer": "C1e^x+C2e^(-2x)",
-  "explanation": "第1步：r²+r-2=0，(r+2)(r-1)=0。\n第2步：r=1，-2。\n结论：y=C1e^x+C2e^(-2x)，选 D。",
+  "explanation": "第1步：r²+r-2=0，(r+2)(r-1)=0。\n第2步：r=1，-2。\n结论：y=C1e^x+C2e^(-2x)，选 A。",
   "source": "海螺补题",
   "chapter": "微分方程",
   "difficulty": 1,
@@ -39274,8 +37137,7 @@
   "options": [
    "C1e^x+C2e^(-2x)",
    "C1e^(-x)+C2e^(2x)",
-   "C1cos2x+C2sin2x",
-   "C1e^x+C2e^(-2x)"
+   "C1cos2x+C2sin2x"
   ]
  },
  {
@@ -39374,8 +37236,7 @@
   "options": [
    "2q+100",
    "2q+10",
-   "q²+10",
-   "2q+10"
+   "q²+10"
   ]
  },
  {
@@ -39384,7 +37245,7 @@
   "type": "choice",
   "stem": "需求函数 q=100-2p，则边际收益 MR 为？",
   "answer": "50-q",
-  "explanation": "第1步：收益 R=pq，由 q=100-2p 得 p=50-q/2。\n第2步：R=q(50-q/2)=50q-q²/2，MR=R'=50-q。\n结论：选 D。",
+  "explanation": "第1步：收益 R=pq，由 q=100-2p 得 p=50-q/2。\n第2步：R=q(50-q/2)=50q-q²/2，MR=R'=50-q。\n结论：选 B。",
   "source": "海螺补题",
   "chapter": "一元函数微分学",
   "difficulty": 3,
@@ -39394,8 +37255,7 @@
   "options": [
    "100-4q",
    "50-q",
-   "100-2q",
-   "50-q"
+   "100-2q"
   ]
  },
  {
@@ -39664,7 +37524,7 @@
   "type": "choice",
   "stem": "P(A)=0.5，P(B)=0.4，P(A∪B)=0.7，则 P(A|B)=？",
   "answer": "0.5",
-  "explanation": "第1步：P(AB)=P(A)+P(B)-P(A∪B)=0.2。\n第2步：P(A|B)=P(AB)/P(B)=0.2/0.4=0.5。\n结论：选 D。",
+  "explanation": "第1步：P(AB)=P(A)+P(B)-P(A∪B)=0.2。\n第2步：P(A|B)=P(AB)/P(B)=0.2/0.4=0.5。\n结论：选 B。",
   "source": "海螺补题",
   "chapter": "随机事件与概率",
   "difficulty": 2,
@@ -39824,7 +37684,7 @@
   "type": "choice",
   "stem": "X 的分布律 P(X=k)=C/2^k（k=1,2,3,…），则 C=？",
   "answer": "1",
-  "explanation": "第1步：ΣP(X=k)=1，即 C·(1/2+1/4+…)=C·1=1。\n第2步：等比求和 =1。\n结论：C=1，选 B。",
+  "explanation": "第1步：ΣP(X=k)=1，即 C·(1/2+1/4+…)=C·1=1。\n第2步：等比求和 =1。\n结论：C=1，选 A。",
   "source": "海螺补题",
   "chapter": "随机变量及其分布",
   "difficulty": 2,
@@ -39832,7 +37692,6 @@
   "reviewStatus": "approved",
   "sub": "离散型随机变量",
   "options": [
-   "1",
    "1",
    "2",
    "1/2"
@@ -39924,7 +37783,7 @@
   "type": "choice",
   "stem": "X~U(0,4)，则 P(1<X<2)=？",
   "answer": "1/4",
-  "explanation": "第1步：均匀分布概率=区间长度/总长度。\n第2步：P=(2-1)/(4-0)=1/4。\n结论：选 B。",
+  "explanation": "第1步：均匀分布概率=区间长度/总长度。\n第2步：P=(2-1)/(4-0)=1/4。\n结论：选 A。",
   "source": "海螺补题",
   "chapter": "随机变量及其分布",
   "difficulty": 1,
@@ -39932,7 +37791,6 @@
   "reviewStatus": "approved",
   "sub": "连续型随机变量",
   "options": [
-   "1/4",
    "1/4",
    "1/2",
    "1/8"
@@ -39984,7 +37842,7 @@
   "type": "choice",
   "stem": "罗尔定理的三个条件是？",
   "answer": "f 连续、可导、f(a)=f(b)",
-  "explanation": "第1步：罗尔定理：f 在 [a,b] 连续，在 (a,b) 可导，且 f(a)=f(b)。\n第2步：则存在 ξ 使 f'(ξ)=0。\n结论：选 C。",
+  "explanation": "第1步：罗尔定理：f 在 [a,b] 连续，在 (a,b) 可导，且 f(a)=f(b)。\n第2步：则存在 ξ 使 f'(ξ)=0。\n结论：选 A。",
   "source": "海螺补题",
   "chapter": "一元函数微分学",
   "difficulty": 1,
@@ -39994,7 +37852,6 @@
   "options": [
    "f 连续、可导、f(a)=f(b)",
    "f 连续、可导",
-   "f 连续、可导、f(a)=f(b)",
    "f 可导、f(a)=f(b)"
   ]
  },
@@ -40157,5 +38014,167 @@
    "0.65",
    "0.7"
   ]
+ },
+ {
+  "id": "math1-gap-multilim-001",
+  "project": "math1",
+  "type": "choice",
+  "stem": "二元函数 f(x,y) = xy/(x²+y²) 在点 (0,0) 处的二重极限（　）。",
+  "answer": "不存在",
+  "options": [
+   "等于 0",
+   "等于 1/2",
+   "不存在",
+   "等于 1"
+  ],
+  "explanation": "第1步：沿直线 y=x 趋近，f(x,x)=x²/(2x²)=1/2。\n第2步：沿直线 y=0 趋近，f(x,0)=0。\n第3步：两条路径的极限不同，二重极限不存在。\n结论：选「不存在」。",
+  "source": "海螺补题",
+  "chapter": "多元函数微分学",
+  "sub": "多元函数的极限与连续",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved"
+ },
+ {
+  "id": "math1-gap-multilim-002",
+  "project": "math1",
+  "type": "fill",
+  "stem": "极限 lim((x,y)→(0,0)) x²y/(x²+y²) = ____。",
+  "answer": "0",
+  "explanation": "第1步：因为 x²/(x²+y²) ≤ 1，所以 |x²y/(x²+y²)| ≤ |y|。\n第2步：当 (x,y)→(0,0) 时 y→0，由夹逼准则极限为 0。\n结论：极限等于 0。",
+  "source": "海螺补题",
+  "chapter": "多元函数微分学",
+  "sub": "多元函数的极限与连续",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved"
+ },
+ {
+  "id": "math1-gap-chain-001",
+  "project": "math1",
+  "type": "choice",
+  "stem": "设 z = f(x²+y²) 可微，则 ∂z/∂x =（　）。",
+  "answer": "2x f'(x²+y²)",
+  "options": [
+   "f'(x²+y²)",
+   "2x f'(x²+y²)",
+   "2y f'(x²+y²)",
+   "2x f'(2x)"
+  ],
+  "explanation": "第1步：把 u = x²+y² 看作中间变量，z = f(u)。\n第2步：由链式法则 ∂z/∂x = f'(u)·∂u/∂x。\n第3步：∂u/∂x = 2x，故 ∂z/∂x = 2x f'(x²+y²)。\n结论：选「2x f'(x²+y²)」。",
+  "source": "海螺补题",
+  "chapter": "多元函数微分学",
+  "sub": "复合函数与隐函数求导",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved"
+ },
+ {
+  "id": "math1-gap-implicit-001",
+  "project": "math1",
+  "type": "choice",
+  "stem": "由方程 e^y + xy = 1 确定的隐函数 y=y(x)，其导数 dy/dx =（　）。",
+  "answer": "-y/(e^y+x)",
+  "options": [
+   "-y/(e^y+x)",
+   "y/(e^y+x)",
+   "-x/(e^y+y)",
+   "(e^y+y)/x"
+  ],
+  "explanation": "第1步：两边对 x 求导：e^y·y' + y + x·y' = 0。\n第2步：整理得 y'(e^y + x) = -y。\n第3步：y' = -y/(e^y+x)（e^y+x≠0）。\n结论：选「-y/(e^y+x)」。",
+  "source": "海螺补题",
+  "chapter": "多元函数微分学",
+  "sub": "复合函数与隐函数求导",
+  "difficulty": 3,
+  "kind": "mock",
+  "reviewStatus": "approved"
+ },
+ {
+  "id": "math1-gap-maxindep-001",
+  "project": "math1",
+  "type": "choice",
+  "stem": "向量组 α₁=(1,2,3)，α₂=(2,4,6)，α₃=(0,0,1) 的极大线性无关组所含向量个数为（　）。",
+  "answer": "2 个",
+  "options": [
+   "1 个",
+   "2 个",
+   "3 个",
+   "0 个"
+  ],
+  "explanation": "第1步：α₂ = 2α₁，说明 α₁、α₂ 线性相关。\n第2步：α₁ 与 α₃ 不成比例，线性无关。\n第3步：向量组的秩为 2，极大线性无关组含 2 个向量（如 α₁、α₃）。\n结论：选「2 个」。",
+  "source": "海螺补题",
+  "chapter": "向量",
+  "sub": "极大线性无关组",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved"
+ },
+ {
+  "id": "math1-gap-maxindep-002",
+  "project": "math1",
+  "type": "fill",
+  "stem": "向量组 α₁=(1,2,3)，α₂=(2,4,6) 的秩为 ____。",
+  "answer": "1",
+  "explanation": "第1步：α₂ = 2α₁，两个向量成比例。\n第2步：成比例的向量组线性相关，秩等于非零向量的个数。\n第3步：只有一个非零向量方向，秩为 1。\n结论：秩为 1。",
+  "source": "海螺补题",
+  "chapter": "向量",
+  "sub": "极大线性无关组",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved"
+ },
+ {
+  "id": "math2-gap-improper-001",
+  "project": "math2",
+  "type": "choice",
+  "stem": "下列反常积分收敛的是（　）。",
+  "answer": "∫₁^∞ 1/x² dx",
+  "options": [
+   "∫₁^∞ 1/x dx",
+   "∫₁^∞ 1/x² dx",
+   "∫₀¹ 1/x dx",
+   "∫₀^∞ dx"
+  ],
+  "explanation": "第1步：p 积分 ∫₁^∞ 1/x^p dx 当 p>1 收敛、p≤1 发散。\n第2步：∫₁^∞ 1/x dx 中 p=1，发散；∫₁^∞ 1/x² dx 中 p=2>1，收敛。\n第3步：∫₀¹ 1/x dx = ln x|₀¹ 发散；∫₀^∞ dx 也发散。\n结论：选「∫₁^∞ 1/x² dx」。",
+  "source": "海螺补题",
+  "chapter": "一元函数积分学",
+  "sub": "反常积分",
+  "difficulty": 2,
+  "kind": "mock",
+  "reviewStatus": "approved"
+ },
+ {
+  "id": "math3-gap-mvt-001",
+  "project": "math3",
+  "type": "choice",
+  "stem": "罗尔定理成立需要满足的条件是（　）。",
+  "answer": "f 在 [a,b] 连续，在 (a,b) 可导，且 f(a)=f(b)",
+  "options": [
+   "f 在 [a,b] 连续，在 (a,b) 可导，且 f(a)=f(b)",
+   "f 在 [a,b] 连续即可",
+   "f 在 (a,b) 可导，且 f(a)=f(b)",
+   "f 在 [a,b] 可导，且 f(a)≠f(b)"
+  ],
+  "explanation": "第1步：罗尔定理的三个条件缺一不可：闭区间连续、开区间可导、端点函数值相等。\n第2步：三个条件同时满足时，存在 ξ∈(a,b) 使 f'(ξ)=0。\n第3步：只连续或只可导都不足以保证结论成立。\n结论：选第一项。",
+  "source": "海螺补题",
+  "chapter": "一元函数微分学",
+  "sub": "微分中值定理",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved"
+ },
+ {
+  "id": "math3-gap-mvt-002",
+  "project": "math3",
+  "type": "fill",
+  "stem": "f(x) = x²−4 在 [−2,2] 上满足罗尔定理的条件，则定理中的 ξ = ____。",
+  "answer": "0",
+  "explanation": "第1步：f 在 [−2,2] 连续、在 (−2,2) 可导，且 f(−2)=f(2)=0，满足罗尔定理条件。\n第2步：f'(x) = 2x，令 f'(x)=0 得 x=0。\n第3步：0∈(−2,2)，故 ξ=0。\n结论：ξ=0。",
+  "source": "海螺补题",
+  "chapter": "一元函数微分学",
+  "sub": "微分中值定理",
+  "difficulty": 1,
+  "kind": "mock",
+  "reviewStatus": "approved"
  }
 ]

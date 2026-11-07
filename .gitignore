@@ -6,3 +6,10 @@ node_modules/
 .env
 dist/
 publish-site/
+
+# 本地调试产物
+.tmp-*
+tmp-*.js
+.acl-recovery/
+.tmp-shots/
+.dsh-uploads/

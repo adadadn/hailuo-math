@@ -1,16 +1,35 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-theme="light">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#11557a" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#11557a" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0b1420" media="(prefers-color-scheme: dark)" />
+    <meta name="description" content="考研数学一 / 二 / 三 / 396 自适应每日一练：错题优先组卷、记忆曲线复习、章节讲义与限时模拟考，离线可用、无需账号。" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="海螺游学" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="海螺游学 · 考研数学自适应练习" />
+    <meta property="og:description" content="每天一小组题：错题优先、14 天不重复、记忆曲线复习，支持数学一 / 二 / 三 / 396。" />
+    <meta property="og:locale" content="zh_CN" />
+    <title>海螺游学 · 考研数学自适应每日一练</title>
     <link rel="icon" href="icon.svg" type="image/svg+xml" />
+    <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png" />
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon-180.png" />
     <link rel="manifest" href="manifest.webmanifest" />
     <link rel="stylesheet" href="styles.css" />
-    <title>海螺游学</title>
   </head>
   <body>
     <div id="app"></div>
+    <noscript>
+      <div style="padding:24px;font-family:system-ui,sans-serif;line-height:1.7">
+        <h1>需要开启 JavaScript</h1>
+        <p>海螺游学在本地浏览器里完成组卷、判分与打卡，请开启 JavaScript 后刷新页面。</p>
+      </div>
+    </noscript>
     <script src="core.js"></script>
     <script src="app.js"></script>
   </body>
