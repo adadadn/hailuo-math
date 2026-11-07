@@ -17,6 +17,7 @@ const FILES = [
   "sw.js",
   "manifest.webmanifest",
   "icon.svg",
+  "icon-mark.svg",
 ];
 const DIRS = ["data", "icons"];
 const REQUIRED_FILES = ["index.html", "app.js", "core.js", "styles.css", "sw.js", "manifest.webmanifest", "data/questions.json", "data/curriculum.json", "data/notes.json"];

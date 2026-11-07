@@ -5,7 +5,7 @@
  *  - 图片 / 图标：缓存优先
  *  - 新版本不自动接管：由页面提示「有新版本」后 postMessage(SKIP_WAITING) 再刷新
  */
-const VERSION = "v21";
+const VERSION = "v22";
 const SHELL = [
   "./",
   "index.html",
@@ -14,6 +14,7 @@ const SHELL = [
   "core.js",
   "manifest.webmanifest",
   "icon.svg",
+  "icon-mark.svg",
   "icons/icon-192.png",
   "icons/icon-512.png",
   "icons/apple-touch-icon-180.png",

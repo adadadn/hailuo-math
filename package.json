@@ -1,13 +1,14 @@
 {
   "name": "hailuo-kaoyan-math",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
   "description": "海螺游学：考研数学一/二/三/396 自适应每日一练（PWA，零依赖）",
   "scripts": {
     "start": "node server.mjs",
     "test": "node test-core.mjs && node test-data.mjs && node test-views.mjs",
     "data:fix": "node tools/fix-bank.mjs && node tools/patch-gaps.mjs",
-    "icons": "python tools/gen-icons.py",
+    "questions": "node tools/add-questions.mjs",
+    "icons": "node tools/gen-icons.mjs",
     "build": "node tools/build-site.mjs"
   }
 }

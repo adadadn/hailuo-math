@@ -150,6 +150,19 @@ console.log("== 复习 / 错题 ==");
   clean("错题本", mistakes);
   const mastery = app.helpers.chapterMasteryMap();
   check("掌握度统计按章节聚合", mastery.get(choiceQ.chapter) && mastery.get(choiceQ.chapter).total === 1);
+
+  // 近 7 天有记录时，首页展示「本周学习」小结（同一章 3 题，才会给出「需加强」）
+  const sameChapter = math1.filter((q) => q.chapter === choiceQ.chapter).slice(0, 3);
+  app.setState(baseState({
+    attempts: Object.fromEntries(sameChapter.map((q, i) => [q.id, {
+      questionId: q.id,
+      result: i === 0 ? "correct" : "incorrect",
+      confirmed: true,
+      updatedAt: new Date().toISOString(),
+    }])),
+  }));
+  const weekHome = app.views.homeView();
+  check("首页展示本周做题分布与正确率", weekHome.includes("本周学习") && weekHome.includes("正确率") && weekHome.includes("需加强"));
 }
 
 console.log("== 讲义 / 搜索 / 详情 ==");

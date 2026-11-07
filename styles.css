@@ -130,7 +130,7 @@ a { color: var(--accent-ink); }
 .topbar-inner { min-height: 56px; padding: 0 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 .brand { display: flex; align-items: center; gap: 9px; color: #f4faf8; text-decoration: none; min-width: 0; }
 .brand-mark { width: 32px; height: 32px; flex: none; display: grid; place-items: center; background: var(--accent); border-radius: 9px; }
-.brand-mark img { display: block; width: 20px; height: 20px; filter: brightness(0) invert(1); }
+.brand-mark img { display: block; width: 20px; height: 20px; }
 .brand-text { min-width: 0; }
 .brand-text strong { display: block; color: #fff; font-size: 14.5px; letter-spacing: .01em; }
 .brand-text small { display: block; color: #a6c1cf; margin-top: 1px; font-size: 11px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
@@ -436,6 +436,15 @@ select:focus, input:focus, textarea:focus { border-color: var(--accent); box-sha
 .tab:hover { color: var(--accent-ink); }
 .tab.active { color: var(--accent-ink); background: var(--accent-soft); }
 .tab svg { display: block; }
+
+/* ---------- 本周学习 ---------- */
+.week-bars { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; height: 64px; align-items: end; margin: 4px 0 10px; }
+.week-bar { height: 100%; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; gap: 4px; }
+.week-bar span { width: 100%; min-height: 3px; border-radius: 5px 5px 3px 3px; background: var(--accent); opacity: .9; }
+.week-bar.is-empty span { background: var(--line); min-height: 2px; }
+.week-bar em { font-style: normal; font-size: 10.5px; color: var(--muted); font-weight: 700; line-height: 1; }
+.week-summary { margin: 0; font-size: 12.5px; color: var(--muted); }
+.week-summary strong { color: var(--ink); }
 
 /* ---------- 搜索 ---------- */
 .searchbar { display: flex; align-items: center; gap: 8px; width: 100%; margin: 12px 0 4px; padding: 11px 13px; border: 1px solid var(--line); border-radius: var(--radius-md); background: var(--surface); color: var(--muted); font-size: 13px; text-align: left; }

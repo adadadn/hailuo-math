@@ -320,7 +320,7 @@ function renderView() {
 function topbarHtml() {
   return `<header class="topbar"><div class="topbar-inner">
     <a class="brand" href="#" data-view="home" aria-label="回到首页">
-      <span class="brand-mark"><img src="icon.svg" alt="" width="20" height="20" /></span>
+      <span class="brand-mark"><img src="icon-mark.svg" alt="" width="20" height="20" /></span>
       <span class="brand-text"><strong>海螺游学</strong><small>考研数学 · 自适应练习</small></span>
     </a>
     <div class="topbar-actions">
@@ -454,6 +454,45 @@ function invalidateMastery() {
   masteryProject = null;
 }
 
+// 近 7 天做题分布 + 正确率 + 最弱章节（至少做过 3 题才参与评选）
+function weekActivity() {
+  const days = [];
+  const start = new Date();
+  start.setHours(0, 0, 0, 0);
+  for (let i = 6; i >= 0; i -= 1) {
+    const d = new Date(start.getTime() - i * 86400000);
+    days.push({ date: localDate(d), weekday: "日一二三四五六"[d.getDay()], total: 0, correct: 0 });
+  }
+  const index = new Map(days.map((d, i) => [d.date, i]));
+  const chapter = new Map();
+  let total = 0;
+  let correct = 0;
+  for (const a of Object.values(state.attempts)) {
+    if (!a || !a.confirmed) continue;
+    const q = qIndex.get(a.questionId);
+    if (!q || q.project !== state.project) continue;
+    const when = a.confirmedAt || a.updatedAt;
+    if (!when) continue;
+    const day = index.get(localDate(new Date(when)));
+    if (day === undefined) continue;
+    days[day].total += 1;
+    total += 1;
+    const ok = a.result === "correct";
+    if (ok) { days[day].correct += 1; correct += 1; }
+    const rec = chapter.get(q.chapter) || { total: 0, correct: 0 };
+    rec.total += 1;
+    if (ok) rec.correct += 1;
+    chapter.set(q.chapter, rec);
+  }
+  let weakest = null;
+  for (const [name, rec] of chapter) {
+    if (rec.total < 3) continue;
+    const rate = rec.correct / rec.total;
+    if (!weakest || rate < weakest.rate) weakest = { name, rate, total: rec.total };
+  }
+  return { days, total, correct, rate: total ? Math.round((correct / total) * 100) : 0, weakest, max: Math.max(1, ...days.map((d) => d.total)) };
+}
+
 /* ---------- 首页 ---------- */
 
 function calendarHtml(dateSet) {
@@ -485,6 +524,7 @@ function homeView() {
   const ck = checkinDateSet();
   const streak = streakDays(ck);
   const due = dueCount();
+  const week = weekActivity();
   const days = daysToExam();
   const learnable = (project.chapters || []).filter((c) => noteFor(c.name));
   const learned = learnable.filter((c) => learnedFor(c.name)).length;
@@ -544,6 +584,15 @@ function homeView() {
     <button class="quick" type="button" data-view="mistakes"><span class="quick-icon">${ICON.pen}</span><strong>错题本</strong><span>${stats.mistakes} 道待巩固</span></button>
     <button class="quick" type="button" data-view="exam-setup"><span class="quick-icon">${ICON.clock}</span><strong>模拟考试</strong><span>${examTimes} 次成绩</span></button>
   </section>
+
+  ${week.total ? `<section class="section panel">
+    <div class="section-head"><h2>本周学习</h2><span class="muted">近 7 天</span></div>
+    <div class="week-bars">${week.days.map((d) => {
+      const height = week.max ? Math.round((d.total / week.max) * 100) : 0;
+      return `<div class="week-bar${d.total ? "" : " is-empty"}" title="${d.date} 做题 ${d.total} 道"><span style="height:${height}%"></span><em>${d.weekday}</em></div>`;
+    }).join("")}</div>
+    <p class="week-summary">做题 <strong>${week.total}</strong> 道 · 正确率 <strong>${week.rate}%</strong>${week.weakest ? ` · 需加强 <strong>${escapeHtml(week.weakest.name)}</strong>` : ""}</p>
+  </section>` : ""}
 
   <section class="section">
     <div class="section-head"><h2>备考科目</h2><span class="muted">${escapeHtml(project.name)}</span></div>

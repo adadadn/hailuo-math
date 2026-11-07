@@ -13,3 +13,4 @@ tmp-*.js
 .acl-recovery/
 .tmp-shots/
 .dsh-uploads/
+.dsh-pilot/
